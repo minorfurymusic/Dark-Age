@@ -1,0 +1,80 @@
+import {LogMessage} from '../../common/logs/LogMessage';
+import {LogMessageType} from '../../common/logs/LogMessageType';
+import {ParticipantId} from '../../common/Types';
+import {IGame} from '../IGame';
+import {Phase} from '../../common/Phase';
+import {Log} from '../../common/logs/Log';
+import {LogMessageData} from '../../common/logs/LogMessageData';
+import {LogMessageDataType} from '../../common/logs/LogMessageDataType';
+
+export class GameLogs {
+  private getLogsForGeneration(messages: Array<LogMessage>, generation: number): Array<LogMessage> {
+    let foundStart = generation === 1;
+    const newMessages = [];
+    for (const message of messages) {
+      if (message.type === LogMessageType.NEW_GENERATION) {
+        const value = Number(message.data[0]?.value);
+        if (value === generation) {
+          foundStart = true;
+        } else if (value === generation + 1) {
+          break;
+        }
+      }
+      if (foundStart === true) {
+        newMessages.push(message);
+      }
+    }
+    return newMessages;
+  }
+
+  public getLogsForGameView(playerId: ParticipantId, game: IGame, generation: number | undefined): Array<LogMessage> {
+    const messagesForPlayer = (message: LogMessage) => {
+      try {
+        if (message === undefined || message === null) {
+          return false;
+        }
+        return message.playerId === undefined || message.playerId === playerId;
+      } catch (e) {
+        console.error('Error checking message for player', e);
+        return false;
+      }
+    };
+
+    // Default view keeps the payload small. An explicit generation request should
+    // always return the full generation, including the current one.
+    if (generation === undefined) {
+      return game.gameLog.filter(messagesForPlayer).slice(-50);
+    }
+    return this.getLogsForGeneration(game.gameLog, generation).filter(messagesForPlayer);
+  }
+
+  public getLogsForGameEnd(game: IGame): Array<string> {
+    if (game.phase !== Phase.END) {
+      throw new Error('Game is not over');
+    }
+
+    return game.gameLog.map((message) => Log.applyData(message, (datum: LogMessageData) => {
+      if (datum.type === undefined || datum.value === undefined) {
+        return '';
+      }
+
+      switch (datum.type) {
+      case LogMessageDataType.PLAYER:
+        for (const player of game.players) {
+          if (datum.value === player.color) {
+            return player.name;
+          }
+        }
+        // Fall-back, show the player color.
+        return datum.value;
+
+      case LogMessageDataType.CARD:
+      case LogMessageDataType.GLOBAL_EVENT:
+      case LogMessageDataType.TILE_TYPE:
+      case LogMessageDataType.COLONY:
+      default:
+        return datum.value.toString();
+      }
+    }));
+  }
+}

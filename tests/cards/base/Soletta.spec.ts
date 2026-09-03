@@ -1,0 +1,14 @@
+
+import {expect} from 'chai';
+import {Soletta} from '../../../src/server/cards/base/Soletta';
+import {testGame} from '../../TestGame';
+import {cast} from '@/common/utils/utils';
+
+describe('Soletta', () => {
+  it('Should play', () => {
+    const card = new Soletta();
+    const [/* game */, player] = testGame(2);
+    cast(card.play(player), undefined);
+    expect(player.production.heat).to.eq(7);
+  });
+});

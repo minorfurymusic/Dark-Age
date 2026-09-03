@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "../build/tests",
+        "types": ["node", "mocha", "chai"]
+    },
+    "extends": "../tsconfig.json",
+    "include": [
+        "testing/setup.ts",
+        "client/vitest.setup.ts",
+        "**/*.spec.ts",
+        "vue-shims.d.ts"
+    ]
+}

@@ -1,0 +1,40 @@
+// A base configuration for src and tests, and also the config
+// Visual Studio Code reads
+{
+    // Compiler options are mostly for the sub-configurations
+    "compilerOptions": {
+        "lib": ["dom", "es2023"],
+        "incremental": true,
+        "module": "commonjs",
+        "strict": true,
+        "noImplicitAny": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "skipLibCheck": true,
+        "target": "es2021",
+        "types": ["node"],
+        "moduleResolution": "bundler",
+        "rootDir": ".",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowUnreachableCode": false,
+        "paths": {
+            "@/*": ["./src/*"],
+            "@tests/*": ["./tests/*"]
+        },
+        "plugins": [
+            { "transform": "transformer-module" },
+        ]
+
+    },
+    // This gives the VS Code IDE its magic.
+    "include": [
+        "src/**/*.ts",
+        "tests/**/*.ts",
+        "scripts/**/*.ts",
+    ],
+}

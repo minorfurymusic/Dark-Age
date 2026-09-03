@@ -1,0 +1,53 @@
+import {IProjectCard} from '../IProjectCard';
+import {Tag} from '../../../common/cards/Tag';
+import {Card} from '../Card';
+import {CardType} from '../../../common/cards/CardType';
+import {TileType} from '../../../common/TileType';
+import {CardName} from '../../../common/cards/CardName';
+import {AdjacencyBonus} from '../../ares/AdjacencyBonus';
+import {CardMetadata} from '../../../common/cards/CardMetadata';
+import {CardRenderer} from '../render/CardRenderer';
+import {oceans} from '../render/DynamicVictoryPoints';
+
+export class Capital extends Card implements IProjectCard {
+  constructor(
+    name = CardName.CAPITAL,
+    adjacencyBonus: AdjacencyBonus | undefined = undefined,
+    metadata: CardMetadata = {
+      cardNumber: '008',
+      description: {
+        text: 'Requires 4 ocean tiles. Place this tile. Decrease your energy production 2 steps and increase your M€ production 5 steps.',
+        align: 'left',
+      },
+      renderData: CardRenderer.builder((b) => {
+        b.production((pb) => {
+          pb.minus().energy(2).br;
+          pb.plus().megacredits(5);
+        }).nbsp.tile(TileType.CAPITAL, false).br;
+        b.vpText('1 additional VP for each ocean tile adjacent to this city tile.');
+      }),
+      victoryPoints: oceans(1, 1),
+    },
+  ) {
+    super({
+      type: CardType.AUTOMATED,
+      name,
+      tags: [Tag.CITY, Tag.BUILDING],
+      cost: 26,
+
+      behavior: {
+        production: {energy: -2, megacredits: 5},
+        tile: {
+          type: TileType.CAPITAL,
+          on: 'city',
+          title: 'Select space for special city tile',
+          adjacencyBonus: adjacencyBonus,
+        },
+      },
+
+      requirements: {oceans: 4},
+      victoryPoints: {oceans: {}, nextToThis: {}},
+      metadata,
+    });
+  }
+}

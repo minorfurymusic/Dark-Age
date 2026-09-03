@@ -1,0 +1,13 @@
+import {expect} from 'chai';
+import {ImportOfAdvancedGHG} from '../../../src/server/cards/base/ImportOfAdvancedGHG';
+import {testGame} from '../../TestGame';
+import {cast} from '@/common/utils/utils';
+
+describe('ImportOfAdvancedGHG', () => {
+  it('Should play', () => {
+    const card = new ImportOfAdvancedGHG();
+    const [/* game */, player] = testGame(2);
+    cast(card.play(player), undefined);
+    expect(player.production.heat).to.eq(2);
+  });
+});
