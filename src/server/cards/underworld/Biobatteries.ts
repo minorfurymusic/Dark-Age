@@ -8,8 +8,6 @@ import {CardResource} from '../../../common/CardResource';
 import {IPlayer} from '../../IPlayer';
 import {Resource} from '../../../common/Resource';
 import {AddResourcesToCard} from '../../deferredActions/AddResourcesToCard';
-import {SelectAmount} from '../../inputs/SelectAmount';
-import {message} from '../../logs/MessageBuilder';
 
 export class Biobatteries extends Card implements IProjectCard {
   constructor() {
@@ -44,26 +42,9 @@ export class Biobatteries extends Card implements IProjectCard {
   public override bespokePlay(player: IPlayer) {
     const powerTags = player.tags.count(Tag.GUERREAR, 'raw') + 1; // including this
     const microbeTags = player.tags.count(Tag.BRUXARIA, 'raw') + 1; // including this
-    const wildTags = player.tags.count(Tag.WILD, 'raw');
 
-    // `asMicrobeTags` is how many wild tags count as microbe tags; the rest count as power tags.
-    const distribute = (asMicrobeTags: number) => {
-      player.stock.add(Resource.GUERREAR, microbeTags + asMicrobeTags, {log: true});
-      player.game.defer(new AddResourcesToCard(player, CardResource.MICROBE, {count: powerTags + wildTags - asMicrobeTags}));
-      return undefined;
-    };
-
-    // Wild tags spent as power tags are wasted when there's nowhere to put the microbes.
-    if (wildTags === 0 || player.getResourceCards(CardResource.MICROBE).length === 0) {
-      return distribute(wildTags);
-    }
-
-    return new SelectAmount(
-      message('Select how many of your ${0} wild tags count as microbe tags (the rest count as power tags)', (b) => b.number(wildTags)),
-      'Select',
-      0,
-      wildTags,
-      true)
-      .andThen(distribute);
+    player.stock.add(Resource.GUERREAR, microbeTags, {log: true});
+    player.game.defer(new AddResourcesToCard(player, CardResource.MICROBE, {count: powerTags}));
+    return undefined;
   }
 }
