@@ -137,8 +137,18 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
   - [x] Extended Reward type with Dark Age resources (guerrear, guerrear_production, inovacao, inovacao_production, 3vp)
   - [x] Integration with PLANETARY_TRACKS export
 
-**Próximos passos (13.16+):**
-- [ ] Combate: revelação de Guerrear e comparação (adversário)
+### 13.16 — Combate: Revelação e Comparação (Combat: Guerrear Revelation & Comparison)
+
+- [x] **Infraestrutura implementada (commit d1af880)**
+  - [x] Defender's allocated Guerrear revealed when attacked
+  - [x] Combat resolution comparing attacker's Guerrear (cost + Estandarte aura) vs defender's allocated Guerrear
+  - [x] Attack success: attacker's total > defender's allocated (attacker captures city)
+  - [x] Attack failure: defender's allocated >= attacker's total (defender holds city)
+  - [x] Logging shows both sides' Guerrear values and combat outcome
+  - [x] Integration into attackCity() flow
+
+**Próximos passos (13.17+):**
+- [ ] Fase de Produção & Geração (Production Phase & Generation transitions)
 
 ---
 
