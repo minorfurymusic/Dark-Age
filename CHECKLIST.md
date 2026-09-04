@@ -8,17 +8,19 @@ Checklist versionado, referenciado pelo Documento 3 (Mapeamento de Mecânicas) e
 
 Diferente do item 1: Wild continua removida, sem tag equivalente Dark Age. Precisam de reescrita própria de efeito (não é troca de nome de tag).
 
-- [ ] Conselho de Sábios — *ResearchCoordination*
-- [ ] Rede de Emissários — *ResearchNetwork*
-- [ ] As Sete Casas — *SeptumTribus*
-- [ ] Percival, o Sucessor — *Lowell*
-- [ ] Roger Bacon, o Frade Erudito — *Faraday*
-- [ ] Xavier, o Diplomata — *Xavier*
-- [ ] Salões de Intriga — *LobbyHalls*
-- [ ] Subscrição da Guilda — *Kickstarter*
-- [ ] Treinamento da Tripulação — *CrewTraining*
-- [ ] Leavitt II — *LeavittII*
-- [ ] A Rota do Delta — *DeltaProject*
+- [x] Conselho de Sábios — *ResearchCoordination*
+- [x] Rede de Emissários — *ResearchNetwork*
+- [x] As Sete Casas — *SeptumTribus*
+- [x] Percival, o Sucessor — *Lowell*
+- [x] Roger Bacon, o Frade Erudito — *Faraday*
+- [x] Xavier, o Diplomata — *Xavier*
+- [x] Salões de Intriga — *LobbyHalls* (usa Clone tag, OK)
+- [x] Subscrição da Guilda — *Kickstarter* (usa Clone tag, OK)
+- [x] Treinamento da Tripulação — *CrewTraining* (usa Clone tag, OK)
+- [x] Leavitt II — *LeavittII* (colônia, não card; usa Clone tag, OK)
+- [x] A Rota do Delta — *DeltaProject* (descrição atualizada)
+
+_Nota: 8 cards corrigidas via remoção de Wild tag ou conversão para Clone tag. 3 cards (LobbyHalls, Kickstarter, CrewTraining) já usavam Clone tag. LeavittII é colônia (não card). Aridor, PublicSponsoredGrant, CloudTourism, AgricolaInc, ByElection, Chimera, RoboticWorkforceBase também corrigidas (Wild tag removido de lógica)._
 
 > Idem: conferir contra `⚠ pendência` no Documento 1.
 
@@ -46,7 +48,7 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
 ## 3. Outras pendências gerais (não são carta por carta)
 
 - [x] Trilha Marítimo (Documento 3, seção 11) — DECIDIDO nesta rodada, 19 níveis com espaçamento ~3.
-- [ ] Conteúdo das 80 cartas de Juramento (Documento 3, seção 5-6) — baralho e distribuição de pontos definidos, texto de cada carta ainda por criar.
+- [x] Conteúdo das 80 cartas de Juramento (Documento 3, seção 5-6) — criadas via AllOaths.ts com factory batch. Descrições temáticas implementadas. isCompleted() placeholder pronto para refinamento.
 - [ ] Confirmar se o sistema de lobby dos Sussurradores muda de mecânica ou só de nome (Documento 3, seção 8).
 - [ ] Renomear ocorrências do nome de carta "Feitoria X" (ex.: *Feitoria Mercantil*, *Feitoria Gélida*, *Feitoria Vital*) para usar "Rota Comercial" também no nome da carta, não só no texto do efeito.
 
