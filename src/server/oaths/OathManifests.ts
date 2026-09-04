@@ -1,5 +1,6 @@
 import {IOath} from './IOath';
-import {OathName} from '../../common/oaths/OathName';
+import {OathName, ALL_OATHS} from '../../common/oaths/OathName';
+import {createOathByName} from './AllOaths';
 
 interface OathManifest {
   oathNames: Array<OathName>;
@@ -8,9 +9,16 @@ interface OathManifest {
 
 export namespace OathManifests {
   export const manifests: Array<OathManifest> = [
-    // TODO: Add oath manifests from individual oath modules
-    // Phase 3: Create individual oath cards (80 total)
-    // For now, this is a placeholder structure ready for oath cards
+    {
+      oathNames: ALL_OATHS,
+      factory: (name: OathName) => {
+        const oath = createOathByName(name);
+        if (!oath) {
+          throw new Error(`Unknown oath: ${name}`);
+        }
+        return oath;
+      },
+    },
   ];
 
   export function createOath(name: OathName): IOath | undefined {
