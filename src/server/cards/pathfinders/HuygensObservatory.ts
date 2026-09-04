@@ -4,13 +4,9 @@ import {CardType} from '../../../common/cards/CardType';
 import {IPlayer} from '../../IPlayer';
 import {CardName} from '../../../common/cards/CardName';
 import {BuildColony} from '../../deferredActions/BuildColony';
-import {OrOptions} from '../../inputs/OrOptions';
 import {Card} from '../Card';
 import {CardRenderer} from '../render/CardRenderer';
-import {SelectOption} from '../../inputs/SelectOption';
 import {SelectColony} from '../../inputs/SelectColony';
-import {IColony} from '../../colonies/IColony';
-import {ColoniesHandler} from '../../colonies/ColoniesHandler';
 
 export class HuygensObservatory extends Card implements IProjectCard {
   constructor() {
@@ -22,100 +18,48 @@ export class HuygensObservatory extends Card implements IProjectCard {
       victoryPoints: 1,
 
       behavior: {
+        colonies: {
+          buildColony: {allowDuplicates: true},
+        },
         tr: 1,
       },
 
       metadata: {
         cardNumber: 'Pf61',
-        renderData: CardRenderer.builder((b) => b.colonies(1).asterix().trade().asterix().tr(1)),
-        description: 'Place a colony. MAY BE PLACED ON A COLONY TILE WHERE YOU ALREADY HAVE A COLONY. ' +
-          'Trade for free. You may use a Trade Fleet that is already on a colony tile, but you may not ' +
-          'trade with the tile that fleet came from. Gain 1 TR.',
+        renderData: CardRenderer.builder((b) => {
+          b.colonies(1).br;
+          b.effect('Then attack a trade route for free (no Guerrear cost). Gain 1 TR.', (eb) => {
+            eb.text('free attack').startEffect.tr(1);
+          });
+        }),
+        description: 'Place a colony (may duplicate). Then attack a trade route without spending Guerrear. Gain 1 TR.',
       },
     });
   }
 
-  private trade(player: IPlayer, colonies: Array<IColony>) {
-    return new SelectColony('Select colony tile to trade with for free', 'Select', colonies)
-      .andThen((colony) => {
-        colony.trade(player);
-        return undefined;
-      });
-  }
-
-  private tryToTrade(player: IPlayer) {
-    const game = player.game;
-    const tradeableColonies = ColoniesHandler.tradeableColonies(player.game);
-    if (tradeableColonies.length === 0) {
-      game.log(
-        '${0} cannot trade with ${1} because there is no colony they may visit.',
-        (b) => b.player(player).card(this));
-      return;
-    }
-
-    const orOptions = new OrOptions().setTitle('Select a trade fleet');
-
-    const visitedColonies = game.colonies.filter((colony) => colony.visitor === player.id);
-    const hasFreeTradeFleet = visitedColonies.length < player.colonies.getFleetSize();
-    const tradeInput = this.trade(player, tradeableColonies);
-    if (visitedColonies.length > 0) {
-      orOptions.options.push(
-        new SelectColony(
-          'Select a colony tile to recall a trade fleet from',
-          'OK',
-          visitedColonies)
-          .andThen((colony) => {
-            game.log(
-              '${0} is reusing a trade fleet from ${1}',
-              (b) => b.player(player).colony(colony));
-            colony.visitor = undefined;
-            player.colonies.usedTradeFleets--;
-            player.defer(() => tradeInput);
-            return undefined;
-          }));
-    }
-    if (hasFreeTradeFleet) {
-      if (orOptions.options.length === 1) {
-        orOptions.options.push(new SelectOption('Use an available trade fleet').andThen(() => {
-          player.defer(tradeInput);
-          return undefined;
-        }));
-      } else {
-        player.defer(tradeInput);
-      }
-    }
-    if (orOptions.options.length === 1) {
-      player.defer(orOptions.options[0]);
-    }
-    if (orOptions.options.length > 1) {
-      player.defer(orOptions);
-    }
-  }
-  public override bespokeCanPlay(player: IPlayer): boolean {
-    // NOTE: Don't use canTrade.
-    if (player.game.tradeEmbargo === true) {
-      return false;
-    }
-    if (player.colonies.getPlayableColonies(/** allowDuplicate = */true).length === 0) {
-      return false;
-    }
-    if (ColoniesHandler.tradeableColonies(player.game).length === 0) {
-      return false;
-    }
-    return true;
-  }
-
   public override bespokePlay(player: IPlayer) {
     const game = player.game;
+    const activeRoutes = game.colonies.filter((c) => c.isActive);
 
-    if (player.colonies.getPlayableColonies(/** allowDuplicate = */true).length > 0) {
-      game.defer(new BuildColony(player, {
-        allowDuplicate: true,
-        title: 'Select colony for Huygens Observatory',
-      })).andThen(() => this.tryToTrade(player));
-    } else {
-      player.defer(() => this.tryToTrade(player));
+    if (activeRoutes.length === 0) {
+      game.log('${0} cannot attack because there are no active trade routes.', (b) => b.player(player));
+      return undefined;
     }
+
+    game.defer(new BuildColony(player, {
+      allowDuplicate: true,
+      title: 'Select colony for Huygens Observatory',
+    })).andThen(() => {
+      player.defer(
+        new SelectColony('Select trade route to attack (free)', 'Attack', activeRoutes)
+          .andThen((colony: any) => {
+            game.log('${0} attacked ${1} via Huygens Observatory (free)', (b) => b.player(player).colony(colony));
+            colony.trade(player);
+            return undefined;
+          }),
+      );
+    });
+
     return undefined;
   }
 }

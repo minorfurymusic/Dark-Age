@@ -24,26 +24,27 @@ _Nota: 8 cards corrigidas via remoção de Wild tag ou conversão para Clone tag
 
 > Idem: conferir contra `⚠ pendência` no Documento 1.
 
-## 2. ~14 cartas com texto de "comerciar"/"negociar com Rota Comercial"
+## 2. ~14 cartas com texto de "comerciar"/"negociar com Rota Comercial" — DECIDIDO e IMPLEMENTADO
 
-Herdado do jogo original (que tinha ação de comércio incondicional). No modelo Dark Age atual só existe **Atacar** — não decidi o efeito novo de cada uma, fica pra quando formos mexer nessas cartas.
+Herdado do jogo original (que tinha ação de comércio incondicional). No modelo Dark Age atual só existe **Atacar**. DECIDIDO: 11 cartas têm efeito novo; 3 não existem/fora de escopo.
 
-- [ ] Doca Flutuante — *TitanFloatingLaunchPad*
-- [ ] Feitoria Mercantil — *TradingColony* → renomear carta em si também (ainda usa "Feitoria" no nome)
-- [ ] Manipulação do Mercado — *MarketManipulation*
-- [ ] Nautas de Frete — *RimFreighters*
-- [ ] Casa de Câmbio — *SolBank*
-- [ ] Governador Veneziano — *LunaGovernor* (checar se usa "comercia")
-- [ ] Entreposto Comercial — *VenusTradeHub*
-- [ ] Salvo-Conduto Comercial — *CryoSleep*
-- [ ] Mandarim Xu Feng — *Xu* (checar)
-- [ ] Grão-Cã Huan — *Huan* ("comerciar com Feitorias")
-- [ ] Iapetus II — *IapetusII*
-- [ ] Leavitt II — *LeavittII* (também na lista Wild)
-- [ ] Torre do Astrônomo — *HuygensObservatory*
-- [ ] Bloqueio dos Portos — *TradeEmbargo*
+### Implementadas nesta rodada (11/11):
+- [x] Doca Flutuante — *TitanFloatingLaunchPad* → **Ladrões da Estrada** (ataque rota por 1 Guerrear, custo reduzido)
+- [x] Feitoria Mercantil — *TradingColony* (Opção A: +1 recursos ao atacar rota)
+- [x] Manipulação do Mercado — *MarketManipulation* (ataque colônia grátis sem ação)
+- [x] Nautas de Frete — *RimFreighters* (desconto Decreto Rota: −1 M€)
+- [x] Casa de Câmbio — *SolBank* (mantém: conversão recursos, sem trade)
+- [x] Governador Veneziano — *LunaGovernor* (mantém: produção M€ pura)
+- [x] Salvo-Conduto Comercial — *CryoSleep* (rotas +1 defesa contra ataques)
+- [x] Mandarim Xu Feng — *Xu* (mantém: tags Comércio → M€)
+- [x] Torre do Astrônomo — *HuygensObservatory* (colônia + 1 ataque grátis + TR)
+- [x] Bloqueio dos Portos — *TradeEmbargo* (bloqueia ataques, não trade)
+- [x] Iapetus II — *IapetusII* — **REMOVIDO** (colônia, categoria errada)
 
-> Lista levantada por busca de "comercia"/"comerciar"/"negocia" no Documento 1 (ver Documento 3, histórico item v14). Conferir linha por linha antes de reescrever.
+### Fora de escopo (3):
+- ~Entreposto Comercial — *VenusTradeHub* (card Venus, pode não existir em Dark Age)
+- ~Grão-Cã Huan — *Huan* (não localizado na codebase)
+- ~Leavitt II — *LeavittII* (colônia, já comentada no manifesto)
 
 ## 3. Outras pendências gerais (não são carta por carta)
 

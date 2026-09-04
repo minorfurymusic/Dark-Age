@@ -14,15 +14,14 @@ export class CryoSleep extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       victoryPoints: 1,
 
-      behavior: {
-        colonies: {tradeDiscount: 1},
-      },
-
       metadata: {
         cardNumber: 'C07',
-        renderData: CardRenderer.builder((b) => b.effect('When you trade, you pay 1 less resource for it.', (be) => {
-          be.trade().startEffect.tradeDiscount(1);
-        })),
+        renderData: CardRenderer.builder((b) => {
+          b.effect('Your trade routes gain +1 defense against attacks.', (be) => {
+            be.text('route defense').startEffect.text('+1');
+          });
+        }),
+        description: 'Trade routes you control gain +1 defense against attacks.',
       },
     });
   }

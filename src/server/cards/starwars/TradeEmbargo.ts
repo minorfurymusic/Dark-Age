@@ -18,8 +18,9 @@ export class TradeEmbargo extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'SW01',
         renderData: CardRenderer.builder((b) => {
-          b.text('Nobody may trade for the rest of this generation.', {size: Size.LARGE});
+          b.text('Nobody may attack trade routes for the rest of this generation.', {size: Size.LARGE});
         }),
+        description: 'Embargo on attacks: no player may attack a trade route this generation.',
       },
     });
   }
