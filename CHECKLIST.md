@@ -127,8 +127,17 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
 - [x] stealFromSpecialRoute() handler for special mechanics
 - [x] Integration into attackRoute() flow
 
-**Próximos passos (13.15+):**
-- [ ] Trilha de Guerrear (4, 7, 12 - bônus específicos)
+### 13.15 — Trilha de Guerrear (Guerrear Planetary Track)
+
+- [x] **Infraestrutura implementada (commit a23c9db)**
+  - [x] 12-level track with Guerrear resource rewards
+  - [x] Guerrear production bonuses at levels 2, 6, 11
+  - [x] Card rewards at levels 3, 5, 7, 9
+  - [x] VP rewards up to 3 (level 12)
+  - [x] Extended Reward type with Dark Age resources (guerrear, guerrear_production, inovacao, inovacao_production, 3vp)
+  - [x] Integration with PLANETARY_TRACKS export
+
+**Próximos passos (13.16+):**
 - [ ] Combate: revelação de Guerrear e comparação (adversário)
 
 ---
