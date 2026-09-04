@@ -108,14 +108,26 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
 
 ### 13.11 — Disputa Direta (Direct Dispute in Routes)
 
-- [x] **Infraestrutura implementada**
+- [x] **Infraestrutura implementada (commit 65d8c2f)**
   - [x] Lógica de roubo: se 1 colonizador, rouba desse
   - [x] Se 2+ colonizadores: rouba do com menos Guerrear
   - [x] Logging específico de Disputa Direta
   - [x] Integrado em stealResourceFromRoute()
 
-**Próximos passos (13.12+):**
-- [ ] Rotas especiais (Pluto, Miranda, Enceladus, Titan)
+### 13.12-13.14 — Rotas Especiais (Special Route Mechanics)
+
+- [x] **Pluto (Jerusalém)** - Card discard mechanic (TBD, placeholder)
+- [x] **Miranda (Lisboa)** - Porco resource theft (TBD, placeholder)
+- [x] **Enceladus (Ragusa)** - Caldeirão resource theft (TBD, placeholder)  
+- [x] **Titan (Constantinopla)** - Multi-player steal + TR gain
+  - [x] Steal 2 Moedas from each colonizer
+  - [x] Attacker gains +1 Ponto de Poder (TR)
+  - [x] Logging specific to Constantinopla conquest
+- [x] isSpecialRoute() checker method
+- [x] stealFromSpecialRoute() handler for special mechanics
+- [x] Integration into attackRoute() flow
+
+**Próximos passos (13.15+):**
 - [ ] Trilha de Guerrear (4, 7, 12 - bônus específicos)
 - [ ] Combate: revelação de Guerrear e comparação (adversário)
 

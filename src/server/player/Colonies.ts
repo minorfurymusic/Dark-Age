@@ -87,11 +87,16 @@ export class Colonies {
     // Deduct Guerrear cost
     player.stock.deduct(Resource.GUERREAR, 2);
 
-    // Steal resources based on route type
-    const stealAmount = this.getStealAmountForRoute(colony.name);
-    if (stealAmount !== undefined) {
-      const {resource, amount} = stealAmount;
-      this.stealResourceFromRoute(colony, player, resource, amount);
+    // Handle special routes separately
+    if (this.isSpecialRoute(colony.name)) {
+      this.stealFromSpecialRoute(colony, player, colony.name);
+    } else {
+      // Steal resources based on route type
+      const stealAmount = this.getStealAmountForRoute(colony.name);
+      if (stealAmount !== undefined) {
+        const {resource, amount} = stealAmount;
+        this.stealResourceFromRoute(colony, player, resource, amount);
+      }
     }
 
     game.log('${0} attacked ${1} via Saque (costs 2 Guerrear)', (b) => b.player(player).colony(colony));
@@ -106,12 +111,61 @@ export class Colonies {
       case ColonyName.EUROPA: return {resource: Resource.GUERREAR, amount: 1};
       case ColonyName.IO: return {resource: Resource.INOVACAO, amount: 1};
       case ColonyName.CALLISTO: return {resource: Resource.GUERREAR, amount: 1};
-      case ColonyName.PLUTO: // Requires special handling for card discard
-      case ColonyName.MIRANDA: // Requires handling for card resources
-      case ColonyName.ENCELADUS: // Requires handling for card resources
-      case ColonyName.TITAN: // Special multi-player steal
+      case ColonyName.PLUTO: // Jerusalem - special card draw
+      case ColonyName.MIRANDA: // Lisboa - resource on card (Porco)
+      case ColonyName.ENCELADUS: // Ragusa - resource on card (Caldeirão)
+      case ColonyName.TITAN: // Constantinopla - special multi-player steal
+        return undefined; // Handled separately
       default:
         return undefined;
+    }
+  }
+
+  /**
+   * Check if route has special steal mechanics.
+   */
+  private isSpecialRoute(colonyName: ColonyName): boolean {
+    return colonyName === ColonyName.PLUTO ||
+           colonyName === ColonyName.MIRANDA ||
+           colonyName === ColonyName.ENCELADUS ||
+           colonyName === ColonyName.TITAN;
+  }
+
+  /**
+   * Handle special route steal mechanics.
+   */
+  private stealFromSpecialRoute(colony: IColony, attacker: IPlayer, colonyName: ColonyName): void {
+    const game = this.player.game;
+
+    switch (colonyName) {
+      case ColonyName.PLUTO: // Jerusalem - discard card to steal
+        game.log('${0} attacked Jerusalém (Pluto) - card discard mechanic TBD', (b) =>
+          b.player(attacker));
+        break;
+
+      case ColonyName.MIRANDA: // Lisboa - steal Porco resource
+        game.log('${0} attacked Lisboa (Miranda) - Porco resource steal TBD', (b) =>
+          b.player(attacker));
+        break;
+
+      case ColonyName.ENCELADUS: // Ragusa - steal Caldeirão resource
+        game.log('${0} attacked Ragusa (Enceladus) - Caldeirão resource steal TBD', (b) =>
+          b.player(attacker));
+        break;
+
+      case ColonyName.TITAN: // Constantinopla - steal from all colonizers (+1 TR)
+        if (colony.colonies.length > 0) {
+          const stealPerOwner = 2; // 2 Moedas per colonizer
+          colony.colonies.forEach((playerId) => {
+            const owner = game.getPlayerById(playerId);
+            owner.stock.steal(Resource.MEGACREDITS, stealPerOwner, attacker, {log: true});
+          });
+          // +1 Ponto de Poder (TR) for attacker
+          attacker.increaseTerraformRating(1, {log: true});
+          game.log('${0} conquered Constantinopla (Titan): +4 Moedas + 1 TR', (b) =>
+            b.player(attacker));
+        }
+        break;
     }
   }
 
