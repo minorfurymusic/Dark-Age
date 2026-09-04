@@ -121,11 +121,33 @@ export class Colonies {
       return; // No one owns it
     }
 
-    // For now, steal from all owners equally (will be refined for Disputa Direta)
-    colony.colonies.forEach((playerId) => {
-      const owner = this.player.game.getPlayerById(playerId);
+    // Disputa Direta: with <2 colonizers, steal from the single owner
+    // With 2+ colonizers, steal from the one with least Guerrear
+    if (colony.colonies.length === 1) {
+      const owner = this.player.game.getPlayerById(colony.colonies[0]);
       owner.stock.steal(resource, amount, attacker, {log: true});
-    });
+      this.player.game.log('${0} exercised Disputa Direta against ${1}', (b) =>
+        b.player(attacker).player(owner));
+    } else {
+      // Multiple colonizers: find weakest (least Guerrear in stock)
+      let weakestOwner: IPlayer | undefined;
+      let minGuerrear = Infinity;
+
+      colony.colonies.forEach((playerId) => {
+        const owner = this.player.game.getPlayerById(playerId);
+        const guerrearCount = owner.stock.get(Resource.GUERREAR);
+        if (guerrearCount < minGuerrear) {
+          minGuerrear = guerrearCount;
+          weakestOwner = owner;
+        }
+      });
+
+      if (weakestOwner !== undefined) {
+        weakestOwner.stock.steal(resource, amount, attacker, {log: true});
+        this.player.game.log('${0} targeted weaker colonizer ${1} in Disputa Direta', (b) =>
+          b.player(attacker).player(weakestOwner!));
+      }
+    }
   }
 
   private tradeWithColony(openColonies: Array<IColony>): AndOptions | undefined {

@@ -100,14 +100,21 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
 
 ### 13.10 — Aura de Estandarte (Banner Aura)
 
-- [x] **Infraestrutura implementada**
+- [x] **Infraestrutura implementada (commit 94cb744)**
   - [x] TileType.ESTANDARTE adicionado (tipo 45)
   - [x] getEstandarteAuraBonus() calcula +1 em raio de 3 tiles
   - [x] Bônus integrado no logging de ataque de feudo
   - [x] Sistema pronto para cards que colocam tiles Estandarte
 
-**Próximos passos (13.11+):**
-- [ ] Disputa Direta (atacar jogador com menos Guerrear)
+### 13.11 — Disputa Direta (Direct Dispute in Routes)
+
+- [x] **Infraestrutura implementada**
+  - [x] Lógica de roubo: se 1 colonizador, rouba desse
+  - [x] Se 2+ colonizadores: rouba do com menos Guerrear
+  - [x] Logging específico de Disputa Direta
+  - [x] Integrado em stealResourceFromRoute()
+
+**Próximos passos (13.12+):**
 - [ ] Rotas especiais (Pluto, Miranda, Enceladus, Titan)
 - [ ] Trilha de Guerrear (4, 7, 12 - bônus específicos)
 - [ ] Combate: revelação de Guerrear e comparação (adversário)
