@@ -10,17 +10,17 @@ export class PowerGrid extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.POWER_GRID,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       cost: 18,
 
       behavior: {
-        production: {energy: {tag: Tag.PODER}},
+        production: {energy: {tag: Tag.GUERREAR}},
       },
 
       metadata: {
         cardNumber: '102',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.energy(1).slash().tag(Tag.PODER));
+          b.production((pb) => pb.energy(1).slash().tag(Tag.GUERREAR));
         }),
         description: 'Increase your energy production step for each power tag you have, including this.',
       },

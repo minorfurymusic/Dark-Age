@@ -10,14 +10,14 @@ export class FusionPower extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.FUSION_POWER,
-      tags: [Tag.ERUDIÇÃO, Tag.PODER, Tag.CONSTRUÇÃO],
+      tags: [Tag.ERUDIÇÃO, Tag.GUERREAR, Tag.CONSTRUÇÃO],
       cost: 14,
 
       behavior: {
         production: {energy: 3},
       },
 
-      requirements: {tag: Tag.PODER, count: 2},
+      requirements: {tag: Tag.GUERREAR, count: 2},
       metadata: {
         cardNumber: '132',
         renderData: CardRenderer.builder((b) => {

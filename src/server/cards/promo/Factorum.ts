@@ -16,7 +16,7 @@ export class Factorum extends CorporationCard implements ICorporationCard, IActi
   constructor() {
     super({
       name: CardName.FACTORUM,
-      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
       startingMegaCredits: 37,
 
       behavior: {

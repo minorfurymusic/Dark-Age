@@ -11,7 +11,7 @@ export class LightningHarvest extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.LIGHTNING_HARVEST,
       cost: 8,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       victoryPoints: 1,
 
       behavior: {

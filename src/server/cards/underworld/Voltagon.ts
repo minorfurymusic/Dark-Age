@@ -10,7 +10,7 @@ export class Voltagon extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.VOLTAGON,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       startingMegaCredits: 38,
 
       behavior: {

@@ -27,7 +27,7 @@ const TRACK_SCIENCE: TrackDefinition = {
 };
 
 const TRACK_ENERGY: TrackDefinition = {
-  tags: [Tag.PODER, Tag.ENGENHO],
+  tags: [Tag.GUERREAR, Tag.ENGENHO],
   productions: [Resource.GUERREAR],
   layout: [undefined, 'advance', 'venus', 'tr3', 'venus2', 'temperature', 'advance', 'milestone', undefined, 'temperature', 'greenery', 'advance', 'ocean', undefined, 'city', 'greenery', undefined, 'temperature', 'tr8'],
 };

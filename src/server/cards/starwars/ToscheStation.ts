@@ -14,7 +14,7 @@ export class ToscheStation extends Card implements IActionCard, IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.TOSCHE_STATION,
-      tags: [Tag.PODER, Tag.AGRICULTURA],
+      tags: [Tag.GUERREAR, Tag.AGRICULTURA],
       cost: 5,
 
       metadata: {

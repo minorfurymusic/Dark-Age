@@ -12,7 +12,7 @@ export class Supercapacitors extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.SUPERCAPACITORS,
-      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
       cost: 4,
 
       behavior: {

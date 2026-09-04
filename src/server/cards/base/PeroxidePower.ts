@@ -10,7 +10,7 @@ export class PeroxidePower extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.PEROXIDE_POWER,
-      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
       cost: 7,
 
       behavior: {

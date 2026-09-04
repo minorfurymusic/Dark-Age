@@ -10,7 +10,7 @@ export class StaticHarvesting extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.STATIC_HARVESTING,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       cost: 5,
 
       behavior: {

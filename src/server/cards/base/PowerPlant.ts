@@ -10,7 +10,7 @@ export class PowerPlant extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.POWER_PLANT,
-      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
       cost: 4,
 
       behavior: {

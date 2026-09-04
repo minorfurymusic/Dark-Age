@@ -10,7 +10,7 @@ export class TychoMagnetics extends CorporationCard implements ICorporationCard 
   constructor() {
     super({
       name: CardName.TYCHO_MAGNETICS,
-      tags: [Tag.PODER, Tag.ERUDIÇÃO],
+      tags: [Tag.GUERREAR, Tag.ERUDIÇÃO],
       startingMegaCredits: 42,
       behavior: {
         production: {energy: 1},

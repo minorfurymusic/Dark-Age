@@ -10,7 +10,7 @@ export class MassConverter extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MASS_CONVERTER,
-      tags: [Tag.ERUDIÇÃO, Tag.PODER],
+      tags: [Tag.ERUDIÇÃO, Tag.GUERREAR],
       cost: 8,
 
       behavior: {

@@ -10,7 +10,7 @@ export class GiantSpaceMirror extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.GIANT_SPACE_MIRROR,
-      tags: [Tag.PODER, Tag.MARÍTIMO],
+      tags: [Tag.GUERREAR, Tag.MARÍTIMO],
       cost: 17,
 
       behavior: {

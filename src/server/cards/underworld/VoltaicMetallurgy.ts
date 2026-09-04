@@ -16,7 +16,7 @@ export class VoltaicMetallurgy extends Card implements IProjectCard, IActionCard
       name: CardName.VOLTAIC_METALLURGY,
       type: CardType.ACTIVE,
       cost: 8,
-      tags: [Tag.ERUDIÇÃO, Tag.PODER],
+      tags: [Tag.ERUDIÇÃO, Tag.GUERREAR],
 
       requirements: {tag: Tag.ERUDIÇÃO, count: 1},
 
@@ -24,7 +24,7 @@ export class VoltaicMetallurgy extends Card implements IProjectCard, IActionCard
         cardNumber: 'U076',
         renderData: CardRenderer.builder((b) => {
           b.action('Spend any number of steel to gain the same amount of titanium (max is the number of power tags you have.)', (ab) => {
-            ab.text('X').steel(1, {secondaryTag: Tag.PODER}).startAction.text('X').titanium(1);
+            ab.text('X').steel(1, {secondaryTag: Tag.GUERREAR}).startAction.text('X').titanium(1);
           });
         }),
         description: 'Requires 1 science tag.',
@@ -33,11 +33,11 @@ export class VoltaicMetallurgy extends Card implements IProjectCard, IActionCard
   }
 
   public canAct(player: IPlayer) {
-    return player.tags.count(Tag.PODER) > 0 && player.stock.steel > 0;
+    return player.tags.count(Tag.GUERREAR) > 0 && player.stock.steel > 0;
   }
 
   public action(player: IPlayer) {
-    const max = Math.min(player.tags.count(Tag.PODER), player.stock.steel);
+    const max = Math.min(player.tags.count(Tag.GUERREAR), player.stock.steel);
     return new SelectAmount(
       message('Select up to ${0} steel to convert to titanium', (b) => b.number(max)),
       'Convert Steel', 1, max, false)

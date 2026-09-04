@@ -15,10 +15,10 @@ export class PowerSupplyConsortium extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.POWER_SUPPLY_CONSORTIUM,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       cost: 5,
 
-      requirements: {tag: Tag.PODER, count: 2},
+      requirements: {tag: Tag.GUERREAR, count: 2},
       metadata: {
         cardNumber: '160',
         renderData: CardRenderer.builder((b) => {

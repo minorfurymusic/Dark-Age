@@ -9,7 +9,7 @@ export class TakondaCastle extends Card {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TAKONDA_CASTLE,
-      tags: [Tag.PODER, Tag.AGRICULTURA],
+      tags: [Tag.GUERREAR, Tag.AGRICULTURA],
       cost: 2,
 
       behavior: {

@@ -11,7 +11,7 @@ export class MicrosingularityPlant extends Card implements IProjectCard {
     super({
       name: CardName.MICROSINGULARITY_PLANT,
       type: CardType.AUTOMATED,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       cost: 10,
       requirements: {habitatTiles: 2, all},
 

@@ -21,7 +21,7 @@ import {IActionCard, ICard, isIActionCard, isIHasCheckLoops} from '../cards/ICar
 export const DELTA_TRACK_TAGS: ReadonlyArray<Tag | undefined> = [
   undefined,     // 0: start
   Tag.CONSTRUÇÃO,  // 1
-  Tag.PODER,     // 2
+  Tag.GUERREAR,     // 2
   Tag.DIPLOMACIA,     // 3
   Tag.MARÍTIMO,     // 4
   Tag.ERUDIÇÃO,   // 5
@@ -163,7 +163,7 @@ export class DeltaProjectExpansion {
       ));
       break;
 
-    case Tag.PODER: // Choose +1 energy production or +1 heat production
+    case Tag.GUERREAR: // Choose +1 energy production or +1 heat production
       player.defer(() => new OrOptions(
         new SelectOption('Increase energy production 1 step', 'Increase').andThen(() => {
           player.production.add(Resource.GUERREAR, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});

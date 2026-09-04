@@ -15,7 +15,7 @@ export class EnergyTapping extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ENERGY_TAPPING,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       cost: 3,
       victoryPoints: -1,
 

@@ -17,7 +17,7 @@ export class Playwrights extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.PLAYWRIGHTS,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
       startingMegaCredits: 38,
 
       behavior: {

@@ -10,7 +10,7 @@ export class SpaceMirrors extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.SPACE_MIRRORS,
-      tags: [Tag.PODER, Tag.MARÍTIMO],
+      tags: [Tag.GUERREAR, Tag.MARÍTIMO],
       cost: 3,
 
       action: {

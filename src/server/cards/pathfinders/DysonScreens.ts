@@ -12,7 +12,7 @@ export class DysonScreens extends ActionCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.DYSON_SCREENS,
-      tags: [Tag.ERUDIÇÃO, Tag.COMÉRCIO, Tag.PODER, Tag.MARÍTIMO],
+      tags: [Tag.ERUDIÇÃO, Tag.COMÉRCIO, Tag.GUERREAR, Tag.MARÍTIMO],
       cost: 28,
       victoryPoints: 1,
 

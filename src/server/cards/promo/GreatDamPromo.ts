@@ -28,7 +28,7 @@ export class GreatDamPromo extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name,
       cost: 15,
-      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
       metadata,
       adjacencyBonus,
 

@@ -8,7 +8,7 @@ export class PowerGeneration extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.POWER_GENERATION,
-      tags: [Tag.PODER],
+      tags: [Tag.GUERREAR],
 
       behavior: {
         production: {energy: 3},

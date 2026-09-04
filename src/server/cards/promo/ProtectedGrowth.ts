@@ -15,13 +15,13 @@ export class ProtectedGrowth extends Card implements IProjectCard {
       tags: [Tag.AGRICULTURA],
 
       behavior: {
-        stock: {plants: {tag: Tag.PODER}},
+        stock: {plants: {tag: Tag.GUERREAR}},
       },
 
       requirements: {oxygen: 7, max},
       metadata: {
         cardNumber: 'X73',
-        renderData: CardRenderer.builder((b) => b.plants(1).slash().tag(Tag.PODER)),
+        renderData: CardRenderer.builder((b) => b.plants(1).slash().tag(Tag.GUERREAR)),
         description: 'Oxygen must be 7% or less. Gain 1 plant per power tag you have.',
       },
     });

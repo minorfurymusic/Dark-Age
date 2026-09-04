@@ -106,7 +106,7 @@ export class Tags {
     // Habitat Marte hook
     if (mode !== 'raw') {
       if (tag === Tag.ERUDIÇÃO && this.player.tableau.has(CardName.HABITAT_MARTE)) {
-        tagCount += this.rawCount(Tag.MARS, includeEvents);
+        tagCount += this.rawCount(Tag.GUERREAR, includeEvents);
       }
     }
 
@@ -133,7 +133,7 @@ export class Tags {
       if (tag === target) {
         return true;
       }
-      if (tag === Tag.MARS &&
+      if (tag === Tag.GUERREAR &&
         target === Tag.ERUDIÇÃO &&
         this.player.tableau.has(CardName.HABITAT_MARTE)) {
         return true;
@@ -156,7 +156,7 @@ export class Tags {
         count++;
       } else if (Array.isArray(target) && target.includes(tag)) {
         count++;
-      } else if (tag === Tag.MARS && target === Tag.ERUDIÇÃO &&
+      } else if (tag === Tag.GUERREAR && target === Tag.ERUDIÇÃO &&
         this.player.tableau.has(CardName.HABITAT_MARTE)) {
         count++;
       }
@@ -304,7 +304,7 @@ export class Tags {
         if (this.player.hasTurmoilScienceTagBonus) {
           distinctCount++;
         } else if (this.player.tableau.has(CardName.HABITAT_MARTE)) {
-          if (this.count(Tag.MARS, 'raw') > 0) {
+          if (this.count(Tag.GUERREAR, 'raw') > 0) {
             distinctCount++;
           }
         }

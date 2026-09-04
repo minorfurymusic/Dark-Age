@@ -18,7 +18,7 @@ export class SummitLogistics extends Card {
       behavior: {
         stock: {
           megacredits: {
-            tag: [Tag.ENGENHO, Tag.DIPLOMACIA, Tag.COMÉRCIO, Tag.MARS],
+            tag: [Tag.ENGENHO, Tag.DIPLOMACIA, Tag.COMÉRCIO, Tag.GUERREAR],
             colonies: {colonies: {}},
           },
         },

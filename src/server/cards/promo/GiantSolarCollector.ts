@@ -7,7 +7,7 @@ export class GiantSolarCollector extends PreludeCard {
   constructor() {
     super({
       name: CardName.GIANT_SOLAR_COLLECTOR,
-      tags: [Tag.PODER, Tag.MARÍTIMO],
+      tags: [Tag.GUERREAR, Tag.MARÍTIMO],
 
       behavior: {
         production: {energy: 2},
