@@ -10,7 +10,7 @@ import {Options} from './CardRequirement';
  */
 export class VenusRequirement extends GlobalParameterRequirement {
   public readonly type = RequirementType.VENUS;
-  protected readonly parameter = GlobalParameter.VENUS;
+  protected readonly parameter = GlobalParameter.ROTAS_COMERCIAIS;
   protected override readonly scale = 2;
 
   constructor(options?: Partial<Options>) {

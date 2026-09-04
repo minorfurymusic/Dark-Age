@@ -70,7 +70,7 @@ export class TurmoilHandler {
   }
 
   public static onGlobalParameterIncrease(player: IPlayer, parameter: GlobalParameter, steps: number = 1): void {
-    if (parameter === GlobalParameter.TEMPERATURE) {
+    if (parameter === GlobalParameter.TECNOLOGIA) {
       // PoliticalAgendas Kelvinists P2 hook
       if (PartyHooks.shouldApplyPolicy(player, PartyName.KELVINISTS, 'kp02')) {
         player.stock.add(Resource.MEGACREDITS, steps * 3);

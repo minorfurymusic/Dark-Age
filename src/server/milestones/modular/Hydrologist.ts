@@ -11,6 +11,6 @@ export class Hydrologist extends BaseMilestone {
   }
 
   public getScore(player: IPlayer): number {
-    return player.globalParameterSteps[GlobalParameter.OCEANS];
+    return player.globalParameterSteps[GlobalParameter.ESTANDARTES];
   }
 }

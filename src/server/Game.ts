@@ -872,11 +872,11 @@ export class Game implements IGame, Logger {
     }
     this.globalsPerGeneration.push({});
     const entry = this.globalsPerGeneration[this.globalsPerGeneration.length - 1];
-    entry[GlobalParameter.TEMPERATURE] = this.temperature;
-    entry[GlobalParameter.OXYGEN] = this.oxygenLevel;
-    entry[GlobalParameter.OCEANS] = this.board.getOceanSpaces().length;
+    entry[GlobalParameter.TECNOLOGIA] = this.temperature;
+    entry[GlobalParameter.FE] = this.oxygenLevel;
+    entry[GlobalParameter.ESTANDARTES] = this.board.getOceanSpaces().length;
     if (this.gameOptions.venusNextExtension) {
-      entry[GlobalParameter.VENUS] = this.venusScaleLevel;
+      entry[GlobalParameter.ROTAS_COMERCIAIS] = this.venusScaleLevel;
     }
     MoonExpansion.ifMoon(this, (moonData) => {
       entry[GlobalParameter.MOON_HABITAT_RATE] = moonData.habitatRate;
@@ -920,7 +920,7 @@ export class Game implements IGame, Logger {
     if (this.getTemperature() < constants.MAX_TEMPERATURE) {
       orOptions.options.push(
         new SelectOption('Increase temperature', 'Increase')
-          .annotate(GlobalParameter.TEMPERATURE)
+          .annotate(GlobalParameter.TECNOLOGIA)
           .andThen(() => {
             this.increaseTemperature(player, 1);
             this.log('${0} acted as World Government and increased temperature', (b) => b.player(player));
@@ -931,7 +931,7 @@ export class Game implements IGame, Logger {
     if (this.getOxygenLevel() < constants.MAX_OXYGEN_LEVEL) {
       orOptions.options.push(
         new SelectOption('Increase oxygen', 'Increase')
-          .annotate(GlobalParameter.OXYGEN)
+          .annotate(GlobalParameter.FE)
           .andThen(() => {
             this.increaseOxygenLevel(player, 1);
             this.log('${0} acted as World Government and increased oxygen level', (b) => b.player(player));
@@ -942,7 +942,7 @@ export class Game implements IGame, Logger {
     if (this.canAddOcean()) {
       orOptions.options.push(
         new SelectSpace('Add an ocean', this.board.getAvailableSpacesForOcean(player))
-          .annotate(GlobalParameter.OCEANS)
+          .annotate(GlobalParameter.ESTANDARTES)
           .andThen((space) => {
             this.addOcean(player, space);
             this.log('${0} acted as World Government and placed an ocean', (b) => b.player(player));
@@ -1200,8 +1200,8 @@ export class Game implements IGame, Logger {
     const steps = Math.min(increments, constants.MAX_OXYGEN_LEVEL - this.oxygenLevel);
 
     if (this.phase !== Phase.SOLAR) {
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.OXYGEN, steps);
-      player.onGlobalParameterIncrease(GlobalParameter.OXYGEN, steps);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.FE, steps);
+      player.onGlobalParameterIncrease(GlobalParameter.FE, steps);
       player.increaseTerraformRating(steps);
     }
     if (this.oxygenLevel < constants.OXYGEN_LEVEL_FOR_TEMPERATURE_BONUS &&
@@ -1256,13 +1256,13 @@ export class Game implements IGame, Logger {
         }
       }
       for (const card of player.playedCards) {
-        card.onGlobalParameterIncrease?.(player, GlobalParameter.VENUS, steps);
+        card.onGlobalParameterIncrease?.(player, GlobalParameter.ROTAS_COMERCIAIS, steps);
       }
       if (this.exploitationOfVenusInEffect) {
         player.stock.add(Resource.MEGACREDITS, steps * 2, {log: true, from: {card: CardName.EXPLOITATION_OF_VENUS}});
       }
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.VENUS, steps);
-      player.onGlobalParameterIncrease(GlobalParameter.VENUS, steps);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.ROTAS_COMERCIAIS, steps);
+      player.onGlobalParameterIncrease(GlobalParameter.ROTAS_COMERCIAIS, steps);
       player.increaseTerraformRating(steps);
     }
 
@@ -1306,10 +1306,10 @@ export class Game implements IGame, Logger {
       }
 
       for (const card of player.playedCards) {
-        card.onGlobalParameterIncrease?.(player, GlobalParameter.TEMPERATURE, steps);
+        card.onGlobalParameterIncrease?.(player, GlobalParameter.TECNOLOGIA, steps);
       }
-      player.onGlobalParameterIncrease(GlobalParameter.TEMPERATURE, steps);
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.TEMPERATURE, steps);
+      player.onGlobalParameterIncrease(GlobalParameter.TECNOLOGIA, steps);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.TECNOLOGIA, steps);
       player.increaseTerraformRating(steps);
     }
 
@@ -1582,8 +1582,8 @@ export class Game implements IGame, Logger {
     this.addTile(player, space, {tileType: TileType.OCEAN});
 
     if (this.phase !== Phase.SOLAR) {
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.OCEANS);
-      player.onGlobalParameterIncrease(GlobalParameter.OCEANS, 1);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.ESTANDARTES);
+      player.onGlobalParameterIncrease(GlobalParameter.ESTANDARTES, 1);
       player.increaseTerraformRating();
     }
     AresHandler.ifAres(this, (aresData) => {

@@ -607,10 +607,10 @@ export class UnderworldExpansion {
   }
 
   private static GLOBAL_PARAMETER_MAPPING: Record<GlobalParameter, TemporaryBonusToken | undefined> = {
-    [GlobalParameter.OCEANS]: 'oceanrequirementmod',
-    [GlobalParameter.OXYGEN]: 'oxygenrequirementmod',
-    [GlobalParameter.TEMPERATURE]: 'temprequirementmod',
-    [GlobalParameter.VENUS]: undefined,
+    [GlobalParameter.ESTANDARTES]: 'oceanrequirementmod',
+    [GlobalParameter.FE]: 'oxygenrequirementmod',
+    [GlobalParameter.TECNOLOGIA]: 'temprequirementmod',
+    [GlobalParameter.ROTAS_COMERCIAIS]: undefined,
     [GlobalParameter.MOON_HABITAT_RATE]: undefined,
     [GlobalParameter.MOON_MINING_RATE]: undefined,
     [GlobalParameter.MOON_LOGISTIC_RATE]: undefined,

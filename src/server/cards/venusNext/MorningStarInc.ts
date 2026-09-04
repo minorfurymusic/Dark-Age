@@ -11,7 +11,7 @@ export class MorningStarInc extends CorporationCard implements ICorporationCard 
       name: CardName.MORNING_STAR_INC,
       tags: [Tag.VENUS],
       startingMegaCredits: 50,
-      globalParameterRequirementBonus: {steps: 2, parameter: GlobalParameter.VENUS},
+      globalParameterRequirementBonus: {steps: 2, parameter: GlobalParameter.ROTAS_COMERCIAIS},
 
       firstAction: {
         text: 'Draw 3 cards with a Venus tag',

@@ -368,7 +368,7 @@ export abstract class Colony implements IColony {
       break;
 
     case ColonyBenefit.WGT_RAISE_GLOBAL_PARAMETER:
-      const globalParameters = [GlobalParameter.TEMPERATURE, GlobalParameter.OXYGEN, GlobalParameter.OCEANS];
+      const globalParameters = [GlobalParameter.TECNOLOGIA, GlobalParameter.FE, GlobalParameter.ESTANDARTES];
       const annotation = globalParameters[quantity];
       const wgt = game.worldGovernmentTerraformingInput(player);
       const option = wgt.options.find((option) => option.annotation === annotation);
@@ -377,7 +377,7 @@ export abstract class Colony implements IColony {
           game.temporarySolarPhase(player, () => {
             // Placing an ocean requires the player to select a space, so it is
             // deferred as a player input. Temperature and oxygen apply directly.
-            if (annotation === GlobalParameter.OCEANS) {
+            if (annotation === GlobalParameter.ESTANDARTES) {
               player.defer(option);
             } else {
               option.cb();
