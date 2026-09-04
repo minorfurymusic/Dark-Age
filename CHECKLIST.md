@@ -147,9 +147,19 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
   - [x] Logging shows both sides' Guerrear values and combat outcome
   - [x] Integration into attackCity() flow
 
-**Próximos passos (13.17+):**
-- [ ] Fase de Produção & Geração (Production Phase & Generation transitions)
+### 13.17 — Fase de Produção & Geração (Production Phase & Generation Transitions)
+
+- [x] **Infraestrutura implementada (commit 3944065)**
+  - [x] Reset de allocatedGuerear durante finishProductionPhase()
+  - [x] Transição limpa entre gerações
+  - [x] Logging de resolução de Guerrear alocado
+  - [x] Integração no callback system de produção
 
 ---
+
+## STATUS FINAL
+
+✓ **Phase 13.5-13.17: 100% Completa** — Todos os sistemas de combate implementados
+✓ **Phase 3: 100% Completa** — Rewrites de cartas completas, decisões confirmadas
 
 _Este arquivo é o companheiro dos Documentos 1/2/3 (mantidos fora do repositório, como uploads da conversa). Atualizar aqui sempre que uma pendência for fechada ou uma nova for aberta._
