@@ -135,6 +135,7 @@ export class Game implements IGame, Logger {
   private donePlayers = new Set<PlayerId>();
   private passedPlayers = new Set<PlayerId>();
   private researchedPlayers = new Set<PlayerId>();
+  private guardedPlayers = new Set<PlayerId>();
   /** The first player of this generation. */
   public first: IPlayer;
 
@@ -511,6 +512,7 @@ export class Game implements IGame, Logger {
       preludeDeck: this.preludeDeck.serialize(),
       projectDeck: this.projectDeck.serialize(),
       researchedPlayers: Array.from(this.researchedPlayers),
+      guardedPlayers: Array.from(this.guardedPlayers),
       seed: this.rng.seed,
       someoneHasRemovedOtherPlayersPlants: this.someoneHasRemovedOtherPlayersPlants,
       spectatorId: this.spectatorId,
@@ -756,6 +758,15 @@ export class Game implements IGame, Logger {
     this.save();
     this.players.forEach((player) => {
       player.runResearchPhase();
+    });
+  }
+
+  public gotoGuardPhase(): void {
+    this.phase = Phase.GUARDA;
+    this.guardedPlayers.clear();
+    this.save();
+    this.players.forEach((player) => {
+      player.runGuardPhase();
     });
   }
 
@@ -1056,6 +1067,20 @@ export class Game implements IGame, Logger {
       this.researchedPlayers.add(player.id);
       if (this.researchedPlayers.size === this.players.length) {
         this.researchedPlayers.clear();
+        this.phase = Phase.ACTION;
+        this.passedPlayers.clear();
+        this.potentiallyChangeFirstPlayer();
+
+        this.startActionsForPlayer(this.first);
+      }
+    });
+  }
+
+  public playerIsFinishedWithGuardPhase(player: IPlayer): void {
+    this.deferredActions.runAllFor(player, () => {
+      this.guardedPlayers.add(player.id);
+      if (this.guardedPlayers.size === this.players.length) {
+        this.guardedPlayers.clear();
         this.phase = Phase.ACTION;
         this.passedPlayers.clear();
         this.potentiallyChangeFirstPlayer();
@@ -1783,6 +1808,7 @@ export class Game implements IGame, Logger {
     game.passedPlayers = new Set<PlayerId>(d.passedPlayers);
     game.donePlayers = new Set<PlayerId>(d.donePlayers);
     game.researchedPlayers = new Set<PlayerId>(d.researchedPlayers);
+    game.guardedPlayers = new Set<PlayerId>(d.guardedPlayers ?? []);
 
     game.lastSaveId = d.lastSaveId;
     game.clonedGamedId = d.clonedGamedId;

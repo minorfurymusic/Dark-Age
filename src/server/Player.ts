@@ -22,6 +22,7 @@ import {PlayerInput} from './PlayerInput';
 import {Resource} from '../common/Resource';
 import {CardResource} from '../common/CardResource';
 import {SelectCard} from './inputs/SelectCard';
+import {SelectGuardAllocation} from './inputs/SelectGuardAllocation';
 import {SellPatentsStandardProject} from './cards/base/standardProjects/SellPatentsStandardProject';
 import {SimpleDeferredAction} from './deferredActions/DeferredAction';
 import {Priority} from './deferredActions/Priority';
@@ -177,6 +178,9 @@ export class Player implements IPlayer {
   public availableActionsThisRound = 2;
 
   public withinDeflectionZone = false;
+
+  // Combat Systems (Phase 13.7)
+  public allocatedGuerear: number = 0;
 
   // Stats
   public actionsTakenThisGame: number = 0;
@@ -711,6 +715,20 @@ export class Player implements IPlayer {
     } else {
       this.setWaitingFor(chooseCardsToBuy());
     }
+  }
+
+  public runGuardPhase(): void {
+    const maxAllocation = this.production.energy;
+    const currentGuerear = this.energy;
+
+    const selectAllocation = new SelectGuardAllocation(maxAllocation, currentGuerear)
+      .andThen((allocated) => {
+        this.allocatedGuerear = allocated;
+        this.game.playerIsFinishedWithGuardPhase(this);
+        return undefined;
+      });
+
+    this.setWaitingFor(selectAllocation);
   }
 
   public getCardCost(card: IProjectCard): number {

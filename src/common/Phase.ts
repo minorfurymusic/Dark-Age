@@ -28,6 +28,9 @@ export const Phase = {
   /** The standard drafting phase, as described by the official rules variant. */
   DRAFTING: 'drafting',
 
+  /** Guard Phase (Fase de Guarda): secret allocation of Guerrear after draft, before actions. */
+  GUARDA: 'guarda',
+
   /** Maps to rulebook action phase */
   ACTION: 'action',
 

@@ -319,6 +319,7 @@ export interface IPlayer {
   finishProductionPhase(): void;
 
   runResearchPhase(): void;
+  runGuardPhase(): void;
   getCardCost(card: IProjectCard): number;
 
   /** The number of resources on this card for this player, or 0 if the player does not have this card. */
