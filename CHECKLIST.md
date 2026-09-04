@@ -68,11 +68,29 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
   - [x] Transição de fase: DRAFTING -> GUARDA -> ACTION
   - [x] Serialização/desserialização de guardedPlayers
 
-**Próximos passos (13.8+):**
-- [ ] Ataques em Rotas Comerciais (2 Guerrear, steal valores específicos)
+### 13.8 — Saque em Rotas Comerciais (Attack Routes)
+
+- [x] **Infraestrutura implementada (commit 262a1c0)**
+  - [x] Colonies.canAttackRoute() para verificar 2+ Guerrear alocados
+  - [x] Colonies.coloniesAttackAction() para seleção de rota alvo
+  - [x] Colonies.attackRoute() com mecânica de roubo de recursos
+  - [x] Mapeamento de valores de saque por tipo de rota
+  - [x] Integração Stock.steal() com logging
+  - [x] Adição de ação de ataque às opções do jogador
+  - [x] Valores de saque implementados:
+    - Veneza (Luna): 5 Moedas
+    - Gênova (Ceres): 3 Pedras
+    - Rodes (Triton): 2 Aços
+    - Alexandria (Ganymede): 2 Grãos
+    - Flandres (Europa): 1 Guerrear
+    - Nuremberga (Io): 1 Inovação
+    - Novgorod (Callisto): 1 Guerrear
+
+**Próximos passos (13.9+):**
 - [ ] Ataques em Feudos (custo por distância, ataque vs defesa)
 - [ ] Aura de Estandarte (+1 combate em 3 tiles)
 - [ ] Disputa Direta (atacar jogador com menos Guerrear)
+- [ ] Rotas especiais (Pluto, Miranda, Enceladus, Titan)
 - [ ] Trilha de Guerrear (4, 7, 12 - bônus específicos)
 
 ---
