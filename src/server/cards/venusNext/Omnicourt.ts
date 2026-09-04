@@ -10,14 +10,14 @@ export class Omnicourt extends Card implements IProjectCard {
     super({
       name: CardName.OMNICOURT,
       type: CardType.AUTOMATED,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 11,
 
       behavior: {
         tr: 2,
       },
 
-      requirements: [{tag: Tag.VENUS}, {tag: Tag.EARTH}, {tag: Tag.JOVIAN}],
+      requirements: [{tag: Tag.COMÉRCIO}, {tag: Tag.DIPLOMACIA}, {tag: Tag.ENGENHO}],
       metadata: {
         cardNumber: '241',
         renderData: CardRenderer.builder((b) => {

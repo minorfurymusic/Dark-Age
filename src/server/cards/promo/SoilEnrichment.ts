@@ -15,7 +15,7 @@ export class SoilEnrichment extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.SOIL_ENRICHMENT,
-      tags: [Tag.MICROBE, Tag.PLANT],
+      tags: [Tag.BRUXARIA, Tag.AGRICULTURA],
       cost: 6,
 
       metadata: {

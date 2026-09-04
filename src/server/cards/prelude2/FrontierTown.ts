@@ -17,7 +17,7 @@ export class FrontierTown extends Card implements IProjectCard {
       name: CardName.FRONTIER_TOWN,
       type: CardType.AUTOMATED,
       cost: 11,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
 
       requirements: {party: PartyName.MARS},
 

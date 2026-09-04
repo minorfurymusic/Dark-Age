@@ -11,7 +11,7 @@ export class SyndicatePirateRaids extends Card implements IProjectCard {
     super({
       name: CardName.SYNDICATE_PIRATE_RAIDS,
       type: CardType.EVENT,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 8,
 
       metadata: {

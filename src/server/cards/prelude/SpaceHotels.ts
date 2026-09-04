@@ -10,14 +10,14 @@ export class SpaceHotels extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.SPACE_HOTELS,
-      tags: [Tag.SPACE, Tag.EARTH],
+      tags: [Tag.MARÍTIMO, Tag.DIPLOMACIA],
       cost: 12,
 
       behavior: {
         production: {megacredits: 4},
       },
 
-      requirements: {tag: Tag.EARTH, count: 2},
+      requirements: {tag: Tag.DIPLOMACIA, count: 2},
       metadata: {
         cardNumber: 'P42',
         renderData: CardRenderer.builder((b) => {

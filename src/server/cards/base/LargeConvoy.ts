@@ -20,7 +20,7 @@ export class LargeConvoy extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.LARGE_CONVOY,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 36,
       victoryPoints: 2,
 

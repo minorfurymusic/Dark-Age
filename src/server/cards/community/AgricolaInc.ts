@@ -13,7 +13,7 @@ export class AgricolaInc extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.AGRICOLA_INC,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       startingMegaCredits: 40,
 
       victoryPoints: 'special',
@@ -39,7 +39,7 @@ export class AgricolaInc extends CorporationCard implements ICorporationCard {
   public override getVictoryPoints(player: IPlayer): number {
     const scorableTags = [...player.game.tags];
     inplaceRemove(scorableTags, Tag.WILD);
-    inplaceRemove(scorableTags, Tag.EVENT);
+    inplaceRemove(scorableTags, Tag.HISTÓRIA);
     inplaceRemove(scorableTags, Tag.CLONE);
 
     const counts = player.tags.countAllTags();

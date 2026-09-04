@@ -10,19 +10,19 @@ export class MedicalLab extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MEDICAL_LAB,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 13,
       victoryPoints: 1,
 
       behavior: {
-        production: {megacredits: {tag: Tag.BUILDING, per: 2}},
+        production: {megacredits: {tag: Tag.CONSTRUÇÃO, per: 2}},
       },
 
       metadata: {
         cardNumber: '207',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(1).slash().tag(Tag.BUILDING, 2);
+            pb.megacredits(1).slash().tag(Tag.CONSTRUÇÃO, 2);
           });
         }),
         description: 'Increase your M€ production 1 step for every 2 building tags you have, including this.',

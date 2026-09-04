@@ -11,7 +11,7 @@ export class IcyImpactors extends ActionCard implements IActionCard {
     super({
       name: CardName.ICY_IMPACTORS,
       type: CardType.ACTIVE,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 15,
       resourceType: CardResource.ASTEROID,
 

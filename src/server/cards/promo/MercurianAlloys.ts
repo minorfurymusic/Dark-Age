@@ -11,14 +11,14 @@ export class MercurianAlloys extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MERCURIAN_ALLOYS,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 3,
 
       behavior: {
         titanumValue: 1,
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: 'X07',
         renderData: CardRenderer.builder((b) => {

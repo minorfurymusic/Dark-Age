@@ -11,7 +11,7 @@ export class DeimosDown extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.DEIMOS_DOWN,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 31,
 
       behavior: {

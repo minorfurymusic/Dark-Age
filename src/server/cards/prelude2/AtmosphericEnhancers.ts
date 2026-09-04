@@ -14,7 +14,7 @@ export class AtmosphericEnhancers extends PreludeCard {
   constructor() {
     super({
       name: CardName.ATMOSPHERIC_ENHANCERS,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
 
       behavior: {
         or: {

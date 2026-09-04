@@ -12,7 +12,7 @@ export class GlobalAudit extends Card implements IProjectCard {
       name: CardName.GLOBAL_AUDIT,
       type: CardType.EVENT,
       cost: 2,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       metadata: {
         cardNumber: 'U025',

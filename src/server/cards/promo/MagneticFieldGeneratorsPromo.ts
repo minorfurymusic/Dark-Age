@@ -27,7 +27,7 @@ export class MagneticFieldGeneratorsPromo extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: name,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 22,
       behavior: {
         production: {energy: -4, plants: 2},

@@ -11,7 +11,7 @@ export class BehemothExcavator extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.BEHEMOTH_EXCAVATOR,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 13,
 
       behavior: {

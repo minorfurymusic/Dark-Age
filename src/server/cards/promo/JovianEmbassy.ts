@@ -10,7 +10,7 @@ export class JovianEmbassy extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.JOVIAN_EMBASSY,
-      tags: [Tag.JOVIAN, Tag.BUILDING],
+      tags: [Tag.ENGENHO, Tag.CONSTRUÇÃO],
       cost: 14,
       victoryPoints: 1,
 

@@ -7,7 +7,7 @@ export class IoResearchOutpost extends PreludeCard {
   constructor() {
     super({
       name: CardName.IO_RESEARCH_OUTPOST,
-      tags: [Tag.JOVIAN, Tag.SCIENCE],
+      tags: [Tag.ENGENHO, Tag.ERUDIÇÃO],
 
       behavior: {
         production: {titanium: 1},

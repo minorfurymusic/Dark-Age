@@ -14,7 +14,7 @@ export class GMOContract extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.GMO_CONTRACT,
-      tags: [Tag.MICROBE, Tag.SCIENCE],
+      tags: [Tag.BRUXARIA, Tag.ERUDIÇÃO],
       cost: 3,
 
       requirements: {party: PartyName.GREENS},
@@ -23,7 +23,7 @@ export class GMOContract extends Card implements IProjectCard {
         cardNumber: 'T06',
         renderData: CardRenderer.builder((b) => {
           b.effect('Each time you play a plant, animal or microbe tag, including this, gain 2 M€.', (be) => {
-            be.tag(Tag.ANIMAL).slash().tag(Tag.PLANT).slash().tag(Tag.MICROBE);
+            be.tag(Tag.PECUÁRIA).slash().tag(Tag.AGRICULTURA).slash().tag(Tag.BRUXARIA);
             be.startEffect.megacredits(2);
           });
         }),
@@ -32,13 +32,13 @@ export class GMOContract extends Card implements IProjectCard {
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag): void {
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       player.defer(() => player.stock.add(Resource.MEGACREDITS, 2, {log: true}));
     }
   }
 
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    const amount = player.tags.cardTagCount(card, [Tag.ANIMAL, Tag.PLANT, Tag.MICROBE]);
+    const amount = player.tags.cardTagCount(card, [Tag.PECUÁRIA, Tag.AGRICULTURA, Tag.BRUXARIA]);
     if (amount > 0) {
       player.defer(() => player.stock.add(Resource.MEGACREDITS, amount * 2, {log: true}));
     }

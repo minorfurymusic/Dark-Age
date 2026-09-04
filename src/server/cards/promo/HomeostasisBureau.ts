@@ -14,7 +14,7 @@ export class HomeostasisBureau extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.HOMEOSTASIS_BUREAU,
       cost: 16,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         production: {heat: 2},

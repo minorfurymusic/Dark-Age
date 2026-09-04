@@ -18,7 +18,7 @@ export class TheGrandLunaCapitalGroup extends CorporationCard implements ICorpor
   constructor() {
     super({
       name: CardName.THE_GRAND_LUNA_CAPITAL_GROUP,
-      tags: [Tag.CITY, Tag.MOON],
+      tags: [Tag.FEUDO, Tag.MOON],
       startingMegaCredits: 32,
       victoryPoints: 'special',
 

@@ -10,18 +10,18 @@ export class Insects extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.INSECTS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 9,
 
       behavior: {
-        production: {plants: {tag: Tag.PLANT}},
+        production: {plants: {tag: Tag.AGRICULTURA}},
       },
 
       requirements: {oxygen: 6},
       metadata: {
         cardNumber: '148',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.plants(1).slash().tag(Tag.PLANT));
+          b.production((pb) => pb.plants(1).slash().tag(Tag.AGRICULTURA));
         }),
         description: 'Requires 6% oxygen. Increase your plant production 1 step for each plant tag you have.',
       },

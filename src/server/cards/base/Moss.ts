@@ -11,7 +11,7 @@ export class Moss extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MOSS,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 4,
 
       behavior: {

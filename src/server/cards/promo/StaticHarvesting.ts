@@ -10,12 +10,12 @@ export class StaticHarvesting extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.STATIC_HARVESTING,
-      tags: [Tag.POWER],
+      tags: [Tag.PODER],
       cost: 5,
 
       behavior: {
         production: {energy: 1},
-        stock: {megacredits: {tag: Tag.BUILDING}},
+        stock: {megacredits: {tag: Tag.CONSTRUÇÃO}},
       },
 
       requirements: {
@@ -27,7 +27,7 @@ export class StaticHarvesting extends Card implements IProjectCard {
         cardNumber: 'X74',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.energy(1)).br;
-          b.megacredits(1).slash().tag(Tag.BUILDING);
+          b.megacredits(1).slash().tag(Tag.CONSTRUÇÃO);
         }),
         description: 'Requires 3 or fewer ocean tiles. Increase your energy production 1 step. Gain 1 M€ per building tag you have.',
       },

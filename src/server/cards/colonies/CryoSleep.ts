@@ -9,7 +9,7 @@ export class CryoSleep extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 10,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       name: CardName.CRYO_SLEEP,
       type: CardType.ACTIVE,
       victoryPoints: 1,

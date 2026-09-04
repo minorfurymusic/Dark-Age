@@ -10,10 +10,10 @@ export class AtalantaPlanitiaLab extends Card implements IProjectCard {
     super({
       name: CardName.ATALANTA_PLANITIA_LAB,
       type: CardType.AUTOMATED,
-      tags: [Tag.VENUS, Tag.SCIENCE],
+      tags: [Tag.COMÉRCIO, Tag.ERUDIÇÃO],
       cost: 10,
 
-      requirements: {tag: Tag.SCIENCE, count: 3},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 3},
       victoryPoints: 2,
 
       behavior: {

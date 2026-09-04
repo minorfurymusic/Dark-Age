@@ -11,7 +11,7 @@ export class SecurityFleet extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.SECURITY_FLEET,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 12,
       resourceType: CardResource.FIGHTER,
 

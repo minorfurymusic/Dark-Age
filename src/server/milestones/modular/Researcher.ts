@@ -11,6 +11,6 @@ export class Researcher extends BaseMilestone {
   }
 
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.SCIENCE, 'milestone');
+    return player.tags.count(Tag.ERUDIÇÃO, 'milestone');
   }
 }

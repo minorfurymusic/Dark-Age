@@ -10,7 +10,7 @@ export class IndustrialComplex extends PreludeCard {
   constructor() {
     super({
       name: CardName.INDUSTRIAL_COMPLEX,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       startingMegacredits: -18,
 

@@ -17,15 +17,15 @@ export class OumuamuaTypeObjectSurvey extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.OUMUAMUA_TYPE_OBJECT_SURVEY,
       cost: 20,
-      tags: [Tag.SPACE, Tag.SCIENCE],
-      requirements: [{tag: Tag.SPACE}, {tag: Tag.SCIENCE}],
+      tags: [Tag.MARÍTIMO, Tag.ERUDIÇÃO],
+      requirements: [{tag: Tag.MARÍTIMO}, {tag: Tag.ERUDIÇÃO}],
 
       metadata: {
         cardNumber: 'Pf53',
         renderData: CardRenderer.builder((b) => {
           b.resource(CardResource.DATA, 2).asterix().cards(2, {size: Size.SMALL}).asterix().br;
-          b.tag(Tag.SCIENCE).tag(Tag.MICROBE).colon().text('play ', {size: Size.SMALL, uppercase});
-          b.tag(Tag.SPACE).colon().production((pb) => pb.energy(3, {digit})).br;
+          b.tag(Tag.ERUDIÇÃO).tag(Tag.BRUXARIA).colon().text('play ', {size: Size.SMALL, uppercase});
+          b.tag(Tag.MARÍTIMO).colon().production((pb) => pb.energy(3, {digit})).br;
           b.text(
             'Draw 2 cards face up. If the first has a science or microbe tag (and is playable), play it outright, ignoring requirements and cost. ' +
             'If not, and it has a space tag, gain 3 energy prod. Otherwise, apply the check to the second card.',
@@ -43,7 +43,7 @@ export class OumuamuaTypeObjectSurvey extends Card implements IProjectCard {
 
   private processCard(player: IPlayer, card: IProjectCard): boolean {
     const tags = card.tags;
-    if (player.tags.cardHasTag(card, Tag.SCIENCE) || player.tags.cardHasTag(card, Tag.MICROBE)) {
+    if (player.tags.cardHasTag(card, Tag.ERUDIÇÃO) || player.tags.cardHasTag(card, Tag.BRUXARIA)) {
       if (!card.canPlayPostRequirements(player)) {
         player.game.log('${0} cannot play ${1}', (b) => b.player(player).card(card));
       } else {
@@ -51,7 +51,7 @@ export class OumuamuaTypeObjectSurvey extends Card implements IProjectCard {
         return true;
       }
     }
-    if (tags.includes(Tag.SPACE)) {
+    if (tags.includes(Tag.MARÍTIMO)) {
       player.production.add(Resource.GUERREAR, 3, {log: true});
       this.keep(player, card);
       return true;

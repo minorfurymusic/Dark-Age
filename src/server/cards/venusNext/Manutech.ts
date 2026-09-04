@@ -10,7 +10,7 @@ export class Manutech extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.MANUTECH,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       startingMegaCredits: 35,
 
       behavior: {

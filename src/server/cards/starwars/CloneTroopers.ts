@@ -21,7 +21,7 @@ export class CloneTroopers extends Card implements IActionCard, IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.CLONE_TROOPERS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 12,
       resourceType: CardResource.CLONE_TROOPER,
       requirements: {oceans: 6},

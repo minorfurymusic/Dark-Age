@@ -15,7 +15,7 @@ export class LunaTradeFederation extends CorporationCard implements ICorporation
   constructor() {
     super({
       name: CardName.LUNA_TRADE_FEDERATION,
-      tags: [Tag.MOON, Tag.SPACE],
+      tags: [Tag.MOON, Tag.MARÍTIMO],
       startingMegaCredits: 15,
 
       behavior: {

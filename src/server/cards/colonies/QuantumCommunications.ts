@@ -15,7 +15,7 @@ export class QuantumCommunications extends Card implements IProjectCard {
       cost: 8,
       name: CardName.QUANTUM_COMMUNICATIONS,
       type: CardType.AUTOMATED,
-      requirements: {tag: Tag.SCIENCE, count: 4},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 4},
       victoryPoints: 1,
 
       metadata: {

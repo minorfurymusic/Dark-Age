@@ -15,7 +15,7 @@ import {TITLES} from '../../inputs/titles';
 import {Priority} from '../../deferredActions/Priority';
 
 const INVALID_TAGS = [
-  Tag.EVENT,
+  Tag.HISTÓRIA,
   Tag.WILD,
 ];
 

@@ -12,7 +12,7 @@ export class SoylentSeedlingSystems extends CorporationCard implements ICorporat
   constructor() {
     super({
       name: CardName.SOYLENT_SEEDLING_SYSTEMS,
-      tags: [Tag.SCIENCE, Tag.PLANT],
+      tags: [Tag.ERUDIÇÃO, Tag.AGRICULTURA],
       startingMegaCredits: 38,
       resourceType: CardResource.SEED,
 
@@ -28,7 +28,7 @@ export class SoylentSeedlingSystems extends CorporationCard implements ICorporat
             eb.greenery().startEffect.resource(CardResource.SEED);
           }).br;
           b.effect('When paying for a plant card, or the STANDARD GREENERY PROJECT, seeds here may be used as 5 M€ each.', (eb) => {
-            eb.tag(Tag.PLANT).slash().greenery().startEffect.resource(CardResource.SEED).equals().megacredits(5);
+            eb.tag(Tag.AGRICULTURA).slash().greenery().startEffect.resource(CardResource.SEED).equals().megacredits(5);
           }).br;
         }),
         description: 'You start with 38M€ and 2 seeds on this card.',

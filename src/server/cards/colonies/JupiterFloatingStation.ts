@@ -16,17 +16,17 @@ export class JupiterFloatingStation extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 9,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       name: CardName.JUPITER_FLOATING_STATION,
       type: CardType.ACTIVE,
       resourceType: CardResource.FLOATER,
-      requirements: {tag: Tag.SCIENCE, count: 3},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 3},
       victoryPoints: 1,
 
       metadata: {
         cardNumber: 'C19',
         renderData: CardRenderer.builder((b) => {
-          b.arrow().resource(CardResource.FLOATER, {secondaryTag: Tag.JOVIAN}).nbsp.or().br;
+          b.arrow().resource(CardResource.FLOATER, {secondaryTag: Tag.ENGENHO}).nbsp.or().br;
           b.arrow().megacredits(1).slash().resource(CardResource.FLOATER).text('[max 4]', {size: Size.SMALL}).br;
 
           b.plainText('Action: Add 1 floater to a JOVIAN CARD, or gain 1 M€ for every floater here [MAX 4].', /* parens */ true);
@@ -48,7 +48,7 @@ export class JupiterFloatingStation extends Card implements IProjectCard {
     return new OrOptions(
       new SelectOption('Add 1 floater to a Jovian card', 'Add floater').andThen(() => {
         player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER, {
-          restrictedTag: Tag.JOVIAN, title: 'Add 1 floater to a Jovian card',
+          restrictedTag: Tag.ENGENHO, title: 'Add 1 floater to a Jovian card',
         }));
         return undefined;
       }),

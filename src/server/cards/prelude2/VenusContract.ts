@@ -11,10 +11,10 @@ export class VenusContract extends PreludeCard {
   constructor() {
     super({
       name: CardName.VENUS_CONTRACT,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
 
       behavior: {
-        drawCard: {count: 1, tag: Tag.VENUS},
+        drawCard: {count: 1, tag: Tag.COMÉRCIO},
         tr: 1,
       },
 
@@ -26,7 +26,7 @@ export class VenusContract extends PreludeCard {
             eb.venus(1).startEffect.megacredits(3);
           });
           b.br;
-          b.cards(1, {secondaryTag: Tag.VENUS}).tr(1);
+          b.cards(1, {secondaryTag: Tag.COMÉRCIO}).tr(1);
         }),
       },
     });

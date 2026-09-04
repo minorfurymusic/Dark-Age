@@ -11,7 +11,7 @@ export class OreProcessor extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ORE_PROCESSOR,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 13,
 
       action: {

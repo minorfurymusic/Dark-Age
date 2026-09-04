@@ -416,11 +416,11 @@ export class UnderworldExpansion {
       break;
     case 'sciencetag':
       player.tags.extraScienceTags++;
-      player.triggerOnNonCardTagAdded(Tag.SCIENCE);
+      player.triggerOnNonCardTagAdded(Tag.ERUDIÇÃO);
       break;
     case 'planttag':
       player.tags.extraPlantTags++;
-      player.triggerOnNonCardTagAdded(Tag.PLANT);
+      player.triggerOnNonCardTagAdded(Tag.AGRICULTURA);
       break;
 
     // This doesn't reward anything.

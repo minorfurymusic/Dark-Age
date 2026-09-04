@@ -13,7 +13,7 @@ export class VenusianAnimals extends Card implements IProjectCard {
     super({
       name: CardName.VENUSIAN_ANIMALS,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS, Tag.ANIMAL, Tag.SCIENCE],
+      tags: [Tag.COMÉRCIO, Tag.PECUÁRIA, Tag.ERUDIÇÃO],
       cost: 15,
       resourceType: CardResource.ANIMAL,
       victoryPoints: {resourcesHere: {}},
@@ -23,7 +23,7 @@ export class VenusianAnimals extends Card implements IProjectCard {
         cardNumber: '259',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a science tag, including this, add 1 animal to this card.', (eb)=> {
-            eb.tag(Tag.SCIENCE).startEffect.resource(CardResource.ANIMAL);
+            eb.tag(Tag.ERUDIÇÃO).startEffect.resource(CardResource.ANIMAL);
           }).br;
           b.vpText('1 VP per animal on this card.');
         }),
@@ -32,11 +32,11 @@ export class VenusianAnimals extends Card implements IProjectCard {
     });
   }
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    const qty = player.tags.cardTagCount(card, Tag.SCIENCE);
+    const qty = player.tags.cardTagCount(card, Tag.ERUDIÇÃO);
     player.addResourceTo(this, {qty, log: true});
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
   }

@@ -8,7 +8,7 @@ export class MoholeExcavation extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.MOHOLE_EXCAVATION,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         production: {steel: 1, heat: 2},

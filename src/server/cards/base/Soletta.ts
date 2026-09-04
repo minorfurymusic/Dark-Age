@@ -10,7 +10,7 @@ export class Soletta extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.SOLETTA,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 35,
 
       behavior: {

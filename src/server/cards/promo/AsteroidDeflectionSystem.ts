@@ -15,7 +15,7 @@ export class AsteroidDeflectionSystem extends Card implements IActionCard, IProj
     super({
       type: CardType.ACTIVE,
       name: CardName.ASTEROID_DEFLECTION_SYSTEM,
-      tags: [Tag.SPACE, Tag.EARTH, Tag.BUILDING],
+      tags: [Tag.MARÍTIMO, Tag.DIPLOMACIA, Tag.CONSTRUÇÃO],
       cost: 13,
 
       resourceType: CardResource.ASTEROID,
@@ -29,7 +29,7 @@ export class AsteroidDeflectionSystem extends Card implements IActionCard, IProj
         cardNumber: 'X14',
         renderData: CardRenderer.builder((b) => {
           b.action('REVEAL AND DISCARD the top card of the deck. If it has a space tag, add an asteroid here.', (eb) => {
-            eb.empty().startAction.cards(1).asterix().nbsp.tag(Tag.SPACE).colon().resource(CardResource.ASTEROID);
+            eb.empty().startAction.cards(1).asterix().nbsp.tag(Tag.MARÍTIMO).colon().resource(CardResource.ASTEROID);
           }).br;
           b.production((pb) => pb.minus().energy(1)).text('opponents may not remove your plants', {size: Size.SMALL, uppercase});
         }),
@@ -48,7 +48,7 @@ export class AsteroidDeflectionSystem extends Card implements IActionCard, IProj
   public action(player: IPlayer) {
     const card = player.game.projectDeck.drawOrThrow(player.game);
     player.game.log('${0} revealed and discarded ${1}', (b) => b.player(player).card(card, {tags: true}));
-    if (card.tags.includes(Tag.SPACE)) {
+    if (card.tags.includes(Tag.MARÍTIMO)) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
     player.game.projectDeck.discard(card);

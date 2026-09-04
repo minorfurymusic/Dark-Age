@@ -16,7 +16,7 @@ export class HuygensObservatory extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 27,
-      tags: [Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO],
       name: CardName.HUYGENS_OBSERVATORY,
       type: CardType.AUTOMATED,
       victoryPoints: 1,

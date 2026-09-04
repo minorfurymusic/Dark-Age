@@ -11,7 +11,7 @@ export class JovianEnvoys extends Card implements IProjectCard {
       type: CardType.EVENT,
       name: CardName.JOVIAN_ENVOYS,
       cost: 2,
-      requirements: {tag: Tag.JOVIAN, count: 2},
+      requirements: {tag: Tag.ENGENHO, count: 2},
 
       behavior: {
         turmoil: {sendDelegates: {count: 2}},

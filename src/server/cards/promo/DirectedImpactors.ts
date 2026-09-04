@@ -12,7 +12,7 @@ export class DirectedImpactors extends ActionCard implements IActionCard, IProje
     super({
       type: CardType.ACTIVE,
       name: CardName.DIRECTED_IMPACTORS,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 8,
       resourceType: CardResource.ASTEROID,
 

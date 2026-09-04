@@ -11,18 +11,18 @@ export class StratosphericExpedition extends Card implements IProjectCard {
     super({
       name: CardName.STRATOSPHERIC_EXPEDITION,
       cost: 12,
-      tags: [Tag.VENUS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARÍTIMO],
       type: CardType.EVENT,
       victoryPoints: 1,
 
       behavior: {
         addResourcesToAnyCard: {count: 2, type: CardResource.FLOATER},
-        drawCard: {count: 2, tag: Tag.VENUS},
+        drawCard: {count: 2, tag: Tag.COMÉRCIO},
       },
       metadata: {
         cardNumber: 'P84',
         renderData: CardRenderer.builder((b) => {
-          b.resource(CardResource.FLOATER, 2).asterix().cards(2, {secondaryTag: Tag.VENUS});
+          b.resource(CardResource.FLOATER, 2).asterix().cards(2, {secondaryTag: Tag.COMÉRCIO});
         }),
         description: 'Add two floaters to ANY CARD. Draw 2 Venus cards.',
       },

@@ -40,14 +40,14 @@ export class PublicSponsoredGrant extends Card implements IProjectCard {
       target.attack(player, Resource.MEGACREDITS, Math.min(target.megaCredits, 2), {log: true});
     });
 
-    const tags = [...player.game.tags, Tag.EVENT];
-    inplaceRemove(tags, Tag.CITY);
+    const tags = [...player.game.tags, Tag.HISTÓRIA];
+    inplaceRemove(tags, Tag.FEUDO);
     inplaceRemove(tags, Tag.WILD);
     inplaceRemove(tags, Tag.CLONE);
 
-    inplaceRemove(tags, Tag.EARTH);
-    inplaceRemove(tags, Tag.JOVIAN);
-    inplaceRemove(tags, Tag.VENUS);
+    inplaceRemove(tags, Tag.DIPLOMACIA);
+    inplaceRemove(tags, Tag.ENGENHO);
+    inplaceRemove(tags, Tag.COMÉRCIO);
     inplaceRemove(tags, Tag.MOON);
     inplaceRemove(tags, Tag.MARS);
 

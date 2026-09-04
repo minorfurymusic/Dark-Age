@@ -15,9 +15,9 @@ export class HyperspaceDrivePrototype extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.HYPERSPACE_DRIVE_PROTOTYPE,
       cost: 11,
-      tags: [Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO],
 
-      requirements: {tag: Tag.SCIENCE, count: 3},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 3},
 
       metadata: {
         cardNumber: 'U052',

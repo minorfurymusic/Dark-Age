@@ -15,7 +15,7 @@ export class CassiniStation extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.CASSINI_STATION,
       cost: 23,
-      tags: [Tag.POWER, Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.PODER, Tag.ERUDIÇÃO, Tag.MARÍTIMO],
 
       behavior: {
         production: {energy: {colonies: {colonies: {}}, all}},

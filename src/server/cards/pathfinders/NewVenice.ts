@@ -11,7 +11,7 @@ export class NewVenice extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.NEW_VENICE,
-      tags: [Tag.MARS, Tag.POWER, Tag.BUILDING, Tag.CITY],
+      tags: [Tag.MARS, Tag.PODER, Tag.CONSTRUÇÃO, Tag.FEUDO],
       cost: 21,
 
       behavior: {

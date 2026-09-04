@@ -10,14 +10,14 @@ export class Thorgate extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.THORGATE,
-      tags: [Tag.POWER],
+      tags: [Tag.PODER],
       startingMegaCredits: 48,
 
       behavior: {
         production: {energy: 1},
       },
 
-      cardDiscount: {tag: Tag.POWER, amount: 3},
+      cardDiscount: {tag: Tag.PODER, amount: 3},
       metadata: {
         cardNumber: 'R13',
         description: 'You start with 1 energy production and 48 M€.',
@@ -26,7 +26,7 @@ export class Thorgate extends CorporationCard implements ICorporationCard {
           b.production((pb) => pb.energy(1)).nbsp.megacredits(48);
           b.corpBox('effect', (ce) => {
             ce.effect('When playing a power card OR THE STANDARD PROJECT POWER PLANT, you pay 3 M€ less for it.', (eb) => {
-              eb.tag(Tag.POWER).asterix().startEffect.megacredits(-3);
+              eb.tag(Tag.PODER).asterix().startEffect.megacredits(-3);
             });
           });
         }),

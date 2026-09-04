@@ -14,7 +14,7 @@ export class Whales extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.WHALES,
       cost: 10,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       resourceType: CardResource.ANIMAL,
       victoryPoints: {resourcesHere: 1},
       requirements: {oceans: 6},

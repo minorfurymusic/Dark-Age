@@ -34,7 +34,7 @@ export class GeologicalExpedition extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.GEOLOGICAL_EXPEDITION,
       cost: 18,
-      tags: [Tag.MARS, Tag.SCIENCE],
+      tags: [Tag.MARS, Tag.ERUDIÇÃO],
       victoryPoints: 2,
 
       metadata: {

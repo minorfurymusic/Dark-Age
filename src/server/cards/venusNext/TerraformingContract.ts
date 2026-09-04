@@ -11,7 +11,7 @@ export class TerraformingContract extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.TERRAFORMING_CONTRACT,
       cost: 8,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       behavior: {
         production: {megacredits: 4},

@@ -16,7 +16,7 @@ export class MarsUniversity extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MARS_UNIVERSITY,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 8,
       victoryPoints: 1,
 
@@ -24,7 +24,7 @@ export class MarsUniversity extends Card implements IProjectCard {
         cardNumber: '073',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a science tag, including this, you may discard a card from hand to draw a card.', (eb) => {
-            eb.tag(Tag.SCIENCE).startEffect.minus().cards(1).nbsp.plus().cards(1);
+            eb.tag(Tag.ERUDIÇÃO).startEffect.minus().cards(1).nbsp.plus().cards(1);
           });
         }),
       },
@@ -32,11 +32,11 @@ export class MarsUniversity extends Card implements IProjectCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const scienceTags = player.tags.cardTagCount(card, Tag.SCIENCE);
+    const scienceTags = player.tags.cardTagCount(card, Tag.ERUDIÇÃO);
     this.onScienceTagAdded(player, scienceTags);
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       this.onScienceTagAdded(player, 1);
     }
   }

@@ -9,7 +9,7 @@ export class EarthElevator extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 43,
-      tags: [Tag.SPACE, Tag.EARTH],
+      tags: [Tag.MARÍTIMO, Tag.DIPLOMACIA],
       name: CardName.EARTH_ELEVATOR,
       type: CardType.AUTOMATED,
       victoryPoints: 4,

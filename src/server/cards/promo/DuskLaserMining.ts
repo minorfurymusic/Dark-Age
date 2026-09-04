@@ -12,14 +12,14 @@ export class DuskLaserMining extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.DUSK_LASER_MINING,
       cost: 8,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
 
       behavior: {
         production: {energy: -1, titanium: 1},
         stock: {titanium: 4},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: 'X01',
         description: 'Requires 2 science tags. Decrease your energy production 1 step, and increase your titanium production 1 step. Gain 4 titanium.',

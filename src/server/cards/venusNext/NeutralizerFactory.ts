@@ -10,7 +10,7 @@ export class NeutralizerFactory extends Card implements IProjectCard {
     super({
       name: CardName.NEUTRALIZER_FACTORY,
       type: CardType.AUTOMATED,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 7,
 
       behavior: {

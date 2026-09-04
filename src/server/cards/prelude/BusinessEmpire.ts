@@ -9,7 +9,7 @@ export class BusinessEmpire extends PreludeCard {
   constructor() {
     super({
       name: CardName.BUSINESS_EMPIRE,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       behavior: {
         production: {megacredits: 6},

@@ -11,7 +11,7 @@ export class LunarTradeFleet extends Card implements IProjectCard {
     super({
       name: CardName.LUNAR_TRADE_FLEET,
       type: CardType.AUTOMATED,
-      tags: [Tag.MOON, Tag.SPACE],
+      tags: [Tag.MOON, Tag.MARÍTIMO],
       cost: 8,
 
       behavior: {

@@ -30,9 +30,9 @@ class GreensBonus01 extends Bonus {
   readonly description = 'Gain 1 M€ for each Plant, Microbe and Animal tag you have';
 
   getScore(player: IPlayer) {
-    return player.tags.count(Tag.PLANT, 'raw') +
-      player.tags.count(Tag.MICROBE, 'raw') +
-      player.tags.count(Tag.ANIMAL, 'raw');
+    return player.tags.count(Tag.AGRICULTURA, 'raw') +
+      player.tags.count(Tag.BRUXARIA, 'raw') +
+      player.tags.count(Tag.PECUÁRIA, 'raw');
   }
 
   grantForPlayer(player: IPlayer): void {
@@ -80,7 +80,7 @@ class GreensPolicy03 implements IPolicy {
   readonly description = 'When you play an animal, plant or microbe tag, gain 2 M€';
 
   onCardPlayed(player: IPlayer, card: ICard) {
-    const tags = [Tag.ANIMAL, Tag.PLANT, Tag.MICROBE];
+    const tags = [Tag.PECUÁRIA, Tag.AGRICULTURA, Tag.BRUXARIA];
     const tagCount = card.tags.filter((tag) => tags.includes(tag)).length;
 
     player.defer(() => player.stock.add(Resource.MEGACREDITS, tagCount * 2, {log: true, from: {partyName: PartyName.GREENS}}));

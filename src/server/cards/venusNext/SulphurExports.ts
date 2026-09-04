@@ -10,19 +10,19 @@ export class SulphurExports extends Card implements IProjectCard {
     super({
       name: CardName.SULPHUR_EXPORTS,
       type: CardType.AUTOMATED,
-      tags: [Tag.VENUS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARÍTIMO],
       cost: 21,
 
       behavior: {
         global: {venus: 1},
-        production: {megacredits: {tag: Tag.VENUS}},
+        production: {megacredits: {tag: Tag.COMÉRCIO}},
       },
 
       metadata: {
         cardNumber: '250',
         renderData: CardRenderer.builder((b) => {
           b.venus(1).br;
-          b.production((pb) => pb.megacredits(1).slash().tag(Tag.VENUS));
+          b.production((pb) => pb.megacredits(1).slash().tag(Tag.COMÉRCIO));
         }),
         description: 'Increase Venus 1 step. Increase your M€ production 1 step for each Venus tag you have, including this.',
       },

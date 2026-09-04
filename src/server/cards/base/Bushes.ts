@@ -10,7 +10,7 @@ export class Bushes extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.BUSHES,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 10,
 
       behavior: {

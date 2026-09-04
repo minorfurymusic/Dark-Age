@@ -18,7 +18,7 @@ export class Pets extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.PETS,
-      tags: [Tag.EARTH, Tag.ANIMAL],
+      tags: [Tag.DIPLOMACIA, Tag.PECUÁRIA],
       cost: 10,
       resourceType: CardResource.ANIMAL,
       protectedResources: true,

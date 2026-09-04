@@ -10,7 +10,7 @@ export class NoctisFarming extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.NOCTIS_FARMING,
-      tags: [Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
       cost: 10,
       requirements: {temperature: -20},
       victoryPoints: 1,

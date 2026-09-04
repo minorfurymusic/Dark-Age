@@ -15,7 +15,7 @@ export class ClassActionLawsuit extends Card implements IProjectCard {
       name: CardName.CLASS_ACTION_LAWSUIT,
       type: CardType.EVENT,
       cost: 25,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       victoryPoints: 3,
 

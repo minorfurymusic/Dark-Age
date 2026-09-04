@@ -10,7 +10,7 @@ export class ResearchOutpost extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.RESEARCH_OUTPOST,
-      tags: [Tag.SCIENCE, Tag.CITY, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 18,
 
       behavior: {

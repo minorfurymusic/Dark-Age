@@ -10,7 +10,7 @@ export class RefugeeCamps extends ActionCard implements IProjectCard {
   constructor() {
     super({
       cost: 10,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       name: CardName.REFUGEE_CAMPS,
       type: CardType.ACTIVE,
       resourceType: CardResource.CAMP,

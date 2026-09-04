@@ -10,7 +10,7 @@ export class SterlingVents extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.STERLING_VENTS,
-      tags: [Tag.POWER, Tag.BUILDING],
+      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
       cost: 5,
       victoryPoints: 1,
 

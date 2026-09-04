@@ -13,7 +13,7 @@ export class StandardTechnology extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.STANDARD_TECHNOLOGY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 6,
 
       metadata: {

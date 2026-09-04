@@ -15,7 +15,7 @@ export class SponsoredAcademies extends Card implements IProjectCard {
     super({
       name: CardName.SPONSORED_ACADEMIES,
       type: CardType.AUTOMATED,
-      tags: [Tag.EARTH, Tag.SCIENCE],
+      tags: [Tag.DIPLOMACIA, Tag.ERUDIÇÃO],
       cost: 9,
 
       victoryPoints: 1,

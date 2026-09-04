@@ -16,14 +16,14 @@ export class ImprovedEnergyTemplates extends GlobalEvent implements IGlobalEvent
       behavior: {
         production: {
           energy: {
-            tag: Tag.POWER,
+            tag: Tag.PODER,
             turmoil: {influence: {}},
             per: 2,
           },
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.production((pb) => pb.energy(1)).slash().tag(Tag.POWER, 2).influence({size: Size.SMALL});
+        b.production((pb) => pb.energy(1)).slash().tag(Tag.PODER, 2).influence({size: Size.SMALL});
       }),
     });
   }

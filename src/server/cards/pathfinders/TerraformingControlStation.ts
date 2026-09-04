@@ -11,18 +11,18 @@ export class TerraformingControlStation extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.TERRAFORMING_CONTROL_STATION,
       cost: 18,
-      tags: [Tag.VENUS, Tag.MARS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARS, Tag.MARÍTIMO],
 
       behavior: {
         tr: 2,
       },
 
-      cardDiscount: [{tag: Tag.VENUS, amount: 2}, {tag: Tag.MARS, amount: 2}],
+      cardDiscount: [{tag: Tag.COMÉRCIO, amount: 2}, {tag: Tag.MARS, amount: 2}],
       metadata: {
         cardNumber: 'Pf12',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a Venus or Mars tag, pay 2 M€ less.', (eb) => {
-            eb.tag(Tag.VENUS).slash().tag(Tag.MARS).startEffect.megacredits(-2);
+            eb.tag(Tag.COMÉRCIO).slash().tag(Tag.MARS).startEffect.megacredits(-2);
           });
           b.br.tr(2);
         }),

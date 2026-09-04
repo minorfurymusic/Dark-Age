@@ -10,7 +10,7 @@ export class LunarObservationPost extends ActionCard {
     super({
       name: CardName.LUNAR_OBSERVATION_POST,
       type: CardType.ACTIVE,
-      tags: [Tag.SCIENCE, Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO, Tag.ERUDIÇÃO],
       cost: 7,
 
       resourceType: CardResource.DATA,

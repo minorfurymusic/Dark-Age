@@ -11,7 +11,7 @@ export class Viron extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.VIRON,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       startingMegaCredits: 48,
 
       metadata: {

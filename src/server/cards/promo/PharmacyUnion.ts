@@ -22,23 +22,23 @@ export class PharmacyUnion extends CorporationCard implements ICorporationCard {
       resourceType: CardResource.DISEASE,
 
       behavior: {
-        drawCard: {count: 1, tag: Tag.SCIENCE},
+        drawCard: {count: 1, tag: Tag.ERUDIÇÃO},
       },
 
       metadata: {
         cardNumber: 'R39',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(54).cards(1, {secondaryTag: Tag.SCIENCE});
+          b.megacredits(54).cards(1, {secondaryTag: Tag.ERUDIÇÃO});
           // blank space after MC is on purpose
           b.text('(You start with 54 M€. Draw a Science card.)', {size: Size.TINY, isBold: false});
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.effect(undefined, (eb) => {
-              eb.tag(Tag.MICROBE, {all}).startEffect.resource(CardResource.DISEASE).megacredits(-4);
+              eb.tag(Tag.BRUXARIA, {all}).startEffect.resource(CardResource.DISEASE).megacredits(-4);
             });
             ce.vSpace();
             ce.effect('When ANY microbe tag is played, add a disease here and lose 4 M€ or as much as possible. When you play a science tag, remove a disease here and gain 1 TR OR if there are no diseases here, you MAY put this card face down in your EVENTS PILE to gain 3 TR.', (eb) => {
-              eb.tag(Tag.SCIENCE).startEffect.minus().resource(CardResource.DISEASE);
+              eb.tag(Tag.ERUDIÇÃO).startEffect.minus().resource(CardResource.DISEASE);
               eb.tr(1, {size: Size.SMALL}).slash().tr(3, {size: Size.SMALL, digit});
             });
           });
@@ -53,7 +53,7 @@ export class PharmacyUnion extends CorporationCard implements ICorporationCard {
     if (this.isDisabled) {
       return [];
     }
-    return [Tag.MICROBE, Tag.MICROBE];
+    return [Tag.BRUXARIA, Tag.BRUXARIA];
   }
 
   private logAddingDisease(player: IPlayer, count: number, megaCreditsLost: number) {
@@ -80,8 +80,8 @@ export class PharmacyUnion extends CorporationCard implements ICorporationCard {
 
     const game = player.game;
 
-    const hasScienceTag = player.tags.cardHasTag(card, Tag.SCIENCE);
-    const hasMicrobesTag = card.tags.includes(Tag.MICROBE);
+    const hasScienceTag = player.tags.cardHasTag(card, Tag.ERUDIÇÃO);
+    const hasMicrobesTag = card.tags.includes(Tag.BRUXARIA);
 
     if (player === activePlayer && hasScienceTag) {
       // Edge case, let player pick order of resolution (see https://github.com/bafolts/terraforming-mars/issues/1286)
@@ -110,14 +110,14 @@ export class PharmacyUnion extends CorporationCard implements ICorporationCard {
           return undefined;
         }
       } else {
-        const scienceTags = player.tags.cardTagCount(card, Tag.SCIENCE);
+        const scienceTags = player.tags.cardTagCount(card, Tag.ERUDIÇÃO);
         this.onScienceTagAdded(player, scienceTags);
       }
     }
 
     if (hasMicrobesTag) {
       player.defer(() => {
-        const microbeTagCount = card.tags.filter((cardTag) => cardTag === Tag.MICROBE).length;
+        const microbeTagCount = card.tags.filter((cardTag) => cardTag === Tag.BRUXARIA).length;
         this.addDisease(player, microbeTagCount);
         return undefined;
       }, Priority.PHARMACY_UNION);
@@ -125,7 +125,7 @@ export class PharmacyUnion extends CorporationCard implements ICorporationCard {
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       this.onScienceTagAdded(player, 1);
     }
   }

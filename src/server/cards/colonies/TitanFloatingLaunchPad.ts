@@ -19,26 +19,26 @@ export class TitanFloatingLaunchPad extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 18,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       name: CardName.TITAN_FLOATING_LAUNCHPAD,
       type: CardType.ACTIVE,
       resourceType: CardResource.FLOATER,
       victoryPoints: 1,
 
       behavior: {
-        addResourcesToAnyCard: {type: CardResource.FLOATER, count: 2, tag: Tag.JOVIAN},
+        addResourcesToAnyCard: {type: CardResource.FLOATER, count: 2, tag: Tag.ENGENHO},
       },
 
       metadata: {
         cardNumber: 'C44',
         renderData: CardRenderer.builder((b) => {
           b.action(undefined, (eb) => {
-            eb.empty().startAction.resource(CardResource.FLOATER, {secondaryTag: Tag.JOVIAN}).nbsp.or();
+            eb.empty().startAction.resource(CardResource.FLOATER, {secondaryTag: Tag.ENGENHO}).nbsp.or();
           }).br;
           b.action('Add 1 floater to ANY JOVIAN CARD or spend 1 floater here to trade for free.', (eb) => {
             eb.resource(CardResource.FLOATER).startAction.trade();
           }).br.br;
-          b.resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.JOVIAN});
+          b.resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.ENGENHO});
         }),
         description: {
           text: 'Add two floaters to ANY JOVIAN CARD.',
@@ -66,7 +66,7 @@ export class TitanFloatingLaunchPad extends Card implements IProjectCard {
         return undefined;
       }),
       new SelectOption('Add 1 floater to a Jovian card', 'Add floater').andThen(() => {
-        player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER, {restrictedTag: Tag.JOVIAN, title: 'Add 1 floater to a Jovian card'}));
+        player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER, {restrictedTag: Tag.ENGENHO, title: 'Add 1 floater to a Jovian card'}));
         return undefined;
       }),
     );

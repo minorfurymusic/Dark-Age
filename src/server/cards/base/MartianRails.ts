@@ -12,7 +12,7 @@ export class MartianRails extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MARTIAN_RAILS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 13,
 
       action: {

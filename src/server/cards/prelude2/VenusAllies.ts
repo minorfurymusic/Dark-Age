@@ -10,7 +10,7 @@ export class VenusAllies extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.VENUS_ALLIES,
-      tags: [Tag.VENUS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARÍTIMO],
       cost: 30,
       victoryPoints: 2,
 

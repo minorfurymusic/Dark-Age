@@ -10,7 +10,7 @@ export class Meltworks extends ActionCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MELTWORKS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 4,
 
       action: {

@@ -13,7 +13,7 @@ export class StingOperation extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.STING_OPERATION,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 14,
       victoryPoints: 'special',
 

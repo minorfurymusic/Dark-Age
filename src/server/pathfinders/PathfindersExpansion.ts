@@ -29,11 +29,11 @@ export class PathfindersExpansion {
 
   public static initialize(game: IGame): PathfindersData {
     return {
-      venus: game.tags.includes(Tag.VENUS) ? 0 : -1,
-      earth: 0,
-      mars: 0,
-      jovian: 0,
-      moon: game.tags.includes(Tag.MOON) ? 0 : -1,
+      [Tag.COMÉRCIO]: game.tags.includes(Tag.COMÉRCIO) ? 0 : -1,
+      [Tag.DIPLOMACIA]: 0,
+      [Tag.MARS]: 0,
+      [Tag.ENGENHO]: 0,
+      [Tag.MOON]: game.tags.includes(Tag.MOON) ? 0 : -1,
       vps: [],
     };
   }

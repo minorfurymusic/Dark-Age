@@ -17,7 +17,7 @@ export class Herbivores extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.HERBIVORES,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       cost: 12,
 
       resourceType: CardResource.ANIMAL,

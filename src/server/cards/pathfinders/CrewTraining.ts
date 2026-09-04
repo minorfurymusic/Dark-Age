@@ -20,10 +20,10 @@ export class CrewTraining extends PreludeCard implements ICloneTagCard {
         cardNumber: 'PfP06',
         renderData: CardRenderer.builder((b) => {
           b.planetaryTrack().text('2')
-            .tag(Tag.VENUS).or(Size.SMALL)
-            .tag(Tag.EARTH).or(Size.SMALL).br;
+            .tag(Tag.COMÉRCIO).or(Size.SMALL)
+            .tag(Tag.DIPLOMACIA).or(Size.SMALL).br;
           b.tag(Tag.MARS).or(Size.SMALL)
-            .tag(Tag.JOVIAN).or(Size.SMALL)
+            .tag(Tag.ENGENHO).or(Size.SMALL)
             .tag(Tag.MOON).br;
 
           b.tr(2);

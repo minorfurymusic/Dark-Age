@@ -10,7 +10,7 @@ export class GeologicalExpertise extends PreludeCard {
       name: CardName.GEOLOGICAL_EXPERTISE,
 
       behavior: {
-        drawCard: {tag: Tag.SCIENCE, count: 2},
+        drawCard: {tag: Tag.ERUDIÇÃO, count: 2},
         underworld: {identify: {count: 4, claim: 1}},
       },
 
@@ -18,7 +18,7 @@ export class GeologicalExpertise extends PreludeCard {
         cardNumber: 'UP06',
         renderData: CardRenderer.builder((b) => {
           b.identify(4, {digit}).claim(1).br;
-          b.cards(2, {secondaryTag: Tag.SCIENCE});
+          b.cards(2, {secondaryTag: Tag.ERUDIÇÃO});
         }),
         description: 'Identify 4 underground resources. Claim one of them. Draw 2 cards with science tags.',
       },

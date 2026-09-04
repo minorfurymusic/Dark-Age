@@ -8,7 +8,7 @@ export class LunarPlanningOffice extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.LUNAR_PlANNING_OFFICE,
-      tags: [Tag.MOON, Tag.BUILDING],
+      tags: [Tag.MOON, Tag.CONSTRUÇÃO],
 
       behavior: {
         stock: {steel: 6},

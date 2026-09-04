@@ -11,7 +11,7 @@ export class GhgShipment extends Card {
     super({
       name: CardName.GHG_SHIPMENT,
       type: CardType.EVENT,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 3,
 
       behavior: {

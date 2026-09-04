@@ -27,10 +27,10 @@ export class EconomicHelp extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.megacredits(1)).nbsp.nbsp;
           b.planetaryTrack().text('3').asterix().br;
-          b.tag(Tag.VENUS, {size: Size.SMALL}).or(Size.TINY)
-            .tag(Tag.EARTH, {size: Size.SMALL}).or(Size.TINY)
+          b.tag(Tag.COMÉRCIO, {size: Size.SMALL}).or(Size.TINY)
+            .tag(Tag.DIPLOMACIA, {size: Size.SMALL}).or(Size.TINY)
             .tag(Tag.MARS, {size: Size.SMALL}).or(Size.TINY)
-            .tag(Tag.JOVIAN, {size: Size.SMALL}).or(Size.TINY)
+            .tag(Tag.ENGENHO, {size: Size.SMALL}).or(Size.TINY)
             .tag(Tag.MOON, {size: Size.SMALL});
         }),
         description: 'Raise the lowest non-completed planetary influence track 3 steps. When tied, raise all lowest tracks 2 steps. ' +
@@ -58,20 +58,20 @@ export class EconomicHelp extends Card implements IProjectCard {
     const lowest = Math.min(...(values.filter((v) => v >= 0)));
     const count = values.filter((v) => v === lowest).length;
     const increment = (count === 1) ? 3 : 2;
-    if (data.earth === lowest) {
-      PathfindersExpansion.raiseTrack(Tag.EARTH, player, increment);
+    if (data[Tag.DIPLOMACIA] === lowest) {
+      PathfindersExpansion.raiseTrack(Tag.DIPLOMACIA, player, increment);
     }
-    if (data.jovian === lowest) {
-      PathfindersExpansion.raiseTrack(Tag.JOVIAN, player, increment);
+    if (data[Tag.ENGENHO] === lowest) {
+      PathfindersExpansion.raiseTrack(Tag.ENGENHO, player, increment);
     }
-    if (data.mars === lowest) {
+    if (data[Tag.MARS] === lowest) {
       PathfindersExpansion.raiseTrack(Tag.MARS, player, increment);
     }
-    if (data.moon === lowest && player.game.gameOptions.moonExpansion === true) {
+    if (data[Tag.MOON] === lowest && player.game.gameOptions.moonExpansion === true) {
       PathfindersExpansion.raiseTrack(Tag.MOON, player, increment);
     }
-    if (data.venus === lowest && player.game.gameOptions.venusNextExtension === true) {
-      PathfindersExpansion.raiseTrack(Tag.VENUS, player, increment);
+    if (data[Tag.COMÉRCIO] === lowest && player.game.gameOptions.venusNextExtension === true) {
+      PathfindersExpansion.raiseTrack(Tag.COMÉRCIO, player, increment);
     }
     return undefined;
   }

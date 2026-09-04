@@ -14,7 +14,7 @@ export class MarketManipulation extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 1,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       name: CardName.MARKET_MANIPULATION,
       type: CardType.EVENT,
 

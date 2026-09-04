@@ -12,7 +12,7 @@ export class InterplanetaryTrade extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.INTERPLANETARY_TRADE,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 27,
       victoryPoints: 1,
 
@@ -28,7 +28,7 @@ export class InterplanetaryTrade extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    const distinctTagCount = player.tags.distinctCount('default', Tag.SPACE);
+    const distinctTagCount = player.tags.distinctCount('default', Tag.MARÍTIMO);
     player.production.add(Resource.MEGACREDITS, distinctTagCount, {log: true});
     return undefined;
   }

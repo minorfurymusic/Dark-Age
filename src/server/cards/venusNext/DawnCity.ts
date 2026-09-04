@@ -11,10 +11,10 @@ export class DawnCity extends Card implements IProjectCard {
     super({
       name: CardName.DAWN_CITY,
       type: CardType.AUTOMATED,
-      tags: [Tag.CITY, Tag.SPACE],
+      tags: [Tag.FEUDO, Tag.MARÍTIMO],
       cost: 15,
 
-      requirements: {tag: Tag.SCIENCE, count: 4},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 4},
       victoryPoints: 3,
       behavior: {
         production: {energy: -1, titanium: 1},

@@ -13,7 +13,7 @@ export class EarlyExpedition extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.EARLY_EXPEDITION,
       cost: 15,
-      tags: [Tag.SCIENCE, Tag.SPACE, Tag.CITY],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO, Tag.FEUDO],
       requirements: {temperature: -18, max},
 
       behavior: {

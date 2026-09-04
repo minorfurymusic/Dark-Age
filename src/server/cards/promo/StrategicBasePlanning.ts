@@ -9,7 +9,7 @@ export class StrategicBasePlanning extends PreludeCard {
   constructor() {
     super({
       name: CardName.STRATEGIC_BASE_PLANNING,
-      tags: [Tag.CITY, Tag.BUILDING, Tag.SPACE],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO, Tag.MARÍTIMO],
 
       startingMegacredits: -3,
 

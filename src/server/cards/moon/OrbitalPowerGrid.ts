@@ -11,7 +11,7 @@ export class OrbitalPowerGrid extends Card implements IProjectCard {
     super({
       name: CardName.ORBITAL_POWER_GRID,
       type: CardType.AUTOMATED,
-      tags: [Tag.POWER, Tag.SPACE],
+      tags: [Tag.PODER, Tag.MARÍTIMO],
       cost: 19,
       victoryPoints: 1,
 
@@ -23,7 +23,7 @@ export class OrbitalPowerGrid extends Card implements IProjectCard {
         description: 'Increase your energy production 1 step per city tile NOT ON MARS.',
         cardNumber: 'M85',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.energy(1)).slash().city({all, secondaryTag: Tag.SPACE});
+          b.production((pb) => pb.energy(1)).slash().city({all, secondaryTag: Tag.MARÍTIMO});
         }),
       },
     });

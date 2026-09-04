@@ -10,7 +10,7 @@ export class NitriteReducingBacteria extends ActionCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.NITRITE_REDUCING_BACTERIA,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 11,
       resourceType: CardResource.MICROBE,
 

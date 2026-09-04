@@ -15,7 +15,7 @@ export class DetectiveTVSeries extends Card implements IProjectCard {
       name: CardName.DETECTIVE_TV_SERIES,
       type: CardType.ACTIVE,
       cost: 5,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       metadata: {
         cardNumber: 'U091',

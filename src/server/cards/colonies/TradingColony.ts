@@ -10,7 +10,7 @@ export class TradingColony extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 18,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.TRADING_COLONY,
       type: CardType.ACTIVE,
 

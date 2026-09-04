@@ -13,7 +13,7 @@ export class EcologyResearch extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 21,
-      tags: [Tag.SCIENCE, Tag.PLANT, Tag.ANIMAL, Tag.MICROBE],
+      tags: [Tag.ERUDIÇÃO, Tag.AGRICULTURA, Tag.PECUÁRIA, Tag.BRUXARIA],
       name: CardName.ECOLOGY_RESEARCH,
       type: CardType.AUTOMATED,
       victoryPoints: 1,

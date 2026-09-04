@@ -15,7 +15,7 @@ export class Vitor extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.VITOR,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 48, // It's 45 + 3 when this corp is played
       initialActionText: 'Fund an award for free',
 

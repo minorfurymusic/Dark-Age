@@ -12,7 +12,7 @@ export class LunaTrainStation extends Card {
     super({
       name: CardName.LUNA_TRAIN_STATION,
       type: CardType.AUTOMATED,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 24,
       reserveUnits: {steel: 2},
       victoryPoints: {moon: {road: {}}, nextToThis: {}, each: 2},

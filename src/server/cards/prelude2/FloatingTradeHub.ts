@@ -17,7 +17,7 @@ export class FloatingTradeHub extends PreludeCard implements IActionCard {
   constructor() {
     super({
       name: CardName.FLOATING_TRADE_HUB,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       resourceType: CardResource.FLOATER,
 
       metadata: {

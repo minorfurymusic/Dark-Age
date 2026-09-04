@@ -10,7 +10,7 @@ export class UtopiaInvest extends ActiveCorporationCard implements ICorporationC
   constructor() {
     super({
       name: CardName.UTOPIA_INVEST,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       startingMegaCredits: 40,
 
       behavior: {

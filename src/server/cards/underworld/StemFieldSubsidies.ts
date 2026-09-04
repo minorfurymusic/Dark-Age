@@ -15,7 +15,7 @@ export class StemFieldSubsidies extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.STEM_FIELD_SUBSIDIES,
       cost: 10,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       resourceType: CardResource.DATA,
 
       action: {
@@ -31,7 +31,7 @@ export class StemFieldSubsidies extends ActionCard implements IProjectCard {
         cardNumber: 'U043',
         renderData: CardRenderer.builder((b) => {
           b.effect('Whenever you play a science tag (including this), add 1 data to this card.',
-            (eb) => eb.tag(Tag.SCIENCE).startEffect.resource(CardResource.DATA));
+            (eb) => eb.tag(Tag.ERUDIÇÃO).startEffect.resource(CardResource.DATA));
           b.br;
           b.action('Spend 2 resources here to identify 3 underground resources. Claim 1 of them.',
             (ab) => ab.resource(CardResource.DATA, {amount: 2}).startAction.identify(3, {digit}).claim(1));
@@ -41,11 +41,11 @@ export class StemFieldSubsidies extends ActionCard implements IProjectCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const count = player.tags.cardTagCount(card, Tag.SCIENCE);
+    const count = player.tags.cardTagCount(card, Tag.ERUDIÇÃO);
     this.onScienceTagAdded(player, count);
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       this.onScienceTagAdded(player, 1);
     }
   }

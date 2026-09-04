@@ -12,7 +12,7 @@ export class TradeEmbargo extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.TRADE_EMBARGO,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 4,
 
       metadata: {

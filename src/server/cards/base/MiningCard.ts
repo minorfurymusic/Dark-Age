@@ -26,7 +26,7 @@ export abstract class MiningCard extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost,
       metadata,
     });

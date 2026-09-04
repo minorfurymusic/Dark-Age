@@ -16,7 +16,7 @@ export class ManMadeVolcano extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MAN_MADE_VOLCANO,
-      tags: [Tag.POWER],
+      tags: [Tag.PODER],
       cost: 26,
       tilesBuilt: [TileType.MAN_MADE_VOLCANO],
 

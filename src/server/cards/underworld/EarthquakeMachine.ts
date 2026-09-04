@@ -12,9 +12,9 @@ export class EarthquakeMachine extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.EARTHQUAKE_MACHINE,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 10,
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
 
       behavior: {
         decreaseAnyProduction: {type: Resource.PLANTS, count: 1},

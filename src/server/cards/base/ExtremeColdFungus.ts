@@ -19,7 +19,7 @@ export class ExtremeColdFungus extends Card implements IActionCard, IProjectCard
     super({
       type: CardType.ACTIVE,
       name: CardName.EXTREME_COLD_FUNGUS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 13,
 
       requirements: {temperature: -10, max},

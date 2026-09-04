@@ -13,7 +13,7 @@ export class InfrastructureOverload extends Card implements IProjectCard {
       name: CardName.INFRASTRUCTURE_OVERLOAD,
       type: CardType.AUTOMATED,
       cost: 7,
-      tags: [Tag.POWER, Tag.CRIME],
+      tags: [Tag.PODER, Tag.CRIME],
 
       victoryPoints: -1,
 

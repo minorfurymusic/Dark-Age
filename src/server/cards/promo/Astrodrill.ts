@@ -18,7 +18,7 @@ export class Astrodrill extends CorporationCard implements ICorporationCard, IAc
   constructor() {
     super({
       name: CardName.ASTRODRILL,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegaCredits: 35,
       resourceType: CardResource.ASTEROID,
 

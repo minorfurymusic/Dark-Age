@@ -18,7 +18,7 @@ export class TharsisRepublic extends CorporationCard implements ICorporationCard
   constructor() {
     super({
       name: CardName.THARSIS_REPUBLIC,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       startingMegaCredits: 40,
 
       firstAction: {

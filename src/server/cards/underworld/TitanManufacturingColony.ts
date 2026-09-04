@@ -14,7 +14,7 @@ export class TitanManufacturingColony extends ActionCard implements IProjectCard
       type: CardType.ACTIVE,
       name: CardName.TITAN_MANUFACTURING_COLONY,
       cost: 18,
-      tags: [Tag.JOVIAN, Tag.SPACE, Tag.BUILDING],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO, Tag.CONSTRUÇÃO],
       resourceType: CardResource.TOOL,
 
       action: {
@@ -26,7 +26,7 @@ export class TitanManufacturingColony extends ActionCard implements IProjectCard
         cardNumber: 'U044',
         renderData: CardRenderer.builder((b) => {
           b.effect('Whenever you play a Jovian tag, (including this one), add 1 tool resource on this card.',
-            (ab) => ab.tag(Tag.JOVIAN).startEffect.resource(CardResource.TOOL)).br;
+            (ab) => ab.tag(Tag.ENGENHO).startEffect.resource(CardResource.TOOL)).br;
           b.action('Spend 1 tool resource on this card to excavate an underground resource.',
             (ab) => ab.resource(CardResource.TOOL).startAction.excavate(1));
         }),
@@ -35,7 +35,7 @@ export class TitanManufacturingColony extends ActionCard implements IProjectCard
   }
 
   onCardPlayed(player: IPlayer, card: ICard): undefined {
-    const count = card.tags.filter((tag) => tag === Tag.JOVIAN).length;
+    const count = card.tags.filter((tag) => tag === Tag.ENGENHO).length;
     player.addResourceTo(this, {qty: count, log: true});
     return undefined;
   }

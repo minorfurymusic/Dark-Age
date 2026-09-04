@@ -11,7 +11,7 @@ export class MartianMediaCenter extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MARTIAN_MEDIA_CENTER,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 7,
 
       behavior: {

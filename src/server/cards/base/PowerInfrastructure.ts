@@ -14,7 +14,7 @@ export class PowerInfrastructure extends Card implements IActionCard, IProjectCa
     super({
       type: CardType.ACTIVE,
       name: CardName.POWER_INFRASTRUCTURE,
-      tags: [Tag.POWER, Tag.BUILDING],
+      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
       cost: 4,
 
       metadata: {

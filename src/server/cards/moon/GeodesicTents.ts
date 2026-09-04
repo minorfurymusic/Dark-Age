@@ -10,7 +10,7 @@ export class GeodesicTents extends Card {
     super({
       name: CardName.GEODESIC_TENTS,
       type: CardType.AUTOMATED,
-      tags: [Tag.PLANT, Tag.CITY, Tag.MOON],
+      tags: [Tag.AGRICULTURA, Tag.FEUDO, Tag.MOON],
       cost: 13,
       reserveUnits: {titanium: 1},
 

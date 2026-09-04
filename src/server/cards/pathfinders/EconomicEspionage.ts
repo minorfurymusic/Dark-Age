@@ -12,7 +12,7 @@ export class EconomicEspionage extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.ECONOMIC_ESPIONAGE,
       cost: 8,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       resourceType: CardResource.DATA,
       victoryPoints: {resourcesHere: {}, per: 3},
 

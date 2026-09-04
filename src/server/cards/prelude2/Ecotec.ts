@@ -16,7 +16,7 @@ export class Ecotec extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.ECOTEC,
-      tags: [Tag.MICROBE, Tag.PLANT],
+      tags: [Tag.BRUXARIA, Tag.AGRICULTURA],
       startingMegaCredits: 42,
 
       behavior: {
@@ -29,7 +29,7 @@ export class Ecotec extends CorporationCard implements ICorporationCard {
           b.br.br.br;
           b.megacredits(42).production((pb) => pb.plants(1)).br;
           b.effect('When you play a bio tag, gain 1 plant or add a microbe to ANY card.',
-            (eb) => eb.tag(Tag.MICROBE).tag(Tag.PLANT).tag(Tag.ANIMAL).startEffect.plants(1).slash().resource(CardResource.MICROBE).asterix());
+            (eb) => eb.tag(Tag.BRUXARIA).tag(Tag.AGRICULTURA).tag(Tag.PECUÁRIA).startEffect.plants(1).slash().resource(CardResource.MICROBE).asterix());
         }),
         description: 'You start with 42 M€. Increase your plant production 1 step.',
       },
@@ -67,12 +67,12 @@ export class Ecotec extends CorporationCard implements ICorporationCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    this.process(player, player.tags.cardTagCount(card, [Tag.ANIMAL, Tag.PLANT, Tag.MICROBE]));
+    this.process(player, player.tags.cardTagCount(card, [Tag.PECUÁRIA, Tag.AGRICULTURA, Tag.BRUXARIA]));
     return undefined;
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag): void {
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       this.process(player, 1);
     }
   }

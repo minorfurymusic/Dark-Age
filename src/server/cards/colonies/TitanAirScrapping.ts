@@ -10,7 +10,7 @@ export class TitanAirScrapping extends ActionCard implements IProjectCard {
   constructor() {
     super({
       cost: 21,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       name: CardName.TITAN_AIRSCRAPPING,
       type: CardType.ACTIVE,
       resourceType: CardResource.FLOATER,

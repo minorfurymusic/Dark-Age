@@ -25,7 +25,7 @@ class MarsFirstBonus01 extends Bonus {
   readonly description = 'Gain 1 M€ for each building tag you have';
 
   getScore(player: IPlayer) {
-    return player.tags.count(Tag.BUILDING, 'raw');
+    return player.tags.count(Tag.CONSTRUÇÃO, 'raw');
   }
 
   grantForPlayer(player: IPlayer): void {
@@ -63,7 +63,7 @@ class MarsFirstPolicy02 implements IPolicy {
   readonly description = 'When you play a building tag, gain 2 M€';
 
   onCardPlayed(player: IPlayer, card: ICard) {
-    if (card.tags.includes(Tag.BUILDING)) {
+    if (card.tags.includes(Tag.CONSTRUÇÃO)) {
       player.stock.add(Resource.MEGACREDITS, 2, {log: true, from: {partyName: PartyName.MARS}});
     }
   }
@@ -96,7 +96,7 @@ class MarsFirstPolicy04 implements IPolicy {
     player.politicalAgendasActionUsedCount += 1;
 
     game.defer(new SelectPaymentDeferred(player, 4, {title: TITLES.payForPartyAction(PartyName.MARS)}))
-      .andThen(() => player.drawCard(1, {tag: Tag.BUILDING}));
+      .andThen(() => player.drawCard(1, {tag: Tag.CONSTRUÇÃO}));
     return undefined;
   }
 }

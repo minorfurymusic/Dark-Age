@@ -18,7 +18,7 @@ export class Hospitals extends ActionCard implements IProjectCard, IActionCard {
       type: CardType.ACTIVE,
       name: CardName.HOSPITALS,
       cost: 8,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       resourceType: CardResource.DISEASE,
 
       behavior: {

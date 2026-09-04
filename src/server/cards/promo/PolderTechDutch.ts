@@ -18,7 +18,7 @@ export class PolderTechDutch extends CorporationCard implements ICorporationCard
   constructor() {
     super({
       name: CardName.POLDERTECH_DUTCH,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 35,
 
       initialActionText: 'Place an ocean tile and a greenery tile next to each other',

@@ -16,7 +16,7 @@ export class OlympusConference extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.OLYMPUS_CONFERENCE,
-      tags: [Tag.SCIENCE, Tag.EARTH, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.DIPLOMACIA, Tag.CONSTRUÇÃO],
       cost: 10,
       resourceType: CardResource.SCIENCE,
       victoryPoints: 1,
@@ -24,7 +24,7 @@ export class OlympusConference extends Card implements IProjectCard {
       metadata: {
         cardNumber: '185',
         renderData: CardRenderer.builder((b) => {
-          b.tag(Tag.SCIENCE).colon().resource(CardResource.SCIENCE).br;
+          b.tag(Tag.ERUDIÇÃO).colon().resource(CardResource.SCIENCE).br;
           b.or().br;
           b.minus().resource(CardResource.SCIENCE).plus().cards(1);
         }),
@@ -35,11 +35,11 @@ export class OlympusConference extends Card implements IProjectCard {
 
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const scienceTags = player.tags.cardTagCount(card, Tag.SCIENCE);
+    const scienceTags = player.tags.cardTagCount(card, Tag.ERUDIÇÃO);
     this.onScienceTagAdded(player, scienceTags);
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       this.onScienceTagAdded(player, 1);
     }
   }

@@ -10,7 +10,7 @@ export class Mine extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MINE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 4,
 
       behavior: {

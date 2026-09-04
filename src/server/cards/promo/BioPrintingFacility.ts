@@ -12,7 +12,7 @@ export class BioPrintingFacility extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.BIO_PRINTING_FACILITY,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 7,
 
       action: {

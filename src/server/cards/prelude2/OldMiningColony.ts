@@ -10,7 +10,7 @@ export class OldMiningColony extends PreludeCard {
   constructor() {
     super({
       name: CardName.OLD_MINING_COLONY,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
 
       behavior: {
         production: {titanium: 1},

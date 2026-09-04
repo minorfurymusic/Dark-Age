@@ -13,7 +13,7 @@ export class AsteroidResources extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.ASTEROID_RESOURCES,
       cost: 17,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       reserveUnits: {energy: 3},
       victoryPoints: 1,
 

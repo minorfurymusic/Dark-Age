@@ -12,7 +12,7 @@ export class PhysicsComplex extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.PHYSICS_COMPLEX,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 12,
 
       resourceType: CardResource.SCIENCE,

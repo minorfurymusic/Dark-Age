@@ -10,16 +10,16 @@ export class VenusWaystation extends Card implements IProjectCard {
     super({
       name: CardName.VENUS_WAYSTATION,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARÍTIMO],
       cost: 9,
       victoryPoints: 1,
 
-      cardDiscount: {tag: Tag.VENUS, amount: 2},
+      cardDiscount: {tag: Tag.COMÉRCIO, amount: 2},
       metadata: {
         cardNumber: '258',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a Venus tag, you pay 2 M€ less for it.', (eb)=> {
-            eb.tag(Tag.VENUS).startEffect.megacredits(-2);
+            eb.tag(Tag.COMÉRCIO).startEffect.megacredits(-2);
           });
         }),
       },

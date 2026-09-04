@@ -11,7 +11,7 @@ export class HydrogenProcessingPlant extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.HYDROGEN_PROCESSING_PLANT,
       cost: 9,
-      tags: [Tag.BUILDING, Tag.POWER],
+      tags: [Tag.CONSTRUÇÃO, Tag.PODER],
       requirements: {oxygen: 3},
       victoryPoints: -1,
 

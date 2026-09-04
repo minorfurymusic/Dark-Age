@@ -16,14 +16,14 @@ export class VenusInfrastructure extends GlobalEvent implements IGlobalEvent {
       behavior: {
         stock: {
           megacredits: {
-            tag: Tag.VENUS,
+            tag: Tag.COMÉRCIO,
             each: 2,
             turmoil: {max: 5, influence: {}},
           },
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.megacredits(2).slash().tag(Tag.VENUS).influence({size: Size.SMALL});
+        b.megacredits(2).slash().tag(Tag.COMÉRCIO).influence({size: Size.SMALL});
       }),
     });
   }

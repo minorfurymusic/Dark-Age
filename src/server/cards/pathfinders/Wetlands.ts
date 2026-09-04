@@ -18,7 +18,7 @@ export class Wetlands extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.WETLANDS,
-      tags: [Tag.PLANT, Tag.MARS],
+      tags: [Tag.AGRICULTURA, Tag.MARS],
       cost: 20,
       tr: {oxygen: 1, tr: 1},
       requirements: {oceans: 2},

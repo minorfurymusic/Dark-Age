@@ -12,7 +12,7 @@ export class MainBeltAsteroids extends ActivePreludeCard implements IActionCard 
   constructor() {
     super({
       name: CardName.MAIN_BELT_ASTEROIDS,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       resourceType: CardResource.ASTEROID,
       victoryPoints: {resourcesHere: {}, per: 2},
 

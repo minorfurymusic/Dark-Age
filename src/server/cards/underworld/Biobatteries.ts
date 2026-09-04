@@ -17,7 +17,7 @@ export class Biobatteries extends Card implements IProjectCard {
       name: CardName.BIOBATTERIES,
       type: CardType.AUTOMATED,
       cost: 7,
-      tags: [Tag.POWER, Tag.MICROBE],
+      tags: [Tag.PODER, Tag.BRUXARIA],
 
       behavior: {
         production: {
@@ -30,9 +30,9 @@ export class Biobatteries extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.energy(1));
           b.nbsp;
-          b.energy(1).slash().tag(Tag.MICROBE);
+          b.energy(1).slash().tag(Tag.BRUXARIA);
           b.br;
-          b.resource(CardResource.MICROBE).asterix().slash().tag(Tag.POWER);
+          b.resource(CardResource.MICROBE).asterix().slash().tag(Tag.PODER);
         }),
         description: 'Increase your energy production 1 step. Gain 1 energy ' +
           'for every microbe tag you have (including this.) For every power ' +
@@ -42,8 +42,8 @@ export class Biobatteries extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    const powerTags = player.tags.count(Tag.POWER, 'raw') + 1; // including this
-    const microbeTags = player.tags.count(Tag.MICROBE, 'raw') + 1; // including this
+    const powerTags = player.tags.count(Tag.PODER, 'raw') + 1; // including this
+    const microbeTags = player.tags.count(Tag.BRUXARIA, 'raw') + 1; // including this
     const wildTags = player.tags.count(Tag.WILD, 'raw');
 
     // `asMicrobeTags` is how many wild tags count as microbe tags; the rest count as power tags.

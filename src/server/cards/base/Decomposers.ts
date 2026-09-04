@@ -14,7 +14,7 @@ export class Decomposers extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.DECOMPOSERS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 5,
 
       resourceType: CardResource.MICROBE,
@@ -26,9 +26,9 @@ export class Decomposers extends Card implements IProjectCard {
         description: 'Requires 3% oxygen.',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play an animal, plant, or microbe tag, including this, add a microbe to this card.', (be) => {
-            be.tag(Tag.ANIMAL).slash();
-            be.tag(Tag.PLANT).slash();
-            be.tag(Tag.MICROBE);
+            be.tag(Tag.PECUÁRIA).slash();
+            be.tag(Tag.AGRICULTURA).slash();
+            be.tag(Tag.BRUXARIA);
             be.startEffect.resource(CardResource.MICROBE);
           }).br;
           b.vpText('1 VP per 3 microbes on this card.');
@@ -37,11 +37,11 @@ export class Decomposers extends Card implements IProjectCard {
     });
   }
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    const qty = player.tags.cardTagCount(card, [Tag.ANIMAL, Tag.PLANT, Tag.MICROBE]);
+    const qty = player.tags.cardTagCount(card, [Tag.PECUÁRIA, Tag.AGRICULTURA, Tag.BRUXARIA]);
     player.addResourceTo(this, {qty, log: true});
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag): void {
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
   }

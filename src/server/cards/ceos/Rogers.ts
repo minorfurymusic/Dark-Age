@@ -17,9 +17,9 @@ export class Rogers extends CeoCard {
         renderData: CardRenderer.builder((b) => {
           b.opgArrow().text('ACTIVATE THE BELOW ABILITY');
           b.br;
-          b.tag(Tag.VENUS).colon().projectRequirements();
+          b.tag(Tag.COMÉRCIO).colon().projectRequirements();
           b.br;
-          b.tag(Tag.VENUS).colon().megacredits(-3);
+          b.tag(Tag.COMÉRCIO).colon().megacredits(-3);
         }),
         description: 'Ignore global requirements for your Venus cards THIS GENERATION. When you play a Venus tag THIS GENERATION, you pay 3 M€ less for it.',
       },
@@ -44,6 +44,6 @@ export class Rogers extends CeoCard {
     if (this.opgActionIsActive === false) {
       return 0;
     }
-    return card.tags.filter((tag) => tag === Tag.VENUS).length * 3;
+    return card.tags.filter((tag) => tag === Tag.COMÉRCIO).length * 3;
   }
 }

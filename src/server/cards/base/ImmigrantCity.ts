@@ -20,7 +20,7 @@ export class ImmigrantCity extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.IMMIGRANT_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 13,
 
       metadata: {

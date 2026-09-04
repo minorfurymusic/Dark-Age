@@ -15,7 +15,7 @@ export class UndergroundResearchCenter extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.UNDERGROUND_RESEARCH_CENTER,
-      tags: [Tag.WILD, Tag.BUILDING],
+      tags: [Tag.WILD, Tag.CONSTRUÇÃO],
       cost: 12,
 
       requirements: {undergroundTokens: 4},

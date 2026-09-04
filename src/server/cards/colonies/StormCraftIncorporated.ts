@@ -15,7 +15,7 @@ export class StormCraftIncorporated extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.STORMCRAFT_INCORPORATED,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       startingMegaCredits: 48,
       resourceType: CardResource.FLOATER,
 

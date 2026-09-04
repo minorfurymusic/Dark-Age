@@ -16,7 +16,7 @@ export class Factorum extends CorporationCard implements ICorporationCard, IActi
   constructor() {
     super({
       name: CardName.FACTORUM,
-      tags: [Tag.POWER, Tag.BUILDING],
+      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
       startingMegaCredits: 37,
 
       behavior: {
@@ -32,7 +32,7 @@ export class Factorum extends CorporationCard implements ICorporationCard, IActi
             ce.vSpace(Size.LARGE);
             ce.action('Increase your energy production 1 step IF YOU HAVE NO ENERGY RESOURCES, or spend 3M€ to draw a building card.', (eb) => {
               eb.empty().arrow().production((pb) => pb.energy(1)).asterix();
-              eb.or().megacredits(3).startAction.cards(1, {secondaryTag: Tag.BUILDING});
+              eb.or().megacredits(3).startAction.cards(1, {secondaryTag: Tag.CONSTRUÇÃO});
             });
           });
         }),
@@ -56,7 +56,7 @@ export class Factorum extends CorporationCard implements ICorporationCard, IActi
     const drawBuildingCard = new SelectOption('Spend 3 M€ to draw a building card', 'Draw card')
       .andThen(() => {
         player.game.defer(new SelectPaymentDeferred(player, 3, {title: TITLES.payForCardAction(this.name)}))
-          .andThen(() => player.drawCard(1, {tag: Tag.BUILDING}));
+          .andThen(() => player.drawCard(1, {tag: Tag.CONSTRUÇÃO}));
         return undefined;
       });
 

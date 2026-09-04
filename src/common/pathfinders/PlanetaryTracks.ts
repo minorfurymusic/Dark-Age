@@ -1,11 +1,12 @@
 import {PlanetaryTrack, TrackBuilder} from './PlanetaryTrack';
+import {Tag} from '../cards/Tag';
 
 export type PlanetaryTracks = Readonly<{
-    venus: PlanetaryTrack,
-    earth: PlanetaryTrack,
-    mars: PlanetaryTrack,
-    jovian: PlanetaryTrack,
-    moon: PlanetaryTrack,
+    [Tag.COMÉRCIO]: PlanetaryTrack,
+    [Tag.DIPLOMACIA]: PlanetaryTrack,
+    [Tag.MARS]: PlanetaryTrack,
+    [Tag.ENGENHO]: PlanetaryTrack,
+    [Tag.MOON]: PlanetaryTrack,
 }>;
 
 const venus = new TrackBuilder(17)
@@ -55,9 +56,9 @@ const moon = new TrackBuilder(20)
   .build();
 
 export const PLANETARY_TRACKS: PlanetaryTracks = {
-  venus,
-  earth,
-  mars,
-  jovian,
-  moon,
+  [Tag.COMÉRCIO]: venus,
+  [Tag.DIPLOMACIA]: earth,
+  [Tag.MARS]: mars,
+  [Tag.ENGENHO]: jovian,
+  [Tag.MOON]: moon,
 } as const;

@@ -7,7 +7,7 @@ export class VenusL1Shade extends PreludeCard {
   constructor() {
     super({
       name: CardName.VENUS_L1_SHADE,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       behavior: {
         global: {venus: 3},
       },

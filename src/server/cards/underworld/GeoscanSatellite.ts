@@ -15,7 +15,7 @@ export class GeoscanSatellite extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.GEOSCAN_SATELLITE,
       cost: 8,
-      tags: [Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO],
 
       metadata: {
         cardNumber: 'U002',

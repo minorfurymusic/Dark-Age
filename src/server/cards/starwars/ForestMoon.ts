@@ -13,7 +13,7 @@ export class ForestMoon extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.FOREST_MOON,
-      tags: [Tag.PLANT, Tag.ANIMAL],
+      tags: [Tag.AGRICULTURA, Tag.PECUÁRIA],
       cost: 15,
       requirements: {greeneries: 4, all},
       victoryPoints: 1,

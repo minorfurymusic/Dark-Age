@@ -7,7 +7,7 @@ export class Supplier extends PreludeCard {
   constructor() {
     super({
       name: CardName.SUPPLIER,
-      tags: [Tag.POWER],
+      tags: [Tag.PODER],
 
       behavior: {
         production: {energy: 2},

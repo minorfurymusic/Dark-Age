@@ -19,7 +19,7 @@ export class CuriosityII extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.CURIOSITY_II,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       startingMegaCredits: 40,
 
       behavior: {

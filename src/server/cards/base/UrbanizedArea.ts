@@ -18,7 +18,7 @@ export class UrbanizedArea extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.URBANIZED_AREA,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 10,
 
       behavior: {

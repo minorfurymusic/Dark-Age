@@ -727,7 +727,7 @@ export class Player implements IPlayer {
     });
 
     // TODO(kberg): put this in a callback.
-    if (card.tags.includes(Tag.SPACE) && PartyHooks.shouldApplyPolicy(this, PartyName.UNITY, 'up04')) {
+    if (card.tags.includes(Tag.MARÍTIMO) && PartyHooks.shouldApplyPolicy(this, PartyName.UNITY, 'up04')) {
       cost -= 2;
     }
 
@@ -737,17 +737,17 @@ export class Player implements IPlayer {
   private paymentOptionsForCard(card: IProjectCard): PaymentOptions {
     return {
       heat: this.canUseHeatAsMegaCredits,
-      steel: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.BUILDING),
-      plants: card.tags.includes(Tag.BUILDING) && this.playedCards.has(CardName.MARTIAN_LUMBER_CORP),
-      titanium: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.SPACE),
+      steel: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.CONSTRUÇÃO),
+      plants: card.tags.includes(Tag.CONSTRUÇÃO) && this.playedCards.has(CardName.MARTIAN_LUMBER_CORP),
+      titanium: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.MARÍTIMO),
       lunaTradeFederationTitanium: this.canUseTitaniumAsMegacredits,
-      seeds: card.tags.includes(Tag.PLANT) || card.name === CardName.GREENERY_STANDARD_PROJECT,
-      floaters: card.tags.includes(Tag.VENUS),
-      microbes: card.tags.includes(Tag.PLANT),
+      seeds: card.tags.includes(Tag.AGRICULTURA) || card.name === CardName.GREENERY_STANDARD_PROJECT,
+      floaters: card.tags.includes(Tag.COMÉRCIO),
+      microbes: card.tags.includes(Tag.AGRICULTURA),
       lunaArchivesScience: card.tags.includes(Tag.MOON),
       spireScience: card.type === CardType.STANDARD_PROJECT,
       auroraiData: card.type === CardType.STANDARD_PROJECT,
-      graphene: card.tags.includes(Tag.CITY) || card.tags.includes(Tag.SPACE),
+      graphene: card.tags.includes(Tag.FEUDO) || card.tags.includes(Tag.MARÍTIMO),
       kuiperAsteroids: card.name === CardName.AQUIFER_STANDARD_PROJECT || card.name === CardName.ASTEROID_STANDARD_PROJECT,
     };
   }
@@ -1238,7 +1238,7 @@ export class Player implements IPlayer {
     }
 
     const pharmacyUnion = this.tableau.get(CardName.PHARMACY_UNION);
-    if ((pharmacyUnion?.resourceCount ?? 0 > 0) && this.tags.cardHasTag(card, Tag.SCIENCE)) {
+    if ((pharmacyUnion?.resourceCount ?? 0 > 0) && this.tags.cardHasTag(card, Tag.ERUDIÇÃO)) {
       trSource.tr = (trSource.tr ?? 0) + 1;
     }
 
@@ -1267,7 +1267,7 @@ export class Player implements IPlayer {
       card.additionalProjectCosts = card.additionalProjectCosts ?? {};
       card.additionalProjectCosts.redsCost = canAfford.redsCost;
     }
-    if (this.playedCards.has(CardName.PHARMACY_UNION) && card.tags.includes(Tag.MICROBE)) {
+    if (this.playedCards.has(CardName.PHARMACY_UNION) && card.tags.includes(Tag.BRUXARIA)) {
       const pharmacyUnion = this.tableau.get(CardName.PHARMACY_UNION);
       if (pharmacyUnion?.isDisabled === false) {
         card.addWarning('pharmacyUnion');

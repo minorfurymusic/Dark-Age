@@ -14,7 +14,7 @@ export class ThiolavaVents extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.THIOLAVA_VENTS,
       cost: 13,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       resourceType: CardResource.MICROBE,
 
       requirements: {oceans: 1},

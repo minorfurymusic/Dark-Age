@@ -9,7 +9,7 @@ export class CopernicusSolarArrays extends Card {
     super({
       name: CardName.COPERNICUS_SOLAR_ARRAYS,
       type: CardType.AUTOMATED,
-      tags: [Tag.POWER, Tag.SPACE],
+      tags: [Tag.PODER, Tag.MARÍTIMO],
       cost: 8,
       reserveUnits: {titanium: 1},
 

@@ -10,7 +10,7 @@ export class DeuteriumExport extends ActionCard {
     super({
       name: CardName.DEUTERIUM_EXPORT,
       type: CardType.ACTIVE,
-      tags: [Tag.SPACE, Tag.VENUS, Tag.POWER],
+      tags: [Tag.MARÍTIMO, Tag.COMÉRCIO, Tag.PODER],
       cost: 11,
       resourceType: CardResource.FLOATER,
 

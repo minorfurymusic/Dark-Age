@@ -17,7 +17,7 @@ export class MartianRepository extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.MARTIAN_REPOSITORY,
       cost: 12,
-      tags: [Tag.MARS, Tag.MARS, Tag.BUILDING],
+      tags: [Tag.MARS, Tag.MARS, Tag.CONSTRUÇÃO],
       resourceType: CardResource.DATA,
 
       victoryPoints: {resourcesHere: {}, per: 3},
@@ -26,7 +26,7 @@ export class MartianRepository extends Card implements IProjectCard {
         cardNumber: 'Pf29',
         renderData: CardRenderer.builder((b) => {
           b.effect('For every science or Mars tag you play (including these) add 1 data to this card.', (eb) => {
-            eb.tag(Tag.SCIENCE).tag(Tag.MARS).startEffect.resource(CardResource.DATA);
+            eb.tag(Tag.ERUDIÇÃO).tag(Tag.MARS).startEffect.resource(CardResource.DATA);
           }).br;
           b.minus().production((pb) => pb.energy(1));
         }),
@@ -50,14 +50,14 @@ export class MartianRepository extends Card implements IProjectCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const qty = player.tags.cardTagCount(card, Tag.SCIENCE) + player.tags.cardTagCount(card, Tag. MARS);
+    const qty = player.tags.cardTagCount(card, Tag.ERUDIÇÃO) + player.tags.cardTagCount(card, Tag. MARS);
     if (qty > 0) {
       player.addResourceTo(this, {qty, log: true});
     }
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
   }

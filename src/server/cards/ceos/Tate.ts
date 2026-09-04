@@ -31,7 +31,7 @@ export class Tate extends CeoCard {
     const game = player.game;
     const tags = [...game.tags];
     inplaceRemove(tags, Tag.WILD);
-    inplaceRemove(tags, Tag.EVENT);
+    inplaceRemove(tags, Tag.HISTÓRIA);
     inplaceRemove(tags, Tag.CLONE);
 
     const options = tags.map((tag) => {

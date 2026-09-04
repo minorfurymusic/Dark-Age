@@ -9,7 +9,7 @@ export class RimFreighters extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 4,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.RIM_FREIGHTERS,
       type: CardType.ACTIVE,
 

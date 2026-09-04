@@ -11,7 +11,7 @@ export class ArtificialLake extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ARTIFICIAL_LAKE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 15,
       victoryPoints: 1,
 

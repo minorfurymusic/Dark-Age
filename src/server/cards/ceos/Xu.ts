@@ -12,13 +12,13 @@ export class Xu extends CeoCard {
   constructor() {
     super({
       name: CardName.XU,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
 
       metadata: {
         cardNumber: 'L37',
         renderData: CardRenderer.builder((b) => {
-          b.opgArrow().tag(Tag.VENUS, {all}).colon().megacredits(2).br;
-          b.text('Most').tag(Tag.VENUS).colon().megacredits(8);
+          b.opgArrow().tag(Tag.COMÉRCIO, {all}).colon().megacredits(2).br;
+          b.text('Most').tag(Tag.COMÉRCIO).colon().megacredits(8);
           b.br;
         }),
         description: 'Once per game, gain 2 M€ for each Venus tag in play. Gain an additional 8 M€ if you have the most Venus tags in play.',
@@ -31,13 +31,13 @@ export class Xu extends CeoCard {
     const players = player.game.players;
 
     // If the player being counted is Me, include Wild tags. Dont include opponent wild tags
-    const counts = players.map((p) => p.tags.count(Tag.VENUS, player.id === p.id ? 'default' : 'raw'));
+    const counts = players.map((p) => p.tags.count(Tag.COMÉRCIO, player.id === p.id ? 'default' : 'raw'));
 
     const total = sum(counts);
     player.stock.add(Resource.MEGACREDITS, total * 2, {log: true});
 
     const maxPlayerVenusTagCount = Math.max(...counts);
-    if (maxPlayerVenusTagCount === player.tags.count(Tag.VENUS)) {
+    if (maxPlayerVenusTagCount === player.tags.count(Tag.COMÉRCIO)) {
       player.stock.add(Resource.MEGACREDITS, 8, {log: true});
     }
 

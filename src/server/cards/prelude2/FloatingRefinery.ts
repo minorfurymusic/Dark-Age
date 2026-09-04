@@ -13,11 +13,11 @@ export class FloatingRefinery extends ActionCard implements IProjectCard, IActio
       type: CardType.ACTIVE,
       name: CardName.FLOATING_REFINERY,
       cost: 7,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       resourceType: CardResource.FLOATER,
 
       behavior: {
-        addResources: {tag: Tag.VENUS},
+        addResources: {tag: Tag.COMÉRCIO},
       },
 
       action: {
@@ -45,7 +45,7 @@ export class FloatingRefinery extends ActionCard implements IProjectCard, IActio
 
           b.plainText('Action: Add 1 floater here, or remove 2 floaters from ANY CARD to gain 1 titanium and 2 M€.', /* parens */ true);
           b.br;
-          b.resource(CardResource.FLOATER, 1).slash().tag(Tag.VENUS);
+          b.resource(CardResource.FLOATER, 1).slash().tag(Tag.COMÉRCIO);
         }),
         description: 'Add 1 floater here for each Venus tag you have.',
       },

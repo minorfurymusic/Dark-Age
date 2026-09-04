@@ -13,7 +13,7 @@ export class DarksideMiningSyndicate extends Card implements IProjectCard {
     super({
       name: CardName.DARKSIDE_MINING_SYNDICATE,
       type: CardType.AUTOMATED,
-      tags: [Tag.MOON, Tag.SPACE],
+      tags: [Tag.MOON, Tag.MARÍTIMO],
       cost: 18,
       tr: {moonMining: 1},
 

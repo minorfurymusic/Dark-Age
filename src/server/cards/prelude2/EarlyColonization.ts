@@ -9,7 +9,7 @@ import {Size} from '../../../common/cards/render/Size';
 export class EarlyColonization extends PreludeCard {
   constructor() {
     super({
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.EARLY_COLONIZATION,
 
       behavior: {

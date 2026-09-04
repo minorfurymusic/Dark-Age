@@ -57,7 +57,7 @@ export class ColoniesHandler {
         return true;
       }
     }
-    if (colony.name === ColonyName.VENUS && card.tags.includes(Tag.VENUS) && card.resourceType !== undefined) {
+    if (colony.name === ColonyName.VENUS && card.tags.includes(Tag.COMÉRCIO) && card.resourceType !== undefined) {
       return true;
     }
     return false;

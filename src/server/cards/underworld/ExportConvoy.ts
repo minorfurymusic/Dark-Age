@@ -19,7 +19,7 @@ export class ExportConvoy extends Card implements IProjectCard {
       name: CardName.EXPORT_CONVOY,
       type: CardType.EVENT,
       cost: 6,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       victoryPoints: -1,
 
       metadata: {

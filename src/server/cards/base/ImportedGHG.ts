@@ -10,7 +10,7 @@ export class ImportedGHG extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.IMPORTED_GHG,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 7,
 
       behavior: {

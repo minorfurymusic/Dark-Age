@@ -11,7 +11,7 @@ export class Potatoes extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.POTATOES,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 2,
 
       behavior: {

@@ -11,18 +11,18 @@ export class BatteryFactory extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.BATTERY_FACTORY,
       cost: 8,
-      tags: [Tag.POWER, Tag.BUILDING],
+      tags: [Tag.PODER, Tag.CONSTRUÇÃO],
 
       action: {
         spend: {energy: 1},
-        stock: {megacredits: {tag: Tag.POWER}},
+        stock: {megacredits: {tag: Tag.PODER}},
       },
 
       metadata: {
         cardNumber: 'U075',
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 1 energy to gain 1 M€ for each power tag you have.',
-            (ab) => ab.energy(1).startAction.megacredits(1).slash().tag(Tag.POWER));
+            (ab) => ab.energy(1).startAction.megacredits(1).slash().tag(Tag.PODER));
         }),
       },
     });

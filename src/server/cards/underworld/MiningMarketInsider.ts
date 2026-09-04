@@ -15,7 +15,7 @@ export class MiningMarketInsider extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.MINING_MARKET_INSIDER,
       cost: 5,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       resourceType: CardResource.DATA,
 
       action: {

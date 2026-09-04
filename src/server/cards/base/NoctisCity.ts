@@ -16,7 +16,7 @@ export class NoctisCity extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.NOCTIS_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 18,
 
       behavior: {

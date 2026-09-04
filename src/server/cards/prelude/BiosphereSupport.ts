@@ -7,7 +7,7 @@ export class BiosphereSupport extends PreludeCard {
   constructor() {
     super({
       name: CardName.BIOSPHERE_SUPPORT,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
 
       behavior: {
         production: {plants: 2, megacredits: -1},

@@ -11,7 +11,7 @@ export class WaterSplittingPlant extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.WATER_SPLITTING_PLANT,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 12,
 
       action: {

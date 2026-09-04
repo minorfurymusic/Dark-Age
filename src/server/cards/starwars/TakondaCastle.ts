@@ -9,17 +9,17 @@ export class TakondaCastle extends Card {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TAKONDA_CASTLE,
-      tags: [Tag.POWER, Tag.PLANT],
+      tags: [Tag.PODER, Tag.AGRICULTURA],
       cost: 2,
 
       behavior: {
-        stock: {megacredits: {tag: [Tag.MICROBE, Tag.ANIMAL]}},
+        stock: {megacredits: {tag: [Tag.BRUXARIA, Tag.PECUÁRIA]}},
       },
 
       metadata: {
         cardNumber: 'SW07',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(1).slash().tag(Tag.MICROBE).tag(Tag.ANIMAL);
+          b.megacredits(1).slash().tag(Tag.BRUXARIA).tag(Tag.PECUÁRIA);
         }),
         description: 'Gain 1 M€ for each of your microbe tags and animal tags.',
       },

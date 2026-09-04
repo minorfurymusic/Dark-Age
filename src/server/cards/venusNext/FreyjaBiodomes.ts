@@ -14,7 +14,7 @@ export class FreyjaBiodomes extends Card implements IProjectCard {
     super({
       name: CardName.FREYJA_BIODOMES,
       type: CardType.AUTOMATED,
-      tags: [Tag.PLANT, Tag.VENUS],
+      tags: [Tag.AGRICULTURA, Tag.COMÉRCIO],
       cost: 14,
 
       requirements: {venus: 10},
@@ -27,7 +27,7 @@ export class FreyjaBiodomes extends Card implements IProjectCard {
       metadata: {
         cardNumber: '227',
         renderData: CardRenderer.builder((b) => {
-          b.resource(CardResource.MICROBE, {amount: 2, secondaryTag: Tag.VENUS}).or().resource(CardResource.ANIMAL, {amount: 2, secondaryTag: Tag.VENUS}).br;
+          b.resource(CardResource.MICROBE, {amount: 2, secondaryTag: Tag.COMÉRCIO}).or().resource(CardResource.ANIMAL, {amount: 2, secondaryTag: Tag.COMÉRCIO}).br;
           b.production((pb) => pb.minus().energy(1).nbsp.plus().megacredits(2));
         }),
         description: {
@@ -40,7 +40,7 @@ export class FreyjaBiodomes extends Card implements IProjectCard {
   public getResCards(player: IPlayer): ICard[] {
     let resourceCards = player.getResourceCards(CardResource.ANIMAL);
     resourceCards = resourceCards.concat(player.getResourceCards(CardResource.MICROBE));
-    return resourceCards.filter((card) => card.tags.includes(Tag.VENUS));
+    return resourceCards.filter((card) => card.tags.includes(Tag.COMÉRCIO));
   }
 
   public override bespokePlay(player: IPlayer) {

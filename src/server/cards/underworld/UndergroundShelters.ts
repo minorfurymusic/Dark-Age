@@ -15,7 +15,7 @@ export class UndergroundShelters extends Card implements IProjectCard, IActionCa
       type: CardType.ACTIVE,
       name: CardName.UNDERGROUND_SHELTERS,
       cost: 14,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       victoryPoints: 'special',
 
       behavior: {

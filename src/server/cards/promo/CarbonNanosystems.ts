@@ -14,7 +14,7 @@ export class CarbonNanosystems extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.CARBON_NANOSYSTEMS,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 14,
       victoryPoints: 1,
       resourceType: CardResource.GRAPHENE,
@@ -22,20 +22,20 @@ export class CarbonNanosystems extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'X52',
         renderData: CardRenderer.builder((b) => {
-          b.effect('When you play a science tag, including this, add a graphene resource here.', (eb) => eb.tag(Tag.SCIENCE).startEffect.resource(CardResource.GRAPHENE)).br;
-          b.effect('When playing a space or city tag, graphenes may be used as 4 M€ each.', (eb) => eb.tag(Tag.SPACE).or().tag(Tag.CITY, {size: Size.MEDIUM}).startEffect.resource(CardResource.GRAPHENE).equals().megacredits(4)).br;
+          b.effect('When you play a science tag, including this, add a graphene resource here.', (eb) => eb.tag(Tag.ERUDIÇÃO).startEffect.resource(CardResource.GRAPHENE)).br;
+          b.effect('When playing a space or city tag, graphenes may be used as 4 M€ each.', (eb) => eb.tag(Tag.MARÍTIMO).or().tag(Tag.FEUDO, {size: Size.MEDIUM}).startEffect.resource(CardResource.GRAPHENE).equals().megacredits(4)).br;
         }),
       },
     });
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const qty = player.tags.cardTagCount(card, Tag.SCIENCE);
+    const qty = player.tags.cardTagCount(card, Tag.ERUDIÇÃO);
     player.addResourceTo(this, {qty: qty, log: true});
     return undefined;
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
   }

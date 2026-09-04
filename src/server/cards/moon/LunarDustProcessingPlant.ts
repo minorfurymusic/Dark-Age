@@ -10,7 +10,7 @@ export class LunarDustProcessingPlant extends Card implements IProjectCard {
     super({
       name: CardName.LUNAR_DUST_PROCESSING_PLANT,
       type: CardType.ACTIVE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 6,
       reserveUnits: {titanium: 1},
 

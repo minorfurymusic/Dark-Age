@@ -10,7 +10,7 @@ export class FoodFactory extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.FOOD_FACTORY,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 12,
 
       behavior: {

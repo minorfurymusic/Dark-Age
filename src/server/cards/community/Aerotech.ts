@@ -13,7 +13,7 @@ export class Aerotech extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.AEROTECH,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegaCredits: 48,
 
       metadata: {

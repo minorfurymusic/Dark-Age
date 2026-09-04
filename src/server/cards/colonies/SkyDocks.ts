@@ -9,7 +9,7 @@ export class SkyDocks extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 18,
-      tags: [Tag.SPACE, Tag.EARTH],
+      tags: [Tag.MARÍTIMO, Tag.DIPLOMACIA],
       name: CardName.SKY_DOCKS,
       type: CardType.ACTIVE,
       victoryPoints: 2,
@@ -18,7 +18,7 @@ export class SkyDocks extends Card implements IProjectCard {
         colonies: {addTradeFleet: 1},
       },
 
-      requirements: {tag: Tag.EARTH, count: 2},
+      requirements: {tag: Tag.DIPLOMACIA, count: 2},
       cardDiscount: {amount: 1},
       metadata: {
         cardNumber: 'C36',

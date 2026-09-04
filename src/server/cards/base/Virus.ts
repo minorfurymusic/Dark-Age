@@ -18,7 +18,7 @@ export class Virus extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.VIRUS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 1,
 
       metadata: {

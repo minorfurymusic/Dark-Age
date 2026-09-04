@@ -12,13 +12,13 @@ export class CoronaExtractor extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.CORONA_EXTRACTOR,
       cost: 10,
-      tags: [Tag.SPACE, Tag.POWER],
+      tags: [Tag.MARÍTIMO, Tag.PODER],
 
       behavior: {
         production: {energy: 4},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 4},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 4},
       metadata: {
         cardNumber: 'C06',
         description: 'Requires 4 science tags. Increase your energy production 4 steps.',
