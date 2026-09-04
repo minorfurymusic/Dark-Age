@@ -351,7 +351,28 @@ export class Colonies {
         b.player(attacker).spaceId(city.id).number(distance).number(cost));
     }
 
-    // TODO Phase 13.11: Add defender allocation and combat resolution
+    this.resolveCombat(attacker, defender, city, cost, auraBonus);
+  }
+
+  private resolveCombat(attacker: IPlayer, defender: IPlayer, city: Space, attackerGuerrear: number, auraBonus: number): void {
+    const game = this.player.game;
+    const defenderGuerrear = defender.allocatedGuerear;
+
+    game.log('${0} reveals ${1} allocated Guerrear in defense', (b) =>
+      b.player(defender).number(defenderGuerrear));
+
+    const totalAttackForce = attackerGuerrear + auraBonus;
+
+    if (totalAttackForce > defenderGuerrear) {
+      // Attack succeeds: attacker captures the city tile
+      city.player = attacker;
+      game.log('${0} conquered the feudo! Guerrear: ${1} vs ${2}', (b) =>
+        b.player(attacker).number(totalAttackForce).number(defenderGuerrear));
+    } else {
+      // Attack fails: defender holds the city
+      game.log('${0} held the feudo against ${1}! Guerrear: ${2} vs ${3}', (b) =>
+        b.player(defender).player(attacker).number(defenderGuerrear).number(totalAttackForce));
+    }
   }
 
   public getVictoryPoints(): number {
