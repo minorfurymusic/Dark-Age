@@ -1655,6 +1655,12 @@ export class Player implements IPlayer {
       action.options.push(coloniesAttackAction);
     }
 
+    // Attack cities (Saque de Feudos)
+    const coloniesAttackCityAction = this.colonies.coloniesAttackCityAction();
+    if (coloniesAttackCityAction !== undefined) {
+      action.options.push(coloniesAttackCityAction);
+    }
+
     // Add delegates
     Turmoil.ifTurmoil(this.game, (turmoil) => {
       const input = turmoil.getSendDelegateInput(this);

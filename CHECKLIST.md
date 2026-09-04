@@ -86,12 +86,24 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
     - Nuremberga (Io): 1 Inovação
     - Novgorod (Callisto): 1 Guerrear
 
-**Próximos passos (13.9+):**
-- [ ] Ataques em Feudos (custo por distância, ataque vs defesa)
+### 13.9 — Ataques em Feudos (Feud Attack)
+
+- [x] **Infraestrutura implementada**
+  - [x] Cálculo de distância em hex grid (Chebyshev distance approximation)
+  - [x] Mapeamento de custo por distância: adjacente=2, +1 por espaço (máx 6)
+  - [x] Colonies.canAttackCities() para verificar Guerrear > 0
+  - [x] Colonies.coloniesAttackCityAction() com SelectSpace
+  - [x] DistanceCalculator.calculateDistance() e getAttackCost()
+  - [x] Deducao de custo em Guerrear
+  - [x] Logging de ataque (distância, custo)
+  - [x] Integração em Player.getActions()
+
+**Próximos passos (13.10+):**
 - [ ] Aura de Estandarte (+1 combate em 3 tiles)
 - [ ] Disputa Direta (atacar jogador com menos Guerrear)
 - [ ] Rotas especiais (Pluto, Miranda, Enceladus, Titan)
 - [ ] Trilha de Guerrear (4, 7, 12 - bônus específicos)
+- [ ] Combate: revelação de Guerrear e comparação (Phase 13.10 PHASE2)
 
 ---
 

@@ -17,6 +17,9 @@ import {TradeWithDarksideSmugglersUnion} from '../cards/moon/DarksideSmugglersUn
 import {Payment} from '../../common/inputs/Payment';
 import {TradeWithHectateSpeditions} from '../cards/underworld/HecateSpeditions';
 import {ColonyName} from '../../../src/common/colonies/ColonyName';
+import {SelectSpace} from '../inputs/SelectSpace';
+import {calculateDistance, getAttackCost} from '../boards/DistanceCalculator';
+import {Space} from '../boards/Space';
 
 export class Colonies {
   private player: IPlayer;
@@ -197,6 +200,76 @@ export class Colonies {
         }
         return true;
       });
+  }
+
+  /**
+   * Returns `true` if this player can attack cities (has Guerrear allocated).
+   */
+  public canAttackCities(): boolean {
+    return this.player.allocatedGuerear > 0;
+  }
+
+  /**
+   * Get all enemy cities that can be attacked.
+   */
+  private getAttackableCities() {
+    const game = this.player.game;
+    const board = game.board;
+    return board.spaces.filter((space) => {
+      if (!space.tile || space.player === undefined || space.player === this.player) {
+        return false;
+      }
+      return space.player !== this.player;
+    });
+  }
+
+  public coloniesAttackCityAction(): SelectSpace | undefined {
+    const game = this.player.game;
+    if (!game.gameOptions.coloniesExtension || !this.canAttackCities()) {
+      return undefined;
+    }
+
+    const attackableCities = this.getAttackableCities();
+    if (attackableCities.length === 0) {
+      return undefined;
+    }
+
+    return new SelectSpace('Select a feudo (city) to attack', attackableCities)
+      .andThen((city) => {
+        this.attackCity(city);
+        return undefined;
+      });
+  }
+
+  private attackCity(city: Space): void {
+    const player = this.player;
+    const game = player.game;
+    const attacker = player;
+    const defender = city.player;
+
+    if (!defender) return;
+
+    // Find attacker's city/base for distance calculation
+    const attackerBase = game.board.spaces.find((s) =>
+      s.player === attacker && s.tile && s.x !== -1 && s.y !== -1);
+
+    if (!attackerBase) return;
+
+    const distance = calculateDistance(attackerBase, city);
+    const cost = getAttackCost(distance);
+
+    if (cost === 999 || attacker.allocatedGuerear < cost) {
+      game.log('${0} cannot attack ${1} (insufficient Guerrear)', (b) => b.player(attacker).spaceId(city.id));
+      return;
+    }
+
+    // Deduct cost
+    attacker.stock.deduct(Resource.GUERREAR, cost);
+
+    game.log('${0} attacked ${1} (distance ${2}, cost ${3} Guerrear)', (b) =>
+      b.player(attacker).spaceId(city.id).number(distance).number(cost));
+
+    // TODO Phase 13.10: Add defender allocation and combat resolution
   }
 
   public getVictoryPoints(): number {
