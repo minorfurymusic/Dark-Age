@@ -642,6 +642,12 @@ export class Player implements IPlayer {
         card.opgActionIsActive = false;
       }
     }
+
+    // Reset allocated Guerrear for next generation (Phase 13.17)
+    if (this.allocatedGuerear > 0) {
+      this.game.log('${0} resolves allocated Guerrear for next generation', (b) => b.player(this));
+      this.allocatedGuerear = 0;
+    }
   }
 
   /**
