@@ -50,8 +50,8 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
 
 - [x] Trilha Marítimo (Documento 3, seção 11) — DECIDIDO nesta rodada, 19 níveis com espaçamento ~3.
 - [x] Conteúdo das 80 cartas de Juramento (Documento 3, seção 5-6) — criadas via AllOaths.ts com factory batch. Descrições temáticas implementadas. isCompleted() placeholder pronto para refinamento.
-- [ ] Confirmar se o sistema de lobby dos Sussurradores muda de mecânica ou só de nome (Documento 3, seção 8).
-- [ ] Renomear ocorrências do nome de carta "Feitoria X" (ex.: *Feitoria Mercantil*, *Feitoria Gélida*, *Feitoria Vital*) para usar "Rota Comercial" também no nome da carta, não só no texto do efeito.
+- [x] Confirmar se o sistema de lobby dos Sussurradores muda de mecânica ou só de nome (Documento 3, seção 8) — Mecânica já discussa, definições documentadas.
+- [x] Renomear ocorrências do nome de carta "Feitoria X" (ex.: *Feitoria Mercantil*, *Feitoria Gélida*, *Feitoria Vital*) para usar "Rota Comercial" também no nome da carta — Todas as colonias-feitorias já renomeadas para Rota Comercial.
 
 ---
 
