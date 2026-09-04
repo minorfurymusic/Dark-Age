@@ -38,7 +38,6 @@ export class AgricolaInc extends CorporationCard implements ICorporationCard {
 
   public override getVictoryPoints(player: IPlayer): number {
     const scorableTags = [...player.game.tags];
-    inplaceRemove(scorableTags, Tag.WILD);
     inplaceRemove(scorableTags, Tag.HISTÓRIA);
     inplaceRemove(scorableTags, Tag.CLONE);
 

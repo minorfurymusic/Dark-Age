@@ -24,7 +24,7 @@ export class PublicSponsoredGrant extends Card implements IProjectCard {
         cardNumber: 'PfTVD',
         renderData: CardRenderer.builder((b) => {
           b.minus().megacredits(2, {all}).br;
-          b.cards(1, {secondaryTag: Tag.WILD}).cards(1, {secondaryTag: Tag.WILD}).asterix();
+          b.cards(2).asterix();
         }),
         description: 'Requires Scientists are ruling or that you have 2 delegates there. All players lose 2M€. Choose a tag (NOT CITY, ? OR PLANETARY TRACK) and draw 2 cards with that tag.',
       },
@@ -42,7 +42,6 @@ export class PublicSponsoredGrant extends Card implements IProjectCard {
 
     const tags = [...player.game.tags, Tag.HISTÓRIA];
     inplaceRemove(tags, Tag.FEUDO);
-    inplaceRemove(tags, Tag.WILD);
     inplaceRemove(tags, Tag.CLONE);
 
     inplaceRemove(tags, Tag.DIPLOMACIA);
