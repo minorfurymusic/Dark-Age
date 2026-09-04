@@ -33,6 +33,7 @@ import {GlobalParameter} from '../common/GlobalParameter';
 import {UnderworldData} from './underworld/UnderworldData';
 import {OrOptions} from './inputs/OrOptions';
 import {IStandardProjectCard} from './cards/IStandardProjectCard';
+import {OathDealer} from './oaths/OathDealer';
 
 export interface Score {
   corporation: String;
@@ -85,6 +86,7 @@ export interface IGame extends Logger {
   moonData: MoonData | undefined;
   pathfindersData: PathfindersData | undefined;
   underworldData: UnderworldData;
+  oathDealer: OathDealer | undefined;
 
   // Card-specific data
 

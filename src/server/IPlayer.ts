@@ -36,6 +36,7 @@ import {PlayedCards} from './cards/PlayedCards';
 import {From} from './logs/From';
 import {Tag} from '../common/cards/Tag';
 import {SelectStandardProjectToPlay} from './inputs/SelectStandardProjectToPlay';
+import {IOath} from './oaths/IOath';
 
 /**
  * Represents additional costs a player must pay to execute an action.
@@ -121,6 +122,9 @@ export interface IPlayer {
   draftedCards: Array<IProjectCard>;
   /** true when this player is drafting, false when player is not, undefined when there is no draft phase. */
   needsToDraft?: boolean;
+
+  /** Oaths this player has selected */
+  oaths: Array<IOath>;
 
   timer: Timer;
 
