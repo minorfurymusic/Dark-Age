@@ -19,7 +19,6 @@ import {Venus} from '../cards/community/Venus';
 import {Leavitt} from '../cards/community/Leavitt';
 import {Pallas} from '../cards/community/Pallas';
 import {GameModule} from '../../common/cards/GameModule';
-import {IapetusII} from '../cards/pathfinders/IapetusII';
 import {Deimos} from './Deimos';
 import {Terra} from '../cards/community/Terra';
 import {Kuiper} from '../cards/community/Kuiper';
@@ -59,7 +58,7 @@ export const COMMUNITY_COLONIES_TILES: Array<IColonyFactory<Colony>> = [
 
 export const PATHFINDERS_COLONIES_TILES: Array<IColonyFactory<Colony>> = [
   // {colonyName: ColonyName.LEAVITT_II, Factory: LeavittII},
-  {colonyName: ColonyName.IAPETUS_II, Factory: IapetusII},
+  // {colonyName: ColonyName.IAPETUS_II, Factory: IapetusII}, — removed per Phase 3 (trade/commerce card rewrites)
 ];
 
 export const ALL_COLONIES_TILES = [...BASE_COLONIES_TILES, ...COMMUNITY_COLONIES_TILES, ...PATHFINDERS_COLONIES_TILES];

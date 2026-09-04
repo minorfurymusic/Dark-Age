@@ -7,7 +7,6 @@ import {ENERGY_TRADE_COST, MC_TRADE_COST, TITANIUM_TRADE_COST} from '../../commo
 import {IColony} from '../colonies/IColony';
 import {SelectPaymentDeferred} from '../deferredActions/SelectPaymentDeferred';
 import {Resource} from '../../common/Resource';
-import {TradeWithTitanFloatingLaunchPad} from '../cards/colonies/TitanFloatingLaunchPad';
 import {OrOptions} from '../inputs/OrOptions';
 import {SelectOption} from '../inputs/SelectOption';
 import {SelectColony} from '../inputs/SelectColony';
@@ -60,7 +59,6 @@ export class Colonies {
     const player = this.player;
     const handlers = [
       new TradeWithDarksideSmugglersUnion(player),
-      new TradeWithTitanFloatingLaunchPad(player),
       new TradeWithCollegiumCopernicus(player),
       new TradeWithHectateSpeditions(player),
       new TradeWithEnergy(player),
