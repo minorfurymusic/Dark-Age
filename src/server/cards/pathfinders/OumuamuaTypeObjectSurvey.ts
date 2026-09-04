@@ -52,7 +52,7 @@ export class OumuamuaTypeObjectSurvey extends Card implements IProjectCard {
       }
     }
     if (tags.includes(Tag.SPACE)) {
-      player.production.add(Resource.ENERGY, 3, {log: true});
+      player.production.add(Resource.GUERREAR, 3, {log: true});
       this.keep(player, card);
       return true;
     } else {

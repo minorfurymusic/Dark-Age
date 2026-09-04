@@ -1298,11 +1298,11 @@ export class Game implements IGame, Logger {
       // BONUS FOR HEAT PRODUCTION AT -20 and -24
       if (this.temperature < constants.TEMPERATURE_BONUS_FOR_HEAT_1 &&
         this.temperature + steps * 2 >= constants.TEMPERATURE_BONUS_FOR_HEAT_1) {
-        player.production.add(Resource.HEAT, 1, {log: true});
+        player.production.add(Resource.INOVACAO, 1, {log: true});
       }
       if (this.temperature < constants.TEMPERATURE_BONUS_FOR_HEAT_2 &&
         this.temperature + steps * 2 >= constants.TEMPERATURE_BONUS_FOR_HEAT_2) {
-        player.production.add(Resource.HEAT, 1, {log: true});
+        player.production.add(Resource.INOVACAO, 1, {log: true});
       }
 
       for (const card of player.playedCards) {
@@ -1482,7 +1482,7 @@ export class Game implements IGame, Logger {
       player.stock.add(Resource.TITANIUM, count, {log: true});
       break;
     case SpaceBonus.HEAT:
-      player.stock.add(Resource.HEAT, count, {log: true});
+      player.stock.add(Resource.INOVACAO, count, {log: true});
       break;
     case SpaceBonus.OCEAN:
       // Hellas special requirements ocean tile
@@ -1504,7 +1504,7 @@ export class Game implements IGame, Logger {
       this.defer(new AddResourcesToCard(player, CardResource.DATA, {count: count}));
       break;
     case SpaceBonus.ENERGY_PRODUCTION:
-      player.production.add(Resource.ENERGY, count, {log: true});
+      player.production.add(Resource.GUERREAR, count, {log: true});
       break;
     case SpaceBonus.SCIENCE:
       this.defer(new AddResourcesToCard(player, CardResource.SCIENCE, {count: count}));
@@ -1521,7 +1521,7 @@ export class Game implements IGame, Logger {
       }
       break;
     case SpaceBonus.ENERGY:
-      player.stock.add(Resource.ENERGY, count, {log: true});
+      player.stock.add(Resource.GUERREAR, count, {log: true});
       break;
     case SpaceBonus.ASTEROID:
       this.defer(new AddResourcesToCard(player, CardResource.ASTEROID, {count: count}));

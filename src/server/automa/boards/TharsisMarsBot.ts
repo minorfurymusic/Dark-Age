@@ -28,13 +28,13 @@ const TRACK_SCIENCE: TrackDefinition = {
 
 const TRACK_ENERGY: TrackDefinition = {
   tags: [Tag.POWER, Tag.JOVIAN],
-  productions: [Resource.ENERGY],
+  productions: [Resource.GUERREAR],
   layout: [undefined, 'advance', 'venus', 'tr3', 'venus2', 'temperature', 'advance', 'milestone', undefined, 'temperature', 'greenery', 'advance', 'ocean', undefined, 'city', 'greenery', undefined, 'temperature', 'tr8'],
 };
 
 const TRACK_EARTH: TrackDefinition = {
   tags: [Tag.EARTH, Tag.CITY],
-  productions: [Resource.HEAT],
+  productions: [Resource.INOVACAO],
   layout: [undefined, 'city', undefined, undefined, 'tr3', 'city', undefined, 'advance', 'city', 'award', 'advance', 'city', 'greenery', 'tr4', 'greenery', 'advance', undefined, 'city', 'tr7'],
 };
 

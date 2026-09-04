@@ -15,7 +15,7 @@ export class Mercury extends Colony {
         description: 'Gain 1 unit of production of the type below the track marker',
         type: ColonyBenefit.GAIN_PRODUCTION,
         resource: [
-          Resource.HEAT, Resource.HEAT, Resource.HEAT,
+          Resource.INOVACAO, Resource.INOVACAO, Resource.INOVACAO,
           Resource.STEEL, Resource.STEEL,
           Resource.TITANIUM, Resource.TITANIUM,
         ],

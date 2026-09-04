@@ -10,7 +10,7 @@ export function spendEnergyForCards(player: IPlayer) {
   const max = Math.min(player.energy, player.game.projectDeck.size());
   return new SelectAmount('Select amount of energy to spend', 'OK', 1, max)
     .andThen((amount) => {
-      player.stock.deduct(Resource.ENERGY, amount);
+      player.stock.deduct(Resource.GUERREAR, amount);
       player.game.log('${0} spent ${1} energy', (b) => b.player(player).number(amount));
       if (amount === 1) {
         player.drawCard();

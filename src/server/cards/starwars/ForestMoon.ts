@@ -19,7 +19,7 @@ export class ForestMoon extends Card implements IProjectCard {
       victoryPoints: 1,
 
       behavior: {
-        decreaseAnyProduction: {count: 2, type: Resource.ENERGY},
+        decreaseAnyProduction: {count: 2, type: Resource.GUERREAR},
         addResourcesToAnyCard: {count: 1, type: CardResource.ANIMAL},
       },
 

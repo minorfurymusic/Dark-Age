@@ -33,7 +33,7 @@ export class GlobalDustStorm extends GlobalEvent implements IGlobalEvent {
   }
   public override bespokeResolvePlayer(player: IPlayer) {
     if (player.heat > 0) {
-      player.stock.deduct(Resource.HEAT, player.heat, {log: true, from: {globalEvent: this}});
+      player.stock.deduct(Resource.INOVACAO, player.heat, {log: true, from: {globalEvent: this}});
     }
   }
 }

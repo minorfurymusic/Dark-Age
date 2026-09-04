@@ -134,7 +134,7 @@ export class MoonExpansion {
 
   private static RateData = {
     [GlobalParameter.MOON_MINING_RATE]: {field: 'miningRate', bonusAt6: Resource.TITANIUM},
-    [GlobalParameter.MOON_HABITAT_RATE]: {field: 'habitatRate', bonusAt6: Resource.ENERGY},
+    [GlobalParameter.MOON_HABITAT_RATE]: {field: 'habitatRate', bonusAt6: Resource.GUERREAR},
     [GlobalParameter.MOON_LOGISTIC_RATE]: {field: 'logisticRate', bonusAt6: Resource.STEEL},
   } as const;
 

@@ -49,7 +49,7 @@ export class Factorum extends CorporationCard implements ICorporationCard, IActi
       'Increase your energy production 1 step',
       'Increase production')
       .andThen(() => {
-        player.production.add(Resource.ENERGY, 1, {log: true});
+        player.production.add(Resource.GUERREAR, 1, {log: true});
         return undefined;
       });
 

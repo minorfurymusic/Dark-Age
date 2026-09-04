@@ -53,6 +53,6 @@ export class Voltagon extends ActiveCorporationCard {
   }
 
   onClaim(player: IPlayer) {
-    player.stock.add(Resource.ENERGY, 2, {log: true});
+    player.stock.add(Resource.GUERREAR, 2, {log: true});
   }
 }

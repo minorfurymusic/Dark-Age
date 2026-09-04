@@ -35,7 +35,7 @@ export class ToscheStation extends Card implements IActionCard, IProjectCard {
   public action(player: IPlayer) {
     return new SelectAmount('Select amount of energy to spend', 'Spend energy', 1, Math.min(player.energy, 4))
       .andThen((amount) => {
-        player.stock.deduct(Resource.ENERGY, amount);
+        player.stock.deduct(Resource.GUERREAR, amount);
         player.stock.add(Resource.PLANTS, amount - 1, {log: true});
         return undefined;
       });

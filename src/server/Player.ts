@@ -404,7 +404,7 @@ export class Player implements IPlayer {
   }
 
   public canHaveProductionReduced(resource: Resource, minQuantity: number, attacker: IPlayer) {
-    const reducable = this.production[resource] + (resource === Resource.MEGACREDITS ? 5 : 0);
+    const reducable = this.production.get(resource) + (resource === Resource.MEGACREDITS ? 5 : 0);
     if (reducable < minQuantity) {
       return false;
     }
@@ -1055,7 +1055,7 @@ export class Player implements IPlayer {
     if (stormcraft?.resourceCount > 0) {
       return stormcraft.spendHeat(this, amount, cb);
     }
-    this.stock.deduct(Resource.HEAT, amount);
+    this.stock.deduct(Resource.INOVACAO, amount);
     return cb();
   }
 

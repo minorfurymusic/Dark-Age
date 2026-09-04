@@ -76,7 +76,7 @@ export class PolderTechDutch extends CorporationCard implements ICorporationCard
       return;
     }
     if (space.tile?.tileType === TileType.OCEAN) {
-      cardOwner.stock.add(Resource.ENERGY, 1, {log: true, from: {card: this}});
+      cardOwner.stock.add(Resource.GUERREAR, 1, {log: true, from: {card: this}});
     }
     if (space.tile?.tileType === TileType.GREENERY) {
       cardOwner.stock.add(Resource.PLANTS, 1, {log: true, from: {card: this}});

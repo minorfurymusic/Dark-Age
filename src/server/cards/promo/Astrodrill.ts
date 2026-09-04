@@ -70,11 +70,11 @@ export class Astrodrill extends CorporationCard implements ICorporationCard, IAc
           return undefined;
         }),
         new SelectOption('Gain 1 energy', 'Gain energy').andThen(() => {
-          player.stock.add(Resource.ENERGY, 1, {log: true});
+          player.stock.add(Resource.GUERREAR, 1, {log: true});
           return undefined;
         }),
         new SelectOption('Gain 1 heat', 'Gain heat').andThen(() => {
-          player.stock.add(Resource.HEAT, 1, {log: true});
+          player.stock.add(Resource.INOVACAO, 1, {log: true});
           return undefined;
         }),
         new SelectOption('Gain 1 M€', 'Gain M€').andThen(() => {

@@ -64,10 +64,10 @@ export class SpecializedSettlement extends Card implements IProjectCard {
         resources.add(Resource.PLANTS);
         break;
       case SpaceBonus.ENERGY:
-        resources.add(Resource.ENERGY);
+        resources.add(Resource.GUERREAR);
         break;
       case SpaceBonus.HEAT:
-        resources.add(Resource.HEAT);
+        resources.add(Resource.INOVACAO);
         break;
       }
     });

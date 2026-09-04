@@ -57,7 +57,7 @@ export class ImmigrantCity extends Card implements IProjectCard {
   public override bespokePlay(player: IPlayer) {
     const spaces = MarsBoard.filterForEnergy(player, player.game.board.getAvailableSpacesForCity(player));
     player.game.defer(new PlaceCityTile(player, {spaces})).andThen(() => {
-      player.game.defer(new LoseProduction(player, Resource.ENERGY, {count: 1}));
+      player.game.defer(new LoseProduction(player, Resource.GUERREAR, {count: 1}));
       player.game.defer(new LoseProduction(player, Resource.MEGACREDITS, {count: 2}));
     });
     return undefined;

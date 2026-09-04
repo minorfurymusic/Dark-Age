@@ -20,7 +20,8 @@ export class Stock extends BaseStock {
     // When amount is negative, sometimes the amount being asked to be removed is more than the player has.
     // delta represents an adjusted amount which basically declares that a player cannot lose more resources
     // then they have.
-    const playerAmount = this[resource];
+    const key = this.mapResourceToKey(resource);
+    const playerAmount = this[key as keyof this] as number;
     const delta = (amount >= 0) ? amount : Math.max(amount, -playerAmount);
     // Lots of calls to addResource used to deduct resources are done by cards and/or players stealing some
     // fixed amount which, if the current player doesn't have it. it just removes as much as possible.
@@ -41,7 +42,7 @@ export class Stock extends BaseStock {
         {player: {color: this.player.color, id: this.player.id, name: this.player.name}, resource, amount});
     }
 
-    this[resource] += delta;
+    (this[key as keyof this] as any) += delta;
 
     if (options?.log === true) {
       this.logUnitDelta(resource, delta, /* production*/ false, options.from, options.stealing);
@@ -64,7 +65,8 @@ export class Stock extends BaseStock {
    * much as possible.
    */
   public steal(resource: Resource, qty: number, thief: IPlayer, options?: {log?: boolean}) {
-    const qtyToSteal = Math.min(this[resource], qty);
+    const key = this.mapResourceToKey(resource);
+    const qtyToSteal = Math.min(this[key as keyof this] as number, qty);
     if (qtyToSteal > 0) {
       this.deduct(resource, qtyToSteal, {log: options?.log ?? true, from: {player: thief}, stealing: true});
       thief.stock.add(resource, qtyToSteal);

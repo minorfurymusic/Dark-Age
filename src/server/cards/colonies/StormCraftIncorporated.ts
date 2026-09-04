@@ -71,7 +71,7 @@ export class StormCraftIncorporated extends ActiveCorporationCard {
         throw new Error('You cannot overspend floaters');
       }
       player.removeResourceFrom(this, floaterAmount);
-      player.stock.deduct(Resource.HEAT, heatAmount);
+      player.stock.deduct(Resource.INOVACAO, heatAmount);
       return cb();
     }).setTitle(message('Select how to spend ${0} heat', (b) => b.number(targetAmount)));
   }

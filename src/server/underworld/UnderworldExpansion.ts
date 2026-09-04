@@ -370,13 +370,13 @@ export class UnderworldExpansion {
       player.stock.adjust(Units.of({plants: 1, titanium: 1}), {log: true});
       break;
     case 'energy2':
-      player.stock.add(Resource.ENERGY, 2, {log: true});
+      player.stock.add(Resource.GUERREAR, 2, {log: true});
       break;
     case 'energy1production':
-      player.production.add(Resource.ENERGY, 1, {log: true});
+      player.production.add(Resource.GUERREAR, 1, {log: true});
       break;
     case 'heat2production':
-      player.production.add(Resource.HEAT, 2, {log: true});
+      player.production.add(Resource.INOVACAO, 2, {log: true});
       break;
     case 'microbe2':
       player.game.defer(new AddResourcesToCard(player, CardResource.MICROBE, {count: 2}));

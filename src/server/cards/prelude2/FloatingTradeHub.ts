@@ -11,6 +11,7 @@ import {SelectOption} from '../../inputs/SelectOption';
 import {AndOptions} from '../../inputs/AndOptions';
 import {SelectAmount} from '../../inputs/SelectAmount';
 import {SelectResource} from '../../inputs/SelectResource';
+import {Units} from '../../../common/Units';
 
 export class FloatingTradeHub extends PreludeCard implements IActionCard {
   constructor() {
@@ -49,7 +50,7 @@ export class FloatingTradeHub extends PreludeCard implements IActionCard {
       .andThen(() => {
         // TODO(kberg): Add a better log message.
         player.removeResourceFrom(this, selectAmount.selected, {log: true});
-        player.stock.add(selectResource.selected, selectAmount.selected, {log: true, from: {card: this}});
+        player.stock.add(Units.keyToResource(selectResource.selected), selectAmount.selected, {log: true, from: {card: this}});
         return undefined;
       });
     if (this.resourceCount === 0) {

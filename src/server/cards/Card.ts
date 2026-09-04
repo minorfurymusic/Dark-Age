@@ -528,7 +528,8 @@ export function productionBoxWithBonusResource(card: CardWithBonusResource) {
     {...card.defaultProductionBox} :
     {...Units.EMPTY};
   if (card.bonusResource && card.bonusResource.length === 1) {
-    units[card.bonusResource[0]] += 1;
+    const key = Units.resourceToKey(card.bonusResource[0]);
+    units[key] += 1;
   }
   return units;
 }

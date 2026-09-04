@@ -41,7 +41,7 @@ export class ThiolavaVents extends Card implements IProjectCard {
   }
 
   public onProductionGain(player: IPlayer, resource: Resource, amount: number) {
-    if (amount <= 0 || resource !== Resource.HEAT) {
+    if (amount <= 0 || resource !== Resource.INOVACAO) {
       return;
     }
     player.addResourceTo(this, {qty: amount, log: true});

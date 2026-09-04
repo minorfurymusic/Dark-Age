@@ -21,6 +21,7 @@ import {VictoryPointsBreakdownBuilder} from '../game/VictoryPointsBreakdownBuild
 import {GlobalEventName} from '../../common/turmoil/globalEvents/GlobalEventName';
 import {Priority} from '../deferredActions/Priority';
 import {message} from '../logs/MessageBuilder';
+import {Units} from '../../common/Units';
 
 export class PathfindersExpansion {
   private constructor() {
@@ -188,10 +189,10 @@ export class PathfindersExpansion {
         () => player.stock.add(Resource.MEGACREDITS, 3, {log: true}));
       break;
     case 'energy':
-      player.stock.add(Resource.ENERGY, 1, {log: true});
+      player.stock.add(Resource.GUERREAR, 1, {log: true});
       break;
     case 'energy_production':
-      player.production.add(Resource.ENERGY, 1, {log: true});
+      player.production.add(Resource.GUERREAR, 1, {log: true});
       break;
     case 'floater':
       game.defer(new AddResourcesToCard(player, CardResource.FLOATER));
@@ -200,10 +201,10 @@ export class PathfindersExpansion {
       game.defer(new PlaceGreeneryTile(player));
       break;
     case 'heat':
-      player.stock.add(Resource.HEAT, 1, {log: true});
+      player.stock.add(Resource.INOVACAO, 1, {log: true});
       break;
     case 'heat_production':
-      player.production.add(Resource.HEAT, 1, {log: true});
+      player.production.add(Resource.INOVACAO, 1, {log: true});
       break;
     case 'moon_mine':
       game.defer(new PlaceMoonMineTile(player));
@@ -224,7 +225,7 @@ export class PathfindersExpansion {
     case 'resource':
       player.defer(new SelectResource(message('Gain ${0} units of a standard resource', (b) => b.number(1)))
         .andThen((unit) => {
-          player.stock.add(unit, 1, {log: true});
+          player.stock.add(Units.keyToResource(unit), 1, {log: true});
           return undefined;
         }));
       break;

@@ -139,7 +139,7 @@ export class DeltaProjectExpansion {
     const currentPos = progress.position;
     const newPos = currentPos + steps;
 
-    player.stock.deduct(Resource.ENERGY, steps);
+    player.stock.deduct(Resource.GUERREAR, steps);
     progress.position = newPos;
 
     DeltaProjectExpansion.resolveReward(player, newPos);
@@ -166,11 +166,11 @@ export class DeltaProjectExpansion {
     case Tag.POWER: // Choose +1 energy production or +1 heat production
       player.defer(() => new OrOptions(
         new SelectOption('Increase energy production 1 step', 'Increase').andThen(() => {
-          player.production.add(Resource.ENERGY, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
+          player.production.add(Resource.GUERREAR, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
           return undefined;
         }),
         new SelectOption('Increase heat production 1 step', 'Increase').andThen(() => {
-          player.production.add(Resource.HEAT, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
+          player.production.add(Resource.INOVACAO, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
           return undefined;
         }),
       ));

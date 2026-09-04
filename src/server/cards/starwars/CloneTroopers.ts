@@ -14,6 +14,7 @@ import {SelectOption} from '../../inputs/SelectOption';
 import {Size} from '../../../common/cards/render/Size';
 import {message} from '../../logs/MessageBuilder';
 import {SelectResource} from '../../inputs/SelectResource';
+import {Units} from '../../../common/Units';
 
 export class CloneTroopers extends Card implements IActionCard, IProjectCard {
   constructor() {
@@ -55,7 +56,7 @@ export class CloneTroopers extends Card implements IActionCard, IProjectCard {
       if (player.game.isSoloMode()) {
         options.options.push(new SelectResource('Steal a resource')
           .andThen((resource) => {
-            player.stock.add(resource, 1);
+            player.stock.add(Units.keyToResource(resource), 1);
             player.removeResourceFrom(this, 1);
             return undefined;
           }));

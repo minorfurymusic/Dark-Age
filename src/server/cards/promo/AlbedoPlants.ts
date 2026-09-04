@@ -32,12 +32,12 @@ export class AlbedoPlants extends PreludeCard {
 
   public onCardPlayed(player: IPlayer, card: ICard): void {
     const qty = player.tags.cardTagCount(card, Tag.PLANT);
-    player.stock.add(Resource.HEAT, qty * 3, {log: true});
+    player.stock.add(Resource.INOVACAO, qty * 3, {log: true});
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
     if (tag === Tag.PLANT) {
-      player.stock.add(Resource.HEAT, 3, {log: true});
+      player.stock.add(Resource.INOVACAO, 3, {log: true});
     }
   }
 }
