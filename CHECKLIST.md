@@ -55,4 +55,26 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
 
 ---
 
+## Phase 13.7-13.15: Sistemas de Combate (Combat Systems)
+
+### 13.7 — Fase de Guarda (Guard Phase)
+
+- [x] **Infraestrutura implementada (commit ca2a6c2)**
+  - [x] Phase.GUARDA adicionada ao enum Phase
+  - [x] SelectGuardAllocation input para alocação secreta de Guerrear
+  - [x] player.allocatedGuerear field para armazenar alocação
+  - [x] Game.gotoGuardPhase() e Game.playerIsFinishedWithGuardPhase()
+  - [x] Player.runGuardPhase() método
+  - [x] Transição de fase: DRAFTING -> GUARDA -> ACTION
+  - [x] Serialização/desserialização de guardedPlayers
+
+**Próximos passos (13.8+):**
+- [ ] Ataques em Rotas Comerciais (2 Guerrear, steal valores específicos)
+- [ ] Ataques em Feudos (custo por distância, ataque vs defesa)
+- [ ] Aura de Estandarte (+1 combate em 3 tiles)
+- [ ] Disputa Direta (atacar jogador com menos Guerrear)
+- [ ] Trilha de Guerrear (4, 7, 12 - bônus específicos)
+
+---
+
 _Este arquivo é o companheiro dos Documentos 1/2/3 (mantidos fora do repositório, como uploads da conversa). Atualizar aqui sempre que uma pendência for fechada ou uma nova for aberta._
