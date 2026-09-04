@@ -18,7 +18,7 @@ import {Payment} from '../../common/inputs/Payment';
 import {TradeWithHectateSpeditions} from '../cards/underworld/HecateSpeditions';
 import {ColonyName} from '../../../src/common/colonies/ColonyName';
 import {SelectSpace} from '../inputs/SelectSpace';
-import {calculateDistance, getAttackCost} from '../boards/DistanceCalculator';
+import {calculateDistance, getAttackCost, getEstandarteAuraBonus} from '../boards/DistanceCalculator';
 import {Space} from '../boards/Space';
 
 export class Colonies {
@@ -257,6 +257,7 @@ export class Colonies {
 
     const distance = calculateDistance(attackerBase, city);
     const cost = getAttackCost(distance);
+    const auraBonus = getEstandarteAuraBonus(attacker, city, game.board.spaces);
 
     if (cost === 999 || attacker.allocatedGuerear < cost) {
       game.log('${0} cannot attack ${1} (insufficient Guerrear)', (b) => b.player(attacker).spaceId(city.id));
@@ -266,10 +267,15 @@ export class Colonies {
     // Deduct cost
     attacker.stock.deduct(Resource.GUERREAR, cost);
 
-    game.log('${0} attacked ${1} (distance ${2}, cost ${3} Guerrear)', (b) =>
-      b.player(attacker).spaceId(city.id).number(distance).number(cost));
+    if (auraBonus > 0) {
+      game.log('${0} attacked ${1} (distance ${2}, cost ${3} Guerrear, +${4} from Estandarte aura)', (b) =>
+        b.player(attacker).spaceId(city.id).number(distance).number(cost).number(auraBonus));
+    } else {
+      game.log('${0} attacked ${1} (distance ${2}, cost ${3} Guerrear)', (b) =>
+        b.player(attacker).spaceId(city.id).number(distance).number(cost));
+    }
 
-    // TODO Phase 13.10: Add defender allocation and combat resolution
+    // TODO Phase 13.11: Add defender allocation and combat resolution
   }
 
   public getVictoryPoints(): number {

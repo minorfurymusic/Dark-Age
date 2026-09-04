@@ -1,4 +1,6 @@
 import {Space} from './Space';
+import {IPlayer} from '../IPlayer';
+import {TileType} from '../../common/TileType';
 
 /**
  * Calculates Chebyshev distance (max of absolute differences in coordinates)
@@ -19,4 +21,21 @@ export function getAttackCost(distance: number): number {
   if (distance < 0 || distance === 999) return 999; // Invalid
   if (distance === 0) return 2; // Adjacente
   return Math.min(2 + distance, 6); // Max 6 Guerrear cost
+}
+
+/**
+ * Checks if attacker has an Estandarte aura within 3 tiles of target.
+ * Returns +1 bonus if true, 0 otherwise.
+ */
+export function getEstandarteAuraBonus(attacker: IPlayer, targetSpace: Space, allSpaces: ReadonlyArray<Space>): number {
+  const estandartes = allSpaces.filter((space) =>
+    space.tile?.tileType === TileType.ESTANDARTE && space.player === attacker);
+
+  for (const estandarte of estandartes) {
+    const distToTarget = calculateDistance(estandarte, targetSpace);
+    if (distToTarget <= 3 && distToTarget !== 999) {
+      return 1;
+    }
+  }
+  return 0;
 }
