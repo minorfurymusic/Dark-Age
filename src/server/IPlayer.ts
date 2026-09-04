@@ -91,6 +91,9 @@ export interface IPlayer {
   energy: number;
   heat: number;
 
+  // Combat Systems (Phase 13.7)
+  allocatedGuerear: number;
+
   // Helion
   canUseHeatAsMegaCredits: boolean;
   // Luna Trade Federation

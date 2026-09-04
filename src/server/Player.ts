@@ -1649,6 +1649,12 @@ export class Player implements IPlayer {
       action.options.push(coloniesTradeAction);
     }
 
+    // Attack trade routes (Saque)
+    const coloniesAttackAction = this.colonies.coloniesAttackAction();
+    if (coloniesAttackAction !== undefined) {
+      action.options.push(coloniesAttackAction);
+    }
+
     // Add delegates
     Turmoil.ifTurmoil(this.game, (turmoil) => {
       const input = turmoil.getSendDelegateInput(this);

@@ -47,12 +47,82 @@ export class Colonies {
       this.player.game.tradeEmbargo !== true;
   }
 
+  /**
+   * Returns `true` if this player can attack a route (has 2+ Guerrear allocated).
+   */
+  public canAttackRoute() {
+    return this.player.allocatedGuerear >= 2 &&
+      ColoniesHandler.tradeableColonies(this.player.game).length > 0 &&
+      this.player.game.tradeEmbargo !== true;
+  }
+
   public coloniesTradeAction(): AndOptions | undefined {
     const game = this.player.game;
     if (game.gameOptions.coloniesExtension && this.canTrade()) {
       return this.tradeWithColony(ColoniesHandler.tradeableColonies(game));
     }
     return undefined;
+  }
+
+  public coloniesAttackAction(): SelectColony | undefined {
+    const game = this.player.game;
+    if (game.gameOptions.coloniesExtension && this.canAttackRoute()) {
+      const availableRoutes = ColoniesHandler.tradeableColonies(game);
+      return new SelectColony('Select trade route to attack (costs 2 Guerrear)', 'Attack', availableRoutes)
+        .andThen((colony) => {
+          this.attackRoute(colony);
+          return undefined;
+        });
+    }
+    return undefined;
+  }
+
+  private attackRoute(colony: IColony): void {
+    const player = this.player;
+    const game = player.game;
+
+    // Deduct Guerrear cost
+    player.stock.deduct(Resource.GUERREAR, 2);
+
+    // Steal resources based on route type
+    const stealAmount = this.getStealAmountForRoute(colony.name);
+    if (stealAmount !== undefined) {
+      const {resource, amount} = stealAmount;
+      this.stealResourceFromRoute(colony, player, resource, amount);
+    }
+
+    game.log('${0} attacked ${1} via Saque (costs 2 Guerrear)', (b) => b.player(player).colony(colony));
+  }
+
+  private getStealAmountForRoute(colonyName: ColonyName): {resource: Resource, amount: number} | undefined {
+    switch (colonyName) {
+      case ColonyName.LUNA: return {resource: Resource.MEGACREDITS, amount: 5};
+      case ColonyName.CERES: return {resource: Resource.STEEL, amount: 3};
+      case ColonyName.TRITON: return {resource: Resource.TITANIUM, amount: 2};
+      case ColonyName.GANYMEDE: return {resource: Resource.PLANTS, amount: 2};
+      case ColonyName.EUROPA: return {resource: Resource.GUERREAR, amount: 1};
+      case ColonyName.IO: return {resource: Resource.INOVACAO, amount: 1};
+      case ColonyName.CALLISTO: return {resource: Resource.GUERREAR, amount: 1};
+      case ColonyName.PLUTO: // Requires special handling for card discard
+      case ColonyName.MIRANDA: // Requires handling for card resources
+      case ColonyName.ENCELADUS: // Requires handling for card resources
+      case ColonyName.TITAN: // Special multi-player steal
+      default:
+        return undefined;
+    }
+  }
+
+  private stealResourceFromRoute(colony: IColony, attacker: IPlayer, resource: Resource, amount: number): void {
+    // Find the owner(s) of the colony
+    if (colony.colonies.length === 0) {
+      return; // No one owns it
+    }
+
+    // For now, steal from all owners equally (will be refined for Disputa Direta)
+    colony.colonies.forEach((playerId) => {
+      const owner = this.player.game.getPlayerById(playerId);
+      owner.stock.steal(resource, amount, attacker, {log: true});
+    });
   }
 
   private tradeWithColony(openColonies: Array<IColony>): AndOptions | undefined {
