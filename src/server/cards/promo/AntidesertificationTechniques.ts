@@ -7,7 +7,7 @@ export class AntidesertificationTechniques extends PreludeCard {
   constructor() {
     super({
       name: CardName.ANTI_DESERTIFICATION_TECHNIQUES,
-      tags: [Tag.MICROBE, Tag.PLANT],
+      tags: [Tag.BRUXARIA, Tag.AGRICULTURA],
 
       behavior: {
         production: {plants: 1, steel: 1},

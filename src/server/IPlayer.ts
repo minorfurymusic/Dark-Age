@@ -36,6 +36,7 @@ import {PlayedCards} from './cards/PlayedCards';
 import {From} from './logs/From';
 import {Tag} from '../common/cards/Tag';
 import {SelectStandardProjectToPlay} from './inputs/SelectStandardProjectToPlay';
+import {IOath} from './oaths/IOath';
 
 /**
  * Represents additional costs a player must pay to execute an action.
@@ -90,6 +91,9 @@ export interface IPlayer {
   energy: number;
   heat: number;
 
+  // Combat Systems (Phase 13.7)
+  allocatedGuerear: number;
+
   // Helion
   canUseHeatAsMegaCredits: boolean;
   // Luna Trade Federation
@@ -121,6 +125,9 @@ export interface IPlayer {
   draftedCards: Array<IProjectCard>;
   /** true when this player is drafting, false when player is not, undefined when there is no draft phase. */
   needsToDraft?: boolean;
+
+  /** Oaths this player has selected */
+  oaths: Array<IOath>;
 
   timer: Timer;
 
@@ -315,6 +322,7 @@ export interface IPlayer {
   finishProductionPhase(): void;
 
   runResearchPhase(): void;
+  runGuardPhase(): void;
   getCardCost(card: IProjectCard): number;
 
   /** The number of resources on this card for this player, or 0 if the player does not have this card. */

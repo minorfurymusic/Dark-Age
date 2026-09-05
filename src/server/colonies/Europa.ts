@@ -16,7 +16,7 @@ export class Europa extends Colony {
         type: ColonyBenefit.GAIN_PRODUCTION,
         resource: [
           Resource.MEGACREDITS, Resource.MEGACREDITS,
-          Resource.ENERGY, Resource.ENERGY,
+          Resource.GUERREAR, Resource.GUERREAR,
           Resource.PLANTS, Resource.PLANTS, Resource.PLANTS,
         ],
       },

@@ -10,7 +10,7 @@ export class AdaptationTechnology extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ADAPTATION_TECHNOLOGY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 12,
       victoryPoints: 1,
       globalParameterRequirementBonus: {steps: 2},

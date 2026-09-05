@@ -10,7 +10,7 @@ export class CorporateStronghold extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CORPORATE_STRONGHOLD,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 11,
 
       behavior: {

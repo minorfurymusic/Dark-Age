@@ -10,7 +10,7 @@ export class UndergroundAmusementPark extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.UNDERGROUND_AMUSEMENT_PARK,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 5,
       victoryPoints: 1,
 

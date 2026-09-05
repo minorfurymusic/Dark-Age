@@ -12,7 +12,7 @@ export class Ringcom extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.RINGCOM,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       startingMegaCredits: 39,
 
       behavior: {
@@ -21,7 +21,7 @@ export class Ringcom extends CorporationCard implements ICorporationCard {
 
       firstAction: {
         text: 'Draw 2 cards with a Jovian tag',
-        drawCard: {count: 2, tag: Tag.JOVIAN},
+        drawCard: {count: 2, tag: Tag.ENGENHO},
       },
 
       metadata: {
@@ -30,10 +30,10 @@ export class Ringcom extends CorporationCard implements ICorporationCard {
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.megacredits(39).production((pb) => pb.megacredits(3));
-          b.cards(2, {secondaryTag: Tag.JOVIAN});
+          b.cards(2, {secondaryTag: Tag.ENGENHO});
           b.corpBox('effect', (ce) => {
             ce.effect('When any player plays a card with a Jovian tag (including this) gain 1 titanium.', (eb) => {
-              eb.tag(Tag.JOVIAN, {all}).asterix().startEffect.titanium(1);
+              eb.tag(Tag.ENGENHO, {all}).asterix().startEffect.titanium(1);
             });
           });
         }),
@@ -42,7 +42,7 @@ export class Ringcom extends CorporationCard implements ICorporationCard {
   }
 
   public onCardPlayedByAnyPlayer(player: IPlayer, card: ICard) {
-    if (card.tags.includes(Tag.JOVIAN)) {
+    if (card.tags.includes(Tag.ENGENHO)) {
       player.stock.add(Resource.TITANIUM, 1, {log: true});
     }
   }

@@ -11,7 +11,7 @@ export class AquiferPumping extends ActionCard implements IActionCard, IProjectC
     super({
       type: CardType.ACTIVE,
       name: CardName.AQUIFER_PUMPING,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 18,
 
       action: {

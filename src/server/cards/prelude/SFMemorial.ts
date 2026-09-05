@@ -10,7 +10,7 @@ export class SFMemorial extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.SF_MEMORIAL,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 7,
       victoryPoints: 1,
 

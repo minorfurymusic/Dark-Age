@@ -15,7 +15,7 @@ export class StandardTechnology extends Card implements IActionCard, IProjectCar
       name: CardName.STANDARD_TECHNOLOGY_UNDERWORLD,
       type: CardType.ACTIVE,
       cost: 6,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
 
       metadata: {
         cardNumber: 'UX00',

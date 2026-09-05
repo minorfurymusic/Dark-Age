@@ -14,7 +14,7 @@ export class Spire extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.SPIRE,
-      tags: [Tag.CITY, Tag.EARTH],
+      tags: [Tag.FEUDO, Tag.DIPLOMACIA],
       startingMegaCredits: 50,
       initialActionText: 'Draw 4 cards, then discard 3 cards.',
       resourceType: CardResource.SCIENCE,

@@ -10,7 +10,7 @@ export class JetStreamMicroscrappers extends ActionCard {
     super({
       name: CardName.JET_STREAM_MICROSCRAPPERS,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 12,
       resourceType: CardResource.FLOATER,
 

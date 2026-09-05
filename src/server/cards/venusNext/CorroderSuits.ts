@@ -10,12 +10,12 @@ export class CorroderSuits extends Card implements IProjectCard {
     super({
       name: CardName.CORRODER_SUITS,
       type: CardType.AUTOMATED,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 8,
 
       behavior: {
         production: {megacredits: 2},
-        addResourcesToAnyCard: {count: 1, tag: Tag.VENUS},
+        addResourcesToAnyCard: {count: 1, tag: Tag.COMÉRCIO},
       },
 
       metadata: {
@@ -24,7 +24,7 @@ export class CorroderSuits extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
             pb.megacredits(2);
-          }).wild(1, {secondaryTag: Tag.VENUS});
+          }).wild(1, {secondaryTag: Tag.COMÉRCIO});
         }),
       },
     });

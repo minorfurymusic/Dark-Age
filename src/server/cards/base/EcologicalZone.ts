@@ -24,7 +24,7 @@ export class EcologicalZone extends Card implements IProjectCard {
       cardNumber: '128',
       renderData: CardRenderer.builder((b) => {
         b.effect('When you play an animal or plant tag INCLUDING THESE, add an animal to this card.', (eb) => {
-          eb.tag(Tag.ANIMAL).slash().tag(Tag.PLANT).startEffect.resource(CardResource.ANIMAL);
+          eb.tag(Tag.PECUÁRIA).slash().tag(Tag.AGRICULTURA).startEffect.resource(CardResource.ANIMAL);
         }).br;
         b.plainText('Requires that YOU have a greenery tile. Place this tile adjacent to ANY greenery.', true);
         b.tile(TileType.ECOLOGICAL_ZONE, true).asterix();
@@ -36,7 +36,7 @@ export class EcologicalZone extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name,
-      tags: [Tag.ANIMAL, Tag.PLANT],
+      tags: [Tag.PECUÁRIA, Tag.AGRICULTURA],
       cost,
       resourceType: CardResource.ANIMAL,
       adjacencyBonus,
@@ -55,11 +55,11 @@ export class EcologicalZone extends Card implements IProjectCard {
     return this.getAvailableSpaces(player, canAffordOptions).length > 0;
   }
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    const qty = player.tags.cardTagCount(card, [Tag.ANIMAL, Tag.PLANT]);
+    const qty = player.tags.cardTagCount(card, [Tag.PECUÁRIA, Tag.AGRICULTURA]);
     player.addResourceTo(this, {qty, log: true});
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag): void {
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
   }

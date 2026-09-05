@@ -11,7 +11,7 @@ export class ArchaeBacteria extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ARCHAEBACTERIA,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 6,
 
       behavior: {

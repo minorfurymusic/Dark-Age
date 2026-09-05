@@ -12,12 +12,12 @@ export class SeptumTribus extends CorporationCard implements ICorporationCard, I
   constructor() {
     super({
       name: CardName.SEPTUM_TRIBUS,
-      tags: [Tag.WILD],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 36,
 
       metadata: {
         cardNumber: 'R15',
-        description: 'You start with 36 M€. When you perform an action, the wild tag counts as any tag of your choice.',
+        description: 'You start with 36 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.megacredits(36);

@@ -9,7 +9,7 @@ export class MarsMaths extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.MARS_MATHS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       startingMegaCredits: 40,
 
       firstAction: {

@@ -11,7 +11,7 @@ export class ExcavatorLeasing extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.EXCAVATOR_LEASING,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 8,
 
       metadata: {

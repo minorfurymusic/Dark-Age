@@ -9,7 +9,7 @@ export class GalileanMining extends PreludeCard {
   constructor() {
     super({
       name: CardName.GALILEAN_MINING,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
 
       behavior: {
         production: {titanium: 2},

@@ -11,7 +11,7 @@ export class VenusianInsects extends ActionCard implements IActionCard {
     super({
       name: CardName.VENUSIAN_INSECTS,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS, Tag.MICROBE],
+      tags: [Tag.COMÉRCIO, Tag.BRUXARIA],
       cost: 5,
       resourceType: CardResource.MICROBE,
       victoryPoints: {resourcesHere: {}, per: 2},

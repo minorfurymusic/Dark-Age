@@ -10,7 +10,7 @@ export class TitaniumMine extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TITANIUM_MINE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 7,
 
       behavior: {

@@ -11,7 +11,7 @@ export class MagneticFieldGenerators extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MAGNETIC_FIELD_GENERATORS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 20,
 
       behavior: {

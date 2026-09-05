@@ -9,7 +9,7 @@ export class LunaGovernor extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 4,
-      tags: [Tag.EARTH, Tag.EARTH],
+      tags: [Tag.DIPLOMACIA, Tag.DIPLOMACIA],
       name: CardName.LUNA_GOVERNOR,
       type: CardType.AUTOMATED,
 
@@ -17,7 +17,7 @@ export class LunaGovernor extends Card implements IProjectCard {
         production: {megacredits: 2},
       },
 
-      requirements: {tag: Tag.EARTH, count: 3},
+      requirements: {tag: Tag.DIPLOMACIA, count: 3},
       metadata: {
         cardNumber: 'C20',
         renderData: CardRenderer.builder((b) => {

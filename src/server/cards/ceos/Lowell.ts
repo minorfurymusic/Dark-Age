@@ -12,7 +12,7 @@ export class Lowell extends CeoCard {
   constructor() {
     super({
       name: CardName.LOWELL,
-      tags: [Tag.WILD],
+      tags: [Tag.ENGENHO],
       metadata: {
         cardNumber: 'L12',
         renderData: CardRenderer.builder((b) => {

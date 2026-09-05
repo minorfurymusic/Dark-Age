@@ -15,7 +15,7 @@ export class Ambient extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.AMBIENT,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       startingMegaCredits: 38,
 
       firstAction: {
@@ -30,7 +30,7 @@ export class Ambient extends CorporationCard implements ICorporationCard {
         renderData: CardRenderer.builder((b) => {
           b.megacredits(38).venus(2, {size: Size.SMALL}).br;
           b.effect('When you play a card with a Venus tag (including this) increase your heat production 1 step.', (eb) => {
-            eb.tag(Tag.VENUS).asterix().startEffect.production((pb) => pb.heat(1));
+            eb.tag(Tag.COMÉRCIO).asterix().startEffect.production((pb) => pb.heat(1));
           }).br;
           b.action('When temperature is maxed, spend 8 heat gain 1 TR. ' +
             'You may repeat this action like a standard project.', (ab) => {
@@ -42,8 +42,8 @@ export class Ambient extends CorporationCard implements ICorporationCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    if (card.tags.includes(Tag.VENUS)) {
-      player.production.add(Resource.HEAT, 1, {log: true});
+    if (card.tags.includes(Tag.COMÉRCIO)) {
+      player.production.add(Resource.INOVACAO, 1, {log: true});
     }
   }
 

@@ -11,7 +11,7 @@ export class EventAnalysts extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.EVENT_ANALYSTS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 5,
 
       behavior: {

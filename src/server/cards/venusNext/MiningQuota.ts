@@ -10,14 +10,14 @@ export class MiningQuota extends Card implements IProjectCard {
     super({
       name: CardName.MINING_QUOTA,
       type: CardType.AUTOMATED,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 5,
 
       behavior: {
         production: {steel: 2},
       },
 
-      requirements: [{tag: Tag.VENUS}, {tag: Tag.EARTH}, {tag: Tag.JOVIAN}],
+      requirements: [{tag: Tag.COMÉRCIO}, {tag: Tag.DIPLOMACIA}, {tag: Tag.ENGENHO}],
       metadata: {
         cardNumber: '239',
         renderData: CardRenderer.builder((b) => {

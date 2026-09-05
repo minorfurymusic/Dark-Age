@@ -11,7 +11,7 @@ export class Microgravimetry extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MICROGRAVIMETRY,
-      tags: [Tag.POWER, Tag.SCIENCE],
+      tags: [Tag.GUERREAR, Tag.ERUDIÇÃO],
       cost: 5,
       victoryPoints: 1,
 

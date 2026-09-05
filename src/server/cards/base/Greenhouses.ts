@@ -12,7 +12,7 @@ export class Greenhouses extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.GREENHOUSES,
-      tags: [Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
       cost: 6,
 
       behavior: {

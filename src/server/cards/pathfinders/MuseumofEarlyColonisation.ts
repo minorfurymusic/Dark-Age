@@ -16,7 +16,7 @@ export class MuseumofEarlyColonisation extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.MUSEUM_OF_EARLY_COLONISATION,
       cost: 20,
-      tags: [Tag.BUILDING, Tag.MARS],
+      tags: [Tag.CONSTRUÇÃO, Tag.MARS],
       requirements: [{oceans: 1}, {cities: 1, all}, {greeneries: 1, all}],
 
       behavior: {

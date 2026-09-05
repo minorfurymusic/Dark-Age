@@ -22,7 +22,7 @@ export class NaturalPreserve extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 9,
 
       behavior: {

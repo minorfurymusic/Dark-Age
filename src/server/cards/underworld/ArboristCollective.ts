@@ -13,7 +13,7 @@ export class ArboristCollective extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.ARBORIST_COLLECTIVE,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       startingMegaCredits: 40,
       resourceType: CardResource.ACTIVIST,
 
@@ -34,7 +34,7 @@ export class ArboristCollective extends ActiveCorporationCard {
         renderData: CardRenderer.builder((b) => {
           b.megacredits(40).plants(2, {digit}).production((pb) => pb.plants(2)).br;
           b.effect('After you play an event card with a base cost of 14 or less, put an activist resource on this card.', (eb) => {
-            eb.text('≤').megacredits(14, {secondaryTag: Tag.EVENT}).startEffect.resource(CardResource.ACTIVIST);
+            eb.text('≤').megacredits(14, {secondaryTag: Tag.HISTÓRIA}).startEffect.resource(CardResource.ACTIVIST);
           }).br;
           b.action('Spend 2 activists here to increase your plant production 1 step and gain 2 plants.', (ab) => {
             ab.text('2').resource(CardResource.ACTIVIST).startAction.plants(2).production((pb) => pb.plants(1));

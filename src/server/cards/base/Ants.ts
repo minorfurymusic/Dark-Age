@@ -13,7 +13,7 @@ export class Ants extends ActionCard implements IActionCard, IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ANTS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 9,
 
       resourceType: CardResource.MICROBE,

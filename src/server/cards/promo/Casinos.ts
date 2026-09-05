@@ -13,7 +13,7 @@ export class Casinos extends Card implements IProjectCard {
     super({
       cost: 5,
       name: CardName.CASINOS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       type: CardType.AUTOMATED,
       behavior: {
         production: {energy: -1, megacredits: 4},

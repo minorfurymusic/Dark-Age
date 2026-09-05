@@ -11,21 +11,21 @@ export class LunarEmbassy extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.LUNAR_EMBASSY,
-      tags: [Tag.EARTH, Tag.MARS, Tag.CITY, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARS, Tag.FEUDO, Tag.MARÍTIMO],
       cost: 28,
       victoryPoints: 2,
 
       behavior: {
         drawCard: 1,
         city: {space: SpaceName.LUNAR_EMBASSY},
-        production: {megacredits: 3, plants: {tag: Tag.EARTH, per: 2}},
+        production: {megacredits: 3, plants: {tag: Tag.DIPLOMACIA, per: 2}},
       },
 
       metadata: {
         cardNumber: 'Pf16',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.megacredits(3))
-            .production((pb) => pb.plants(1).slash().tag(Tag.EARTH, 2))
+            .production((pb) => pb.plants(1).slash().tag(Tag.DIPLOMACIA, 2))
             .br
             .cards(1).city().asterix().br;
         }),

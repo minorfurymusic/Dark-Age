@@ -10,11 +10,11 @@ export class MoonTether extends Card implements IProjectCard {
     super({
       name: CardName.MOON_TETHER,
       type: CardType.ACTIVE,
-      tags: [Tag.MOON, Tag.SPACE],
+      tags: [Tag.MOON, Tag.MARÍTIMO],
       cost: 18,
       victoryPoints: 1,
 
-      requirements: {tag: Tag.SPACE, count: 6},
+      requirements: {tag: Tag.MARÍTIMO, count: 6},
       cardDiscount: {amount: 2},
       metadata: {
         cardNumber: 'M90',

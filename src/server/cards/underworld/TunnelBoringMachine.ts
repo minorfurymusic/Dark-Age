@@ -11,7 +11,7 @@ export class TunnelBoringMachine extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.TUNNEL_BORING_MACHINE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 10,
 
       action: {

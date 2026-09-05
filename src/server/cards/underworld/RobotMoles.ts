@@ -12,7 +12,7 @@ export class RobotMoles extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.ROBOT_MOLES,
       cost: 8,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         stock: {steel: 2},

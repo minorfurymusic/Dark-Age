@@ -10,7 +10,7 @@ export class SummitLogistics extends Card {
     super({
       name: CardName.SUMMIT_LOGISTICS,
       type: CardType.AUTOMATED,
-      tags: [Tag.BUILDING, Tag.SPACE],
+      tags: [Tag.CONSTRUÇÃO, Tag.MARÍTIMO],
       cost: 10,
 
       requirements: {party: PartyName.SCIENTISTS},
@@ -18,7 +18,7 @@ export class SummitLogistics extends Card {
       behavior: {
         stock: {
           megacredits: {
-            tag: [Tag.JOVIAN, Tag.EARTH, Tag.VENUS, Tag.MARS],
+            tag: [Tag.ENGENHO, Tag.DIPLOMACIA, Tag.COMÉRCIO, Tag.GUERREAR],
             colonies: {colonies: {}},
           },
         },
@@ -28,7 +28,7 @@ export class SummitLogistics extends Card {
       metadata: {
         cardNumber: 'P85',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(1).slash().tag(Tag.JOVIAN).tag(Tag.EARTH).tag(Tag.VENUS).colonies(1);
+          b.megacredits(1).slash().tag(Tag.ENGENHO).tag(Tag.DIPLOMACIA).tag(Tag.COMÉRCIO).colonies(1);
           b.br;
           b.cards(2).br;
           b.plainText('(Requires that Scientists are ruling or that you have 2 delegates there. ' +

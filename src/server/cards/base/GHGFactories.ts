@@ -11,7 +11,7 @@ export class GHGFactories extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.GHG_FACTORIES,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 11,
 
       behavior: {

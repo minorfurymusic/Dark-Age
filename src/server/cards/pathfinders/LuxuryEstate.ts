@@ -11,7 +11,7 @@ export class LuxuryEstate extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.LUXURY_ESTATE,
       cost: 12,
-      tags: [Tag.EARTH, Tag.MARS, Tag.BUILDING],
+      tags: [Tag.DIPLOMACIA, Tag.MARS, Tag.CONSTRUÇÃO],
       requirements: {oxygen: 7},
 
       behavior: {

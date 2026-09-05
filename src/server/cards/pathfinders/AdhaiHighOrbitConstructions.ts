@@ -16,7 +16,7 @@ export class AdhaiHighOrbitConstructions extends CorporationCard implements ICor
   constructor() {
     super({
       name: CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegaCredits: 43,
       resourceType: CardResource.ORBITAL,
 
@@ -24,11 +24,11 @@ export class AdhaiHighOrbitConstructions extends CorporationCard implements ICor
         cardNumber: 'PfC23',
         description: 'You start with 43 M€.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(43).nbsp.nbsp.tag(Tag.SPACE, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).colon().resource(CardResource.ORBITAL).br;
+          b.megacredits(43).nbsp.nbsp.tag(Tag.MARÍTIMO, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).colon().resource(CardResource.ORBITAL).br;
           b.text('(Effect: Whenever you play a card with a space tag BUT NO PLANETARY TAG (including this) add 1 orbital on this card.)', {size: Size.SMALL, isBold: false});
           b.br;
           b.effect('For every 2 orbitals on this card, cards with a space tag but with no planetary tag or the STANDARD COLONY PROJECT or TRADE ACTION costs 1 M€ less.', (eb) => {
-            eb.tag(Tag.SPACE, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).slash(Size.SMALL).asterix().colonies(1, {size: Size.SMALL}).slash(Size.SMALL).trade({size: Size.SMALL})
+            eb.tag(Tag.MARÍTIMO, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).slash(Size.SMALL).asterix().colonies(1, {size: Size.SMALL}).slash(Size.SMALL).trade({size: Size.SMALL})
               .startEffect
               .minus().megacredits(1).text('/2').resource(CardResource.ORBITAL);
           });
@@ -41,7 +41,7 @@ export class AdhaiHighOrbitConstructions extends CorporationCard implements ICor
   private matchingTags(tags: ReadonlyArray<Tag>): boolean {
     let spaceTag = false;
     for (const tag of tags) {
-      if (tag === Tag.SPACE) {
+      if (tag === Tag.MARÍTIMO) {
         spaceTag = true;
       }
       if (isPlanetaryTag(tag)) {

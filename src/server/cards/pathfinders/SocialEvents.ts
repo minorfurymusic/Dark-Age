@@ -12,7 +12,7 @@ export class SocialEvents extends Card implements IProjectCard {
       type: CardType.EVENT,
       name: CardName.SOCIAL_EVENTS,
       cost: 18,
-      tags: [Tag.EARTH, Tag.MARS],
+      tags: [Tag.DIPLOMACIA, Tag.MARS],
 
       metadata: {
         cardNumber: 'PfT10',

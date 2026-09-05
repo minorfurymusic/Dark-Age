@@ -18,13 +18,13 @@ export class ViralEnhancers extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.VIRAL_ENHANCERS,
-      tags: [Tag.SCIENCE, Tag.MICROBE],
+      tags: [Tag.ERUDIÇÃO, Tag.BRUXARIA],
       cost: 9,
 
       metadata: {
         cardNumber: '074',
         renderData: CardRenderer.builder((b) => {
-          b.tag(Tag.PLANT).slash().tag(Tag.MICROBE).slash().tag(Tag.ANIMAL).br;
+          b.tag(Tag.AGRICULTURA).slash().tag(Tag.BRUXARIA).slash().tag(Tag.PECUÁRIA).br;
           b.effect('When you play a plant, microbe, or an animal tag, including this, gain 1 plant or add 1 resource to THAT CARD.', (eb) => {
             eb.empty().startEffect;
             eb.plants(1).slash().resource(CardResource.MICROBE).asterix().slash().resource(CardResource.ANIMAL).asterix();
@@ -39,7 +39,7 @@ export class ViralEnhancers extends Card implements IProjectCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const resourceCount = player.tags.cardTagCount(card, [Tag.ANIMAL, Tag.PLANT, Tag.MICROBE]);
+    const resourceCount = player.tags.cardTagCount(card, [Tag.PECUÁRIA, Tag.AGRICULTURA, Tag.BRUXARIA]);
     if (resourceCount === 0) {
       return undefined;
     }
@@ -67,7 +67,7 @@ export class ViralEnhancers extends Card implements IProjectCard {
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       this.addPlant(player, 1);
     }
   }

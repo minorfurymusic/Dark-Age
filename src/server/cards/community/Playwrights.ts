@@ -17,7 +17,7 @@ export class Playwrights extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.PLAYWRIGHTS,
-      tags: [Tag.POWER],
+      tags: [Tag.GUERREAR],
       startingMegaCredits: 38,
 
       behavior: {
@@ -34,7 +34,7 @@ export class Playwrights extends CorporationCard implements ICorporationCard {
             cb.action('Replay a played event from any player (INCLUDING events that place special tiles) by paying its cost ONLY in M€ (discounts and rebates apply), then REMOVE IT FROM PLAY.', (eb) => {
               eb.megacredits(1, {text: '?'}).startAction;
               eb.text('replay', {size: Size.SMALL, uppercase});
-              eb.nbsp.cards(1, {all, secondaryTag: Tag.EVENT});
+              eb.nbsp.cards(1, {all, secondaryTag: Tag.HISTÓRIA});
             });
           });
         }),

@@ -10,7 +10,7 @@ export class Sponsors extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.SPONSORS,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 6,
 
       behavior: {

@@ -12,7 +12,7 @@ export class SoilDetoxification extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.SOIL_DETOXIFICATION,
       cost: 10,
-      tags: [Tag.PLANT, Tag.SCIENCE],
+      tags: [Tag.AGRICULTURA, Tag.ERUDIÇÃO],
 
       requirements: {party: PartyName.GREENS},
 

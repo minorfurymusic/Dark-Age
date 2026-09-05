@@ -8,7 +8,7 @@ export class LunaHyperloopCorporation extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.LUNA_HYPERLOOP_CORPORATION,
-      tags: [Tag.MOON, Tag.BUILDING],
+      tags: [Tag.MOON, Tag.CONSTRUÇÃO],
       startingMegaCredits: 38,
 
       behavior: {

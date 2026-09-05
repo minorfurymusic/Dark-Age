@@ -14,11 +14,11 @@ export class Xavier extends CeoCard {
       metadata: {
         cardNumber: 'L24',
         renderData: CardRenderer.builder((b) => {
-          b.opgArrow().text('GAIN').tag(Tag.WILD, 2).asterix();
+          b.opgArrow().text('GAIN').tag(Tag.DIPLOMACIA, 2).asterix();
           b.br;
-          b.plainText('Once per game, gain 2 wild tags for THIS GENERATION.');
+          b.plainText('Once per game, gain 2 Diplomacy tags for THIS GENERATION.');
           b.br.br;
-          b.effect('AFTER this action has been used, when playing a card with a requirement, you pay 1 M€ less for it.',
+          b.effect('AFTER this action has been used, when playing a card with a Diplomacy tag, you pay 1 M€ less for it.',
             (eb) => eb.asterix().startEffect.cards(1, {secondaryTag: AltSecondaryTag.REQ}).colon().megacredits(-1));
         }),
       },
@@ -26,7 +26,7 @@ export class Xavier extends CeoCard {
   }
 
   public override get tags(): Array<Tag> {
-    return this.opgActionIsActive ? [Tag.WILD, Tag.WILD] : [];
+    return this.opgActionIsActive ? [Tag.DIPLOMACIA, Tag.DIPLOMACIA] : [];
   }
 
   public action(player: IPlayer): PlayerInput | undefined {

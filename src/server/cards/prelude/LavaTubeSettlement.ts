@@ -13,7 +13,7 @@ export class LavaTubeSettlement extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.LAVA_TUBE_SETTLEMENT,
-      tags: [Tag.BUILDING, Tag.CITY],
+      tags: [Tag.CONSTRUÇÃO, Tag.FEUDO],
       cost: 15,
 
       behavior: {

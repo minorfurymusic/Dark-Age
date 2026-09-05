@@ -12,7 +12,7 @@ export class DomedCrater extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.DOMED_CRATER,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 24,
       victoryPoints: 1,
 

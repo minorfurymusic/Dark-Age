@@ -13,7 +13,7 @@ export class MetallicAsteroid extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.METALLIC_ASTEROID,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 13,
 
       behavior: {

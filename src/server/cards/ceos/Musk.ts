@@ -18,7 +18,7 @@ export class Musk extends CeoCard {
       metadata: {
         cardNumber: 'L28',
         renderData: CardRenderer.builder((b) => {
-          b.opgArrow().minus().cards(1, {secondaryTag: Tag.EARTH}).colon().cards(1, {secondaryTag: Tag.SPACE}).titanium(1).asterix();
+          b.opgArrow().minus().cards(1, {secondaryTag: Tag.DIPLOMACIA}).colon().cards(1, {secondaryTag: Tag.MARÍTIMO}).titanium(1).asterix();
           b.br;
           b.titanium(6);
           b.br.br;
@@ -31,7 +31,7 @@ export class Musk extends CeoCard {
   public action(player: IPlayer): PlayerInput | undefined {
     this.isDisabled = true;
     const game = player.game;
-    const eligibleCards = player.cardsInHand.filter((card) => card.tags.includes(Tag.EARTH));
+    const eligibleCards = player.cardsInHand.filter((card) => card.tags.includes(Tag.DIPLOMACIA));
 
     if (eligibleCards.length === 0) {
       game.log('${0} has no Earth cards', (b) => b.player(player), {reservedFor: player});
@@ -50,7 +50,7 @@ export class Musk extends CeoCard {
           for (const card of cards) {
             player.discardCardFromHand(card);
           }
-          player.game.defer(DrawCards.keepAll(player, cards.length, {tag: Tag.SPACE}));
+          player.game.defer(DrawCards.keepAll(player, cards.length, {tag: Tag.MARÍTIMO}));
           return undefined;
         },
       );

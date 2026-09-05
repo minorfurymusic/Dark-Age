@@ -11,7 +11,7 @@ export class RegoPlastics extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.REGO_PLASTICS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 10,
       victoryPoints: 1,
 

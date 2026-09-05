@@ -11,7 +11,7 @@ export class NitrophilicMoss extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.NITROPHILIC_MOSS,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 8,
 
       behavior: {

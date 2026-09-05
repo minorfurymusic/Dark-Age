@@ -11,7 +11,7 @@ export class Arklight extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.ARKLIGHT,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       startingMegaCredits: 45,
       resourceType: CardResource.ANIMAL,
       victoryPoints: {resourcesHere: {}, per: 2},
@@ -27,7 +27,7 @@ export class Arklight extends CorporationCard implements ICorporationCard {
           b.megacredits(45).nbsp.production((pb) => pb.megacredits(2));
           b.corpBox('effect', (ce) => {
             ce.effect('When you play an animal or plant tag, including this, add 1 animal to this card.', (eb) => {
-              eb.tag(Tag.ANIMAL).slash().tag(Tag.PLANT).startEffect.resource(CardResource.ANIMAL);
+              eb.tag(Tag.PECUÁRIA).slash().tag(Tag.AGRICULTURA).startEffect.resource(CardResource.ANIMAL);
             });
             ce.vSpace(); // to offset the description to the top a bit so it can be readable
           });
@@ -37,12 +37,12 @@ export class Arklight extends CorporationCard implements ICorporationCard {
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag): void {
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
   }
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    const qty = card.tags.filter((cardTag) => cardTag === Tag.ANIMAL || cardTag === Tag.PLANT).length;
+    const qty = card.tags.filter((cardTag) => cardTag === Tag.PECUÁRIA || cardTag === Tag.AGRICULTURA).length;
     if (qty > 0) {
       player.addResourceTo(this, {qty: qty, log: true});
     }

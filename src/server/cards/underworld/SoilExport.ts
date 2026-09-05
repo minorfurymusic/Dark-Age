@@ -12,7 +12,7 @@ export class SoilExport extends Card implements IProjectCard {
       name: CardName.SOIL_EXPORT,
       type: CardType.AUTOMATED,
       cost: 3,
-      tags: [Tag.VENUS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARÍTIMO],
       victoryPoints: -1,
 
       behavior: {

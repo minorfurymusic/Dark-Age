@@ -10,7 +10,7 @@ export class Algae extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ALGAE,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 10,
 
       behavior: {

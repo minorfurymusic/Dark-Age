@@ -17,7 +17,7 @@ export class SpecialPermit extends Card implements IProjectCard {
       cost: 5,
       name: CardName.SPECIAL_PERMIT,
       type: CardType.EVENT,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       requirements: {party: PartyName.GREENS},
 
       metadata: {

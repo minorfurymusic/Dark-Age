@@ -8,7 +8,7 @@ export class PolarIndustries extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.POLAR_INDUSTRIES,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         production: {heat: 2},

@@ -13,7 +13,7 @@ export class Advertising extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ADVERTISING,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 4,
 
       metadata: {

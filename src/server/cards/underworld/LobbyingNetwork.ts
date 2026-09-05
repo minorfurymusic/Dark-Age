@@ -10,7 +10,7 @@ export class LobbyingNetwork extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.LOBBYING_NETWORK,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 5,
 
       behavior: {

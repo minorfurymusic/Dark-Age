@@ -4,6 +4,7 @@ import {EconomicHelp} from '../../../src/server/cards/pathfinders/EconomicHelp';
 import {IGame} from '../../../src/server/IGame';
 import {TestPlayer} from '../../TestPlayer';
 import {Units} from '../../../src/common/Units';
+import {Tag} from '../../../src/common/cards/Tag';
 
 describe('EconomicHelp', () => {
   let card: EconomicHelp;
@@ -18,11 +19,11 @@ describe('EconomicHelp', () => {
   it('Play - one lowest influence tracks', () => {
     expect(player.production.asUnits()).deep.eq(Units.EMPTY);
     game.pathfindersData = {
-      venus: 0,
-      earth: 1,
-      mars: 1,
-      jovian: 1,
-      moon: -1,
+      [Tag.COMÉRCIO]: 0,
+      [Tag.DIPLOMACIA]: 1,
+      [Tag.MARS]: 1,
+      [Tag.ENGENHO]: 1,
+      [Tag.MOON]: -1,
       vps: [],
     };
 
@@ -30,77 +31,77 @@ describe('EconomicHelp', () => {
 
     expect(player.production.asUnits()).deep.eq(Units.of({megacredits: 1}));
     expect(game.pathfindersData).deep.eq({
-      venus: 3,
-      earth: 1,
-      mars: 1,
-      jovian: 1,
-      moon: -1,
+      [Tag.COMÉRCIO]: 3,
+      [Tag.DIPLOMACIA]: 1,
+      [Tag.MARS]: 1,
+      [Tag.ENGENHO]: 1,
+      [Tag.MOON]: -1,
       vps: [],
     });
   });
 
   it('Play - two lowest influence tracks', () => {
     game.pathfindersData = {
-      venus: 2,
-      earth: 1,
-      mars: 1,
-      jovian: 2,
-      moon: -1,
+      [Tag.COMÉRCIO]: 2,
+      [Tag.DIPLOMACIA]: 1,
+      [Tag.MARS]: 1,
+      [Tag.ENGENHO]: 2,
+      [Tag.MOON]: -1,
       vps: [],
     };
 
     card.play(player);
 
     expect(game.pathfindersData).deep.eq({
-      venus: 2,
-      earth: 3,
-      mars: 3,
-      jovian: 2,
-      moon: -1,
+      [Tag.COMÉRCIO]: 2,
+      [Tag.DIPLOMACIA]: 3,
+      [Tag.MARS]: 3,
+      [Tag.ENGENHO]: 2,
+      [Tag.MOON]: -1,
       vps: [],
     });
   });
 
   it('Play - all influence tracks tied', () => {
     expect(game.pathfindersData).deep.eq({
-      venus: 0,
-      earth: 0,
-      mars: 0,
-      jovian: 0,
-      moon: -1,
+      [Tag.COMÉRCIO]: 0,
+      [Tag.DIPLOMACIA]: 0,
+      [Tag.MARS]: 0,
+      [Tag.ENGENHO]: 0,
+      [Tag.MOON]: -1,
       vps: [],
     });
 
     card.play(player);
 
     expect(game.pathfindersData).deep.eq({
-      venus: 2,
-      earth: 2,
-      mars: 2,
-      jovian: 2,
-      moon: -1,
+      [Tag.COMÉRCIO]: 2,
+      [Tag.DIPLOMACIA]: 2,
+      [Tag.MARS]: 2,
+      [Tag.ENGENHO]: 2,
+      [Tag.MOON]: -1,
       vps: [],
     });
   });
 
   it('Play - ignore maximized tracks', () => {
     game.pathfindersData = {
-      venus: 17, // At the maximum
-      earth: 18, // Max is 22
-      mars: 17, // At the maximmum
-      jovian: 14, // At the maximum
-      moon: -1,
+      [Tag.COMÉRCIO]: 17, // At the maximum
+      [Tag.DIPLOMACIA]: 18, // Max is 22
+      [Tag.MARS]: 17, // At the maximum
+      [Tag.ENGENHO]: 14, // At the maximum
+      [Tag.MOON]: -1,
       vps: [],
     };
 
     card.play(player);
 
     expect(game.pathfindersData).deep.eq({
-      venus: 17,
-      earth: 21,
-      mars: 17,
-      jovian: 14,
-      moon: -1,
+      [Tag.COMÉRCIO]: 17,
+      [Tag.DIPLOMACIA]: 21,
+      [Tag.MARS]: 17,
+      [Tag.ENGENHO]: 14,
+      [Tag.MOON]: -1,
       vps: [],
     });
   });

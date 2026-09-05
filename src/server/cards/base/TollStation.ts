@@ -11,18 +11,18 @@ export class TollStation extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TOLL_STATION,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 12,
 
       behavior: {
-        production: {megacredits: {tag: Tag.SPACE, others: true}},
+        production: {megacredits: {tag: Tag.MARÍTIMO, others: true}},
       },
 
       metadata: {
         cardNumber: '099',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(1).slash().tag(Tag.SPACE, {all}).asterix();
+            pb.megacredits(1).slash().tag(Tag.MARÍTIMO, {all}).asterix();
           });
         }),
         description: 'Increase your M€ production 1 step for each space tag your OPPONENTS have.',

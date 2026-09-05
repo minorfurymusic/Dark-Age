@@ -11,7 +11,7 @@ export class MartianSurvey extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.MARTIAN_SURVEY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 9,
       victoryPoints: 1,
 

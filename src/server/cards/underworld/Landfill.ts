@@ -12,7 +12,7 @@ export class Landfill extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.LANDFILL,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 2,
 
       victoryPoints: -2,

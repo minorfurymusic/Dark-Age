@@ -12,7 +12,7 @@ export class ControlledBloom extends Card implements IProjectCard {
       type: CardType.EVENT,
       name: CardName.CONTROLLED_BLOOM,
       cost: 13,
-      tags: [Tag.MICROBE, Tag.PLANT],
+      tags: [Tag.BRUXARIA, Tag.AGRICULTURA],
       victoryPoints: 1,
 
       requirements: {oceans: 3},

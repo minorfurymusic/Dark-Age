@@ -34,7 +34,7 @@ export class LobbyHalls extends Card implements IProjectCard, ICloneTagCard {
   public cloneTag: Tag = Tag.CLONE;
 
   public override get tags(): Array<Tag> {
-    return [this.cloneTag, Tag.BUILDING];
+    return [this.cloneTag, Tag.CONSTRUÇÃO];
   }
 
   public override bespokePlay(player: IPlayer) {

@@ -17,7 +17,7 @@ export class SolarFlare extends GlobalEvent implements IGlobalEvent {
         lose: {
           stock: {
             megacredits: {
-              tag: Tag.SPACE,
+              tag: Tag.MARÍTIMO,
               turmoil: {max: 5, influence: {subtract: true}},
               each: 3,
             },
@@ -25,7 +25,7 @@ export class SolarFlare extends GlobalEvent implements IGlobalEvent {
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.minus().megacredits(3).slash().tag(Tag.SPACE).influence({size: Size.SMALL});
+        b.minus().megacredits(3).slash().tag(Tag.MARÍTIMO).influence({size: Size.SMALL});
       }),
     });
   }

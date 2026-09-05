@@ -9,7 +9,7 @@ export class TransNeptuneProbe extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TRANS_NEPTUNE_PROBE,
-      tags: [Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO],
       cost: 6,
       victoryPoints: 1,
 

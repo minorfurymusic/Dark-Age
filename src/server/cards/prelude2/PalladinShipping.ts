@@ -14,7 +14,7 @@ export class PalladinShipping extends ActiveCorporationCard implements ICorporat
   constructor() {
     super({
       name: CardName.PALLADIN_SHIPPING,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegaCredits: 36,
 
       behavior: {
@@ -33,7 +33,7 @@ export class PalladinShipping extends ActiveCorporationCard implements ICorporat
           b.corpBox('effect-action', (cea) => {
             cea.vSpace(Size.LARGE);
             cea.effect('When you play a space event, gain 1 titanium.', (eb) => {
-              eb.tag(Tag.SPACE).tag(Tag.EVENT).startEffect.titanium(1);
+              eb.tag(Tag.MARÍTIMO).tag(Tag.HISTÓRIA).startEffect.titanium(1);
             });
             b.br;
             cea.action('Spend 2 titanium to raise the temperature 1 step.', (ab) => {
@@ -47,7 +47,7 @@ export class PalladinShipping extends ActiveCorporationCard implements ICorporat
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    if (card.type === CardType.EVENT && card.tags.includes(Tag.SPACE)) {
+    if (card.type === CardType.EVENT && card.tags.includes(Tag.MARÍTIMO)) {
       player.stock.add(Resource.TITANIUM, 1, {log: true});
     }
   }

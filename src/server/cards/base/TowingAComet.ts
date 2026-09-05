@@ -10,7 +10,7 @@ export class TowingAComet extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.TOWING_A_COMET,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 23,
 
       behavior: {

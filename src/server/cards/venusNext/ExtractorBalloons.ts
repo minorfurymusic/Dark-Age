@@ -11,7 +11,7 @@ export class ExtractorBalloons extends ActionCard {
     super({
       name: CardName.EXTRACTOR_BALLOONS,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 21,
       resourceType: CardResource.FLOATER,
 

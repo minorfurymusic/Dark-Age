@@ -18,13 +18,13 @@ import {defineComponent} from 'vue';
 import {MAX_OCEAN_TILES, MAX_OXYGEN_LEVEL, MAX_TEMPERATURE, MAX_VENUS_SCALE} from '@/common/constants';
 import {GlobalParameter} from '@/common/GlobalParameter';
 
-type BaseGlobalParameter = 'temperature' | 'oxygen' | 'oceans' | 'venus';
+type BaseGlobalParameter = 'tecnologia' | 'fe' | 'estandartes' | 'rotas-comerciais';
 
 const attributes: Record<BaseGlobalParameter, {max: number, title: string, iconClass: string}> = {
-  [GlobalParameter.TEMPERATURE]: {max: MAX_TEMPERATURE, title: 'Temperature', iconClass: 'temperature-tile'},
-  [GlobalParameter.OXYGEN]: {max: MAX_OXYGEN_LEVEL, title: 'Oxygen Level', iconClass: 'oxygen-tile'},
-  [GlobalParameter.OCEANS]: {max: MAX_OCEAN_TILES, title: 'Oceans', iconClass: 'ocean-tile'},
-  [GlobalParameter.VENUS]: {max: MAX_VENUS_SCALE, title: 'Venus Scale', iconClass: 'venus-tile'},
+  [GlobalParameter.TECNOLOGIA]: {max: MAX_TEMPERATURE, title: 'Technology', iconClass: 'tecnologia-tile'},
+  [GlobalParameter.FE]: {max: MAX_OXYGEN_LEVEL, title: 'Faith', iconClass: 'fe-tile'},
+  [GlobalParameter.ESTANDARTES]: {max: MAX_OCEAN_TILES, title: 'Banners', iconClass: 'estandarte-tile'},
+  [GlobalParameter.ROTAS_COMERCIAIS]: {max: MAX_VENUS_SCALE, title: 'Trade Routes', iconClass: 'rota-comercial-tile'},
 };
 
 export default defineComponent({
@@ -50,7 +50,7 @@ export default defineComponent({
       return attributes[this.param].iconClass;
     },
     suffix(): string {
-      return this.param === GlobalParameter.OXYGEN ? '%' : '';
+      return this.param === GlobalParameter.FE ? '%' : '';
     },
   },
 });

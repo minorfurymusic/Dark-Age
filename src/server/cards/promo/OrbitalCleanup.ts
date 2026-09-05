@@ -10,7 +10,7 @@ export class OrbitalCleanup extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ORBITAL_CLEANUP,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 14,
       victoryPoints: 2,
 
@@ -19,7 +19,7 @@ export class OrbitalCleanup extends ActionCard implements IProjectCard {
       },
 
       action: {
-        stock: {megacredits: {tag: Tag.SCIENCE}},
+        stock: {megacredits: {tag: Tag.ERUDIÇÃO}},
       },
 
       metadata: {
@@ -27,7 +27,7 @@ export class OrbitalCleanup extends ActionCard implements IProjectCard {
 
         renderData: CardRenderer.builder((b) => {
           b.action('Gain 1 M€ per science tag you have.', (eb) => {
-            eb.empty().startAction.megacredits(1).slash().tag(Tag.SCIENCE);
+            eb.empty().startAction.megacredits(1).slash().tag(Tag.ERUDIÇÃO);
           }).br;
           b.production((pb) => {
             pb.megacredits(-2);

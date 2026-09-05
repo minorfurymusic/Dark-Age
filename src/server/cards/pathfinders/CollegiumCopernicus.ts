@@ -21,13 +21,13 @@ export class CollegiumCopernicus extends CorporationCard implements ICorporation
   constructor() {
     super({
       name: CardName.COLLEGIUM_COPERNICUS,
-      tags: [Tag.SCIENCE, Tag.EARTH],
+      tags: [Tag.ERUDIÇÃO, Tag.DIPLOMACIA],
       startingMegaCredits: 33,
       resourceType: CardResource.DATA,
 
       firstAction: {
         text: 'Draw 2 cards with a science tag',
-        drawCard: {count: 2, tag: Tag.SCIENCE},
+        drawCard: {count: 2, tag: Tag.ERUDIÇÃO},
       },
 
       metadata: {
@@ -35,9 +35,9 @@ export class CollegiumCopernicus extends CorporationCard implements ICorporation
         description: 'You start with 33 M€. As your first action, draw 2 cards with a science tag.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(33).cards(2, {secondaryTag: Tag.SCIENCE}).br;
+          b.megacredits(33).cards(2, {secondaryTag: Tag.ERUDIÇÃO}).br;
           b.effect('When you play a card with a science tag (including this) Add 1 data to ANY card.', (eb) => {
-            eb.tag(Tag.SCIENCE).asterix().startEffect.resource(CardResource.DATA).asterix();
+            eb.tag(Tag.ERUDIÇÃO).asterix().startEffect.resource(CardResource.DATA).asterix();
           }).br;
           b.resource(CardResource.DATA, {amount: 3, digit}).arrow().trade().plainText('Action: Spend 3 data from this card to trade.', true);
         }),
@@ -46,7 +46,7 @@ export class CollegiumCopernicus extends CorporationCard implements ICorporation
   }
 
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    if (player.tags.cardHasTag(card, Tag.SCIENCE) && player.tableau.has(this.name)) {
+    if (player.tags.cardHasTag(card, Tag.ERUDIÇÃO) && player.tableau.has(this.name)) {
       player.game.defer(new AddResourcesToCard(player, CardResource.DATA, {count: 1}));
     }
   }

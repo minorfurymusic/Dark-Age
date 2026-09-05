@@ -9,18 +9,18 @@ export class WarpDrive extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 14,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       name: CardName.WARP_DRIVE,
       type: CardType.ACTIVE,
       victoryPoints: 2,
 
-      requirements: {tag: Tag.SCIENCE, count: 5},
-      cardDiscount: {tag: Tag.SPACE, amount: 4},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 5},
+      cardDiscount: {tag: Tag.MARÍTIMO, amount: 4},
       metadata: {
         cardNumber: 'C49',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a space card, you pay 4 M€ less for it.', (eb) => {
-            eb.tag(Tag.SPACE).startEffect.megacredits(-4);
+            eb.tag(Tag.MARÍTIMO).startEffect.megacredits(-4);
           });
         }),
         description: 'Requires 5 science tags.',

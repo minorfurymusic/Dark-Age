@@ -11,7 +11,7 @@ export class RustEatingBacteria extends ActionCard implements IProjectCard {
     super({
       name: CardName.RUST_EATING_BACTERIA,
       type: CardType.ACTIVE,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 7,
 
       resourceType: CardResource.MICROBE,

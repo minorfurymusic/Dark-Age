@@ -7,7 +7,7 @@ export class CorridorsOfPower extends PreludeCard {
   constructor() {
     super({
       name: CardName.CORRIDORS_OF_POWER,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       behavior: {
         tr: 1,

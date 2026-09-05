@@ -11,7 +11,7 @@ export class OrbitalLaboratories extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.ORBITAL_LABORATORIES,
       cost: 18,
-      tags: [Tag.SCIENCE, Tag.PLANT, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.AGRICULTURA, Tag.MARÍTIMO],
 
       behavior: {
         production: {plants: 2},

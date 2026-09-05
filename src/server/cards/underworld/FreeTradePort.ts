@@ -7,7 +7,7 @@ export class FreeTradePort extends PreludeCard {
   constructor() {
     super({
       name: CardName.FREE_TRADE_PORT,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
 
       behavior: {
         colonies: {buildColony: {}},

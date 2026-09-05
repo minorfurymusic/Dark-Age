@@ -12,7 +12,7 @@ export class InterplanetaryTransport extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.INTERPLANETARY_TRANSPORT,
       cost: 15,
-      tags: [Tag.EARTH, Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.ENGENHO, Tag.MARÍTIMO],
       victoryPoints: 1,
 
       behavior: {
@@ -22,7 +22,7 @@ export class InterplanetaryTransport extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'Pf43',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.megacredits(1)).slash().city({all, secondaryTag: Tag.SPACE}).asterix;
+          b.production((pb) => pb.megacredits(1)).slash().city({all, secondaryTag: Tag.MARÍTIMO}).asterix;
         }),
         description: 'Increase your M€ production 1 step for every offworld city tile.',
       },

@@ -61,12 +61,12 @@ export class Tags {
   public countAllTags(): Record<Tag, number> {
     const counts: Record<Tag, number> = {} as Record<Tag, number>;
     for (const tag of ALL_TAGS) {
-      if (tag === Tag.EVENT) {
+      if (tag === Tag.HISTÓRIA) {
         continue;
       }
       counts[tag] = this.count(tag, 'raw');
     }
-    counts[Tag.EVENT] = this.player.getPlayedEventsCount();
+    counts[Tag.HISTÓRIA] = this.player.getPlayedEventsCount();
     return counts;
   }
 
@@ -80,21 +80,21 @@ export class Tags {
     let tagCount = this.rawCount(tag, includeEvents);
 
     // Leavitt Station, Underworld
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       tagCount += this.extraScienceTags;
     }
 
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       tagCount += this.extraPlantTags;
     }
 
-    if (tag === Tag.JOVIAN) {
+    if (tag === Tag.ENGENHO) {
       tagCount += this.extraJovianTags;
     }
 
     if (includeTagSubstitutions) {
       // Earth Embassy hook
-      if (tag === Tag.EARTH && this.player.tableau.has(CardName.EARTH_EMBASSY)) {
+      if (tag === Tag.DIPLOMACIA && this.player.tableau.has(CardName.EARTH_EMBASSY)) {
         tagCount += this.rawCount(Tag.MOON, includeEvents);
       }
 
@@ -105,8 +105,8 @@ export class Tags {
 
     // Habitat Marte hook
     if (mode !== 'raw') {
-      if (tag === Tag.SCIENCE && this.player.tableau.has(CardName.HABITAT_MARTE)) {
-        tagCount += this.rawCount(Tag.MARS, includeEvents);
+      if (tag === Tag.ERUDIÇÃO && this.player.tableau.has(CardName.HABITAT_MARTE)) {
+        tagCount += this.rawCount(Tag.GUERREAR, includeEvents);
       }
     }
 
@@ -133,13 +133,13 @@ export class Tags {
       if (tag === target) {
         return true;
       }
-      if (tag === Tag.MARS &&
-        target === Tag.SCIENCE &&
+      if (tag === Tag.GUERREAR &&
+        target === Tag.ERUDIÇÃO &&
         this.player.tableau.has(CardName.HABITAT_MARTE)) {
         return true;
       }
     }
-    if (target === Tag.EVENT && card.type === CardType.EVENT) {
+    if (target === Tag.HISTÓRIA && card.type === CardType.EVENT) {
       return true;
     }
 
@@ -156,7 +156,7 @@ export class Tags {
         count++;
       } else if (Array.isArray(target) && target.includes(tag)) {
         count++;
-      } else if (tag === Tag.MARS && target === Tag.SCIENCE &&
+      } else if (tag === Tag.GUERREAR && target === Tag.ERUDIÇÃO &&
         this.player.tableau.has(CardName.HABITAT_MARTE)) {
         count++;
       }
@@ -188,7 +188,7 @@ export class Tags {
     }
 
     // This is repeated behavior from getTagCount, sigh, OK.
-    if (tags.includes(Tag.EARTH) && !tags.includes(Tag.MOON) && this.player.tableau.has(CardName.EARTH_EMBASSY)) {
+    if (tags.includes(Tag.DIPLOMACIA) && !tags.includes(Tag.MOON) && this.player.tableau.has(CardName.EARTH_EMBASSY)) {
       tagCount += this.rawCount(Tag.MOON, includeEvents);
     }
 
@@ -205,13 +205,13 @@ export class Tags {
       }
     }
 
-    if (tags.includes(Tag.SCIENCE)) {
+    if (tags.includes(Tag.ERUDIÇÃO)) {
       tagCount += this.extraScienceTags;
     }
-    if (tags.includes(Tag.PLANT)) {
+    if (tags.includes(Tag.AGRICULTURA)) {
       tagCount += this.extraPlantTags;
     }
-    if (tags.includes(Tag.JOVIAN)) {
+    if (tags.includes(Tag.ENGENHO)) {
       tagCount += this.extraJovianTags;
     }
 
@@ -228,7 +228,7 @@ export class Tags {
   public tagsInGame(): number {
     const tags = this.player.game.tags;
     if (this._tagsInGame === 0) {
-      const i = intersection(tags, [Tag.EVENT, Tag.CLONE, Tag.WILD]);
+      const i = intersection(tags, [Tag.HISTÓRIA, Tag.CLONE, Tag.WILD]);
       this._tagsInGame = tags.length - i.length;
     }
     return this._tagsInGame;
@@ -259,7 +259,7 @@ export class Tags {
         }
       }
       if (playerIsOdyssey && card.type === CardType.EVENT) {
-        uniqueTags.add(Tag.EVENT);
+        uniqueTags.add(Tag.HISTÓRIA);
       }
     }
 
@@ -269,13 +269,13 @@ export class Tags {
     }
 
     if (this.extraScienceTags > 0) {
-      uniqueTags.add(Tag.SCIENCE);
+      uniqueTags.add(Tag.ERUDIÇÃO);
     }
     if (this.extraPlantTags > 0) {
-      uniqueTags.add(Tag.PLANT);
+      uniqueTags.add(Tag.AGRICULTURA);
     }
     if (this.extraJovianTags > 0) {
-      uniqueTags.add(Tag.JOVIAN);
+      uniqueTags.add(Tag.ENGENHO);
     }
 
     // Global events occur outside the action phase. Stop counting here, before wild tags apply.
@@ -300,11 +300,11 @@ export class Tags {
     tags.forEach((tag) => {
       if (this.count(tag, 'raw') > 0) {
         distinctCount++;
-      } else if (tag === Tag.SCIENCE) {
+      } else if (tag === Tag.ERUDIÇÃO) {
         if (this.player.hasTurmoilScienceTagBonus) {
           distinctCount++;
         } else if (this.player.tableau.has(CardName.HABITAT_MARTE)) {
-          if (this.count(Tag.MARS, 'raw') > 0) {
+          if (this.count(Tag.GUERREAR, 'raw') > 0) {
             distinctCount++;
           }
         }

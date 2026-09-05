@@ -10,7 +10,7 @@ export class UndergroundDetonations extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.UNDERGROUND_DETONATIONS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 6,
 
       action: {

@@ -10,7 +10,7 @@ export class AerialMappers extends ActionCard {
     super({
       name: CardName.AERIAL_MAPPERS,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 11,
       resourceType: CardResource.FLOATER,
       victoryPoints: 1,

@@ -11,7 +11,7 @@ export class BoomTown extends PreludeCard {
   constructor() {
     super({
       name: CardName.BOOM_TOWN,
-      tags: [Tag.BUILDING, Tag.CITY],
+      tags: [Tag.CONSTRUÇÃO, Tag.FEUDO],
 
       behavior: {
         production: {titanium: 2},

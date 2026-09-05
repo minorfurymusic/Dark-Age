@@ -10,7 +10,7 @@ export class MethaneFromTitan extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.METHANE_FROM_TITAN,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       cost: 28,
       victoryPoints: 2,
 

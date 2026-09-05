@@ -14,7 +14,7 @@ export class HenkeiGenetics extends CorporationCard implements ICorporationCard,
   constructor() {
     super({
       name: CardName.HENKEI_GENETICS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       startingMegaCredits: 47,
       resourceType: CardResource.MICROBE,
 
@@ -30,14 +30,14 @@ export class HenkeiGenetics extends CorporationCard implements ICorporationCard,
 
       firstAction: {
         text: 'Draw 2 microbe cards',
-        drawCard: {count: 2, tag: Tag.MICROBE},
+        drawCard: {count: 2, tag: Tag.BRUXARIA},
       },
 
       metadata: {
         cardNumber: 'UC04',
         description: 'You start with 47 M€ and 1 corruption. As your first action, draw 2 microbe cards.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(47).corruption(1).cards(2, {secondaryTag: Tag.MICROBE}).br;
+          b.megacredits(47).corruption(1).cards(2, {secondaryTag: Tag.BRUXARIA}).br;
           b.action('Pay 1 corruption to place 3 microbes on each card, up 2 to cards.', (ab) => {
             ab.corruption(1).startAction
               .resource(CardResource.MICROBE, {amount: 3, digit}).asterix()

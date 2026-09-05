@@ -7,7 +7,7 @@ export class ResearchGrant extends PreludeCard {
   constructor() {
     super({
       name: CardName.RESEARCH_GRANT_PATHFINDERS,
-      tags: [Tag.SCIENCE, Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO, Tag.ERUDIÇÃO],
 
       behavior: {
         production: {energy: 1},

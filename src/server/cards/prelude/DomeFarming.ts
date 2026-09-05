@@ -7,7 +7,7 @@ export class DomeFarming extends PreludeCard {
   constructor() {
     super({
       name: CardName.DOME_FARMING,
-      tags: [Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
 
       behavior: {
         production: {megacredits: 2, plants: 1},

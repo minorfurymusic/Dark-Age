@@ -9,7 +9,7 @@ export class ResearchColony extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 20,
-      tags: [Tag.SPACE, Tag.SCIENCE],
+      tags: [Tag.MARÍTIMO, Tag.ERUDIÇÃO],
       name: CardName.RESEARCH_COLONY,
       type: CardType.AUTOMATED,
 

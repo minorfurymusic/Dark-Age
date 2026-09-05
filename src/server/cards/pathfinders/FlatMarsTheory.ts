@@ -14,8 +14,8 @@ export class FlatMarsTheory extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.FLAT_MARS_THEORY,
       cost: 8,
-      tags: [Tag.EARTH],
-      requirements: {tag: Tag.SCIENCE, count: 1, max},
+      tags: [Tag.DIPLOMACIA],
+      requirements: {tag: Tag.ERUDIÇÃO, count: 1, max},
 
       metadata: {
         cardNumber: 'Pf39',

@@ -10,10 +10,10 @@ export class VenusGovernor extends Card implements IProjectCard {
     super({
       name: CardName.VENUS_GOVERNOR,
       type: CardType.AUTOMATED,
-      tags: [Tag.VENUS, Tag.VENUS],
+      tags: [Tag.COMÉRCIO, Tag.COMÉRCIO],
       cost: 4,
 
-      requirements: {tag: Tag.VENUS, count: 2},
+      requirements: {tag: Tag.COMÉRCIO, count: 2},
 
       behavior: {
         production: {megacredits: 2},

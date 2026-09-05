@@ -55,6 +55,7 @@ import {MultiSet} from 'mnemonist';
 import {GrantVenusAltTrackBonusDeferred} from './venusNext/GrantVenusAltTrackBonusDeferred';
 import {PathfindersExpansion} from './pathfinders/PathfindersExpansion';
 import {PathfindersData} from './pathfinders/PathfindersData';
+import {OathDealer} from './oaths/OathDealer';
 import {DeltaProject} from './cards/delta/DeltaProject';
 import {AddResourcesToCard} from './deferredActions/AddResourcesToCard';
 import {ColonyDeserializer} from './colonies/ColonyDeserializer';
@@ -134,6 +135,7 @@ export class Game implements IGame, Logger {
   private donePlayers = new Set<PlayerId>();
   private passedPlayers = new Set<PlayerId>();
   private researchedPlayers = new Set<PlayerId>();
+  private guardedPlayers = new Set<PlayerId>();
   /** The first player of this generation. */
   public first: IPlayer;
 
@@ -154,6 +156,7 @@ export class Game implements IGame, Logger {
   public aresData: AresData | undefined;
   public moonData: MoonData | undefined;
   public pathfindersData: PathfindersData | undefined;
+  public oathDealer: OathDealer | undefined;
   public underworldData: UnderworldData = UnderworldExpansion.initializeGameWithoutUnderworld();
   public inTurmoil: boolean = false;
 
@@ -376,6 +379,9 @@ export class Game implements IGame, Logger {
       game.pathfindersData = PathfindersExpansion.initialize(game);
     }
 
+    // Initialize oath dealer
+    game.oathDealer = new OathDealer(game.rng);
+
     if (game.gameOptions.deltaProjectExpansion) {
       for (const player of game.players) {
         player.preludeCardsInHand.push(new DeltaProject());
@@ -506,6 +512,7 @@ export class Game implements IGame, Logger {
       preludeDeck: this.preludeDeck.serialize(),
       projectDeck: this.projectDeck.serialize(),
       researchedPlayers: Array.from(this.researchedPlayers),
+      guardedPlayers: Array.from(this.guardedPlayers),
       seed: this.rng.seed,
       someoneHasRemovedOtherPlayersPlants: this.someoneHasRemovedOtherPlayersPlants,
       spectatorId: this.spectatorId,
@@ -754,6 +761,15 @@ export class Game implements IGame, Logger {
     });
   }
 
+  public gotoGuardPhase(): void {
+    this.phase = Phase.GUARDA;
+    this.guardedPlayers.clear();
+    this.save();
+    this.players.forEach((player) => {
+      player.runGuardPhase();
+    });
+  }
+
   private gotoDraftPhase(): void {
     this.phase = Phase.DRAFTING;
     this.draftRound = 1;
@@ -872,11 +888,11 @@ export class Game implements IGame, Logger {
     }
     this.globalsPerGeneration.push({});
     const entry = this.globalsPerGeneration[this.globalsPerGeneration.length - 1];
-    entry[GlobalParameter.TEMPERATURE] = this.temperature;
-    entry[GlobalParameter.OXYGEN] = this.oxygenLevel;
-    entry[GlobalParameter.OCEANS] = this.board.getOceanSpaces().length;
+    entry[GlobalParameter.TECNOLOGIA] = this.temperature;
+    entry[GlobalParameter.FE] = this.oxygenLevel;
+    entry[GlobalParameter.ESTANDARTES] = this.board.getOceanSpaces().length;
     if (this.gameOptions.venusNextExtension) {
-      entry[GlobalParameter.VENUS] = this.venusScaleLevel;
+      entry[GlobalParameter.ROTAS_COMERCIAIS] = this.venusScaleLevel;
     }
     MoonExpansion.ifMoon(this, (moonData) => {
       entry[GlobalParameter.MOON_HABITAT_RATE] = moonData.habitatRate;
@@ -920,7 +936,7 @@ export class Game implements IGame, Logger {
     if (this.getTemperature() < constants.MAX_TEMPERATURE) {
       orOptions.options.push(
         new SelectOption('Increase temperature', 'Increase')
-          .annotate(GlobalParameter.TEMPERATURE)
+          .annotate(GlobalParameter.TECNOLOGIA)
           .andThen(() => {
             this.increaseTemperature(player, 1);
             this.log('${0} acted as World Government and increased temperature', (b) => b.player(player));
@@ -931,7 +947,7 @@ export class Game implements IGame, Logger {
     if (this.getOxygenLevel() < constants.MAX_OXYGEN_LEVEL) {
       orOptions.options.push(
         new SelectOption('Increase oxygen', 'Increase')
-          .annotate(GlobalParameter.OXYGEN)
+          .annotate(GlobalParameter.FE)
           .andThen(() => {
             this.increaseOxygenLevel(player, 1);
             this.log('${0} acted as World Government and increased oxygen level', (b) => b.player(player));
@@ -942,7 +958,7 @@ export class Game implements IGame, Logger {
     if (this.canAddOcean()) {
       orOptions.options.push(
         new SelectSpace('Add an ocean', this.board.getAvailableSpacesForOcean(player))
-          .annotate(GlobalParameter.OCEANS)
+          .annotate(GlobalParameter.ESTANDARTES)
           .andThen((space) => {
             this.addOcean(player, space);
             this.log('${0} acted as World Government and placed an ocean', (b) => b.player(player));
@@ -1051,6 +1067,20 @@ export class Game implements IGame, Logger {
       this.researchedPlayers.add(player.id);
       if (this.researchedPlayers.size === this.players.length) {
         this.researchedPlayers.clear();
+        this.phase = Phase.ACTION;
+        this.passedPlayers.clear();
+        this.potentiallyChangeFirstPlayer();
+
+        this.startActionsForPlayer(this.first);
+      }
+    });
+  }
+
+  public playerIsFinishedWithGuardPhase(player: IPlayer): void {
+    this.deferredActions.runAllFor(player, () => {
+      this.guardedPlayers.add(player.id);
+      if (this.guardedPlayers.size === this.players.length) {
+        this.guardedPlayers.clear();
         this.phase = Phase.ACTION;
         this.passedPlayers.clear();
         this.potentiallyChangeFirstPlayer();
@@ -1200,8 +1230,8 @@ export class Game implements IGame, Logger {
     const steps = Math.min(increments, constants.MAX_OXYGEN_LEVEL - this.oxygenLevel);
 
     if (this.phase !== Phase.SOLAR) {
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.OXYGEN, steps);
-      player.onGlobalParameterIncrease(GlobalParameter.OXYGEN, steps);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.FE, steps);
+      player.onGlobalParameterIncrease(GlobalParameter.FE, steps);
       player.increaseTerraformRating(steps);
     }
     if (this.oxygenLevel < constants.OXYGEN_LEVEL_FOR_TEMPERATURE_BONUS &&
@@ -1256,13 +1286,13 @@ export class Game implements IGame, Logger {
         }
       }
       for (const card of player.playedCards) {
-        card.onGlobalParameterIncrease?.(player, GlobalParameter.VENUS, steps);
+        card.onGlobalParameterIncrease?.(player, GlobalParameter.ROTAS_COMERCIAIS, steps);
       }
       if (this.exploitationOfVenusInEffect) {
         player.stock.add(Resource.MEGACREDITS, steps * 2, {log: true, from: {card: CardName.EXPLOITATION_OF_VENUS}});
       }
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.VENUS, steps);
-      player.onGlobalParameterIncrease(GlobalParameter.VENUS, steps);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.ROTAS_COMERCIAIS, steps);
+      player.onGlobalParameterIncrease(GlobalParameter.ROTAS_COMERCIAIS, steps);
       player.increaseTerraformRating(steps);
     }
 
@@ -1298,18 +1328,18 @@ export class Game implements IGame, Logger {
       // BONUS FOR HEAT PRODUCTION AT -20 and -24
       if (this.temperature < constants.TEMPERATURE_BONUS_FOR_HEAT_1 &&
         this.temperature + steps * 2 >= constants.TEMPERATURE_BONUS_FOR_HEAT_1) {
-        player.production.add(Resource.HEAT, 1, {log: true});
+        player.production.add(Resource.INOVACAO, 1, {log: true});
       }
       if (this.temperature < constants.TEMPERATURE_BONUS_FOR_HEAT_2 &&
         this.temperature + steps * 2 >= constants.TEMPERATURE_BONUS_FOR_HEAT_2) {
-        player.production.add(Resource.HEAT, 1, {log: true});
+        player.production.add(Resource.INOVACAO, 1, {log: true});
       }
 
       for (const card of player.playedCards) {
-        card.onGlobalParameterIncrease?.(player, GlobalParameter.TEMPERATURE, steps);
+        card.onGlobalParameterIncrease?.(player, GlobalParameter.TECNOLOGIA, steps);
       }
-      player.onGlobalParameterIncrease(GlobalParameter.TEMPERATURE, steps);
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.TEMPERATURE, steps);
+      player.onGlobalParameterIncrease(GlobalParameter.TECNOLOGIA, steps);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.TECNOLOGIA, steps);
       player.increaseTerraformRating(steps);
     }
 
@@ -1482,7 +1512,7 @@ export class Game implements IGame, Logger {
       player.stock.add(Resource.TITANIUM, count, {log: true});
       break;
     case SpaceBonus.HEAT:
-      player.stock.add(Resource.HEAT, count, {log: true});
+      player.stock.add(Resource.INOVACAO, count, {log: true});
       break;
     case SpaceBonus.OCEAN:
       // Hellas special requirements ocean tile
@@ -1504,7 +1534,7 @@ export class Game implements IGame, Logger {
       this.defer(new AddResourcesToCard(player, CardResource.DATA, {count: count}));
       break;
     case SpaceBonus.ENERGY_PRODUCTION:
-      player.production.add(Resource.ENERGY, count, {log: true});
+      player.production.add(Resource.GUERREAR, count, {log: true});
       break;
     case SpaceBonus.SCIENCE:
       this.defer(new AddResourcesToCard(player, CardResource.SCIENCE, {count: count}));
@@ -1521,7 +1551,7 @@ export class Game implements IGame, Logger {
       }
       break;
     case SpaceBonus.ENERGY:
-      player.stock.add(Resource.ENERGY, count, {log: true});
+      player.stock.add(Resource.GUERREAR, count, {log: true});
       break;
     case SpaceBonus.ASTEROID:
       this.defer(new AddResourcesToCard(player, CardResource.ASTEROID, {count: count}));
@@ -1582,8 +1612,8 @@ export class Game implements IGame, Logger {
     this.addTile(player, space, {tileType: TileType.OCEAN});
 
     if (this.phase !== Phase.SOLAR) {
-      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.OCEANS);
-      player.onGlobalParameterIncrease(GlobalParameter.OCEANS, 1);
+      TurmoilHandler.onGlobalParameterIncrease(player, GlobalParameter.ESTANDARTES);
+      player.onGlobalParameterIncrease(GlobalParameter.ESTANDARTES, 1);
       player.increaseTerraformRating();
     }
     AresHandler.ifAres(this, (aresData) => {
@@ -1778,6 +1808,7 @@ export class Game implements IGame, Logger {
     game.passedPlayers = new Set<PlayerId>(d.passedPlayers);
     game.donePlayers = new Set<PlayerId>(d.donePlayers);
     game.researchedPlayers = new Set<PlayerId>(d.researchedPlayers);
+    game.guardedPlayers = new Set<PlayerId>(d.guardedPlayers ?? []);
 
     game.lastSaveId = d.lastSaveId;
     game.clonedGamedId = d.clonedGamedId;

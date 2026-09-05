@@ -7,7 +7,7 @@ export class BatteryShipment extends PreludeCard {
   constructor() {
     super({
       name: CardName.BATTERY_SHIPMENT,
-      tags: [Tag.POWER],
+      tags: [Tag.GUERREAR],
 
       behavior: {
         stock: {energy: 12},

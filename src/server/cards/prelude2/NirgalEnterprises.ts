@@ -8,7 +8,7 @@ export class NirgalEnterprises extends CorporationCard implements ICorporationCa
   constructor() {
     super({
       name: CardName.NIRGAL_ENTERPRISES,
-      tags: [Tag.POWER, Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.GUERREAR, Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
       startingMegaCredits: 30,
 
       behavior: {

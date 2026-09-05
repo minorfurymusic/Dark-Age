@@ -10,7 +10,7 @@ export class CrescentResearchAssociation extends CorporationCard implements ICor
   constructor() {
     super({
       name: CardName.CRESCENT_RESEARCH_ASSOCIATION,
-      tags: [Tag.SCIENCE, Tag.MOON],
+      tags: [Tag.ERUDIÇÃO, Tag.MOON],
       startingMegaCredits: 50,
 
       victoryPoints: {tag: Tag.MOON, per: 3},

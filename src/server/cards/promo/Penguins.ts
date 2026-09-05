@@ -11,7 +11,7 @@ export class Penguins extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.PENGUINS,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       cost: 7,
       resourceType: CardResource.ANIMAL,
       victoryPoints: {resourcesHere: {}},

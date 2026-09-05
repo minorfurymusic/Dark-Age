@@ -10,7 +10,7 @@ export class TechnologyDemonstration extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.TECHNOLOGY_DEMONSTRATION,
-      tags: [Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO],
       cost: 5,
 
       behavior: {

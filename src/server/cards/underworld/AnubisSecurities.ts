@@ -12,7 +12,7 @@ export class AnubisSecurities extends CorporationCard implements ICorporationCar
   constructor() {
     super({
       name: CardName.ANUBIS_SECURITIES,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 42,
       initialActionText: 'Play a card, ignoring global requirements',
 

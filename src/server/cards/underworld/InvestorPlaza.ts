@@ -7,7 +7,7 @@ export class InvestorPlaza extends PreludeCard {
   constructor() {
     super({
       name: CardName.INVESTOR_PLAZA,
-      tags: [Tag.EARTH, Tag.CITY],
+      tags: [Tag.DIPLOMACIA, Tag.FEUDO],
 
       behavior: {
         city: {},

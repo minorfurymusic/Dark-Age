@@ -10,7 +10,7 @@ export class LTFHeadquarters extends Card implements IProjectCard {
     super({
       name: CardName.LTF_HEADQUARTERS,
       type: CardType.AUTOMATED,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 31,
 
       behavior: {

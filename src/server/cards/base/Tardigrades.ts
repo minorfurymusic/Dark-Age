@@ -11,7 +11,7 @@ export class Tardigrades extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.TARDIGRADES,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 4,
 
       resourceType: CardResource.MICROBE,

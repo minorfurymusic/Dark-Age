@@ -10,7 +10,7 @@ export class StripMine extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.STRIP_MINE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 25,
 
       behavior: {

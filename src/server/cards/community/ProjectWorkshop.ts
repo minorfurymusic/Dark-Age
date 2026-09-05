@@ -22,7 +22,7 @@ export class ProjectWorkshop extends CorporationCard implements ICorporationCard
   constructor() {
     super({
       name: CardName.PROJECT_WORKSHOP,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 39,
 
       behavior: {

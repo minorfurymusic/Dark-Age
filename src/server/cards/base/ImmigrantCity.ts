@@ -20,7 +20,7 @@ export class ImmigrantCity extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.IMMIGRANT_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 13,
 
       metadata: {
@@ -57,7 +57,7 @@ export class ImmigrantCity extends Card implements IProjectCard {
   public override bespokePlay(player: IPlayer) {
     const spaces = MarsBoard.filterForEnergy(player, player.game.board.getAvailableSpacesForCity(player));
     player.game.defer(new PlaceCityTile(player, {spaces})).andThen(() => {
-      player.game.defer(new LoseProduction(player, Resource.ENERGY, {count: 1}));
+      player.game.defer(new LoseProduction(player, Resource.GUERREAR, {count: 1}));
       player.game.defer(new LoseProduction(player, Resource.MEGACREDITS, {count: 2}));
     });
     return undefined;

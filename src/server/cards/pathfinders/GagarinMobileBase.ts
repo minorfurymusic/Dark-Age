@@ -17,7 +17,7 @@ export class GagarinMobileBase extends CorporationCard implements ICorporationCa
   constructor() {
     super({
       name: CardName.GAGARIN_MOBILE_BASE,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       startingMegaCredits: 42,
       initialActionText: 'Place Gagarin Mobile Base on ANY space ON MARS',
 

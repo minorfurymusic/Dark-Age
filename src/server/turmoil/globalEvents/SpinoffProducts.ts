@@ -18,7 +18,7 @@ export class SpinoffProducts extends GlobalEvent implements IGlobalEvent {
       revealedDelegate: PartyName.GREENS,
       currentDelegate: PartyName.SCIENTISTS,
       renderData: CardRenderer.builder((b) => {
-        b.megacredits(2).slash().tag(Tag.SCIENCE).influence({size: Size.SMALL});
+        b.megacredits(2).slash().tag(Tag.ERUDIÇÃO).influence({size: Size.SMALL});
       }),
     });
   }
@@ -27,7 +27,7 @@ export class SpinoffProducts extends GlobalEvent implements IGlobalEvent {
     player.stock.add(
       Resource.MEGACREDITS,
       2 *
-        (Math.min(5, player.tags.count(Tag.SCIENCE, 'raw-pf')) +
+        (Math.min(5, player.tags.count(Tag.ERUDIÇÃO, 'raw-pf')) +
           turmoil.getInfluence(player)),
       {log: true, from: {globalEvent: this}},
     );

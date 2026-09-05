@@ -10,6 +10,6 @@ export class Martian extends BaseMilestone {
       4);
   }
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.MARS, 'milestone');
+    return player.tags.count(Tag.GUERREAR, 'milestone');
   }
 }

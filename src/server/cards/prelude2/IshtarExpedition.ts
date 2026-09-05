@@ -10,7 +10,7 @@ export class IshtarExpedition extends Card implements IProjectCard {
     super({
       name: CardName.ISHTAR_EXPEDITION,
       cost: 6,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       type: CardType.EVENT,
 
       requirements: {venus: 10},
@@ -19,13 +19,13 @@ export class IshtarExpedition extends Card implements IProjectCard {
         stock: {
           titanium: 3,
         },
-        drawCard: {count: 2, tag: Tag.VENUS},
+        drawCard: {count: 2, tag: Tag.COMÉRCIO},
       },
 
       metadata: {
         cardNumber: 'P76',
         renderData: CardRenderer.builder((b) => {
-          b.titanium(3).cards(2, {secondaryTag: Tag.VENUS});
+          b.titanium(3).cards(2, {secondaryTag: Tag.COMÉRCIO});
         }),
         description: 'Requires Venus 10%. Gain 3 titanium and draw 2 Venus cards.',
       },

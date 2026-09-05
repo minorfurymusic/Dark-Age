@@ -11,7 +11,7 @@ export class KuiperCooperative extends ActiveCorporationCard implements ICorpora
   constructor() {
     super({
       name: CardName.KUIPER_COOPERATIVE,
-      tags: [Tag.SPACE, Tag.SPACE],
+      tags: [Tag.MARÍTIMO, Tag.MARÍTIMO],
       startingMegaCredits: 33,
       resourceType: CardResource.ASTEROID,
 
@@ -20,7 +20,7 @@ export class KuiperCooperative extends ActiveCorporationCard implements ICorpora
       },
 
       action: {
-        addResources: {tag: Tag.SPACE},
+        addResources: {tag: Tag.MARÍTIMO},
       },
 
       metadata: {
@@ -29,7 +29,7 @@ export class KuiperCooperative extends ActiveCorporationCard implements ICorpora
         renderData: CardRenderer.builder((b) => {
           b.megacredits(33).production((pb) => pb.titanium(1)).br;
           b.action('Add 1 asteroid here for every space tag you have.', (ab) => {
-            ab.empty().startAction.resource(CardResource.ASTEROID).slash().tag(Tag.SPACE);
+            ab.empty().startAction.resource(CardResource.ASTEROID).slash().tag(Tag.MARÍTIMO);
           }).br;
           b.effect('When you use the AQUIFER or ASTEROID standard projects, you can spend asteroids on card as 1M€ each.', (eb) => {
             eb.plate('Standard Project', {size: Size.SMALL}).asterix().startEffect.resource(CardResource.ASTEROID).equals().megacredits(1);

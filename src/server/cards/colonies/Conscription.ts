@@ -13,11 +13,11 @@ export class Conscription extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       cost: 5,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       name: CardName.CONSCRIPTION,
       victoryPoints: -1,
 
-      requirements: {tag: Tag.EARTH, count: 2},
+      requirements: {tag: Tag.DIPLOMACIA, count: 2},
       metadata: {
         cardNumber: 'C05',
         renderData: CardRenderer.builder((b) => {

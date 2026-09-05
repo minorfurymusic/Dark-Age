@@ -27,7 +27,7 @@ export class MartianInsuranceGroup extends CorporationCard implements ICorporati
           b.megacredits(42).production((pb) => pb.megacredits(1));
           b.corpBox('effect', (ce) => {
             ce.effect('Whenever you play an event card, raise your M€ production 1 step.', (eb) => {
-              eb.tag(Tag.EVENT).startEffect.production((pb) => pb.megacredits(1));
+              eb.tag(Tag.HISTÓRIA).startEffect.production((pb) => pb.megacredits(1));
             });
           });
         }),

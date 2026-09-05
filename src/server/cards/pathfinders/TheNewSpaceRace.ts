@@ -11,7 +11,7 @@ export class TheNewSpaceRace extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.THE_NEW_SPACE_RACE,
-      tags: [Tag.SCIENCE, Tag.EARTH],
+      tags: [Tag.ERUDIÇÃO, Tag.DIPLOMACIA],
 
       behavior: {
         stock: {megacredits: 12},

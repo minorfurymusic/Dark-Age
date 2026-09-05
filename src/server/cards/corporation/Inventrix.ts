@@ -8,7 +8,7 @@ export class Inventrix extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.INVENTRIX,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       startingMegaCredits: 45,
       globalParameterRequirementBonus: {steps: 2},
 

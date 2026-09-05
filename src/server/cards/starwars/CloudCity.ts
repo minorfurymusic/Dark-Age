@@ -11,7 +11,7 @@ export class CloudCity extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CLOUD_CITY,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 5,
       requirements: {venus: 6},
 

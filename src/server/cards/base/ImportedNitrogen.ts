@@ -12,7 +12,7 @@ export class ImportedNitrogen extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.IMPORTED_NITROGEN,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 23,
 
       behavior: {

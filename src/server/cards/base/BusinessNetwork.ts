@@ -12,7 +12,7 @@ export class BusinessNetwork extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.BUSINESS_NETWORK,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 4,
       behavior: {
         production: {megacredits: -1},

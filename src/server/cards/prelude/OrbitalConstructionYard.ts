@@ -8,7 +8,7 @@ export class OrbitalConstructionYard extends PreludeCard implements IProjectCard
   constructor() {
     super({
       name: CardName.ORBITAL_CONSTRUCTION_YARD,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
 
       behavior: {
         production: {titanium: 1},

@@ -9,7 +9,7 @@ export class EcologyExperts extends PreludeCard {
   constructor() {
     super({
       name: CardName.ECOLOGY_EXPERTS,
-      tags: [Tag.PLANT, Tag.MICROBE],
+      tags: [Tag.AGRICULTURA, Tag.BRUXARIA],
 
       behavior: {
         production: {plants: 1},

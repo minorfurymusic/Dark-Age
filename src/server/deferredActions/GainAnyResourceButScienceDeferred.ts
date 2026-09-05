@@ -9,6 +9,7 @@ import {SelectOption} from '../inputs/SelectOption';
 import {UnderworldExpansion} from '../underworld/UnderworldExpansion';
 import {SelectResource} from '../inputs/SelectResource';
 import {message} from '../logs/MessageBuilder';
+import {Units} from '../../common/Units';
 
 export class GainAnyResourceButScienceDeferred extends DeferredAction {
   constructor(player: IPlayer) {
@@ -29,7 +30,7 @@ export class GainAnyResourceButScienceDeferred extends DeferredAction {
     }
     orOptions.options.push(new SelectResource('Gain 1 standard resource')
       .andThen((resource) => {
-        this.player.stock.add(resource, 1, {log: true});
+        this.player.stock.add(Units.keyToResource(resource), 1, {log: true});
         return undefined;
       }));
     orOptions.options.push(new SelectOption('Gain 1 corruption')

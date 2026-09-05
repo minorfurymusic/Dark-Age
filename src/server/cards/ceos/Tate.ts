@@ -18,7 +18,7 @@ export class Tate extends CeoCard {
       metadata: {
         cardNumber: 'L20',
         renderData: CardRenderer.builder((b) => {
-          b.opgArrow().text('5', {size: Size.LARGE}).cards(1, {secondaryTag: Tag.WILD}).asterix();
+          b.opgArrow().text('5', {size: Size.LARGE}).cards(1).asterix();
           b.br.br;
         }),
         description: 'Once per game, name a tag. Reveal cards from the deck until you find 5 cards with that tag. BUY up to 2 cards and discard the rest.',
@@ -30,8 +30,7 @@ export class Tate extends CeoCard {
     this.isDisabled = true;
     const game = player.game;
     const tags = [...game.tags];
-    inplaceRemove(tags, Tag.WILD);
-    inplaceRemove(tags, Tag.EVENT);
+    inplaceRemove(tags, Tag.HISTÓRIA);
     inplaceRemove(tags, Tag.CLONE);
 
     const options = tags.map((tag) => {

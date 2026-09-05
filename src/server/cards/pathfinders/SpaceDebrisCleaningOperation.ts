@@ -16,8 +16,8 @@ export class SpaceDebrisCleaningOperation extends Card implements IProjectCard {
       type: CardType.EVENT,
       name: CardName.SPACE_DEBRIS_CLEANING_OPERATION,
       cost: 7,
-      tags: [Tag.MARS, Tag.SPACE],
-      requirements: {tag: Tag.SPACE, count: 4, all},
+      tags: [Tag.MARS, Tag.MARÍTIMO],
+      requirements: {tag: Tag.MARÍTIMO, count: 4, all},
 
       behavior: {
         stock: {titanium: 3},
@@ -48,7 +48,7 @@ export class SpaceDebrisCleaningOperation extends Card implements IProjectCard {
           count: 1,
           robotCards: true,
           filter: (card: ICard) => {
-            return card.resourceType !== undefined && card.resourceType !== CardResource.SCIENCE && !card.tags.includes(Tag.ANIMAL);
+            return card.resourceType !== undefined && card.resourceType !== CardResource.SCIENCE && !card.tags.includes(Tag.PECUÁRIA);
           },
         },
       ));

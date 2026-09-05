@@ -13,7 +13,7 @@ export class NitrogenRichAsteroid extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.NITROGEN_RICH_ASTEROID,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 31,
 
       behavior: {
@@ -26,7 +26,7 @@ export class NitrogenRichAsteroid extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
             pb.plants(1).nbsp.or().br;
-            pb.tag(Tag.PLANT, {amount: 3, digit}).colon().nbsp.plants(4, {digit});
+            pb.tag(Tag.AGRICULTURA, {amount: 3, digit}).colon().nbsp.plants(4, {digit});
           }).br;
           b.tr(2).temperature(1);
         }),
@@ -36,7 +36,7 @@ export class NitrogenRichAsteroid extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    if (player.tags.count(Tag.PLANT) < 3) {
+    if (player.tags.count(Tag.AGRICULTURA) < 3) {
       player.production.add(Resource.PLANTS, 1, {log: true});
     } else {
       player.production.add(Resource.PLANTS, 4, {log: true});

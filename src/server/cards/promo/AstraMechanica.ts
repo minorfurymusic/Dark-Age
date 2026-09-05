@@ -13,13 +13,13 @@ export class AstraMechanica extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ASTRA_MECHANICA,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 7,
 
       metadata: {
         cardNumber: 'X51',
         renderData: CardRenderer.builder((b) => {
-          b.cards(2, {secondaryTag: Tag.EVENT}).asterix();
+          b.cards(2, {secondaryTag: Tag.HISTÓRIA}).asterix();
         }),
         description: 'RETURN UP TO 2 OF YOUR PLAYED EVENT CARDS TO YOUR HAND. THEY MAY NOT BE CARDS THAT PLACE SPECIAL TILES.',
       },

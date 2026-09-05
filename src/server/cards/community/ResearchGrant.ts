@@ -8,7 +8,7 @@ export class ResearchGrant extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.RESEARCH_GRANT,
-      tags: [Tag.SCIENCE, Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO, Tag.ERUDIÇÃO],
       behavior: {
         stock: {megacredits: 8},
       },

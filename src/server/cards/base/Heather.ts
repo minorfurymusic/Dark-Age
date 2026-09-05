@@ -10,7 +10,7 @@ export class Heather extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.HEATHER,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 6,
 
       behavior: {

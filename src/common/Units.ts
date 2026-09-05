@@ -1,3 +1,5 @@
+import {Resource} from './Resource';
+
 // A representation of a value associated with each standard resource type.
 // Could be a player's inventory, or their production, or just a way to pass several resource-related values
 
@@ -13,6 +15,18 @@ export type Units = {
 }
 
 export namespace Units {
+  export function resourceToKey(resource: Resource): keyof Units {
+    if (resource === Resource.GUERREAR) return 'energy';
+    if (resource === Resource.INOVACAO) return 'heat';
+    return resource as keyof Units;
+  }
+
+  export function keyToResource(key: keyof Units): Resource {
+    if (key === 'energy') return Resource.GUERREAR;
+    if (key === 'heat') return Resource.INOVACAO;
+    return key as Resource;
+  }
+
   export const EMPTY: Readonly<Units> = {
     get megacredits() {
       return 0;

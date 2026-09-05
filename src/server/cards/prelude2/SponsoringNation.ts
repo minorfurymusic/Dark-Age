@@ -9,7 +9,7 @@ export class SponsoringNation extends Card {
     super({
       name: CardName.SPONSORING_NATION,
       type: CardType.AUTOMATED,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 21,
 
       behavior: {
@@ -17,7 +17,7 @@ export class SponsoringNation extends Card {
         turmoil: {sendDelegates: {count: 2}},
       },
 
-      requirements: {tag: Tag.EARTH, count: 4},
+      requirements: {tag: Tag.DIPLOMACIA, count: 4},
 
       metadata: {
         cardNumber: 'P83',

@@ -16,7 +16,7 @@ export class NoctisCity extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.NOCTIS_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 18,
 
       behavior: {
@@ -54,7 +54,7 @@ export class NoctisCity extends Card implements IProjectCard {
     if (noctisCitySpaceId !== undefined) {
       const space = player.game.board.getSpaceOrThrow(noctisCitySpaceId);
       player.game.addCity(player, space);
-      player.production.add(Resource.ENERGY, -1, {log: true});
+      player.production.add(Resource.GUERREAR, -1, {log: true});
     } else {
       const spaces = MarsBoard.filterForEnergy(player, player.game.board.getAvailableSpacesForCity(player));
       player.game.defer(
@@ -63,7 +63,7 @@ export class NoctisCity extends Card implements IProjectCard {
           spaces,
         }),
       ).andThen(() => {
-        player.game.defer(new LoseProduction(player, Resource.ENERGY, {count: 1}));
+        player.game.defer(new LoseProduction(player, Resource.GUERREAR, {count: 1}));
       });
     }
     return undefined;

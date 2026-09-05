@@ -16,7 +16,7 @@ export class ValuableGases extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.VALUABLE_GASES_PATHFINDERS,
-      tags: [Tag.JOVIAN, Tag.VENUS],
+      tags: [Tag.ENGENHO, Tag.COMÉRCIO],
       // 50 steps ensures "ignore requirements"
       globalParameterRequirementBonus: {steps: 50, nextCardOnly: true},
 

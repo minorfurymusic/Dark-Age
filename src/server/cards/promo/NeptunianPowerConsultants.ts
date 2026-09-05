@@ -21,7 +21,7 @@ export class NeptunianPowerConsultants extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.NEPTUNIAN_POWER_CONSULTANTS,
-      tags: [Tag.POWER],
+      tags: [Tag.GUERREAR],
       cost: 14,
       resourceType: CardResource.HYDROELECTRIC_RESOURCE,
       victoryPoints: {resourcesHere: {}},
@@ -53,7 +53,7 @@ export class NeptunianPowerConsultants extends Card implements IProjectCard {
           5, {steel: true})
           .andThen((payment) => {
             cardOwner.pay(payment);
-            cardOwner.production.add(Resource.ENERGY, 1, {log: true});
+            cardOwner.production.add(Resource.GUERREAR, 1, {log: true});
             cardOwner.addResourceTo(this, {qty: 1, log: true});
             return undefined;
           }));

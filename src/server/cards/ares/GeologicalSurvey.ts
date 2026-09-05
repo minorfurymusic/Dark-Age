@@ -14,7 +14,7 @@ export class GeologicalSurvey extends SurveyCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.GEOLOGICAL_SURVEY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 8,
 
       requirements: {greeneries: 5, all, max},
@@ -34,6 +34,6 @@ export class GeologicalSurvey extends SurveyCard {
   protected checkForBonuses(cardOwner: IPlayer, space: Space) {
     super.maybeRewardStandardResource(cardOwner, space, Resource.STEEL, SpaceBonus.STEEL);
     super.maybeRewardStandardResource(cardOwner, space, Resource.TITANIUM, SpaceBonus.TITANIUM);
-    super.maybeRewardStandardResource(cardOwner, space, Resource.HEAT, SpaceBonus.HEAT);
+    super.maybeRewardStandardResource(cardOwner, space, Resource.INOVACAO, SpaceBonus.HEAT);
   }
 }

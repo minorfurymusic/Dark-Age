@@ -17,7 +17,7 @@ export class NarrativeSpin extends Card implements IProjectCard {
         underworld: {corruption: 2},
       },
 
-      requirements: {tag: Tag.EARTH, count: 1},
+      requirements: {tag: Tag.DIPLOMACIA, count: 1},
       victoryPoints: -1,
 
       metadata: {

@@ -10,14 +10,14 @@ export class Plantation extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.PLANTATION,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 15,
 
       behavior: {
         greenery: {},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: '193',
         renderData: CardRenderer.builder((b) => {

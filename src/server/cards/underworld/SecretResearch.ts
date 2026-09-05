@@ -7,7 +7,7 @@ export class SecretResearch extends PreludeCard {
   constructor() {
     super({
       name: CardName.SECRET_RESEARCH,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
 
       behavior: {
         drawCard: 3,

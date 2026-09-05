@@ -16,7 +16,7 @@ export class MareSerenitatisMine extends Card {
     super({
       name: CardName.MARE_SERENITATIS_MINE,
       type: CardType.AUTOMATED,
-      tags: [Tag.MOON, Tag.BUILDING],
+      tags: [Tag.MOON, Tag.CONSTRUÇÃO],
       cost: 21,
 
       behavior: {

@@ -10,20 +10,20 @@ export class MassConverter extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MASS_CONVERTER,
-      tags: [Tag.SCIENCE, Tag.POWER],
+      tags: [Tag.ERUDIÇÃO, Tag.GUERREAR],
       cost: 8,
 
       behavior: {
         production: {energy: 6},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 5},
-      cardDiscount: {tag: Tag.SPACE, amount: 2, per: 'card'},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 5},
+      cardDiscount: {tag: Tag.MARÍTIMO, amount: 2, per: 'card'},
       metadata: {
         cardNumber: '094',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a space card, you pay 2 M€ less for it.', (eb) => {
-            eb.tag(Tag.SPACE).startEffect.megacredits(-2);
+            eb.tag(Tag.MARÍTIMO).startEffect.megacredits(-2);
           }).br;
           b.production((pb) => pb.energy(6));
         }),

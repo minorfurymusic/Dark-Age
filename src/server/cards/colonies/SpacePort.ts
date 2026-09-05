@@ -9,7 +9,7 @@ export class SpacePort extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 22,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       name: CardName.SPACE_PORT,
       type: CardType.AUTOMATED,
 

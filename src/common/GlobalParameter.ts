@@ -1,8 +1,8 @@
 export const GlobalParameter = {
-  OCEANS: 'oceans',
-  OXYGEN: 'oxygen',
-  TEMPERATURE: 'temperature',
-  VENUS: 'venus',
+  ESTANDARTES: 'estandartes',
+  FE: 'fe',
+  TECNOLOGIA: 'tecnologia',
+  ROTAS_COMERCIAIS: 'rotas-comerciais',
   MOON_HABITAT_RATE: 'moon-habitat',
   MOON_MINING_RATE: 'moon-mining',
   MOON_LOGISTIC_RATE: 'moon-logistic',

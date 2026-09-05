@@ -380,7 +380,7 @@ export class Executor implements BehaviorExecutor {
         player.stock.deduct(Resource.PLANTS, spend.plants);
       }
       if (spend.energy) {
-        player.stock.deduct(Resource.ENERGY, spend.energy);
+        player.stock.deduct(Resource.GUERREAR, spend.energy);
       }
       if (spend.heat) {
         player.defer(player.spendHeat(spend.heat, () => {
@@ -476,7 +476,7 @@ export class Executor implements BehaviorExecutor {
         player.defer(
           new SelectResource(message('Gain ${0} units of a standard resource', (b) => b.number(count)))
             .andThen((unit) => {
-              player.stock.add(unit, count, {log: true, from});
+              player.stock.add(Units.keyToResource(unit), count, {log: true, from});
               return undefined;
             }));
       }

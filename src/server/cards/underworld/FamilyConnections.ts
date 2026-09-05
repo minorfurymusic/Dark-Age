@@ -15,14 +15,14 @@ export class FamilyConnections extends Card implements IProjectCard {
 
       behavior: {
         underworld: {
-          corruption: {tag: Tag.CITY},
+          corruption: {tag: Tag.FEUDO},
         },
       },
 
       metadata: {
         cardNumber: 'U095',
         renderData: CardRenderer.builder((b) => {
-          b.corruption(1).slash().tag(Tag.CITY);
+          b.corruption(1).slash().tag(Tag.FEUDO);
         }),
         description: 'Gain 1 corruption for every city tag you have.',
       },

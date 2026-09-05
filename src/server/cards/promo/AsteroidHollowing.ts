@@ -11,7 +11,7 @@ export class AsteroidHollowing extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ASTEROID_HOLLOWING,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 16,
       resourceType: CardResource.ASTEROID,
 

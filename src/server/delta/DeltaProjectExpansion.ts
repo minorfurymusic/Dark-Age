@@ -20,15 +20,15 @@ import {IActionCard, ICard, isIActionCard, isIHasCheckLoops} from '../cards/ICar
  */
 export const DELTA_TRACK_TAGS: ReadonlyArray<Tag | undefined> = [
   undefined,     // 0: start
-  Tag.BUILDING,  // 1
-  Tag.POWER,     // 2
-  Tag.EARTH,     // 3
-  Tag.SPACE,     // 4
-  Tag.SCIENCE,   // 5
-  Tag.PLANT,     // 6
-  Tag.MICROBE,   // 7
-  Tag.JOVIAN,    // 8
-  Tag.ANIMAL,    // 9
+  Tag.CONSTRUÇÃO,  // 1
+  Tag.GUERREAR,     // 2
+  Tag.DIPLOMACIA,     // 3
+  Tag.MARÍTIMO,     // 4
+  Tag.ERUDIÇÃO,   // 5
+  Tag.AGRICULTURA,     // 6
+  Tag.BRUXARIA,   // 7
+  Tag.ENGENHO,    // 8
+  Tag.PECUÁRIA,    // 9
   undefined,     // 10: 2VP
   undefined,     // 11: 5VP
 ] as const;
@@ -139,7 +139,7 @@ export class DeltaProjectExpansion {
     const currentPos = progress.position;
     const newPos = currentPos + steps;
 
-    player.stock.deduct(Resource.ENERGY, steps);
+    player.stock.deduct(Resource.GUERREAR, steps);
     progress.position = newPos;
 
     DeltaProjectExpansion.resolveReward(player, newPos);
@@ -150,7 +150,7 @@ export class DeltaProjectExpansion {
   private static resolveReward(player: IPlayer, position: number): void {
     // Positions 10/11 (VP spots) have no additional reward beyond VP claiming.
     switch (DELTA_TRACK_TAGS[position]) {
-    case Tag.BUILDING: // Choose 2 steel or 2 plants
+    case Tag.CONSTRUÇÃO: // Choose 2 steel or 2 plants
       player.defer(() => new OrOptions(
         new SelectOption('Gain 2 steel', 'Gain steel').andThen(() => {
           player.stock.add(Resource.STEEL, 2, {log: true, from: {card: CardName.DELTA_PROJECT}});
@@ -163,38 +163,38 @@ export class DeltaProjectExpansion {
       ));
       break;
 
-    case Tag.POWER: // Choose +1 energy production or +1 heat production
+    case Tag.GUERREAR: // Choose +1 energy production or +1 heat production
       player.defer(() => new OrOptions(
         new SelectOption('Increase energy production 1 step', 'Increase').andThen(() => {
-          player.production.add(Resource.ENERGY, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
+          player.production.add(Resource.GUERREAR, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
           return undefined;
         }),
         new SelectOption('Increase heat production 1 step', 'Increase').andThen(() => {
-          player.production.add(Resource.HEAT, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
+          player.production.add(Resource.INOVACAO, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
           return undefined;
         }),
       ));
       break;
 
-    case Tag.EARTH: // +2 MC production
+    case Tag.DIPLOMACIA: // +2 MC production
       player.production.add(Resource.MEGACREDITS, 2, {log: true, from: {card: CardName.DELTA_PROJECT}});
       break;
 
-    case Tag.SPACE: // +1 titanium production
+    case Tag.MARÍTIMO: // +1 titanium production
       player.production.add(Resource.TITANIUM, 1, {log: true, from: {card: CardName.DELTA_PROJECT}});
       break;
 
-    case Tag.SCIENCE: // Look at top 4 cards, take 2, discard rest
+    case Tag.ERUDIÇÃO: // Look at top 4 cards, take 2, discard rest
       player.game.defer(DrawCards.keepSome(player, 4, {keepMax: 2}));
       break;
 
-    case Tag.PLANT: { // Gain 1 plant per plant tag
-      const plantCount = player.tags.count(Tag.PLANT);
+    case Tag.AGRICULTURA: { // Gain 1 plant per plant tag
+      const plantCount = player.tags.count(Tag.AGRICULTURA);
       player.stock.add(Resource.PLANTS, plantCount, {log: true, from: {card: CardName.DELTA_PROJECT}});
       break;
     }
 
-    case Tag.MICROBE: { // Reuse a used blue card action
+    case Tag.BRUXARIA: { // Reuse a used blue card action
       const actionCards = DeltaProjectExpansion.getUsedActionCards(player);
       if (actionCards.length > 0) {
         player.defer(() => new SelectCard<IActionCard & ICard>(
@@ -209,15 +209,15 @@ export class DeltaProjectExpansion {
       break;
     }
 
-    case Tag.JOVIAN: { // Gain one Jovian tag
+    case Tag.ENGENHO: { // Gain one Jovian tag
       const progress = DeltaProjectExpansion.getProgress(player);
       if (!progress.jovianBonus) {
         progress.jovianBonus = true;
         player.tags.extraJovianTags++;
-        player.triggerOnNonCardTagAdded(Tag.JOVIAN);
+        player.triggerOnNonCardTagAdded(Tag.ENGENHO);
         for (const p of player.game.playersInGenerationOrder) {
           for (const card of p.tableau) {
-            card.onNonCardTagAddedByAnyPlayer?.(p, Tag.JOVIAN);
+            card.onNonCardTagAddedByAnyPlayer?.(p, Tag.ENGENHO);
           }
         }
         player.game.log('${0} gained a Jovian tag from the Delta Project', (b) => b.player(player));
@@ -225,7 +225,7 @@ export class DeltaProjectExpansion {
       break;
     }
 
-    case Tag.ANIMAL: // Add 2 animals to any card
+    case Tag.PECUÁRIA: // Add 2 animals to any card
       player.game.defer(new AddResourcesToCard(player, CardResource.ANIMAL, {count: 2}));
       break;
     }

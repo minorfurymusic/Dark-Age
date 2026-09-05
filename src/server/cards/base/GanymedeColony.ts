@@ -11,10 +11,10 @@ export class GanymedeColony extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.GANYMEDE_COLONY,
-      tags: [Tag.JOVIAN, Tag.SPACE, Tag.CITY],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO, Tag.FEUDO],
       cost: 20,
 
-      victoryPoints: {tag: Tag.JOVIAN},
+      victoryPoints: {tag: Tag.ENGENHO},
       behavior: {
         city: {space: SpaceName.GANYMEDE_COLONY},
       },

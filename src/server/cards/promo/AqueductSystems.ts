@@ -13,13 +13,13 @@ export class AqueductSystems extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.AQUEDUCT_SYSTEMS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 9,
 
       victoryPoints: 1,
 
       behavior: {
-        drawCard: {count: 3, tag: Tag.BUILDING},
+        drawCard: {count: 3, tag: Tag.CONSTRUÇÃO},
       },
 
       requirements: [{cities: 1, nextTo}, {oceans: 1}],
@@ -27,7 +27,7 @@ export class AqueductSystems extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'X50',
         renderData: CardRenderer.builder((b) => {
-          b.cards(3, {secondaryTag: Tag.BUILDING});
+          b.cards(3, {secondaryTag: Tag.CONSTRUÇÃO});
         }),
         description: 'Requires you have a city next to an ocean. Draw 3 cards with a building tag.',
       },

@@ -13,7 +13,7 @@ export class NanotechIndustries extends CorporationCard implements ICorporationC
   constructor() {
     super({
       name: CardName.NANOTECH_INDUSTRIES,
-      tags: [Tag.SCIENCE, Tag.MOON],
+      tags: [Tag.ERUDIÇÃO, Tag.MOON],
       startingMegaCredits: 42,
       resourceType: CardResource.SCIENCE,
 

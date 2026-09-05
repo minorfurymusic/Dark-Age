@@ -15,7 +15,7 @@ export class BoardOfDirectors extends PreludeCard implements IActionCard {
   constructor() {
     super({
       name: CardName.BOARD_OF_DIRECTORS,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       resourceType: CardResource.DIRECTOR,
 
       behavior: {

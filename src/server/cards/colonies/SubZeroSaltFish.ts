@@ -12,7 +12,7 @@ export class SubZeroSaltFish extends ActionCard implements IProjectCard {
   constructor() {
     super({
       cost: 5,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       name: CardName.SUBZERO_SALT_FISH,
       type: CardType.ACTIVE,
 

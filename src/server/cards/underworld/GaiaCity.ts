@@ -13,7 +13,7 @@ export class GaiaCity extends Card implements IProjectCard {
       name: CardName.GAIA_CITY,
       type: CardType.AUTOMATED,
       cost: 20,
-      tags: [Tag.PLANT, Tag.BUILDING, Tag.CITY],
+      tags: [Tag.AGRICULTURA, Tag.CONSTRUÇÃO, Tag.FEUDO],
 
       behavior: {production: {energy: -1, plants: 2}},
 

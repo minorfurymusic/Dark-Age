@@ -13,7 +13,7 @@ export class ArtesianAquifer extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ARTESIAN_AQUIFER,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 16,
 
       tr: {oceans: 1},

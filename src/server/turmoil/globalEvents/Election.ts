@@ -18,7 +18,7 @@ export class Election extends GlobalEvent implements IGlobalEvent {
       revealedDelegate: PartyName.GREENS,
       currentDelegate: PartyName.MARS,
       renderData: CardRenderer.builder((b) => {
-        b.influence().plus().tag(Tag.BUILDING, {size: Size.SMALL}).plus().city({size: Size.MEDIUM}).colon().br;
+        b.influence().plus().tag(Tag.CONSTRUÇÃO, {size: Size.SMALL}).plus().city({size: Size.MEDIUM}).colon().br;
         b.text('1st:', {size: Size.SMALL}).tr(2, {size: Size.TINY}).nbsp.text('2nd:', {size: Size.SMALL}).tr(1, {size: Size.TINY});
       }),
     });
@@ -73,7 +73,7 @@ export class Election extends GlobalEvent implements IGlobalEvent {
   }
 
   public getScore(player: IPlayer, turmoil: Turmoil, game: IGame) {
-    const score = player.tags.count(Tag.BUILDING, 'raw') + turmoil.getInfluence(player);
+    const score = player.tags.count(Tag.CONSTRUÇÃO, 'raw') + turmoil.getInfluence(player);
 
     const cities = game.board.spaces.filter(
       (space) => Board.isCitySpace(space) && space.player === player,

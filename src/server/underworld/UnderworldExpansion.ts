@@ -370,13 +370,13 @@ export class UnderworldExpansion {
       player.stock.adjust(Units.of({plants: 1, titanium: 1}), {log: true});
       break;
     case 'energy2':
-      player.stock.add(Resource.ENERGY, 2, {log: true});
+      player.stock.add(Resource.GUERREAR, 2, {log: true});
       break;
     case 'energy1production':
-      player.production.add(Resource.ENERGY, 1, {log: true});
+      player.production.add(Resource.GUERREAR, 1, {log: true});
       break;
     case 'heat2production':
-      player.production.add(Resource.HEAT, 2, {log: true});
+      player.production.add(Resource.INOVACAO, 2, {log: true});
       break;
     case 'microbe2':
       player.game.defer(new AddResourcesToCard(player, CardResource.MICROBE, {count: 2}));
@@ -416,11 +416,11 @@ export class UnderworldExpansion {
       break;
     case 'sciencetag':
       player.tags.extraScienceTags++;
-      player.triggerOnNonCardTagAdded(Tag.SCIENCE);
+      player.triggerOnNonCardTagAdded(Tag.ERUDIÇÃO);
       break;
     case 'planttag':
       player.tags.extraPlantTags++;
-      player.triggerOnNonCardTagAdded(Tag.PLANT);
+      player.triggerOnNonCardTagAdded(Tag.AGRICULTURA);
       break;
 
     // This doesn't reward anything.
@@ -607,10 +607,10 @@ export class UnderworldExpansion {
   }
 
   private static GLOBAL_PARAMETER_MAPPING: Record<GlobalParameter, TemporaryBonusToken | undefined> = {
-    [GlobalParameter.OCEANS]: 'oceanrequirementmod',
-    [GlobalParameter.OXYGEN]: 'oxygenrequirementmod',
-    [GlobalParameter.TEMPERATURE]: 'temprequirementmod',
-    [GlobalParameter.VENUS]: undefined,
+    [GlobalParameter.ESTANDARTES]: 'oceanrequirementmod',
+    [GlobalParameter.FE]: 'oxygenrequirementmod',
+    [GlobalParameter.TECNOLOGIA]: 'temprequirementmod',
+    [GlobalParameter.ROTAS_COMERCIAIS]: undefined,
     [GlobalParameter.MOON_HABITAT_RATE]: undefined,
     [GlobalParameter.MOON_MINING_RATE]: undefined,
     [GlobalParameter.MOON_LOGISTIC_RATE]: undefined,

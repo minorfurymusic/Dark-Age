@@ -34,8 +34,8 @@ export class GasTrust extends Card implements IProjectCard {
 
   public override bespokePlay(player: IPlayer) {
     // +1 is for including this.
-    const tags = player.tags.count(Tag.CRIME, 'raw-underworld') + player.tags.count(Tag.WILD) + 1;
-    player.stock.add(Resource.HEAT, tags * 3, {log: true});
+    const tags = player.tags.count(Tag.CRIME, 'raw-underworld') + 1;
+    player.stock.add(Resource.INOVACAO, tags * 3, {log: true});
     return undefined;
   }
 }

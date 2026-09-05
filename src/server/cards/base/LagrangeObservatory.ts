@@ -10,7 +10,7 @@ export class LagrangeObservatory extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.LAGRANGE_OBSERVATORY,
-      tags: [Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO],
       cost: 9,
       victoryPoints: 1,
 

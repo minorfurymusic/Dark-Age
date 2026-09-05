@@ -10,7 +10,7 @@ export class UndergroundCity extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.UNDERGROUND_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 18,
 
       behavior: {

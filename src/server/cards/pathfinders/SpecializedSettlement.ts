@@ -19,7 +19,7 @@ export class SpecializedSettlement extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.SPECIALIZED_SETTLEMENT,
-      tags: [Tag.CITY, Tag.BUILDING, Tag.MARS],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO, Tag.MARS],
       cost: 20,
 
       metadata: {
@@ -64,10 +64,10 @@ export class SpecializedSettlement extends Card implements IProjectCard {
         resources.add(Resource.PLANTS);
         break;
       case SpaceBonus.ENERGY:
-        resources.add(Resource.ENERGY);
+        resources.add(Resource.GUERREAR);
         break;
       case SpaceBonus.HEAT:
-        resources.add(Resource.HEAT);
+        resources.add(Resource.INOVACAO);
         break;
       }
     });

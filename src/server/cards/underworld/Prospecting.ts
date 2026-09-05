@@ -11,7 +11,7 @@ export class Prospecting extends PreludeCard {
     super({
       name: CardName.PROSPECTING,
       startingMegacredits: -4,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
 
       metadata: {
         cardNumber: 'UP13',

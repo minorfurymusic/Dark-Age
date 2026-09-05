@@ -13,7 +13,7 @@ export class Fish extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.FISH,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       cost: 9,
 
       behavior: {

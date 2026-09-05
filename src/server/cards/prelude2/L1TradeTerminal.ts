@@ -13,7 +13,7 @@ export class L1TradeTerminal extends Card {
     super({
       name: CardName.L1_TRADE_TERMINAL,
       type: CardType.ACTIVE,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 25,
       victoryPoints: 2,
 

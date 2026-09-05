@@ -10,6 +10,6 @@ export class RimSettler extends BaseMilestone {
       3);
   }
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.JOVIAN, 'milestone');
+    return player.tags.count(Tag.ENGENHO, 'milestone');
   }
 }

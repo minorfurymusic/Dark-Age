@@ -13,7 +13,7 @@ export class WeatherBalloons extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.WEATHER_BALLOONS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 11,
       resourceType: CardResource.FLOATER,
 

@@ -13,7 +13,7 @@ export class BiofertilizerFacility extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.BIOFERTILIZER_FACILITY,
-      tags: [Tag.MICROBE, Tag.BUILDING],
+      tags: [Tag.BRUXARIA, Tag.CONSTRUÇÃO],
       cost: 12,
 
       behavior: {
@@ -26,7 +26,7 @@ export class BiofertilizerFacility extends Card implements IProjectCard {
         },
       },
 
-      requirements: {tag: Tag.SCIENCE},
+      requirements: {tag: Tag.ERUDIÇÃO},
       metadata: {
         description: 'Requires 1 science tag. Increase your plant production 1 step. ' +
                   'Add up to 2 microbes to ANY card. ' +

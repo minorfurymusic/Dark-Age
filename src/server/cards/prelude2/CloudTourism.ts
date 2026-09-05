@@ -12,7 +12,7 @@ export class CloudTourism extends ActionCard {
     super({
       name: CardName.CLOUD_TOURISM,
       type: CardType.ACTIVE,
-      tags: [Tag.JOVIAN, Tag.VENUS],
+      tags: [Tag.ENGENHO, Tag.COMÉRCIO],
       cost: 11,
       victoryPoints: {resourcesHere: 1, per: 3},
       resourceType: CardResource.FLOATER,
@@ -29,7 +29,7 @@ export class CloudTourism extends ActionCard {
             eb.empty().startAction.resource(CardResource.FLOATER);
           }).br;
           b.production((pb) => {
-            pb.megacredits(1).slash().tag(Tag.EARTH).tag(Tag.VENUS);
+            pb.megacredits(1).slash().tag(Tag.DIPLOMACIA).tag(Tag.COMÉRCIO);
           });
         }),
       },
@@ -37,23 +37,12 @@ export class CloudTourism extends ActionCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    // This does its own calculation because player.tags isn't robust enough at the moment
     const counts = {
-      earth: player.tags.count(Tag.EARTH, 'raw'),
-      // The +1 is "including this"
-      venus: player.tags.count(Tag.VENUS, 'raw') + 1,
+      earth: player.tags.count(Tag.DIPLOMACIA, 'raw'),
+      venus: player.tags.count(Tag.COMÉRCIO, 'raw') + 1,
     };
     if (player.tableau.has(CardName.EARTH_EMBASSY)) {
       counts.earth += player.tags.count(Tag.MOON, 'raw');
-    }
-    let wildTags = player.tags.count(Tag.WILD, 'raw');
-    while (wildTags > 0) {
-      if (counts.earth < counts.venus) {
-        counts.earth++;
-      } else {
-        counts.venus++;
-      }
-      wildTags--;
     }
     const production = Math.min(counts.earth, counts.venus);
     player.production.add(Resource.MEGACREDITS, production, {log: true});

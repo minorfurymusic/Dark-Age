@@ -11,7 +11,7 @@ export class Asteroid extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.ASTEROID,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 14,
 
       behavior: {

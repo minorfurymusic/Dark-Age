@@ -11,7 +11,7 @@ export class Ironworks extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.IRONWORKS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 11,
 
       action: {

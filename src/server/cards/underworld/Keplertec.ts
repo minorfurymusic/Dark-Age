@@ -17,7 +17,7 @@ export class Keplertec extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.KEPLERTEC,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       startingMegaCredits: 33,
       resourceType: CardResource.FIGHTER,
 

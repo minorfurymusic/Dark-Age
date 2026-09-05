@@ -55,7 +55,7 @@ export class Naomi extends CeoCard implements ICeoCard {
 
   public onColonyAddedByAnyPlayer(cardOwner: IPlayer, colonyOwner: IPlayer) {
     if (colonyOwner === cardOwner) {
-      cardOwner.stock.add(Resource.ENERGY, 2, {log: true});
+      cardOwner.stock.add(Resource.GUERREAR, 2, {log: true});
       cardOwner.stock.add(Resource.MEGACREDITS, 3, {log: true});
     }
   }

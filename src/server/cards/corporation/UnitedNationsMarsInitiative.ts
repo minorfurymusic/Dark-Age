@@ -12,7 +12,7 @@ export class UnitedNationsMarsInitiative extends CorporationCard implements IAct
   constructor() {
     super({
       name: CardName.UNITED_NATIONS_MARS_INITIATIVE,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 40,
 
       metadata: {

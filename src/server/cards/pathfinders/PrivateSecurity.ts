@@ -13,7 +13,7 @@ export class PrivateSecurity extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.PRIVATE_SECURITY,
       cost: 8,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       metadata: {
         cardNumber: 'Pf25',

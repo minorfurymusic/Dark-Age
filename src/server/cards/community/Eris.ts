@@ -47,7 +47,7 @@ export class Eris extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.ERIS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       initialActionText: 'Draw an Ares card',
       startingMegaCredits: 46,
 

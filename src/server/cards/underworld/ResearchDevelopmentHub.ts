@@ -14,7 +14,7 @@ export class ResearchDevelopmentHub extends Card implements IProjectCard {
       name: CardName.RESEARCH_DEVELOPMENT_HUB,
       type: CardType.ACTIVE,
       cost: 14,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       resourceType: CardResource.DATA,
 
       victoryPoints: {resourcesHere: {}, per: 3},

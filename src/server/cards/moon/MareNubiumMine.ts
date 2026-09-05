@@ -11,7 +11,7 @@ export class MareNubiumMine extends Card {
     super({
       name: CardName.MARE_NUBIUM_MINE,
       type: CardType.AUTOMATED,
-      tags: [Tag.MOON, Tag.BUILDING],
+      tags: [Tag.MOON, Tag.CONSTRUÇÃO],
       cost: 17,
 
       behavior: {

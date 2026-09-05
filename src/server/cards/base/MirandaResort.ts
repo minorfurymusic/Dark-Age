@@ -10,19 +10,19 @@ export class MirandaResort extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MIRANDA_RESORT,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       cost: 12,
       victoryPoints: 1,
 
       behavior: {
-        production: {megacredits: {tag: Tag.EARTH}},
+        production: {megacredits: {tag: Tag.DIPLOMACIA}},
       },
 
       metadata: {
         cardNumber: '051',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(1).slash().tag(Tag.EARTH);
+            pb.megacredits(1).slash().tag(Tag.DIPLOMACIA);
           });
         }),
         description: 'Increase your M€ production 1 step for each Earth tag you have.',

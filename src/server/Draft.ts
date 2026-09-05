@@ -239,7 +239,7 @@ class StandardDraft extends Draft {
   }
 
   override endRound() {
-    this.game.gotoResearchPhase();
+    this.game.gotoGuardPhase();
   }
 }
 

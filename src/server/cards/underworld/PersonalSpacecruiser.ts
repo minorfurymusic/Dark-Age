@@ -12,7 +12,7 @@ export class PersonalSpacecruiser extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.PERSONAL_SPACECRUISER,
       cost: 12,
-      tags: [Tag.CRIME, Tag.SPACE],
+      tags: [Tag.CRIME, Tag.MARÍTIMO],
 
       action: {
         spend: {energy: 1},

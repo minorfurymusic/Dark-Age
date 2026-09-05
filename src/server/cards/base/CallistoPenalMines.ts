@@ -11,7 +11,7 @@ export class CallistoPenalMines extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CALLISTO_PENAL_MINES,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       cost: 24,
       victoryPoints: 2,
 

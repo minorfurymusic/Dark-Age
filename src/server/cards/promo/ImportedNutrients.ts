@@ -12,7 +12,7 @@ export class ImportedNutrients extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.IMPORTED_NUTRIENTS,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 14,
 
       behavior: {

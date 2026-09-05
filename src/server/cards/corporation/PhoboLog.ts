@@ -10,7 +10,7 @@ export class PhoboLog extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.PHOBOLOG,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegaCredits: 23,
 
       behavior: {

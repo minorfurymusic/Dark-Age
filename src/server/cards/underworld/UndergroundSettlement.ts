@@ -12,7 +12,7 @@ export class UndergroundSettlement extends PreludeCard {
   constructor() {
     super({
       name: CardName.UNDERGROUND_SETTLEMENT,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
 
       metadata: {
         cardNumber: 'UP07',

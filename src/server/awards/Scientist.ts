@@ -6,6 +6,6 @@ export class Scientist implements IAward {
   public readonly name = 'Scientist';
   public readonly description = 'Have the most science tags in play';
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.SCIENCE, 'award');
+    return player.tags.count(Tag.ERUDIÇÃO, 'award');
   }
 }

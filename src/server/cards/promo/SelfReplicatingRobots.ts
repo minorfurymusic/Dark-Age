@@ -19,7 +19,7 @@ export class SelfReplicatingRobots extends Card implements IProjectCard {
       name: CardName.SELF_REPLICATING_ROBOTS,
       cost: 7,
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: '210',
         renderData: CardRenderer.builder((b) => {
@@ -45,12 +45,12 @@ export class SelfReplicatingRobots extends Card implements IProjectCard {
 
   public canAct(player: IPlayer): boolean {
     return this.targetCards.length > 0 ||
-             player.cardsInHand.some((card) => card.tags.some((tag) => tag === Tag.SPACE || tag === Tag.BUILDING));
+             player.cardsInHand.some((card) => card.tags.some((tag) => tag === Tag.MARÍTIMO || tag === Tag.CONSTRUÇÃO));
   }
 
   public action(player: IPlayer) {
     const orOptions = new OrOptions();
-    const selectableCards = player.cardsInHand.filter((card) => card.tags.some((tag) => tag === Tag.SPACE || tag === Tag.BUILDING));
+    const selectableCards = player.cardsInHand.filter((card) => card.tags.some((tag) => tag === Tag.MARÍTIMO || tag === Tag.CONSTRUÇÃO));
 
     if (this.targetCards.length > 0) {
       orOptions.options.push(new SelectCard(

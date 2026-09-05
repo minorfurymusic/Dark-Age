@@ -12,7 +12,7 @@ export class Solarnet extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       cost: 7,
 
-      requirements: [{tag: Tag.VENUS}, {tag: Tag.EARTH}, {tag: Tag.JOVIAN}],
+      requirements: [{tag: Tag.COMÉRCIO}, {tag: Tag.DIPLOMACIA}, {tag: Tag.ENGENHO}],
       victoryPoints: 1,
 
       behavior: {

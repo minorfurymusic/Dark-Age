@@ -11,7 +11,7 @@ export class AerobrakedAmmoniaAsteroid extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.AEROBRAKED_AMMONIA_ASTEROID,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 26,
 
       behavior: {

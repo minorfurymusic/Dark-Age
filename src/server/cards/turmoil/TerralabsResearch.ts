@@ -8,7 +8,7 @@ export class TerralabsResearch extends CorporationCard implements ICorporationCa
   constructor() {
     super({
       name: CardName.TERRALABS_RESEARCH,
-      tags: [Tag.SCIENCE, Tag.EARTH],
+      tags: [Tag.ERUDIÇÃO, Tag.DIPLOMACIA],
       startingMegaCredits: 14,
       cardCost: 1,
 

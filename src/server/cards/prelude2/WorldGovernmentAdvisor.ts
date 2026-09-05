@@ -9,7 +9,7 @@ export class WorldGovernmentAdvisor extends PreludeCard implements IActionCard {
   constructor() {
     super({
       name: CardName.WORLD_GOVERNMENT_ADVISOR,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       behavior: {
         tr: 2,

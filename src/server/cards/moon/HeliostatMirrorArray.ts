@@ -8,7 +8,7 @@ export class HeliostatMirrorArray extends Card {
   constructor() {
     super({
       cost: 10,
-      tags: [Tag.POWER],
+      tags: [Tag.GUERREAR],
       type: CardType.AUTOMATED,
       name: CardName.HELIOSTAT_MIRROR_ARRAY,
 

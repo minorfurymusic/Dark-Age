@@ -9,7 +9,7 @@ export class Aphrodite extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.APHRODITE,
-      tags: [Tag.PLANT, Tag.VENUS],
+      tags: [Tag.AGRICULTURA, Tag.COMÉRCIO],
       startingMegaCredits: 47,
 
       behavior: {

@@ -11,7 +11,7 @@ export class ColonyTradeHub extends PreludeCard implements IPreludeCard {
   constructor() {
     super({
       name: CardName.COLONY_TRADE_HUB,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
 
       behavior: {
         production: {energy: 1},

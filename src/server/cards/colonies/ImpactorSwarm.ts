@@ -10,7 +10,7 @@ export class ImpactorSwarm extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 11,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.IMPACTOR_SWARM,
       type: CardType.EVENT,
 
@@ -19,7 +19,7 @@ export class ImpactorSwarm extends Card implements IProjectCard {
         removeAnyPlants: 2,
       },
 
-      requirements: {tag: Tag.JOVIAN, count: 2},
+      requirements: {tag: Tag.ENGENHO, count: 2},
       metadata: {
         cardNumber: 'C16',
         renderData: CardRenderer.builder((b) => {
