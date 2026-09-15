@@ -157,9 +157,46 @@ Herdado do jogo original (que tinha ação de comércio incondicional). No model
 
 ---
 
+## Phase 4: UI/UX Redesign — Dark Age Medieval Feudal Theme
+
+Transição de Terraforming Mars (sci-fi) para Dark Age (medieval feudal + épico). Inspiração Age of Empires II, visual distintivo (não cópia).
+
+### 4.1 — Tela Inicial (Home Screen) ✓
+
+- [x] **Implementada (commit 571f747)**
+  - [x] Redesign visual completo com tema medieval
+  - [x] Banner heraldic com ornamentações
+  - [x] Botões estilizados como elementos de pedra
+  - [x] Palette: ouro (#D4AF37), vermelho (#8B2323), cinza pedra (#3A3A3A)
+  - [x] Tipografia serif + decorações medievais
+  - [x] Responsivo (mobile/tablet/desktop)
+  - [x] Navegação simplificada: Start Game (destacado vermelho), Cards, Rules, About
+
+### 4.2 — Telas Pendentes (a fazer)
+
+- [ ] **Tela de Criação de Jogo** (CreateGameForm.vue, GameSetup.ts)
+  - Redesign: selector visual para boards, player setup, game options
+- [ ] **Tela do Board** (GameBoardView.vue)
+  - Mapa feudal com hexágonos, cidades, rotas comerciais, tiles
+  - Overlays de combate, alocação de Guerrear
+- [ ] **Tela de Mão** (PlayerHome.vue, hand/cards display)
+  - Cards com estilo medieval, trilhas de recursos
+  - Ações disponíveis redesenhadas
+- [ ] **Trilhas Planetárias** (Tracks display)
+  - 12+ trilhas com visual medieval
+- [ ] **Tela de Resultados** (EndGame screen)
+  - Ranking, pontos, conquistas
+- [ ] **Componentes Auxiliares**
+  - Modais, popups, inputs, selectors
+  - Consistent medieval styling em tudo
+
+---
+
 ## STATUS FINAL
 
 ✓ **Phase 13.5-13.17: 100% Completa** — Todos os sistemas de combate implementados
 ✓ **Phase 3: 100% Completa** — Rewrites de cartas completas, decisões confirmadas
+⧗ **Phase 4.1: UI Home Screen Completa** — Tela inicial redesenhada com tema medieval
+⧗ **Phase 4.2-4.X: UI Remaining Screens** — Telas adicionais pendentes de redesign
 
 _Este arquivo é o companheiro dos Documentos 1/2/3 (mantidos fora do repositório, como uploads da conversa). Atualizar aqui sempre que uma pendência for fechada ou uma nova for aberta._
