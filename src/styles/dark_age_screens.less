@@ -1,0 +1,474 @@
+// Dark Age Screen-Specific Styling
+// Applied to major game screens: CreateGame, Board, PlayerHome, GameEnd, Overview
+
+@import "./dark_age_theme.less";
+
+// ===== APP ROOT =====
+#app {
+  @extend .dark-age-screen;
+}
+
+// ===== CREATE GAME SCREEN =====
+.create-game-form {
+  @extend .dark-age-screen;
+  z-index: 2;
+  padding: 40px 20px;
+
+  .form-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .form-section {
+    @extend .dark-age-panel;
+    margin-bottom: 24px;
+
+    .section-title {
+      @extend .panel-title;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+
+    label {
+      display: block;
+      color: @dark-age-gold-light;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    input,
+    select,
+    textarea {
+      @extend .dark-age-input;
+      width: 100%;
+    }
+
+    select {
+      @extend .dark-age-select;
+    }
+  }
+
+  .button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(@dark-age-gold, 0.3);
+
+    .btn {
+      @extend .dark-age-btn;
+
+      &.btn-submit,
+      .btn-primary {
+        @extend .dark-age-btn--primary;
+      }
+    }
+  }
+
+  .player-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 12px 0;
+
+    .player-option {
+      @extend .dark-age-panel;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+
+      &:hover {
+        border-color: @dark-age-gold-light;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.15),
+          0 8px 16px rgba(0, 0, 0, 0.6),
+          0 0 20px rgba(212, 175, 55, 0.3);
+      }
+
+      &.selected {
+        border-color: @dark-age-gold-light;
+        background: linear-gradient(180deg,
+          rgba(@dark-age-red, 0.3) 0%,
+          rgba(@dark-age-stone-dark, 0.8) 100%
+        );
+      }
+
+      .option-title {
+        color: @dark-age-gold;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 8px 0;
+      }
+
+      .option-desc {
+        @extend .dark-age-text-dim;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .board-selector {
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+
+      .board-card {
+        @extend .dark-age-panel;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &:hover {
+          border-color: @dark-age-gold-light;
+          transform: translateY(-2px);
+        }
+
+        &.selected {
+          border-color: @dark-age-gold-light;
+          background: linear-gradient(180deg,
+            rgba(@dark-age-red, 0.3) 0%,
+            rgba(@dark-age-stone-dark, 0.8) 100%
+          );
+        }
+
+        .board-name {
+          color: @dark-age-gold;
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// ===== GAMES OVERVIEW (HISTORY) =====
+.games-overview {
+  @extend .dark-age-screen;
+  z-index: 2;
+  padding: 40px 20px;
+
+  .overview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .overview-title {
+    font-family: @dark-age-serif;
+    font-size: 32px;
+    color: @dark-age-gold-light;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+
+    .game-card {
+      @extend .dark-age-panel;
+      transition: all 0.25s ease;
+      cursor: pointer;
+
+      &:hover {
+        border-color: @dark-age-gold-light;
+        transform: translateY(-2px);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.15),
+          0 8px 16px rgba(0, 0, 0, 0.6),
+          0 0 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .game-title {
+        font-weight: bold;
+        color: @dark-age-gold-light;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .game-info {
+        @extend .dark-age-text-dim;
+        line-height: 1.4;
+        font-size: 12px;
+
+        div {
+          margin: 4px 0;
+        }
+      }
+
+      .game-status {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(@dark-age-gold, 0.3);
+        font-weight: 600;
+        font-size: 12px;
+
+        &.completed {
+          color: @dark-age-gold;
+        }
+
+        &.in-progress {
+          color: @dark-age-red-light;
+        }
+      }
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: @dark-age-text-dim;
+
+    .empty-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .empty-text {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// ===== GAME END / RESULTS SCREEN =====
+.game-end {
+  @extend .dark-age-screen;
+  z-index: 2;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .victory-banner {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    @extend .dark-age-panel;
+    background: linear-gradient(180deg,
+      rgba(@dark-age-red, 0.2) 0%,
+      rgba(@dark-age-stone, 0.4) 100%
+    );
+
+    .victory-title {
+      font-family: @dark-age-serif;
+      font-size: 48px;
+      font-weight: bold;
+      color: @dark-age-gold-light;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0 0 16px 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .victory-subtitle {
+      color: @dark-age-gold;
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-style: italic;
+    }
+  }
+
+  .rankings {
+    @extend .dark-age-panel;
+    margin-bottom: 24px;
+
+    .ranking-title {
+      @extend .panel-title;
+    }
+
+    .ranking-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .ranking-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        border-bottom: 1px solid rgba(@dark-age-gold, 0.2);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &.winner {
+          background: rgba(@dark-age-gold, 0.1);
+          font-weight: bold;
+
+          .rank-number {
+            color: @dark-age-gold-light;
+            font-size: 20px;
+          }
+
+          .player-name {
+            color: @dark-age-gold-light;
+          }
+        }
+
+        .rank-number {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background: rgba(@dark-age-stone-light, 0.5);
+          border: 1px solid @dark-age-gold;
+          border-radius: 50%;
+          color: @dark-age-text;
+          font-weight: bold;
+          margin-right: 12px;
+          font-size: 14px;
+        }
+
+        .player-info {
+          flex: 1;
+
+          .player-name {
+            color: @dark-age-text;
+            font-weight: 600;
+            margin-bottom: 4px;
+          }
+
+          .player-details {
+            @extend .dark-age-text-dim;
+            font-size: 11px;
+          }
+        }
+
+        .final-score {
+          text-align: right;
+          font-size: 18px;
+          font-weight: bold;
+          color: @dark-age-gold-light;
+          min-width: 60px;
+        }
+      }
+    }
+  }
+
+  .game-stats {
+    @extend .dark-age-panel;
+    margin-bottom: 24px;
+
+    .stats-title {
+      @extend .panel-title;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+
+      .stat-item {
+        text-align: center;
+        padding: 12px;
+        border: 1px solid rgba(@dark-age-gold, 0.3);
+        border-radius: 1px;
+
+        .stat-label {
+          @extend .dark-age-text-dim;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 6px;
+        }
+
+        .stat-value {
+          font-size: 24px;
+          font-weight: bold;
+          color: @dark-age-gold-light;
+        }
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .btn {
+      @extend .dark-age-btn;
+
+      &.btn-primary {
+        @extend .dark-age-btn--primary;
+      }
+    }
+  }
+}
+
+// ===== RESPONSIVE OVERRIDES =====
+@media only screen and (max-width: 768px) {
+  .create-game-form {
+    padding: 20px 16px;
+
+    .player-selector {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .board-selector .board-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+  }
+
+  .games-overview {
+    padding: 20px 16px;
+
+    .overview-title {
+      font-size: 24px;
+    }
+
+    .games-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .game-end {
+    padding: 20px 16px;
+
+    .victory-banner .victory-title {
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .rankings .ranking-list .ranking-item {
+      flex-direction: column;
+      text-align: center;
+
+      .rank-number {
+        margin-right: 0;
+        margin-bottom: 8px;
+      }
+
+      .final-score {
+        margin-top: 8px;
+      }
+    }
+
+    .game-stats .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
