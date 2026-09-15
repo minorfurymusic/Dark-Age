@@ -1,0 +1,336 @@
+// Dark Age Theme Overrides — Override existing Terraforming Mars styles
+// This file should be imported LAST to ensure dark age theme takes precedence
+
+@import "./dark_age_theme.less";
+
+// ===== START SCREEN OVERRIDES =====
+.topmost-start-screen {
+  @extend .dark-age-screen;
+
+  // Keep existing start screen styling but add dark age theme
+  .start-screen {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+// ===== CREATE GAME FORM OVERRIDES =====
+.topmost-create-game-form {
+  @extend .dark-age-screen;
+}
+
+.create-game-form {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px !important;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .create-game--block {
+    @extend .dark-age-panel;
+    background: unset;
+    border-radius: 2px;
+    margin: 16px 0 !important;
+    padding: 20px !important;
+
+    .create-game-subsection-label {
+      @extend .panel-title;
+      padding: 0 0 12px 0 !important;
+      font-size: 18px !important;
+    }
+  }
+
+  .create-game-corporations-count,
+  .player-handicap,
+  input[type="text"],
+  input[type="number"],
+  select {
+    @extend .dark-age-input;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    & + label {
+      color: @dark-age-text;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    &:checked + label {
+      color: @dark-age-gold-light;
+      font-weight: 600;
+    }
+
+    &:focus-visible + label {
+      outline: 2px solid @dark-age-gold !important;
+      outline-offset: 2px !important;
+    }
+  }
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary,
+    &.btn-submit {
+      @extend .dark-age-btn--primary;
+    }
+  }
+
+  .form-input::placeholder {
+    color: @dark-age-text-dim !important;
+  }
+
+  .create-game-subsection-label {
+    color: @dark-age-gold-light !important;
+  }
+
+  .create-game-page-container {
+    background-color: transparent !important;
+  }
+}
+
+// ===== GAME HOME OVERRIDES =====
+.topmost-game-home {
+  @extend .dark-age-screen;
+}
+
+.game-home {
+  position: relative;
+  z-index: 2;
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+}
+
+// ===== PLAYER HOME (IN-GAME) OVERRIDES =====
+.topmost-player-home {
+  @extend .dark-age-screen;
+}
+
+.player-home {
+  position: relative;
+  z-index: 2;
+
+  .btn,
+  button {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+
+  input,
+  select {
+    @extend .dark-age-input;
+  }
+}
+
+// ===== SPECTATOR HOME OVERRIDES =====
+.topmost-spectator-home {
+  @extend .dark-age-screen;
+}
+
+.spectator-home {
+  position: relative;
+  z-index: 2;
+}
+
+// ===== GAME END OVERRIDES =====
+.topmost-the-end {
+  @extend .dark-age-screen;
+}
+
+.game-end {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+}
+
+// ===== GAMES OVERVIEW OVERRIDES =====
+.topmost-games-overview {
+  @extend .dark-age-screen;
+}
+
+.games-overview {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+}
+
+// ===== CARD LIST OVERRIDES =====
+.topmost-cards {
+  @extend .dark-age-screen;
+}
+
+.card-list {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+
+  input,
+  select {
+    @extend .dark-age-input;
+  }
+}
+
+// ===== LOGIN HOME OVERRIDES =====
+.topmost-login-home {
+  @extend .dark-age-screen;
+}
+
+.login-home {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+
+  input {
+    @extend .dark-age-input;
+  }
+}
+
+// ===== ADMIN HOME OVERRIDES =====
+.topmost-admin {
+  @extend .dark-age-screen;
+}
+
+.admin-home {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+
+  input,
+  select {
+    @extend .dark-age-input;
+  }
+}
+
+// ===== HELP OVERRIDES =====
+.topmost-help {
+  @extend .dark-age-screen;
+}
+
+.help-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  color: @dark-age-text;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  h1, h2, h3 {
+    color: @dark-age-gold-light;
+    font-family: @dark-age-serif;
+    letter-spacing: 1px;
+  }
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+}
+
+// ===== GLOBAL BUTTON OVERRIDES =====
+.btn,
+button {
+  &:not(.spectre-btn) {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+
+    &.btn-submit {
+      @extend .dark-age-btn--primary;
+    }
+  }
+}
+
+// ===== DIALOG OVERRIDES =====
+dialog,
+.dialog {
+  @extend .dark-age-modal;
+
+  .modal-content {
+    background: linear-gradient(180deg, @dark-age-stone 0%, @dark-age-stone-dark 100%);
+    border: 3px solid @dark-age-gold;
+    padding: 30px;
+  }
+
+  .title,
+  h1, h2, h3 {
+    color: @dark-age-gold-light;
+  }
+
+  .btn {
+    @extend .dark-age-btn;
+
+    &.btn-primary {
+      @extend .dark-age-btn--primary;
+    }
+  }
+}
+
+// ===== RESPONSIVE =====
+@media only screen and (max-width: 768px) {
+  .create-game-form {
+    padding: 20px 16px !important;
+  }
+
+  .game-end,
+  .games-overview,
+  .card-list,
+  .login-home,
+  .admin-home,
+  .help-content {
+    padding: 20px 16px !important;
+  }
+}
