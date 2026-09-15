@@ -11,8 +11,8 @@ export class CultivationOfVenus extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.CULTIVATION_OF_VENUS,
       cost: 18,
-      tags: [Tag.PLANT, Tag.VENUS],
-      victoryPoints: {tag: Tag.VENUS, per: 2},
+      tags: [Tag.AGRICULTURA, Tag.COMÉRCIO],
+      victoryPoints: {tag: Tag.COMÉRCIO, per: 2},
 
       action: {
         spend: {plants: 3},

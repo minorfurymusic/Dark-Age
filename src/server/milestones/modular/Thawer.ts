@@ -11,6 +11,6 @@ export class Thawer extends BaseMilestone {
   }
 
   public getScore(player: IPlayer): number {
-    return player.globalParameterSteps[GlobalParameter.TEMPERATURE];
+    return player.globalParameterSteps[GlobalParameter.TECNOLOGIA];
   }
 }

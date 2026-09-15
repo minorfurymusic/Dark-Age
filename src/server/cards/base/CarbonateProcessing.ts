@@ -10,7 +10,7 @@ export class CarbonateProcessing extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CARBONATE_PROCESSING,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 6,
 
       behavior: {

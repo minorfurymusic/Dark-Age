@@ -14,7 +14,7 @@ export class RareEarthElements extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.RARE_EARTH_ELEMENTS,
       cost: 5,
-      tags: [Tag.EARTH, Tag.MARS],
+      tags: [Tag.DIPLOMACIA, Tag.MARS],
 
       metadata: {
         cardNumber: 'Pf06',

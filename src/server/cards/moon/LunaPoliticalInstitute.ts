@@ -10,7 +10,7 @@ export class LunaPoliticalInstitute extends ActionCard implements IProjectCard {
     super({
       name: CardName.LUNA_POLITICAL_INSTITUTE,
       type: CardType.ACTIVE,
-      tags: [Tag.MOON, Tag.EARTH],
+      tags: [Tag.MOON, Tag.DIPLOMACIA],
       cost: 6,
       requirements: {tag: Tag.MOON, count: 2},
 

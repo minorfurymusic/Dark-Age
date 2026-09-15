@@ -11,7 +11,7 @@ export class Comet extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.COMET,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 21,
 
       behavior: {

@@ -9,7 +9,7 @@ export class AquiferTurbines extends PreludeCard {
   constructor() {
     super({
       name: CardName.AQUIFER_TURBINES,
-      tags: [Tag.POWER],
+      tags: [Tag.GUERREAR],
 
       behavior: {
         production: {energy: 2},

@@ -10,7 +10,7 @@ export class IceMoonColony extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 23,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.ICE_MOON_COLONY,
       type: CardType.AUTOMATED,
 

@@ -12,7 +12,7 @@ export class ThinkTank extends ActionCard {
       name: CardName.THINK_TANK,
       type: CardType.ACTIVE,
       cost: 12,
-      tags: [Tag.MARS, Tag.VENUS, Tag.SCIENCE],
+      tags: [Tag.MARS, Tag.COMÉRCIO, Tag.ERUDIÇÃO],
       resourceType: CardResource.DATA,
 
       action: {

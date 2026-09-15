@@ -7,7 +7,7 @@ export class GanymedeTradingCompany extends PreludeCard {
   constructor() {
     super({
       name: CardName.GANYMEDE_TRADING_COMPANY,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
 
       behavior: {
         stock: {titanium: 3},

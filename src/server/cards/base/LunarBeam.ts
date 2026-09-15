@@ -10,7 +10,7 @@ export class LunarBeam extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.LUNAR_BEAM,
-      tags: [Tag.EARTH, Tag.POWER],
+      tags: [Tag.DIPLOMACIA, Tag.GUERREAR],
       cost: 13,
 
       behavior: {

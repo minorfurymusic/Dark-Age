@@ -17,7 +17,7 @@ export class SolarStorm extends Card implements IProjectCard {
       type: CardType.EVENT,
       name: CardName.SOLAR_STORM,
       cost: 12,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
 
       behavior: {
         production: {heat: 1},

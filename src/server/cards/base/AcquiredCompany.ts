@@ -10,7 +10,7 @@ export class AcquiredCompany extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ACQUIRED_COMPANY,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 10,
 
       behavior: {

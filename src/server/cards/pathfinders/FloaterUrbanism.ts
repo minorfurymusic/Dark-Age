@@ -13,9 +13,9 @@ export class FloaterUrbanism extends ActionCard implements IProjectCard, IAction
       type: CardType.ACTIVE,
       name: CardName.FLOATER_URBANISM,
       cost: 7,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       resourceType: CardResource.VENUSIAN_HABITAT,
-      requirements: {tag: Tag.VENUS, count: 4},
+      requirements: {tag: Tag.COMÉRCIO, count: 4},
       victoryPoints: {resourcesHere: {}},
 
       action: {

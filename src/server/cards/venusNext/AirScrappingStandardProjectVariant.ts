@@ -15,7 +15,7 @@ export class AirScrappingStandardProjectVariant extends AirScrappingStandardProj
         cardNumber: 'SP1a',
         renderData: CardRenderer.builder((b) => {
           b.standardProject('Spend 15M€, less 1M€ per Venus tag you have, to raise Venus 1 step.', (eb) => {
-            eb.megacredits(15).text('(').megacredits(-1).slash().tag(Tag.VENUS).text(')').startAction.venus(1);
+            eb.megacredits(15).text('(').megacredits(-1).slash().tag(Tag.COMÉRCIO).text(')').startAction.venus(1);
           });
           b.br.text('(max -5M€)', {size: Size.SMALL});
         }),
@@ -24,7 +24,7 @@ export class AirScrappingStandardProjectVariant extends AirScrappingStandardProj
   }
 
   protected override discount(player: IPlayer): number {
-    const tagCount = player.tags.count(Tag.VENUS);
+    const tagCount = player.tags.count(Tag.COMÉRCIO);
     const discount = Math.min(tagCount, 5);
     return discount + super.discount(player);
   }

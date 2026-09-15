@@ -20,7 +20,7 @@ export class CommunicationCenter extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.COMMUNICATION_CENTER,
       cost: 8,
-      tags: [Tag.SCIENCE, Tag.MARS, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.MARS, Tag.CONSTRUÇÃO],
       resourceType: CardResource.DATA,
 
       behavior: {
@@ -30,7 +30,7 @@ export class CommunicationCenter extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'Pf28',
         renderData: CardRenderer.builder((b) => {
-          b.tag(Tag.EVENT, {all}).colon().resource(CardResource.DATA).nbsp.resource(CardResource.DATA, {amount: 3, digit}).colon().cards(1).br;
+          b.tag(Tag.HISTÓRIA, {all}).colon().resource(CardResource.DATA).nbsp.resource(CardResource.DATA, {amount: 3, digit}).colon().cards(1).br;
           b.text('(Effect: Whenever ANY PLAYER plays an event, add 1 data to this card.)', {size: Size.TINY, isBold: false}).br;
           b.text('(Effect: Remove 3 data to draw a card automatically.)', {size: Size.TINY, isBold: false}).br;
           b.minus().production((pb) => pb.energy(1)).resource(CardResource.DATA, 2);

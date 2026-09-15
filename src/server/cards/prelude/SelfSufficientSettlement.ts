@@ -8,7 +8,7 @@ export class SelfSufficientSettlement extends PreludeCard implements IProjectCar
   constructor() {
     super({
       name: CardName.SELF_SUFFICIENT_SETTLEMENT,
-      tags: [Tag.BUILDING, Tag.CITY],
+      tags: [Tag.CONSTRUÇÃO, Tag.FEUDO],
 
       behavior: {
         production: {megacredits: 2},

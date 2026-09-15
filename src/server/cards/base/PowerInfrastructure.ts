@@ -14,7 +14,7 @@ export class PowerInfrastructure extends Card implements IActionCard, IProjectCa
     super({
       type: CardType.ACTIVE,
       name: CardName.POWER_INFRASTRUCTURE,
-      tags: [Tag.POWER, Tag.BUILDING],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
       cost: 4,
 
       metadata: {
@@ -33,7 +33,7 @@ export class PowerInfrastructure extends Card implements IActionCard, IProjectCa
   public action(player: IPlayer) {
     return new SelectAmount('Select amount of energy to spend', 'Spend energy', 1, player.energy)
       .andThen((amount) => {
-        player.stock.deduct(Resource.ENERGY, amount);
+        player.stock.deduct(Resource.GUERREAR, amount);
         player.stock.add(Resource.MEGACREDITS, amount, {log: true});
         return undefined;
       });

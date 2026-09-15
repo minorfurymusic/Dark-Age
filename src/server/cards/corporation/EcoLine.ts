@@ -9,7 +9,7 @@ export class EcoLine extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.ECOLINE,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       startingMegaCredits: 36,
 
       behavior: {

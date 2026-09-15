@@ -16,7 +16,7 @@ export class LawSuit extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.LAW_SUIT,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 2,
       victoryPoints: 'special',
 

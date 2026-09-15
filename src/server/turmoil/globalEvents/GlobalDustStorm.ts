@@ -19,7 +19,7 @@ export class GlobalDustStorm extends GlobalEvent implements IGlobalEvent {
         lose: {
           stock: {
             megacredits: {
-              tag: Tag.BUILDING,
+              tag: Tag.CONSTRUÇÃO,
               turmoil: {max: 5, influence: {subtract: true}},
               each: 2,
             },
@@ -27,13 +27,13 @@ export class GlobalDustStorm extends GlobalEvent implements IGlobalEvent {
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.text('Lose all').heat(1).nbsp.megacredits(-2).slash().tag(Tag.BUILDING).influence({size: Size.SMALL});
+        b.text('Lose all').heat(1).nbsp.megacredits(-2).slash().tag(Tag.CONSTRUÇÃO).influence({size: Size.SMALL});
       }),
     });
   }
   public override bespokeResolvePlayer(player: IPlayer) {
     if (player.heat > 0) {
-      player.stock.deduct(Resource.HEAT, player.heat, {log: true, from: {globalEvent: this}});
+      player.stock.deduct(Resource.INOVACAO, player.heat, {log: true, from: {globalEvent: this}});
     }
   }
 }

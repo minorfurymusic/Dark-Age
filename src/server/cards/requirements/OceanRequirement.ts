@@ -10,7 +10,7 @@ import {Options} from './CardRequirement';
  */
 export class OceanRequirement extends GlobalParameterRequirement {
   public readonly type = RequirementType.OCEANS;
-  protected readonly parameter = GlobalParameter.OCEANS;
+  protected readonly parameter = GlobalParameter.ESTANDARTES;
 
   constructor(options?: Partial<Options>) {
     const count = options?.count ?? 1;

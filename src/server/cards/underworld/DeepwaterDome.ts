@@ -12,7 +12,7 @@ export class DeepwaterDome extends PreludeCard implements IPreludeCard {
   constructor() {
     super({
       name: CardName.DEEPWATER_DOME,
-      tags: [Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
 
       tr: {oceans: 1},
       behavior: {

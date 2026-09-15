@@ -12,7 +12,7 @@ export class BusinessContacts extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.BUSINESS_CONTACTS,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 7,
 
       behavior: {

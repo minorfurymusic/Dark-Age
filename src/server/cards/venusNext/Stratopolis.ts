@@ -11,12 +11,12 @@ export class Stratopolis extends ActionCard {
     super({
       name: CardName.STRATOPOLIS,
       type: CardType.ACTIVE,
-      tags: [Tag.CITY, Tag.VENUS],
+      tags: [Tag.FEUDO, Tag.COMÉRCIO],
       cost: 22,
 
       resourceType: CardResource.FLOATER,
       victoryPoints: {resourcesHere: {}, per: 3},
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
 
       behavior: {
         production: {megacredits: 2},
@@ -26,7 +26,7 @@ export class Stratopolis extends ActionCard {
       action: {
         addResourcesToAnyCard: {
           count: 2,
-          tag: Tag.VENUS,
+          tag: Tag.COMÉRCIO,
           type: CardResource.FLOATER,
           autoSelect: true,
         },
@@ -36,7 +36,7 @@ export class Stratopolis extends ActionCard {
         cardNumber: '248',
         renderData: CardRenderer.builder((b) => {
           b.action('Add 2 floaters to ANY VENUS CARD.', (eb) => {
-            eb.empty().startAction.resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.VENUS});
+            eb.empty().startAction.resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.COMÉRCIO});
           }).br;
           b.production((pb) => pb.megacredits(2)).city().asterix();
           b.vpText('1 VP for every 3rd Floater on this card.');

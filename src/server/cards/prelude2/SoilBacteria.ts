@@ -10,11 +10,11 @@ export class SoilBacteria extends PreludeCard {
   constructor() {
     super({
       name: CardName.SOIL_BACTERIA,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
 
       behavior: {
         stock: {plants: 3},
-        drawCard: {count: 2, tag: Tag.MICROBE},
+        drawCard: {count: 2, tag: Tag.BRUXARIA},
       },
 
       metadata: {
@@ -22,23 +22,23 @@ export class SoilBacteria extends PreludeCard {
         cardNumber: 'P61',
         renderData: CardRenderer.builder((b) => {
           b.effect('When playing a plant tag or a microbe tag, including this, gain 1 plant.', (eb) => {
-            eb.tag(Tag.PLANT).slash().tag(Tag.MICROBE).startEffect.plants(1);
+            eb.tag(Tag.AGRICULTURA).slash().tag(Tag.BRUXARIA).startEffect.plants(1);
           });
           b.br;
-          b.cards(2, {secondaryTag: Tag.MICROBE}).plants(3);
+          b.cards(2, {secondaryTag: Tag.BRUXARIA}).plants(3);
         }),
       },
     });
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag): void {
-    if (tag === Tag.PLANT) {
+    if (tag === Tag.AGRICULTURA) {
       player.defer(() => player.stock.add(Resource.PLANTS, 1, {log: true}));
     }
   }
 
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    const amount = player.tags.cardTagCount(card, [Tag.PLANT, Tag.MICROBE]);
+    const amount = player.tags.cardTagCount(card, [Tag.AGRICULTURA, Tag.BRUXARIA]);
     if (amount > 0) {
       player.defer(() => player.stock.add(Resource.PLANTS, amount, {log: true}));
     }

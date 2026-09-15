@@ -16,7 +16,7 @@ export class EnergyMarket extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ENERGY_MARKET,
-      tags: [Tag.POWER],
+      tags: [Tag.GUERREAR],
       cost: 3,
 
       metadata: {
@@ -40,13 +40,13 @@ export class EnergyMarket extends Card implements IProjectCard {
       'Select amount of energy to gain', 'Gain energy', 1, Math.floor(availableMC / 2))
       .andThen((amount) => {
         player.game.defer(new SelectPaymentDeferred(player, amount * 2))
-          .andThen(() => player.stock.add(Resource.ENERGY, amount, {log: true}));
+          .andThen(() => player.stock.add(Resource.GUERREAR, amount, {log: true}));
         return undefined;
       });
   }
 
   private getMegacreditsOption(player: IPlayer) {
-    player.production.add(Resource.ENERGY, -1);
+    player.production.add(Resource.GUERREAR, -1);
     player.stock.add(Resource.MEGACREDITS, 8);
     player.game.log('${0} decreased energy production 1 step to gain 8 M€', (b) => b.player(player));
     return undefined;

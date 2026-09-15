@@ -34,7 +34,7 @@ export abstract class RoboticWorkforceBase extends Card {
       return false;
     }
 
-    if (!card.tags.includes(Tag.BUILDING) && !card.tags.includes(Tag.WILD)) {
+    if (!card.tags.includes(Tag.CONSTRUÇÃO)) {
       return false;
     }
 

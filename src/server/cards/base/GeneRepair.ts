@@ -10,7 +10,7 @@ export class GeneRepair extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.GENE_REPAIR,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 12,
       victoryPoints: 2,
 
@@ -18,7 +18,7 @@ export class GeneRepair extends Card implements IProjectCard {
         production: {megacredits: 2},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 3},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 3},
       metadata: {
         cardNumber: '091',
         renderData: CardRenderer.builder((b) => b.production((pb) => pb.megacredits(2))),

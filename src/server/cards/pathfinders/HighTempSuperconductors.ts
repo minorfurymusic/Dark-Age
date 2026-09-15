@@ -14,10 +14,10 @@ export class HighTempSuperconductors extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.HIGH_TEMP_SUPERCONDUCTORS,
       cost: 10,
-      tags: [Tag.POWER, Tag.SCIENCE],
+      tags: [Tag.GUERREAR, Tag.ERUDIÇÃO],
 
       requirements: {party: PartyName.KELVINISTS},
-      cardDiscount: {tag: Tag.POWER, amount: 3},
+      cardDiscount: {tag: Tag.GUERREAR, amount: 3},
 
       behavior: {
         production: {energy: 2},
@@ -27,7 +27,7 @@ export class HighTempSuperconductors extends Card implements IProjectCard {
         cardNumber: 'PfTMP',
         renderData: CardRenderer.builder((b) => {
           b.effect('When playing a power card, THE STANDARD PROJECT POWER PLANT, OR THE KELVINIST RULING POLICY ACTION, pay 3M€ less.', (eb) => {
-            eb.tag(Tag.POWER).asterix().slash().text('Kelvinists').startEffect.megacredits(-3);
+            eb.tag(Tag.GUERREAR).asterix().slash().text('Kelvinists').startEffect.megacredits(-3);
           }).br;
           b.production((pb) => pb.energy(2));
         }),

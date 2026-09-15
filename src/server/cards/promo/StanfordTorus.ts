@@ -11,7 +11,7 @@ export class StanfordTorus extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.STANFORD_TORUS,
-      tags: [Tag.SPACE, Tag.CITY],
+      tags: [Tag.MARÍTIMO, Tag.FEUDO],
       cost: 12,
       victoryPoints: 2,
 

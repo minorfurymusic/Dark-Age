@@ -11,8 +11,8 @@ export class EnvoysFromVenus extends Card implements IProjectCard {
       type: CardType.EVENT,
       name: CardName.ENVOYS_FROM_VENUS,
       cost: 1,
-      tags: [Tag.VENUS],
-      requirements: {tag: Tag.VENUS, count: 3},
+      tags: [Tag.COMÉRCIO],
+      requirements: {tag: Tag.COMÉRCIO, count: 3},
 
       behavior: {
         turmoil: {sendDelegates: {count: 2}},

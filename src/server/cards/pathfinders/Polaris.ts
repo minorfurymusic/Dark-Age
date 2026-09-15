@@ -17,7 +17,7 @@ export class Polaris extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.POLARIS,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegaCredits: 32,
 
       firstAction: {

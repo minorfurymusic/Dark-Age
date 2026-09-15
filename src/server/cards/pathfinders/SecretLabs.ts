@@ -21,8 +21,8 @@ export class SecretLabs extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.SECRET_LABS,
       cost: 21,
-      tags: [Tag.JOVIAN, Tag.BUILDING, Tag.SPACE],
-      requirements: [{tag: Tag.SCIENCE}, {tag: Tag.JOVIAN}],
+      tags: [Tag.ENGENHO, Tag.CONSTRUÇÃO, Tag.MARÍTIMO],
+      requirements: [{tag: Tag.ERUDIÇÃO}, {tag: Tag.ENGENHO}],
       victoryPoints: 1,
 
       metadata: {

@@ -14,7 +14,7 @@ export class AntiTrustCrackdown extends Card implements IProjectCard {
       name: CardName.ANTI_TRUST_CRACKDOWN,
       type: CardType.EVENT,
       cost: 18,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       victoryPoints: 2,
 
       requirements: {corruption: 0, max},

@@ -11,7 +11,7 @@ export class OffWorldTaxHaven extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.OFF_WORLD_TAX_HAVEN,
       cost: 8,
-      tags: [Tag.SPACE, Tag.CRIME],
+      tags: [Tag.MARÍTIMO, Tag.CRIME],
 
       victoryPoints: -1,
       requirements: {corruption: 2},

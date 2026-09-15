@@ -12,7 +12,7 @@ export class DarksideIncubationPlant extends ActionCard implements IActionCard, 
     super({
       name: CardName.DARKSIDE_INCUBATION_PLANT,
       type: CardType.ACTIVE,
-      tags: [Tag.MICROBE, Tag.MOON],
+      tags: [Tag.BRUXARIA, Tag.MOON],
       cost: 11,
 
       resourceType: CardResource.MICROBE,

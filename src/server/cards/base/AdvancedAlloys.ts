@@ -11,7 +11,7 @@ export class AdvancedAlloys extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ADVANCED_ALLOYS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 9,
 
       behavior: {

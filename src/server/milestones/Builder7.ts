@@ -10,6 +10,6 @@ export class Builder7 extends BaseMilestone {
       7);
   }
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.BUILDING, 'milestone');
+    return player.tags.count(Tag.CONSTRUÇÃO, 'milestone');
   }
 }

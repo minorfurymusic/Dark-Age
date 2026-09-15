@@ -16,8 +16,8 @@ export class NobelLabs extends Card implements IProjectCard, IActionCard {
       type: CardType.ACTIVE,
       name: CardName.NOBEL_LABS,
       cost: 8,
-      tags: [Tag.SCIENCE],
-      requirements: {tag: Tag.SCIENCE, count: 4},
+      tags: [Tag.ERUDIÇÃO],
+      requirements: {tag: Tag.ERUDIÇÃO, count: 4},
 
       metadata: {
         cardNumber: 'Pf60',

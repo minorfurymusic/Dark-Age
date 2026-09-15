@@ -7,7 +7,7 @@ export class UNMIContractor extends PreludeCard {
   constructor() {
     super({
       name: CardName.UNMI_CONTRACTOR,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       behavior: {
         drawCard: 1,

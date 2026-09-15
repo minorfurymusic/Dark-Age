@@ -12,7 +12,7 @@ export class InventorsGuild extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.INVENTORS_GUILD,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 9,
 
       action: {

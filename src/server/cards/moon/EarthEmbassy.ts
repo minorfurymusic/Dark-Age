@@ -10,14 +10,14 @@ export class EarthEmbassy extends Card implements IProjectCard {
     super({
       name: CardName.EARTH_EMBASSY,
       type: CardType.ACTIVE,
-      tags: [Tag.MOON, Tag.EARTH],
+      tags: [Tag.MOON, Tag.DIPLOMACIA],
       cost: 16,
 
       metadata: {
         cardNumber: 'M77',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you perform an action, your PLAYED Moon tags count as Earth tags, but not vice versa.', (eb) => {
-            eb.empty().startEffect.tag(Tag.MOON).equals().tag(Tag.EARTH);
+            eb.empty().startEffect.tag(Tag.MOON).equals().tag(Tag.DIPLOMACIA);
           });
         }),
       },

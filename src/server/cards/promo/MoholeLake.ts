@@ -14,7 +14,7 @@ export class MoholeLake extends Card implements IActionCard, IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MOHOLE_LAKE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 31,
 
       behavior: {

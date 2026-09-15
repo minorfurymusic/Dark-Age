@@ -10,7 +10,7 @@ export class GeothermalNetwork extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.GEOTHERMAL_NETWORK,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 14,
 
       requirements: {undergroundTokens: 3},

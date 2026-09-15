@@ -13,7 +13,7 @@ export class AncientShipyards extends Card {
     super({
       name: CardName.ANCIENT_SHIPYARDS,
       type: CardType.ACTIVE,
-      tags: [Tag.MOON, Tag.SPACE],
+      tags: [Tag.MOON, Tag.MARÍTIMO],
       cost: 6,
 
       resourceType: CardResource.RESOURCE_CUBE,

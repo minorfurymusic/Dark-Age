@@ -10,7 +10,7 @@ export class PublicBaths extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.PUBLIC_BATHS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 6,
       victoryPoints: 1,
 

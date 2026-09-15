@@ -10,7 +10,7 @@ export class AIControlledMineNetwork extends Card implements IProjectCard {
     super({
       name: CardName.AI_CONTROLLED_MINE_NETWORK,
       type: CardType.AUTOMATED,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 6,
 
       behavior: {

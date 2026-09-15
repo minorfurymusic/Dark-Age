@@ -11,7 +11,7 @@ export class SpinoffDepartment extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 10,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       name: CardName.SPINOFF_DEPARTMENT,
       type: CardType.ACTIVE,
 

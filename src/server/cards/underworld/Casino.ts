@@ -10,7 +10,7 @@ export class Casino extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CASINO,
-      tags: [Tag.BUILDING, Tag.CRIME],
+      tags: [Tag.CONSTRUÇÃO, Tag.CRIME],
       cost: 15,
 
       requirements: {cities: 2},

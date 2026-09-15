@@ -11,7 +11,7 @@ export class Acidizing extends Card implements IProjectCard {
       name: CardName.ACIDIZING,
       type: CardType.AUTOMATED,
       cost: 10,
-      tags: [Tag.VENUS, Tag.BUILDING],
+      tags: [Tag.COMÉRCIO, Tag.CONSTRUÇÃO],
 
       behavior: {
         global: {

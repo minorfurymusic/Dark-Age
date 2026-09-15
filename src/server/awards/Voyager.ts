@@ -7,6 +7,6 @@ export class Voyager implements IAward {
   public readonly description = 'Have the most Jovian tags in play';
 
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.JOVIAN, 'award');
+    return player.tags.count(Tag.ENGENHO, 'award');
   }
 }

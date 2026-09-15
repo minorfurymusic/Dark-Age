@@ -14,7 +14,7 @@ export class LuxuryFoods extends Card implements IProjectCard {
 
       victoryPoints: 2,
 
-      requirements: [{tag: Tag.VENUS}, {tag: Tag.EARTH}, {tag: Tag.JOVIAN}],
+      requirements: [{tag: Tag.COMÉRCIO}, {tag: Tag.DIPLOMACIA}, {tag: Tag.ENGENHO}],
       metadata: {
         description: 'Requires that you have a Venus tag, an Earth tag and a Jovian tag.',
         cardNumber: '237',
@@ -23,6 +23,6 @@ export class LuxuryFoods extends Card implements IProjectCard {
   }
 
   public override bespokeCanPlay(player: IPlayer): boolean {
-    return player.tags.playerHas([Tag.VENUS, Tag.EARTH, Tag.JOVIAN]);
+    return player.tags.playerHas([Tag.COMÉRCIO, Tag.DIPLOMACIA, Tag.ENGENHO]);
   }
 }

@@ -17,14 +17,14 @@ export class TiredEarth extends GlobalEvent implements IGlobalEvent {
         lose: {
           stock: {
             plants: {
-              tag: Tag.EARTH,
+              tag: Tag.DIPLOMACIA,
               turmoil: {max: 5, influence: {subtract: true}},
             },
           },
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.minus().plants(1).slash().tag(Tag.EARTH).influence({size: Size.SMALL});
+        b.minus().plants(1).slash().tag(Tag.DIPLOMACIA).influence({size: Size.SMALL});
       }),
     });
   }

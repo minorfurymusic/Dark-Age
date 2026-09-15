@@ -10,7 +10,7 @@ export class MarketingExperts extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MARKETING_EXPERTS,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 5,
 
       behavior: {

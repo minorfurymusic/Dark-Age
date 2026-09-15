@@ -14,7 +14,7 @@ export class HostileTakeover extends Card {
     super({
       name: CardName.HOSTILE_TAKEOVER,
       type: CardType.EVENT,
-      tags: [Tag.CITY, Tag.MOON],
+      tags: [Tag.FEUDO, Tag.MOON],
       cost: 26,
       requirements: [{habitatRate: 2}, {miningRate: 4}],
 

@@ -12,7 +12,7 @@ export class BioengineeringEnclosure extends ActionCard implements IProjectCard,
     super({
       type: CardType.ACTIVE,
       name: CardName.BIOENGINEERING_ENCLOSURE,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       cost: 7,
       resourceType: CardResource.ANIMAL,
       protectedResources: true,
@@ -31,7 +31,7 @@ export class BioengineeringEnclosure extends ActionCard implements IProjectCard,
         },
       },
 
-      requirements: {tag: Tag.SCIENCE},
+      requirements: {tag: Tag.ERUDIÇÃO},
       metadata: {
         description: 'Requires 1 science tag to play. Add 2 animals to this card. OTHERS MAY NOT REMOVE ANIMALS FROM THIS CARD.',
         cardNumber: 'A01',

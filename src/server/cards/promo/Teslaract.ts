@@ -13,7 +13,7 @@ export class Teslaract extends Card implements IActionCard {
       type: CardType.ACTIVE,
       name: CardName.TESLARACT,
       cost: 14,
-      tags: [Tag.POWER, Tag.BUILDING],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
 
       behavior: {
         tr: 1,

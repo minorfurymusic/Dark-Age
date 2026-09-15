@@ -1,6 +1,7 @@
 export type Reward =
 '1vp' |
 '2vp' |
+'3vp' |
 '3mc' |
 '6mc' |
 'any_resource' |
@@ -11,8 +12,12 @@ export type Reward =
 'energy_production' |
 'floater' |
 'greenery' |
+'guerrear' |
+'guerrear_production' |
 'heat' |
 'heat_production' |
+'inovacao' |
+'inovacao_production' |
 'moon_road' |
 'moon_mine' |
 'ocean' |

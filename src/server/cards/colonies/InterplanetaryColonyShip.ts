@@ -9,7 +9,7 @@ export class InterplanetaryColonyShip extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 12,
-      tags: [Tag.SPACE, Tag.EARTH],
+      tags: [Tag.MARÍTIMO, Tag.DIPLOMACIA],
       name: CardName.INTERPLANETARY_COLONY_SHIP,
       type: CardType.EVENT,
 

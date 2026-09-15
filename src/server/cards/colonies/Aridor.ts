@@ -38,7 +38,7 @@ export class Aridor extends CorporationCard implements ICorporationCard {
     if (card.type === CardType.EVENT) {
       return [];
     }
-    return card.tags.filter((tag) => tag !== Tag.WILD);
+    return [...card.tags];
   }
 
   public override bespokePlay(player: IPlayer) {

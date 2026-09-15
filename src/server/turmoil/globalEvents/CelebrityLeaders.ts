@@ -23,7 +23,7 @@ export class CelebrityLeaders extends GlobalEvent implements IGlobalEvent {
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.megacredits(2).slash().tag(Tag.EVENT).influence({size: Size.SMALL});
+        b.megacredits(2).slash().tag(Tag.HISTÓRIA).influence({size: Size.SMALL});
       }),
     });
   }

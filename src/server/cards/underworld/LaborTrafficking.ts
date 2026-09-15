@@ -13,7 +13,7 @@ export class LaborTrafficking extends Card implements IProjectCard {
       name: CardName.LABOR_TRAFFICKING,
       type: CardType.ACTIVE,
       cost: 6,
-      tags: [Tag.SPACE, Tag.CRIME],
+      tags: [Tag.MARÍTIMO, Tag.CRIME],
       victoryPoints: -2,
 
       requirements: {corruption: 2},

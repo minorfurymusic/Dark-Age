@@ -66,7 +66,7 @@ export default defineComponent({
         return learnerModeOn || this.value > DEFAULT_STEEL_VALUE;
       case Resource.TITANIUM:
         return learnerModeOn || this.value > DEFAULT_TITANIUM_VALUE;
-      case Resource.HEAT:
+      case Resource.INOVACAO:
         return this.value > 0;
       default:
         return false;

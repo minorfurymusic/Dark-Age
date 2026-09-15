@@ -10,7 +10,7 @@ export class HousePrinting extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.HOUSE_PRINTING,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 10,
 
       behavior: {

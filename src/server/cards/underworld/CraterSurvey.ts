@@ -12,7 +12,7 @@ export class CraterSurvey extends Card implements IProjectCard {
       name: CardName.CRATER_SURVEY,
       type: CardType.EVENT,
       cost: 5,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
 
       behavior: {
         underworld: {identify: {count: 4, claim: 1}},

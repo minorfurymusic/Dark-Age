@@ -17,7 +17,7 @@ export class FrontierTown extends Card implements IProjectCard {
       name: CardName.FRONTIER_TOWN,
       type: CardType.AUTOMATED,
       cost: 11,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
 
       requirements: {party: PartyName.MARS},
 
@@ -49,7 +49,7 @@ export class FrontierTown extends Card implements IProjectCard {
   public override bespokePlay(player: IPlayer) {
     const spaces = MarsBoard.filterForEnergy(player, this.availableSpaces(player, 0));
     player.game.defer(new PlaceCityTile(player, {spaces})).andThen((space) => {
-      player.game.defer(new LoseProduction(player, Resource.ENERGY, {count: 1}));
+      player.game.defer(new LoseProduction(player, Resource.GUERREAR, {count: 1}));
       if (space) {
         player.game.grantSpaceBonuses(player, space);
         player.game.grantSpaceBonuses(player, space);

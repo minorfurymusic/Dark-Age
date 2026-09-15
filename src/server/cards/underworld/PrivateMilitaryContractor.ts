@@ -12,7 +12,7 @@ export class PrivateMilitaryContractor extends ActionCard implements IProjectCar
       type: CardType.ACTIVE,
       name: CardName.PRIVATE_MILITARY_CONTRACTOR,
       cost: 14,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       resourceType: CardResource.FIGHTER,
 
       behavior: {

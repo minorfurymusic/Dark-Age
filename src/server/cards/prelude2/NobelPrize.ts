@@ -9,7 +9,7 @@ export class NobelPrize extends PreludeCard {
   constructor() {
     super({
       name: CardName.NOBEL_PRIZE,
-      tags: [Tag.WILD],
+      tags: [Tag.ERUDIÇÃO],
       victoryPoints: 2,
 
       behavior: {

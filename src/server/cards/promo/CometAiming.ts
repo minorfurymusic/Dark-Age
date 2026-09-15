@@ -11,7 +11,7 @@ export class CometAiming extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.COMET_AIMING,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 17,
       resourceType: CardResource.ASTEROID,
 

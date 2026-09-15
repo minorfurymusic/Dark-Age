@@ -9,7 +9,7 @@ export class HeavyTaxation extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 3,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       name: CardName.HEAVY_TAXATION,
       type: CardType.AUTOMATED,
       victoryPoints: -1,
@@ -19,7 +19,7 @@ export class HeavyTaxation extends Card implements IProjectCard {
         stock: {megacredits: 4},
       },
 
-      requirements: {tag: Tag.EARTH, count: 2},
+      requirements: {tag: Tag.DIPLOMACIA, count: 2},
       metadata: {
         cardNumber: 'C14',
         renderData: CardRenderer.builder((b) => {

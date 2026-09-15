@@ -8,10 +8,10 @@ export class Teractor extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.TERACTOR,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 60,
 
-      cardDiscount: {tag: Tag.EARTH, amount: 3},
+      cardDiscount: {tag: Tag.DIPLOMACIA, amount: 3},
       metadata: {
         cardNumber: 'R30',
         description: 'You start with 60 M€.',
@@ -20,7 +20,7 @@ export class Teractor extends CorporationCard implements ICorporationCard {
           b.megacredits(60);
           b.corpBox('effect', (ce) => {
             ce.effect('When you play an Earth tag, you pay 3 M€ less for it.', (eb) => {
-              eb.tag(Tag.EARTH).startEffect.megacredits(-3);
+              eb.tag(Tag.DIPLOMACIA).startEffect.megacredits(-3);
             });
           });
         }),

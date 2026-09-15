@@ -10,7 +10,7 @@ export class TropicalResort extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TROPICAL_RESORT,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 13,
 
       behavior: {

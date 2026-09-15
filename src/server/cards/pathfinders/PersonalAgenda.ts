@@ -19,7 +19,7 @@ export class PersonalAgenda extends PreludeCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.megacredits(3)).br;
           // TODO(kberg): allow more than one secondary tag.
-          b.cards(3, {secondaryTag: Tag.EVENT}).asterix();
+          b.cards(3, {secondaryTag: Tag.HISTÓRIA}).asterix();
         }),
         description: 'Increase your M€ production 3 steps. Draw 3 event cards that do not have a space tag.',
       },
@@ -29,7 +29,7 @@ export class PersonalAgenda extends PreludeCard {
     player.drawCard(3, {
       include: (card) => {
         return card.type === CardType.EVENT &&
-          (card.tags.includes(Tag.SPACE) === false);
+          (card.tags.includes(Tag.MARÍTIMO) === false);
       }});
     return undefined;
   }

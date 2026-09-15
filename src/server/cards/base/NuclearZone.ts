@@ -23,7 +23,7 @@ export class NuclearZone extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost,
       behavior: {
         global: {temperature: 2},

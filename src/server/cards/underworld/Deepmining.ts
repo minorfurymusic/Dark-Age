@@ -20,7 +20,7 @@ export class Deepmining extends Card implements IProjectCard {
       name: CardName.DEEPMINING,
       cost: 11,
       type: CardType.AUTOMATED,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       metadata: {
         cardNumber: 'U029',
         renderData: CardRenderer.builder((b) => {

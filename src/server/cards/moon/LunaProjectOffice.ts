@@ -12,9 +12,9 @@ export class LunaProjectOffice extends Card implements IProjectCard {
     super({
       name: CardName.LUNA_PROJECT_OFFICE,
       type: CardType.AUTOMATED,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 4,
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
 
       metadata: {
         description: 'Requires 2 science tags.',

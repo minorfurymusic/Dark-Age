@@ -23,7 +23,7 @@ export class MoholeArea extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 20,
       metadata,
 

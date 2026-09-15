@@ -10,7 +10,7 @@ export class GHGImportFromVenus extends Card implements IProjectCard {
     super({
       name: CardName.GHG_IMPORT_FROM_VENUS,
       type: CardType.EVENT,
-      tags: [Tag.SPACE, Tag.VENUS],
+      tags: [Tag.MARÍTIMO, Tag.COMÉRCIO],
       cost: 23,
 
       behavior: {

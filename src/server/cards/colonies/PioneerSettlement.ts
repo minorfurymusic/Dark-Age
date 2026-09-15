@@ -14,7 +14,7 @@ export class PioneerSettlement extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 13,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.PIONEER_SETTLEMENT,
       type: CardType.AUTOMATED,
       requirements: {colonies: 1, max},

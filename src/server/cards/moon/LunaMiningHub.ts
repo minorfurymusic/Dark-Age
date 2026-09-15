@@ -12,7 +12,7 @@ export class LunaMiningHub extends Card {
     super({
       name: CardName.LUNA_MINING_HUB,
       type: CardType.AUTOMATED,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 23,
       reserveUnits: {steel: 1, titanium: 1},
 

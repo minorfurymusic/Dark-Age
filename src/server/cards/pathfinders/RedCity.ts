@@ -19,7 +19,7 @@ export class RedCity extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.RED_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 21,
 
       behavior: {

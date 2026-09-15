@@ -7,7 +7,7 @@ export class HydrogenBombardment extends PreludeCard {
   constructor() {
     super({
       name: CardName.HYDROGEN_BOMBARDMENT,
-      tags: [Tag.SPACE, Tag.VENUS],
+      tags: [Tag.MARÍTIMO, Tag.COMÉRCIO],
       behavior: {
         production: {titanium: 1},
         global: {venus: 1},

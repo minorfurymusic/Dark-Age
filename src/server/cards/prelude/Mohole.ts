@@ -8,7 +8,7 @@ export class Mohole extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.MOHOLE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         production: {heat: 3},

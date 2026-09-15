@@ -48,7 +48,7 @@ export class StarVegas extends Card {
       type: CardType.AUTOMATED,
       name: CardName.STAR_VEGAS,
       cost: 32,
-      tags: [Tag.CRIME, Tag.SPACE, Tag.CITY],
+      tags: [Tag.CRIME, Tag.MARÍTIMO, Tag.FEUDO],
       requirements: {cities: 3, all: true},
 
       behavior: {

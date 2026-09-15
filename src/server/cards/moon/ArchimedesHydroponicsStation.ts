@@ -9,7 +9,7 @@ export class ArchimedesHydroponicsStation extends Card {
     super({
       name: CardName.ARCHIMEDES_HYDROPONICS_STATION,
       type: CardType.AUTOMATED,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 12,
 
       behavior: {

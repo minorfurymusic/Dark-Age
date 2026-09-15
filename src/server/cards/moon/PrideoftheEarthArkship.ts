@@ -11,16 +11,16 @@ export class PrideoftheEarthArkship extends ActionCard implements IActionCard {
     super({
       name: CardName.PRIDE_OF_THE_EARTH_ARKSHIP,
       type: CardType.ACTIVE,
-      tags: [Tag.SCIENCE, Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.ERUDIÇÃO, Tag.MARÍTIMO],
       cost: 22,
 
       resourceType: CardResource.SCIENCE,
       victoryPoints: {resourcesHere: {}},
-      requirements: [{tag: Tag.SCIENCE}, {tag: Tag.SPACE, count: 2}],
+      requirements: [{tag: Tag.ERUDIÇÃO}, {tag: Tag.MARÍTIMO, count: 2}],
       reserveUnits: {titanium: 2},
 
       action: {
-        addResources: {tag: Tag.SCIENCE, per: 5},
+        addResources: {tag: Tag.ERUDIÇÃO, per: 5},
       },
 
       metadata: {
@@ -28,7 +28,7 @@ export class PrideoftheEarthArkship extends ActionCard implements IActionCard {
         cardNumber: 'M24',
         renderData: CardRenderer.builder((b) => {
           b.action('Add 1 science resource here per every 5 science tags you have.', (eb) => {
-            eb.empty().startAction.resource(CardResource.SCIENCE).slash().text('5').tag(Tag.SCIENCE);
+            eb.empty().startAction.resource(CardResource.SCIENCE).slash().text('5').tag(Tag.ERUDIÇÃO);
           }).br;
           b.minus().titanium(2);
         }),

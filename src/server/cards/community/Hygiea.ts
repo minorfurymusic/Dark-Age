@@ -18,8 +18,8 @@ export class Hygiea extends Colony {
         resource: [
           Resource.MEGACREDITS,
           Resource.MEGACREDITS,
-          Resource.HEAT,
-          Resource.ENERGY,
+          Resource.INOVACAO,
+          Resource.GUERREAR,
           Resource.PLANTS,
           Resource.STEEL,
           Resource.TITANIUM,

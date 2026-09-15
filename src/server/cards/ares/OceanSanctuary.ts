@@ -13,7 +13,7 @@ export class OceanSanctuary extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.OCEAN_SANCTUARY,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       cost: 9,
       resourceType: CardResource.ANIMAL,
       victoryPoints: {resourcesHere: {}},

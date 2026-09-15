@@ -12,7 +12,7 @@ export class BreedingFarms extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.BREEDING_FARMS,
       cost: 16,
-      tags: [Tag.SCIENCE, Tag.ANIMAL, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.PECUÁRIA, Tag.CONSTRUÇÃO],
 
       behavior: {
         global: {temperature: 1},
@@ -23,7 +23,7 @@ export class BreedingFarms extends ActionCard implements IProjectCard {
         addResourcesToAnyCard: {count: 1, type: CardResource.ANIMAL, mustHaveCard: true},
       },
 
-      requirements: [{tag: Tag.SCIENCE}, {tag: Tag.ANIMAL}],
+      requirements: [{tag: Tag.ERUDIÇÃO}, {tag: Tag.PECUÁRIA}],
       metadata: {
         cardNumber: 'Pf01',
         renderData: CardRenderer.builder((b) => {

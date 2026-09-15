@@ -12,9 +12,9 @@ export class Pollinators extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.POLLINATORS,
       cost: 19,
-      tags: [Tag.PLANT, Tag.ANIMAL],
+      tags: [Tag.AGRICULTURA, Tag.PECUÁRIA],
       resourceType: CardResource.ANIMAL,
-      requirements: {tag: Tag.PLANT, count: 3},
+      requirements: {tag: Tag.AGRICULTURA, count: 3},
       victoryPoints: {resourcesHere: {}},
 
       behavior: {

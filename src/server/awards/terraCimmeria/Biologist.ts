@@ -7,6 +7,6 @@ export class Biologist implements IAward {
   public readonly description = 'Have the most animal, plant, and microbe tags in play';
 
   public getScore(player: IPlayer): number {
-    return player.tags.multipleCount([Tag.MICROBE, Tag.PLANT, Tag.ANIMAL], 'award');
+    return player.tags.multipleCount([Tag.BRUXARIA, Tag.AGRICULTURA, Tag.PECUÁRIA], 'award');
   }
 }

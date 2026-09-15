@@ -13,7 +13,7 @@ export class TunnelingLoophole extends Card implements IProjectCard {
       name: CardName.TUNNELING_LOOPHOLE,
       type: CardType.EVENT,
       cost: 8,
-      requirements: {tag: Tag.EARTH},
+      requirements: {tag: Tag.DIPLOMACIA},
       victoryPoints: -1,
 
       behavior: {

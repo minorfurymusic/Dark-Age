@@ -15,7 +15,7 @@ export class UndergroundResearchCenter extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.UNDERGROUND_RESEARCH_CENTER,
-      tags: [Tag.WILD, Tag.BUILDING],
+      tags: [Tag.ENGENHO, Tag.CONSTRUÇÃO],
       cost: 12,
 
       requirements: {undergroundTokens: 4},
@@ -31,7 +31,7 @@ export class UndergroundResearchCenter extends Card implements IProjectCard {
         }),
 
         description: 'Requires you have 4 underground tokens. ' +
-        'Excavate an underground resource. Choose a tag that is not the wild tag or clone tag. ' +
+        'Excavate an underground resource. Choose a tag (except clone tag). ' +
         'Draw a card with that tag.',
       },
     });
@@ -39,7 +39,6 @@ export class UndergroundResearchCenter extends Card implements IProjectCard {
 
   private chooseTagsAndDraw(player: IPlayer) {
     const tags = [...ALL_TAGS];
-    inplaceRemove(tags, Tag.WILD);
     inplaceRemove(tags, Tag.CLONE);
 
     const options = tags.map((tag) => {

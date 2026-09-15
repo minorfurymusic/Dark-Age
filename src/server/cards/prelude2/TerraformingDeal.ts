@@ -12,7 +12,7 @@ export class TerraformingDeal extends PreludeCard implements IPreludeCard {
   constructor() {
     super({
       name: CardName.TERRAFORMING_DEAL,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       metadata: {
         cardNumber: 'P64',

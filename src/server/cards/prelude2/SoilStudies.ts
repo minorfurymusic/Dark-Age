@@ -10,7 +10,7 @@ export class SoilStudies extends Card {
     super({
       name: CardName.SOIL_STUDIES,
       type: CardType.EVENT,
-      tags: [Tag.MICROBE, Tag.PLANT],
+      tags: [Tag.BRUXARIA, Tag.AGRICULTURA],
       cost: 13,
 
       requirements: {temperature: -4, max},
@@ -18,7 +18,7 @@ export class SoilStudies extends Card {
       behavior: {
         stock: {
           plants: {
-            tag: [Tag.VENUS, Tag.PLANT],
+            tag: [Tag.COMÉRCIO, Tag.AGRICULTURA],
             colonies: {colonies: {}},
           },
         },
@@ -27,7 +27,7 @@ export class SoilStudies extends Card {
       metadata: {
         cardNumber: 'P81',
         renderData: CardRenderer.builder((b) => {
-          b.plants(1).slash().tag(Tag.VENUS).tag(Tag.PLANT).colonies(1).br;
+          b.plants(1).slash().tag(Tag.COMÉRCIO).tag(Tag.AGRICULTURA).colonies(1).br;
         }),
         description: 'Requires that temperature is -4 C or lower. Gain 1 plant per Venus tag, plant tag, and colony you have.',
       },

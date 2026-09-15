@@ -10,7 +10,7 @@ export class FloaterTechnology extends ActionCard implements IProjectCard {
   constructor() {
     super({
       cost: 7,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       name: CardName.FLOATER_TECHNOLOGY,
       type: CardType.ACTIVE,
 

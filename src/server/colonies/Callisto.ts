@@ -10,19 +10,19 @@ export class Callisto extends Colony {
       build: {
         description: 'Gain 1 energy production',
         type: ColonyBenefit.GAIN_PRODUCTION,
-        resource: Resource.ENERGY,
+        resource: Resource.GUERREAR,
       },
       trade: {
         description: 'Gain n energy',
         type: ColonyBenefit.GAIN_RESOURCES,
         quantity: [0, 2, 3, 5, 7, 10, 13],
-        resource: Resource.ENERGY,
+        resource: Resource.GUERREAR,
       },
       colony: {
         description: 'Gain 3 energy',
         type: ColonyBenefit.GAIN_RESOURCES,
         quantity: 3,
-        resource: Resource.ENERGY,
+        resource: Resource.GUERREAR,
       },
     });
   }

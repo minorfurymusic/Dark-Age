@@ -10,7 +10,7 @@ export class EarthCatapult extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.EARTH_CATAPULT,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 23,
       victoryPoints: 2,
 

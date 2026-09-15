@@ -10,7 +10,7 @@ export class EquatorialMagnetizer extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.EQUATORIAL_MAGNETIZER,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 11,
 
       action: {

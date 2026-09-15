@@ -16,14 +16,14 @@ export class HomeworldSupport extends GlobalEvent implements IGlobalEvent {
       behavior: {
         stock: {
           megacredits: {
-            tag: Tag.EARTH,
+            tag: Tag.DIPLOMACIA,
             each: 2,
             turmoil: {max: 5, influence: {}},
           },
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.megacredits(2).slash().tag(Tag.EARTH).influence({size: Size.SMALL});
+        b.megacredits(2).slash().tag(Tag.DIPLOMACIA).influence({size: Size.SMALL});
       }),
     });
   }

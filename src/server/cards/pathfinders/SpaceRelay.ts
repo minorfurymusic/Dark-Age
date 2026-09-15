@@ -13,7 +13,7 @@ export class SpaceRelay extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.SPACE_RELAY,
       cost: 13,
-      tags: [Tag.SPACE, Tag.JOVIAN],
+      tags: [Tag.MARÍTIMO, Tag.ENGENHO],
 
       behavior: {
         production: {megacredits: 1},
@@ -23,7 +23,7 @@ export class SpaceRelay extends Card implements IProjectCard {
         cardNumber: 'Pf33',
         renderData: CardRenderer.builder((b) => {
           b.effect('Whenever you play a card with a Jovian tag, including this, draw a card.', (eb) => {
-            eb.tag(Tag.JOVIAN).asterix().startEffect.cards(1);
+            eb.tag(Tag.ENGENHO).asterix().startEffect.cards(1);
           }).br;
           b.production((pb) => pb.megacredits(1));
         }),
@@ -33,7 +33,7 @@ export class SpaceRelay extends Card implements IProjectCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    if (card.tags.includes(Tag.JOVIAN)) {
+    if (card.tags.includes(Tag.ENGENHO)) {
       player.drawCard();
     }
   }

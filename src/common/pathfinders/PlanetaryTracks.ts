@@ -1,11 +1,13 @@
 import {PlanetaryTrack, TrackBuilder} from './PlanetaryTrack';
+import {Tag} from '../cards/Tag';
 
 export type PlanetaryTracks = Readonly<{
-    venus: PlanetaryTrack,
-    earth: PlanetaryTrack,
-    mars: PlanetaryTrack,
-    jovian: PlanetaryTrack,
-    moon: PlanetaryTrack,
+    [Tag.COMÉRCIO]: PlanetaryTrack,
+    [Tag.DIPLOMACIA]: PlanetaryTrack,
+    [Tag.MARS]: PlanetaryTrack,
+    [Tag.ENGENHO]: PlanetaryTrack,
+    [Tag.MOON]: PlanetaryTrack,
+    [Tag.GUERREAR]: PlanetaryTrack,
 }>;
 
 const venus = new TrackBuilder(17)
@@ -54,10 +56,26 @@ const moon = new TrackBuilder(20)
   .at(20).risingPlayer('moon_mine').mostTags('2vp')
   .build();
 
+const guerrear = new TrackBuilder(12)
+  .at(1).everyone('guerrear')
+  .at(2).risingPlayer('guerrear_production').everyone('guerrear')
+  .at(3).everyone('card')
+  .at(4).risingPlayer('delegate').everyone('3mc')
+  .at(5).everyone('card')
+  .at(6).risingPlayer('guerrear_production').everyone('guerrear')
+  .at(7).risingPlayer('tr').everyone('card')
+  .at(8).everyone('guerrear')
+  .at(9).risingPlayer('card').everyone('card')
+  .at(10).everyone('3mc')
+  .at(11).risingPlayer('guerrear_production').everyone('guerrear')
+  .at(12).risingPlayer('tr', 'city').mostTags('3vp')
+  .build();
+
 export const PLANETARY_TRACKS: PlanetaryTracks = {
-  venus,
-  earth,
-  mars,
-  jovian,
-  moon,
+  [Tag.COMÉRCIO]: venus,
+  [Tag.DIPLOMACIA]: earth,
+  [Tag.MARS]: mars,
+  [Tag.ENGENHO]: jovian,
+  [Tag.MOON]: moon,
+  [Tag.GUERREAR]: guerrear,
 } as const;

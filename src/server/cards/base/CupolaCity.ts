@@ -12,7 +12,7 @@ export class CupolaCity extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CUPOLA_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 16,
 
       behavior: {

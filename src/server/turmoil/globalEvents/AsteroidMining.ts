@@ -16,12 +16,12 @@ export class AsteroidMining extends GlobalEvent implements IGlobalEvent {
       behavior: {
         stock: {
           titanium: {
-            tag: Tag.JOVIAN,
+            tag: Tag.ENGENHO,
             turmoil: {max: 5, influence: {}}},
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.titanium(1).slash().tag(Tag.JOVIAN).influence({size: Size.SMALL});
+        b.titanium(1).slash().tag(Tag.ENGENHO).influence({size: Size.SMALL});
       }),
     });
   }

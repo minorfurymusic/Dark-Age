@@ -345,11 +345,11 @@ export default defineComponent({
         });
       }
 
-      dataset.push({label: $t('Temperature'), color: 'red', data: getValues(GlobalParameter.TEMPERATURE, -30, 8)});
-      dataset.push({label: $t('Oxygen'), color: 'green', data: getValues(GlobalParameter.OXYGEN, 0, 14)});
-      dataset.push({label: $t('Oceans'), color: 'blue', data: getValues(GlobalParameter.OCEANS, 0, 9)});
+      dataset.push({label: $t('Technology'), color: 'red', data: getValues(GlobalParameter.TECNOLOGIA, -30, 8)});
+      dataset.push({label: $t('Faith'), color: 'green', data: getValues(GlobalParameter.FE, 14, 0)});
+      dataset.push({label: $t('Banners'), color: 'blue', data: getValues(GlobalParameter.ESTANDARTES, 0, 5)});
       if (this.game.gameOptions.expansions.venus === true) {
-        dataset.push({label: $t('Venus'), color: 'yellow', data: getValues(GlobalParameter.VENUS, 0, 30)});
+        dataset.push({label: $t('Trade Routes'), color: 'yellow', data: getValues(GlobalParameter.ROTAS_COMERCIAIS, 1, 15)});
       }
       if (this.game.gameOptions.expansions.moon === true) {
         dataset.push({label: $t('L. Habitat'), color: 'orange', data: getValues(GlobalParameter.MOON_HABITAT_RATE, 0, 8)});
@@ -361,10 +361,10 @@ export default defineComponent({
     playerContributionsData(): Array<{player: string, color: Color, temp: number, oxygen: number, oceans: number, venus?: number, moonHabitat?: number, moonMining?: number, moonLogistic?: number, total: number}> {
       return this.players.map((player) => {
         const steps = player.globalParameterSteps || {};
-        const temp = steps[GlobalParameter.TEMPERATURE] || 0;
-        const oxygen = steps[GlobalParameter.OXYGEN] || 0;
-        const oceans = steps[GlobalParameter.OCEANS] || 0;
-        const venus = steps[GlobalParameter.VENUS] || 0;
+        const temp = steps[GlobalParameter.TECNOLOGIA] || 0;
+        const oxygen = steps[GlobalParameter.FE] || 0;
+        const oceans = steps[GlobalParameter.ESTANDARTES] || 0;
+        const venus = steps[GlobalParameter.ROTAS_COMERCIAIS] || 0;
         const moonHabitat = steps[GlobalParameter.MOON_HABITAT_RATE] || 0;
         const moonMining = steps[GlobalParameter.MOON_MINING_RATE] || 0;
         const moonLogistic = steps[GlobalParameter.MOON_LOGISTIC_RATE] || 0;

@@ -18,7 +18,7 @@ export class VenusOrbitalSurvey extends Card implements IActionCard {
     super({
       name: CardName.VENUS_ORBITAL_SURVEY,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARÍTIMO],
       cost: 18,
 
       metadata: {
@@ -36,7 +36,7 @@ export class VenusOrbitalSurvey extends Card implements IActionCard {
   }
 
   public action(player: IPlayer) {
-    const isVenus = (card: IProjectCard) => player.tags.cardHasTag(card, Tag.VENUS);
+    const isVenus = (card: IProjectCard) => player.tags.cardHasTag(card, Tag.COMÉRCIO);
 
     player.game.defer(new DrawCards(player, 2).andThen((cards) => {
       player.game.log('${0} revealed ${1} and ${2}', (b) => {

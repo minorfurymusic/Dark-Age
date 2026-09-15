@@ -10,20 +10,20 @@ export class NitrogenFromTitan extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 25,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       name: CardName.NITROGEN_FROM_TITAN,
       type: CardType.AUTOMATED,
       victoryPoints: 1,
 
       behavior: {
         tr: 2,
-        addResourcesToAnyCard: {type: CardResource.FLOATER, count: 2, tag: Tag.JOVIAN},
+        addResourcesToAnyCard: {type: CardResource.FLOATER, count: 2, tag: Tag.ENGENHO},
       },
 
       metadata: {
         cardNumber: 'C28',
         renderData: CardRenderer.builder((b) => {
-          b.tr(2).resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.JOVIAN});
+          b.tr(2).resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.ENGENHO});
         }),
         description: 'Raise your TR 2 steps. Add 2 floaters to a JOVIAN CARD.',
       },

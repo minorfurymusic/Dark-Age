@@ -11,7 +11,7 @@ export class BeamFromAThoriumAsteroid extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.BEAM_FROM_A_THORIUM_ASTEROID,
-      tags: [Tag.JOVIAN, Tag.SPACE, Tag.POWER],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO, Tag.GUERREAR],
       cost: 32,
       victoryPoints: 1,
 
@@ -19,7 +19,7 @@ export class BeamFromAThoriumAsteroid extends Card implements IProjectCard {
         production: {heat: 3, energy: 3},
       },
 
-      requirements: {tag: Tag.JOVIAN},
+      requirements: {tag: Tag.ENGENHO},
       metadata: {
         cardNumber: '058',
         description: 'Requires a Jovian tag. Increase your heat production and energy production 3 steps each.',

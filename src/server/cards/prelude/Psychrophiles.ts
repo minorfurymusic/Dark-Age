@@ -12,7 +12,7 @@ export class Psychrophiles extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.PSYCHROPHILES,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 2,
       resourceType: CardResource.MICROBE,
 
@@ -28,7 +28,7 @@ export class Psychrophiles extends ActionCard implements IProjectCard {
             eb.empty().startAction.resource(CardResource.MICROBE);
           }).br;
           b.effect('When paying for a plant card, microbes here may be used as 2 M€ each.', (eb) => {
-            eb.tag(Tag.PLANT).startEffect.resource(CardResource.MICROBE).equals().megacredits(2);
+            eb.tag(Tag.AGRICULTURA).startEffect.resource(CardResource.MICROBE).equals().megacredits(2);
           });
         }),
         description: 'Temperature must be -20 C or lower.',

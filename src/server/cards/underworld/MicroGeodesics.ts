@@ -17,7 +17,7 @@ export class MicroGeodesics extends Card implements IProjectCard, IActionCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MICRO_GEODESICS,
-      tags: [Tag.MICROBE, Tag.PLANT],
+      tags: [Tag.BRUXARIA, Tag.AGRICULTURA],
       resourceType: CardResource.MICROBE,
       cost: 8,
 

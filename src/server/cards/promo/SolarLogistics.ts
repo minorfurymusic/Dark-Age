@@ -14,22 +14,22 @@ export class SolarLogistics extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.SOLAR_LOGISTICS,
       cost: 20,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
 
       behavior: {
         stock: {titanium: 2},
       },
       victoryPoints: 1,
-      cardDiscount: {tag: Tag.EARTH, amount: 2},
+      cardDiscount: {tag: Tag.DIPLOMACIA, amount: 2},
 
       metadata: {
         cardNumber: 'X63',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play an Earth tag, you pay 2 M€ less.',
-            (eb) => eb.tag(Tag.EARTH).startEffect.megacredits(-2));
+            (eb) => eb.tag(Tag.DIPLOMACIA).startEffect.megacredits(-2));
           b.br;
           b.effect('When any player plays a space event, draw a card.',
-            (eb) => eb.tag(Tag.SPACE, {all}).tag(Tag.EVENT, {all}).startEffect.cards(1));
+            (eb) => eb.tag(Tag.MARÍTIMO, {all}).tag(Tag.HISTÓRIA, {all}).startEffect.cards(1));
           b.br;
           b.titanium(2);
         }),
@@ -39,7 +39,7 @@ export class SolarLogistics extends Card implements IProjectCard {
   }
 
   public onCardPlayedByAnyPlayer(thisCardOwner: IPlayer, card: ICard) {
-    if (card.type === CardType.EVENT && card.tags.includes(Tag.SPACE)) {
+    if (card.type === CardType.EVENT && card.tags.includes(Tag.MARÍTIMO)) {
       thisCardOwner.drawCard(1);
     }
     return undefined;

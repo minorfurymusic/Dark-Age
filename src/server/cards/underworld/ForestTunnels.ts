@@ -10,7 +10,7 @@ export class ForestTunnels extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.FOREST_TUNNELS,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 7,
 
       behavior: {

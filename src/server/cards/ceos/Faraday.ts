@@ -15,8 +15,7 @@ import {TITLES} from '../../inputs/titles';
 import {Priority} from '../../deferredActions/Priority';
 
 const INVALID_TAGS = [
-  Tag.EVENT,
-  Tag.WILD,
+  Tag.HISTÓRIA,
 ];
 
 export class Faraday extends CeoCard {
@@ -30,7 +29,7 @@ export class Faraday extends CeoCard {
           b.text('5', {size: Size.LARGE}).diverseTag(1).colon().megacredits(-3).cards(1, {secondaryTag: AltSecondaryTag.DIVERSE}).asterix();
           b.br.br;
         }),
-        description: 'When you gain a multiple of 5 for any tag type IN PLAY, you may pay 3 M€ to draw a card with that tag. Wild tags do not count for this effect.',
+        description: 'When you gain a multiple of 5 for any tag type IN PLAY, you may pay 3 M€ to draw a card with that tag.',
       },
     });
   }

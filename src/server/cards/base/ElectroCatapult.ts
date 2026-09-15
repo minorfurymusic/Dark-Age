@@ -11,7 +11,7 @@ export class ElectroCatapult extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ELECTRO_CATAPULT,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 17,
 
       behavior: {

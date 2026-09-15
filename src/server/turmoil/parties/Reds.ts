@@ -99,15 +99,15 @@ class RedsPolicy03 implements IPolicy {
 
   private canDecrease(game: IGame, parameter: GlobalParameter) {
     switch (parameter) {
-    case GlobalParameter.TEMPERATURE:
+    case GlobalParameter.TECNOLOGIA:
       const temp = game.getTemperature();
       return temp > MIN_TEMPERATURE && temp !== MAX_TEMPERATURE;
-    case GlobalParameter.OCEANS:
+    case GlobalParameter.ESTANDARTES:
       return game.canRemoveOcean();
-    case GlobalParameter.OXYGEN:
+    case GlobalParameter.FE:
       const oxygenLevel = game.getOxygenLevel();
       return oxygenLevel > MIN_OXYGEN_LEVEL && oxygenLevel !== MAX_OXYGEN_LEVEL;
-    case GlobalParameter.VENUS:
+    case GlobalParameter.ROTAS_COMERCIAIS:
       const venusScaleLevel = game.getVenusScaleLevel();
       return game.gameOptions.venusNextExtension === true && venusScaleLevel > MIN_VENUS_SCALE && venusScaleLevel !== MAX_VENUS_SCALE;
     case GlobalParameter.MOON_HABITAT_RATE:
@@ -168,7 +168,7 @@ class RedsPolicy03 implements IPolicy {
         const orOptions = new OrOptions();
 
         // Decrease temperature option
-        if (this.canDecrease(game, GlobalParameter.TEMPERATURE)) {
+        if (this.canDecrease(game, GlobalParameter.TECNOLOGIA)) {
           orOptions.options.push(new SelectOption('Decrease temperature').andThen(() => {
             game.increaseTemperature(player, -1);
             game.log('${0} decreased temperature 1 step', (b) => b.player(player));
@@ -177,7 +177,7 @@ class RedsPolicy03 implements IPolicy {
         }
 
         // Remove ocean option
-        if (this.canDecrease(game, GlobalParameter.OCEANS)) {
+        if (this.canDecrease(game, GlobalParameter.ESTANDARTES)) {
           orOptions.options.push(new SelectOption('Remove an ocean tile').andThen(() => {
             game.defer(new RemoveOceanTile(player, 'Turmoil Reds action - Remove an Ocean tile from the board'));
             return undefined;
@@ -185,7 +185,7 @@ class RedsPolicy03 implements IPolicy {
         }
 
         // Decrease oxygen level option
-        if (this.canDecrease(game, GlobalParameter.OXYGEN)) {
+        if (this.canDecrease(game, GlobalParameter.FE)) {
           orOptions.options.push(new SelectOption('Decrease oxygen level').andThen(() => {
             game.increaseOxygenLevel(player, -1);
             game.log('${0} decreased oxygen level 1 step', (b) => b.player(player));
@@ -194,7 +194,7 @@ class RedsPolicy03 implements IPolicy {
         }
 
         // Decrease Venus scale option
-        if (this.canDecrease(game, GlobalParameter.VENUS)) {
+        if (this.canDecrease(game, GlobalParameter.ROTAS_COMERCIAIS)) {
           orOptions.options.push(new SelectOption('Decrease Venus scale').andThen(() => {
             game.increaseVenusScaleLevel(player, -1);
             game.log('${0} decreased Venus scale level 1 step', (b) => b.player(player));

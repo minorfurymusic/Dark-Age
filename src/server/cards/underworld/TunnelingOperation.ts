@@ -12,7 +12,7 @@ export class TunnelingOperation extends PreludeCard {
   constructor() {
     super({
       name: CardName.TUNNELING_OPERATION,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         production: {steel: 2},

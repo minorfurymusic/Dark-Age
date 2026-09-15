@@ -12,7 +12,7 @@ export class IoSulphurResearch extends Card implements IProjectCard {
     super({
       name: CardName.IO_SULPHUR_RESEARCH,
       type: CardType.AUTOMATED,
-      tags: [Tag.SCIENCE, Tag.JOVIAN],
+      tags: [Tag.ERUDIÇÃO, Tag.ENGENHO],
       cost: 17,
 
       victoryPoints: 2,
@@ -22,7 +22,7 @@ export class IoSulphurResearch extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.cards(1).br;
           b.or().br;
-          b.tag(Tag.VENUS, {amount: 3, digit}).colon().cards(3);
+          b.tag(Tag.COMÉRCIO, {amount: 3, digit}).colon().cards(3);
         }),
         description: 'Draw 1 card, or draw 3 if you have at least 3 Venus tags.',
       },
@@ -30,7 +30,7 @@ export class IoSulphurResearch extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    player.drawCard(player.tags.count(Tag.VENUS) >= 3 ? 3 : 1);
+    player.drawCard(player.tags.count(Tag.COMÉRCIO) >= 3 ? 3 : 1);
     return undefined;
   }
 }

@@ -11,7 +11,7 @@ export class GiantIceAsteroid extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.GIANT_ICE_ASTEROID,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 36,
 
       behavior: {

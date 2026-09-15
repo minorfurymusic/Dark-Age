@@ -13,7 +13,7 @@ export class InterplanetaryCinematics extends CorporationCard implements ICorpor
   constructor() {
     super({
       name: CardName.INTERPLANETARY_CINEMATICS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       startingMegaCredits: 30,
 
       behavior: {
@@ -28,7 +28,7 @@ export class InterplanetaryCinematics extends CorporationCard implements ICorpor
           b.megacredits(30).nbsp.steel(20, {digit});
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you play an event, you gain 2 M€.', (eb) => {
-              eb.tag(Tag.EVENT).startEffect.megacredits(2);
+              eb.tag(Tag.HISTÓRIA).startEffect.megacredits(2);
             });
           });
         }),

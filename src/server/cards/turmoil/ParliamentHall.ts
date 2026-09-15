@@ -11,20 +11,20 @@ export class ParliamentHall extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.PARLIAMENT_HALL,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 8,
       requirements: {party: PartyName.MARS},
       victoryPoints: 1,
 
       behavior: {
-        production: {megacredits: {tag: Tag.BUILDING, per: 3}},
+        production: {megacredits: {tag: Tag.CONSTRUÇÃO, per: 3}},
       },
 
       metadata: {
         cardNumber: 'T08',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(1).slash().tag(Tag.BUILDING, 3);
+            pb.megacredits(1).slash().tag(Tag.CONSTRUÇÃO, 3);
           });
         }),
         description: 'Requires that Mars First are ruling or that you have 2 delegates there. Increase your M€ production 1 step for every 3 building tags you have, including this.',

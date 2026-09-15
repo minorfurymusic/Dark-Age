@@ -11,7 +11,7 @@ export class Farming extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.FARMING,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 16,
       victoryPoints: 2,
 

@@ -10,7 +10,7 @@ export class AppliedScience extends ActivePreludeCard implements IActionCard {
   constructor() {
     super({
       name: CardName.APPLIED_SCIENCE,
-      tags: [Tag.WILD],
+      tags: [Tag.ERUDIÇÃO],
       resourceType: CardResource.SCIENCE,
 
       behavior: {

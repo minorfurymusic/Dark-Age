@@ -9,7 +9,7 @@ export class FirstLunarSettlement extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.FIRST_LUNAR_SETTLEMENT,
-      tags: [Tag.CITY, Tag.MOON],
+      tags: [Tag.FEUDO, Tag.MOON],
 
       behavior: {
         production: {megacredits: 1},

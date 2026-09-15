@@ -11,12 +11,12 @@ export class MaxwellBase extends ActionCard implements IActionCard {
     super({
       name: CardName.MAXWELL_BASE,
       type: CardType.ACTIVE,
-      tags: [Tag.CITY, Tag.VENUS],
+      tags: [Tag.FEUDO, Tag.COMÉRCIO],
       cost: 18,
 
       action: {
         addResourcesToAnyCard: {
-          tag: Tag.VENUS,
+          tag: Tag.COMÉRCIO,
           count: 1,
           autoSelect: true,
           mustHaveCard: true,
@@ -34,7 +34,7 @@ export class MaxwellBase extends ActionCard implements IActionCard {
         cardNumber: '238',
         renderData: CardRenderer.builder((b) => {
           b.action('Add 1 resource to ANOTHER VENUS CARD.', (eb) => {
-            eb.empty().startAction.wild(1, {secondaryTag: Tag.VENUS});
+            eb.empty().startAction.wild(1, {secondaryTag: Tag.COMÉRCIO});
           }).br;
           b.production((pb) => pb.minus().energy(1)).nbsp.city().asterix();
         }),

@@ -11,7 +11,7 @@ export class FloatingHabs extends ActionCard implements IActionCard {
     super({
       name: CardName.FLOATING_HABS,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 5,
 
       resourceType: CardResource.FLOATER,
@@ -22,7 +22,7 @@ export class FloatingHabs extends ActionCard implements IActionCard {
         addResourcesToAnyCard: {type: CardResource.FLOATER, count: 1, autoSelect: true},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: '225',
         renderData: CardRenderer.builder((b) => {

@@ -14,7 +14,7 @@ export class ProjectEden extends PreludeCard {
   constructor() {
     super({
       name: CardName.PROJECT_EDEN,
-      tags: [Tag.CITY, Tag.PLANT],
+      tags: [Tag.FEUDO, Tag.AGRICULTURA],
       tr: {oceans: 1, oxygen: 1},
 
       metadata: {

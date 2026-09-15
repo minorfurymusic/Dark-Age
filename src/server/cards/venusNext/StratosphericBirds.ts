@@ -13,7 +13,7 @@ export class StratosphericBirds extends ActionCard implements IActionCard {
     super({
       name: CardName.STRATOSPHERIC_BIRDS,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS, Tag.ANIMAL],
+      tags: [Tag.COMÉRCIO, Tag.PECUÁRIA],
       cost: 12,
       resourceType: CardResource.ANIMAL,
       victoryPoints: {resourcesHere: {}},

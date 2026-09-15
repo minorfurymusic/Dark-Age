@@ -28,13 +28,13 @@
       :resourceProtection="player.protectedResources.plants"
       :productionProtection="player.protectedProduction.plants"/>
     <PlayerResource
-      :type="Resource.ENERGY"
+      :type="Resource.GUERREAR"
       :count="player.energy"
       :production="player.energyProduction"
       :resourceProtection="player.protectedResources.energy"
       :productionProtection="player.protectedProduction.energy"/>
     <PlayerResource
-      :type="Resource.HEAT"
+      :type="Resource.INOVACAO"
       :count="player.heat"
       :production="player.heatProduction"
       :value="canUseHeatAsMegaCredits ? 1 : 0"

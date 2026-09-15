@@ -17,7 +17,7 @@ export class SearchForLife extends Card implements IActionCard, IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.SEARCH_FOR_LIFE,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 3,
 
       resourceType: CardResource.SCIENCE,
@@ -29,7 +29,7 @@ export class SearchForLife extends Card implements IActionCard, IProjectCard {
         description: 'Oxygen must be 6% or less.',
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 1 M€ to reveal the top card of the draw deck. If that card has a microbe tag, add a science resource here.', (eb) => {
-            eb.megacredits(1).startAction.tag(Tag.MICROBE).asterix().nbsp.colon().nbsp.resource(CardResource.SCIENCE);
+            eb.megacredits(1).startAction.tag(Tag.BRUXARIA).asterix().nbsp.colon().nbsp.resource(CardResource.SCIENCE);
           }).br;
           b.vpText('3 VPs if you have one or more science resources here.');
         }),
@@ -53,7 +53,7 @@ export class SearchForLife extends Card implements IActionCard, IProjectCard {
       .andThen(() => {
         const card = player.game.projectDeck.drawOrThrow(player.game);
         player.game.log('${0} revealed and discarded ${1}', (b) => b.player(player).card(card, {tags: true}));
-        if (card.tags.includes(Tag.MICROBE)) {
+        if (card.tags.includes(Tag.BRUXARIA)) {
           player.addResourceTo(this, 1);
           player.game.log('${0} found life!', (b) => b.player(player));
         }

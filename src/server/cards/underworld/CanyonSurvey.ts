@@ -12,7 +12,7 @@ export class CanyonSurvey extends Card implements IProjectCard {
       name: CardName.CANYON_SURVEY,
       type: CardType.EVENT,
       cost: 4,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
 
       behavior: {
         underworld: {identify: {count: 3, claim: 1}},

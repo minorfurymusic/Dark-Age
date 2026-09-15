@@ -10,7 +10,7 @@ export class WaterToVenus extends Card implements IProjectCard {
     super({
       name: CardName.WATER_TO_VENUS,
       type: CardType.EVENT,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 9,
 
       behavior: {

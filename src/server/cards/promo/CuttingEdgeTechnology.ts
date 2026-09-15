@@ -12,7 +12,7 @@ export class CuttingEdgeTechnology extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.CUTTING_EDGE_TECHNOLOGY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 12,
       victoryPoints: 1,
 

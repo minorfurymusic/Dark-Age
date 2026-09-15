@@ -12,9 +12,9 @@ export class Planetologist extends BaseMilestone {
   }
 
   public getScore(player: IPlayer): number {
-    const earthTags = Math.min(player.tags.count(Tag.EARTH, 'raw'), 2);
-    const venusTags = Math.min(player.tags.count(Tag.VENUS, 'raw'), 2);
-    const jovianTags = Math.min(player.tags.count(Tag.JOVIAN, 'raw'), 2);
+    const earthTags = Math.min(player.tags.count(Tag.DIPLOMACIA, 'raw'), 2);
+    const venusTags = Math.min(player.tags.count(Tag.COMÉRCIO, 'raw'), 2);
+    const jovianTags = Math.min(player.tags.count(Tag.ENGENHO, 'raw'), 2);
     const wildTags = player.tags.count(Tag.WILD);
     return Math.min(earthTags + venusTags + jovianTags + wildTags, 6);
   }

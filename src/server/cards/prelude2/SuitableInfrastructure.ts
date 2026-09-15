@@ -11,7 +11,7 @@ export class SuitableInfrastructure extends PreludeCard {
   constructor() {
     super({
       name: CardName.SUITABLE_INFRASTRUCTURE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         stock: {steel: 5},

@@ -10,7 +10,7 @@ export class RedSpotObservatory extends ActionCard implements IProjectCard {
   constructor() {
     super({
       cost: 17,
-      tags: [Tag.JOVIAN, Tag.SCIENCE],
+      tags: [Tag.ENGENHO, Tag.ERUDIÇÃO],
       name: CardName.RED_SPOT_OBSERVATORY,
       type: CardType.ACTIVE,
       resourceType: CardResource.FLOATER,
@@ -37,7 +37,7 @@ export class RedSpotObservatory extends ActionCard implements IProjectCard {
         },
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 3},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 3},
       metadata: {
         cardNumber: 'C32',
         renderData: CardRenderer.builder((b) => {

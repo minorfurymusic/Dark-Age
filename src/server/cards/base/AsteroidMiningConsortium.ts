@@ -15,7 +15,7 @@ export class AsteroidMiningConsortium extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ASTEROID_MINING_CONSORTIUM,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       cost: 13,
       victoryPoints: 1,
 

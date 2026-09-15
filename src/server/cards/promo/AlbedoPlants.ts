@@ -10,7 +10,7 @@ export class AlbedoPlants extends PreludeCard {
   constructor() {
     super({
       name: CardName.ALBEDO_PLANTS,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
 
       behavior: {
         production: {plants: 1},
@@ -21,7 +21,7 @@ export class AlbedoPlants extends PreludeCard {
         cardNumber: 'X78',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a plant tag, including this, gain 3 heat.',
-            (b) => b.tag(Tag.PLANT).startEffect.heat(3));
+            (b) => b.tag(Tag.AGRICULTURA).startEffect.heat(3));
           b.br;
           b.production((pb) => pb.plants(1)).plants(1);
         }),
@@ -31,13 +31,13 @@ export class AlbedoPlants extends PreludeCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    const qty = player.tags.cardTagCount(card, Tag.PLANT);
-    player.stock.add(Resource.HEAT, qty * 3, {log: true});
+    const qty = player.tags.cardTagCount(card, Tag.AGRICULTURA);
+    player.stock.add(Resource.INOVACAO, qty * 3, {log: true});
   }
 
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.PLANT) {
-      player.stock.add(Resource.HEAT, 3, {log: true});
+    if (tag === Tag.AGRICULTURA) {
+      player.stock.add(Resource.INOVACAO, 3, {log: true});
     }
   }
 }

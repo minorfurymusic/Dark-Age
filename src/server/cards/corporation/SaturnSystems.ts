@@ -12,7 +12,7 @@ export class SaturnSystems extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.SATURN_SYSTEMS,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       startingMegaCredits: 42,
 
       behavior: {
@@ -27,7 +27,7 @@ export class SaturnSystems extends CorporationCard implements ICorporationCard {
           b.production((pb) => pb.titanium(1)).nbsp.megacredits(42);
           b.corpBox('effect', (ce) => {
             ce.effect('Each time any Jovian tag is put into play, including this, increase your M€ production 1 step.', (eb) => {
-              eb.tag(Tag.JOVIAN, {all}).startEffect.production((pb) => pb.megacredits(1));
+              eb.tag(Tag.ENGENHO, {all}).startEffect.production((pb) => pb.megacredits(1));
             });
           });
         }),
@@ -36,12 +36,12 @@ export class SaturnSystems extends CorporationCard implements ICorporationCard {
   }
 
   public onCardPlayedByAnyPlayer(thisCardOwner: IPlayer, card: ICard) {
-    const count = thisCardOwner.tags.cardTagCount(card, Tag.JOVIAN);
+    const count = thisCardOwner.tags.cardTagCount(card, Tag.ENGENHO);
     thisCardOwner.production.add(Resource.MEGACREDITS, count, {log: true, from: {card: this}});
   }
 
   public onNonCardTagAddedByAnyPlayer(cardOwner: IPlayer, tag: Tag) {
-    if (tag === Tag.JOVIAN) {
+    if (tag === Tag.ENGENHO) {
       cardOwner.production.add(Resource.MEGACREDITS, 1, {log: true, from: {card: this}});
     }
   }

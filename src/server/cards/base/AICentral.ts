@@ -10,7 +10,7 @@ export class AICentral extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.AI_CENTRAL,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 21,
 
       behavior: {
@@ -23,7 +23,7 @@ export class AICentral extends ActionCard implements IProjectCard {
 
       victoryPoints: 1,
 
-      requirements: {tag: Tag.SCIENCE, count: 3},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 3},
       metadata: {
         cardNumber: '208',
         renderData: CardRenderer.builder((b) => {

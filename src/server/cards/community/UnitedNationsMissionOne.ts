@@ -12,7 +12,7 @@ export class UnitedNationsMissionOne extends CorporationCard implements ICorpora
   constructor() {
     super({
       name: CardName.UNITED_NATIONS_MISSION_ONE,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 40, // +1 for the initial change in TR.
 
       behavior: {

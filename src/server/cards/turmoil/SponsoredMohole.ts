@@ -10,7 +10,7 @@ export class SponsoredMohole extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 5,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       name: CardName.SPONSORED_MOHOLE,
       type: CardType.AUTOMATED,
 

@@ -12,7 +12,7 @@ export class OceanFarm extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.OCEAN_FARM,
-      tags: [Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
       cost: 15,
 
       behavior: {

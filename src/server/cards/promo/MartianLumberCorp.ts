@@ -10,7 +10,7 @@ export class MartianLumberCorp extends Card {
     super({
       name: CardName.MARTIAN_LUMBER_CORP,
       type: CardType.ACTIVE,
-      tags: [Tag.BUILDING, Tag.PLANT],
+      tags: [Tag.CONSTRUÇÃO, Tag.AGRICULTURA],
       cost: 6,
 
       behavior: {
@@ -23,7 +23,7 @@ export class MartianLumberCorp extends Card {
         cardNumber: 'X60',
         renderData: CardRenderer.builder((b) => {
           b.effect('When playing a building tag, plants may be used as 3 M€ each.',
-            (eb) => eb.tag(Tag.BUILDING).startEffect.plants(1).equals().megacredits(3)).br;
+            (eb) => eb.tag(Tag.CONSTRUÇÃO).startEffect.plants(1).equals().megacredits(3)).br;
           b.production((pb) => pb.plants(1)).br;
           b.plainText('(Requires that you have 2 greenery tiles. Increase plant production 1 step.)').br;
         }),

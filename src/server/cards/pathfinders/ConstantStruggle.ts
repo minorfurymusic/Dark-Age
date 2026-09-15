@@ -33,10 +33,10 @@ export class ConstantStruggle extends GlobalEvent implements IGlobalEvent {
         PathfindersExpansion.addToSolBank(player);
       }
     });
-    PathfindersExpansion.raiseTrackForGlobalEvent(Tag.VENUS, this.name, game, 2, false);
-    PathfindersExpansion.raiseTrackForGlobalEvent(Tag.EARTH, this.name, game, 2, false);
+    PathfindersExpansion.raiseTrackForGlobalEvent(Tag.COMÉRCIO, this.name, game, 2, false);
+    PathfindersExpansion.raiseTrackForGlobalEvent(Tag.DIPLOMACIA, this.name, game, 2, false);
     PathfindersExpansion.raiseTrackForGlobalEvent(Tag.MARS, this.name, game, 2, false);
-    PathfindersExpansion.raiseTrackForGlobalEvent(Tag.JOVIAN, this.name, game, 2, false);
+    PathfindersExpansion.raiseTrackForGlobalEvent(Tag.ENGENHO, this.name, game, 2, false);
     PathfindersExpansion.raiseTrackForGlobalEvent(Tag.MOON, this.name, game, 2, false);
   }
 }

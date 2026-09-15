@@ -17,7 +17,7 @@ export class Pandemic extends GlobalEvent implements IGlobalEvent {
         lose: {
           stock: {
             megacredits: {
-              tag: Tag.BUILDING,
+              tag: Tag.CONSTRUÇÃO,
               turmoil: {max: 5, influence: {subtract: true}},
               each: 3,
             },
@@ -25,7 +25,7 @@ export class Pandemic extends GlobalEvent implements IGlobalEvent {
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.megacredits(-3).slash().tag(Tag.BUILDING).influence({size: Size.SMALL});
+        b.megacredits(-3).slash().tag(Tag.CONSTRUÇÃO).influence({size: Size.SMALL});
       }),
     });
   }

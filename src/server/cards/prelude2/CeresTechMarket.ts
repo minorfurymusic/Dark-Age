@@ -14,7 +14,7 @@ export class CeresTechMarket extends Card implements IActionCard {
     super({
       name: CardName.CERES_TECH_MARKET,
       type: CardType.ACTIVE,
-      tags: [Tag.SCIENCE, Tag.SPACE],
+      tags: [Tag.ERUDIÇÃO, Tag.MARÍTIMO],
       cost: 12,
       victoryPoints: 1,
 

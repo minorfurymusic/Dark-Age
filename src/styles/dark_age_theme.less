@@ -1,0 +1,366 @@
+// Dark Age Medieval Feudal Theme — Global Reusable Components
+// Used across all game screens (home, create, board, hand, results, etc)
+
+// ===== COLOR PALETTE =====
+@dark-age-gold: #D4AF37;
+@dark-age-gold-light: #E8C547;
+@dark-age-gold-dark: #B8860B;
+@dark-age-red: #8B2323;
+@dark-age-red-light: #A63434;
+@dark-age-red-dark: #5A1515;
+@dark-age-stone: #3A3A3A;
+@dark-age-stone-light: #5A5A5A;
+@dark-age-stone-dark: #2A2A2A;
+@dark-age-text: #E8DCC8;
+@dark-age-text-dim: #A89A7E;
+@dark-age-accent: #C41E3A;
+@dark-age-bg-dark: #1a1a1a;
+@dark-age-bg-medium: #2a2a2a;
+
+// ===== TYPOGRAPHY =====
+@dark-age-serif: 'Georgia', 'Garamond', serif;
+@dark-age-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+// ===== SHARED BACKGROUND PATTERNS =====
+.dark-age-texture {
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.15) 2px, rgba(0,0,0,.15) 4px),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.05) 2px, rgba(255,255,255,.05) 4px);
+}
+
+// ===== PAGE/SCREEN BACKGROUNDS =====
+.dark-age-screen {
+  position: relative;
+  background: linear-gradient(135deg, @dark-age-bg-dark 0%, @dark-age-bg-medium 50%, @dark-age-bg-dark 100%);
+  background-attachment: fixed;
+  color: @dark-age-text;
+  font-family: @dark-age-sans;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .dark-age-texture;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+// ===== BUTTON STYLES =====
+.dark-age-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: @dark-age-text;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+
+  background: linear-gradient(135deg, @dark-age-stone 0%, @dark-age-stone-light 100%);
+  border: 2px solid @dark-age-gold;
+  border-radius: 1px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 6px 12px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.25s ease;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    color: @dark-age-gold-light;
+    border-color: @dark-age-gold-light;
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 10px 16px rgba(0, 0, 0, 0.7),
+      0 0 25px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, lighten(@dark-age-stone, 5%) 0%, lighten(@dark-age-stone-light, 5%) 100%);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.8),
+      0 3px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Variant: primary (red)
+  &--primary {
+    background: linear-gradient(135deg, @dark-age-red 0%, @dark-age-red-light 100%);
+    border-color: @dark-age-gold-light;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 10px 16px rgba(0, 0, 0, 0.7),
+      0 0 20px rgba(196, 30, 58, 0.4);
+    font-size: 16px;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      border-color: @dark-age-gold-light;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 14px 20px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(196, 30, 58, 0.6);
+      background: linear-gradient(135deg, lighten(@dark-age-red, 5%) 0%, lighten(@dark-age-red-light, 5%) 100%);
+    }
+  }
+
+  // Variant: secondary (smaller)
+  &--secondary {
+    padding: 8px 12px;
+    font-size: 12px;
+    border-width: 1px;
+  }
+}
+
+// ===== PANELS / CARDS =====
+.dark-age-panel {
+  position: relative;
+  background: linear-gradient(180deg,
+    rgba(@dark-age-stone, 0.6) 0%,
+    rgba(@dark-age-stone-dark, 0.8) 100%
+  );
+  border: 1px solid @dark-age-gold;
+  border-radius: 2px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 16px;
+
+  // Title in panel
+  .panel-title {
+    font-family: @dark-age-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: @dark-age-gold-light;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(@dark-age-gold, 0.3);
+    padding-bottom: 8px;
+  }
+
+  // Content
+  .panel-content {
+    color: @dark-age-text;
+    line-height: 1.6;
+  }
+}
+
+// ===== INPUT FIELDS =====
+.dark-age-input {
+  background: rgba(@dark-age-stone-dark, 0.7);
+  border: 1px solid @dark-age-gold;
+  color: @dark-age-text;
+  padding: 8px 12px;
+  font-family: @dark-age-sans;
+  font-size: 14px;
+  border-radius: 1px;
+
+  &:focus {
+    outline: none;
+    border-color: @dark-age-gold-light;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  }
+
+  &::placeholder {
+    color: @dark-age-text-dim;
+  }
+}
+
+// ===== SELECT / DROPDOWN =====
+.dark-age-select {
+  @extend .dark-age-input;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23D4AF37' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px;
+}
+
+// ===== MODAL / OVERLAY =====
+.dark-age-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .modal-content {
+    background: linear-gradient(180deg, @dark-age-stone 0%, @dark-age-stone-dark 100%);
+    border: 3px solid @dark-age-gold;
+    border-radius: 2px;
+    padding: 30px;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow:
+      0 0 30px rgba(0, 0, 0, 0.9),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    .modal-title {
+      font-family: @dark-age-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: @dark-age-gold-light;
+      letter-spacing: 2px;
+      margin: 0 0 16px 0;
+      text-transform: uppercase;
+    }
+
+    .modal-body {
+      color: @dark-age-text;
+      line-height: 1.6;
+      margin: 16px 0;
+    }
+
+    .modal-footer {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(@dark-age-gold, 0.3);
+    }
+  }
+}
+
+// ===== TABS / NAVIGATION =====
+.dark-age-tabs {
+  display: flex;
+  border-bottom: 2px solid @dark-age-gold;
+  gap: 0;
+
+  .tab-button {
+    flex: 1;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: @dark-age-text-dim;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+
+    &:hover {
+      color: @dark-age-text;
+    }
+
+    &.active {
+      color: @dark-age-gold-light;
+      border-bottom-color: @dark-age-gold;
+    }
+  }
+}
+
+// ===== SCROLLBARS (webkit) =====
+.dark-age-scrollable {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(@dark-age-stone-dark, 0.5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: @dark-age-gold;
+    border-radius: 4px;
+
+    &:hover {
+      background: @dark-age-gold-light;
+    }
+  }
+}
+
+// ===== UTILITY CLASSES =====
+.dark-age-text-gold {
+  color: @dark-age-gold;
+}
+
+.dark-age-text-gold-light {
+  color: @dark-age-gold-light;
+}
+
+.dark-age-text-red {
+  color: @dark-age-red-light;
+}
+
+.dark-age-text-dim {
+  color: @dark-age-text-dim;
+  font-size: 12px;
+}
+
+.dark-age-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, @dark-age-gold, transparent);
+  margin: 12px 0;
+}
+
+.dark-age-ornament {
+  text-align: center;
+  color: @dark-age-gold;
+  font-size: 14px;
+  opacity: 0.6;
+  margin: 8px 0;
+
+  &::before,
+  &::after {
+    content: '✦';
+    margin: 0 8px;
+  }
+}
+
+// ===== RESPONSIVE =====
+@media only screen and (max-width: 768px) {
+  .dark-age-panel {
+    padding: 12px;
+  }
+
+  .dark-age-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+
+    &--primary {
+      font-size: 15px;
+    }
+  }
+
+  .dark-age-modal .modal-content {
+    padding: 20px;
+    margin: 20px;
+    max-width: calc(100% - 40px);
+
+    .modal-title {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+}

@@ -10,14 +10,14 @@ export class SisterPlanetSupport extends Card implements IProjectCard {
     super({
       name: CardName.SISTER_PLANET_SUPPORT,
       type: CardType.AUTOMATED,
-      tags: [Tag.VENUS, Tag.EARTH],
+      tags: [Tag.COMÉRCIO, Tag.DIPLOMACIA],
       cost: 7,
 
       behavior: {
         production: {megacredits: 3},
       },
 
-      requirements: [{tag: Tag.VENUS}, {tag: Tag.EARTH}],
+      requirements: [{tag: Tag.COMÉRCIO}, {tag: Tag.DIPLOMACIA}],
       metadata: {
         cardNumber: '244',
         renderData: CardRenderer.builder((b) => {

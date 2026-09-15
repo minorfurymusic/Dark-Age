@@ -31,7 +31,7 @@ export function cardsToModel(
       discount = [{tag: Tag.MOON, amount: player.tags.count(Tag.MOON)}];
     }
     if (card.name === CardName.MARS_DIRECT) {
-      discount = [{tag: Tag.MARS, amount: player.tags.count(Tag.MARS)}];
+      discount = [{tag: Tag.GUERREAR, amount: player.tags.count(Tag.GUERREAR)}];
     }
 
     let calculatedCost = card.cost;

@@ -14,7 +14,7 @@ export class TopsoilContract extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.TOPSOIL_CONTRACT,
-      tags: [Tag.MICROBE, Tag.EARTH],
+      tags: [Tag.BRUXARIA, Tag.DIPLOMACIA],
       cost: 8,
 
       behavior: {

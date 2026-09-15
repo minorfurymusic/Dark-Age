@@ -14,7 +14,7 @@ export class MeatIndustry extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MEAT_INDUSTRY,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 5,
 
       metadata: {

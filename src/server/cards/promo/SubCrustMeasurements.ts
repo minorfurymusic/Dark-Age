@@ -10,9 +10,9 @@ export class SubCrustMeasurements extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.SUB_CRUST_MEASUREMENTS,
-      tags: [Tag.SCIENCE, Tag.BUILDING, Tag.EARTH],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO, Tag.DIPLOMACIA],
       cost: 20,
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       victoryPoints: 2,
 
       action: {

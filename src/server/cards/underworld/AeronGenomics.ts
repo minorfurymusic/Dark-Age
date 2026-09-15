@@ -18,7 +18,7 @@ export class AeronGenomics extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.AERON_GENOMICS,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       startingMegaCredits: 35,
       resourceType: CardResource.ANIMAL,
 

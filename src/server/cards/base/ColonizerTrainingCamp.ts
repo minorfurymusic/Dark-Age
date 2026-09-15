@@ -10,7 +10,7 @@ export class ColonizerTrainingCamp extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.COLONIZER_TRAINING_CAMP,
-      tags: [Tag.JOVIAN, Tag.BUILDING],
+      tags: [Tag.ENGENHO, Tag.CONSTRUÇÃO],
       cost: 8,
       victoryPoints: 2,
 

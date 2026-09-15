@@ -10,11 +10,11 @@ export class AntiGravityTechnology extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ANTI_GRAVITY_TECHNOLOGY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 14,
       victoryPoints: 3,
 
-      requirements: {tag: Tag.SCIENCE, count: 7},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 7},
       cardDiscount: {amount: 2},
       metadata: {
         description: 'Requires 7 science tags.',

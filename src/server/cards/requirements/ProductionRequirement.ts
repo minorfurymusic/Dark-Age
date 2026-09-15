@@ -21,6 +21,6 @@ export class ProductionRequirement extends InequalityRequirement {
     this.resource = resource;
   }
   public getScore(player: IPlayer): number {
-    return player.production[this.resource];
+    return player.production.get(this.resource);
   }
 }

@@ -13,7 +13,7 @@ export class MinorityRefuge extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 5,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.MINORITY_REFUGE,
       type: CardType.AUTOMATED,
 

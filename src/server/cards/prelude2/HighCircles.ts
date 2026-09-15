@@ -11,7 +11,7 @@ export class HighCircles extends PreludeCard implements ICard {
   constructor() {
     super({
       name: CardName.HIGH_CIRCLES,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       behavior: {
         tr: 1,

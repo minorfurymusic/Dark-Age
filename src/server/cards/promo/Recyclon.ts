@@ -15,7 +15,7 @@ export class Recyclon extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.RECYCLON,
-      tags: [Tag.MICROBE, Tag.BUILDING],
+      tags: [Tag.BRUXARIA, Tag.CONSTRUÇÃO],
       startingMegaCredits: 38,
       resourceType: CardResource.MICROBE,
 
@@ -31,7 +31,7 @@ export class Recyclon extends CorporationCard implements ICorporationCard {
           b.megacredits(38).nbsp.production((pb) => pb.steel(1));
           b.corpBox('effect', (ce) => {
             ce.effect('When you play a building tag, including this, gain 1 microbe to this card, or remove 2 microbes here and raise your plant production 1 step.', (eb) => {
-              eb.tag(Tag.BUILDING).colon().resource(CardResource.MICROBE).or();
+              eb.tag(Tag.CONSTRUÇÃO).colon().resource(CardResource.MICROBE).or();
               eb.resource(CardResource.MICROBE, {amount: 2, digit}).startEffect.production((pb) => pb.plants(1));
             });
           });
@@ -41,7 +41,7 @@ export class Recyclon extends CorporationCard implements ICorporationCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    if (card.tags.includes(Tag.BUILDING) === false) {
+    if (card.tags.includes(Tag.CONSTRUÇÃO) === false) {
       return undefined;
     }
     if (this.resourceCount < 2) {

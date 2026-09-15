@@ -19,7 +19,7 @@ export class AsteroidRights extends Card implements IActionCard, IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ASTEROID_RIGHTS,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 10,
       resourceType: CardResource.ASTEROID,
 

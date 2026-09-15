@@ -9,7 +9,7 @@ export class BreathingFilters extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.BREATHING_FILTERS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 11,
       victoryPoints: 2,
 

@@ -11,10 +11,10 @@ export class WaterImportFromEuropa extends ActionCard implements IActionCard, IP
     super({
       type: CardType.ACTIVE,
       name: CardName.WATER_IMPORT_FROM_EUROPA,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       cost: 25,
 
-      victoryPoints: {tag: Tag.JOVIAN},
+      victoryPoints: {tag: Tag.ENGENHO},
 
       action: {
         spend: {megacredits: 12, canUseTitanium: true},

@@ -11,7 +11,7 @@ export class Livestock extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.LIVESTOCK,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       cost: 13,
 
       resourceType: CardResource.ANIMAL,

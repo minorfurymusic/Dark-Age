@@ -7,7 +7,7 @@ export class EarlySettlement extends PreludeCard {
   constructor() {
     super({
       name: CardName.EARLY_SETTLEMENT,
-      tags: [Tag.BUILDING, Tag.CITY],
+      tags: [Tag.CONSTRUÇÃO, Tag.FEUDO],
 
       behavior: {
         production: {plants: 1},

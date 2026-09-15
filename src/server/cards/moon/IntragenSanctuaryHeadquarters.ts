@@ -13,7 +13,7 @@ export class IntragenSanctuaryHeadquarters extends CorporationCard implements IC
   constructor() {
     super({
       name: CardName.INTRAGEN_SANCTUARY_HEADQUARTERS,
-      tags: [Tag.ANIMAL, Tag.MOON],
+      tags: [Tag.PECUÁRIA, Tag.MOON],
       startingMegaCredits: 38,
       resourceType: CardResource.ANIMAL,
       victoryPoints: {resourcesHere: {}, per: 2},
@@ -30,7 +30,7 @@ export class IntragenSanctuaryHeadquarters extends CorporationCard implements IC
         renderData: CardRenderer.builder((b) => {
           b.megacredits(38).moonHabitat({secondaryTag: AltSecondaryTag.MOON_HABITAT_RATE}).br;
           b.effect('When any player plays an animal tag (including this), add 1 animal on this card.', (eb) => {
-            eb.tag(Tag.ANIMAL, {all}).startEffect.resource(CardResource.ANIMAL);
+            eb.tag(Tag.PECUÁRIA, {all}).startEffect.resource(CardResource.ANIMAL);
           }).br;
         }),
       },
@@ -39,7 +39,7 @@ export class IntragenSanctuaryHeadquarters extends CorporationCard implements IC
 
   public onCardPlayedByAnyPlayer(player: IPlayer, card: ICard) {
     const corporationOwner = player.game.getCardPlayerOrThrow(this.name);
-    const count = corporationOwner.tags.cardTagCount(card, Tag.ANIMAL);
+    const count = corporationOwner.tags.cardTagCount(card, Tag.PECUÁRIA);
     corporationOwner.addResourceTo(this, {qty: count, log: true});
   }
 }

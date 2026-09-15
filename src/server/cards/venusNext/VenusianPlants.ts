@@ -15,7 +15,7 @@ export class VenusianPlants extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.VENUSIAN_PLANTS,
       cost: 13,
-      tags: [Tag.VENUS, Tag.PLANT],
+      tags: [Tag.COMÉRCIO, Tag.AGRICULTURA],
 
       requirements: {venus: 16},
       victoryPoints: 1,
@@ -28,8 +28,8 @@ export class VenusianPlants extends Card implements IProjectCard {
         cardNumber: '261',
         renderData: CardRenderer.builder((b) => {
           b.venus(1).br.br; // intentional double br
-          b.resource(CardResource.MICROBE, {secondaryTag: Tag.VENUS}).nbsp;
-          b.or().nbsp.resource(CardResource.ANIMAL, {secondaryTag: Tag.VENUS});
+          b.resource(CardResource.MICROBE, {secondaryTag: Tag.COMÉRCIO}).nbsp;
+          b.or().nbsp.resource(CardResource.ANIMAL, {secondaryTag: Tag.COMÉRCIO});
         }),
         description: {
           text: 'Requires Venus 16%. Raise Venus 1 step. Add 1 microbe or 1 animal to ANOTHER VENUS CARD',
@@ -63,6 +63,6 @@ export class VenusianPlants extends Card implements IProjectCard {
   public getResCards(player: IPlayer): ICard[] {
     let resourceCards = player.getResourceCards(CardResource.MICROBE);
     resourceCards = resourceCards.concat(player.getResourceCards(CardResource.ANIMAL));
-    return resourceCards.filter((card) => card.tags.includes(Tag.VENUS));
+    return resourceCards.filter((card) => card.tags.includes(Tag.COMÉRCIO));
   }
 }

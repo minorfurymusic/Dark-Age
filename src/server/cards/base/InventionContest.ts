@@ -12,7 +12,7 @@ export class InventionContest extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.INVENTION_CONTEST,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 2,
 
       behavior: {

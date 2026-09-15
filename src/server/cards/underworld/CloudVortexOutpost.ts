@@ -9,7 +9,7 @@ export class CloudVortexOutpost extends ActivePreludeCard {
   constructor() {
     super({
       name: CardName.CLOUD_VORTEX_OUTPOST,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       resourceType: CardResource.FLOATER,
 
       behavior: {

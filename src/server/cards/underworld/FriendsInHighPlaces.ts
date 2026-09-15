@@ -9,9 +9,9 @@ export class FriendsInHighPlaces extends Card {
     super({
       name: CardName.FRIENDS_IN_HIGH_PLACES,
       type: CardType.ACTIVE,
-      tags: [Tag.CRIME, Tag.EARTH],
+      tags: [Tag.CRIME, Tag.DIPLOMACIA],
       cost: 10,
-      requirements: [{tag: Tag.EARTH, count: 2}],
+      requirements: [{tag: Tag.DIPLOMACIA, count: 2}],
 
       behavior: {
         underworld: {corruption: 1},

@@ -12,7 +12,7 @@ export class CentralReservoir extends PreludeCard {
   constructor() {
     super({
       name: CardName.CENTRAL_RESERVOIR,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       metadata: {
         cardNumber: 'UP09',

@@ -16,7 +16,7 @@ export class Cyanobacteria extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.CYANOBACTERIA,
       cost: 12,
-      tags: [Tag.MICROBE, Tag.MARS],
+      tags: [Tag.BRUXARIA, Tag.MARS],
 
       behavior: {
         global: {oxygen: 1},

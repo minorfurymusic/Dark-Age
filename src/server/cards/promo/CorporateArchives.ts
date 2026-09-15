@@ -9,7 +9,7 @@ export class CorporateArchives extends PreludeCard {
   constructor() {
     super({
       name: CardName.CORPORATE_ARCHIVES,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
 
       behavior: {
         drawCard: {count: 7, keep: 2},

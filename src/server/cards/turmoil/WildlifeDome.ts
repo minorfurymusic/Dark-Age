@@ -11,7 +11,7 @@ export class WildlifeDome extends Card implements IProjectCard {
     super({
       name: CardName.WILDLIFE_DOME,
       cost: 15,
-      tags: [Tag.ANIMAL, Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.PECUÁRIA, Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
       type: CardType.AUTOMATED,
       requirements: {party: PartyName.GREENS},
 

@@ -9,11 +9,11 @@ export class InterstellarColonyShip extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.INTERSTELLAR_COLONY_SHIP,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 24,
       victoryPoints: 4,
 
-      requirements: {tag: Tag.SCIENCE, count: 5},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 5},
       metadata: {
         description: 'Requires that you have 5 science tags.',
         cardNumber: '027',

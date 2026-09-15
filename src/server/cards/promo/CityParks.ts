@@ -10,7 +10,7 @@ export class CityParks extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CITY_PARKS,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 7,
       victoryPoints: 2,
 

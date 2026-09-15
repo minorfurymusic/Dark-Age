@@ -105,7 +105,7 @@ export abstract class Colony implements IColony {
     }
 
     if (this.name === ColonyName.LEAVITT) {
-      player.triggerOnNonCardTagAdded(Tag.SCIENCE);
+      player.triggerOnNonCardTagAdded(Tag.ERUDIÇÃO);
     }
   }
 
@@ -193,7 +193,7 @@ export abstract class Colony implements IColony {
         undefined,
         {
           count: quantity,
-          restrictedTag: Tag.VENUS,
+          restrictedTag: Tag.COMÉRCIO,
           title: message('Select Venus card to add ${0} resource(s)', (b) => b.number(quantity)),
         });
       break;
@@ -364,11 +364,11 @@ export abstract class Colony implements IColony {
       break;
 
     case ColonyBenefit.DRAW_EARTH_CARD:
-      player.drawCard(quantity, {tag: Tag.EARTH});
+      player.drawCard(quantity, {tag: Tag.DIPLOMACIA});
       break;
 
     case ColonyBenefit.WGT_RAISE_GLOBAL_PARAMETER:
-      const globalParameters = [GlobalParameter.TEMPERATURE, GlobalParameter.OXYGEN, GlobalParameter.OCEANS];
+      const globalParameters = [GlobalParameter.TECNOLOGIA, GlobalParameter.FE, GlobalParameter.ESTANDARTES];
       const annotation = globalParameters[quantity];
       const wgt = game.worldGovernmentTerraformingInput(player);
       const option = wgt.options.find((option) => option.annotation === annotation);
@@ -377,7 +377,7 @@ export abstract class Colony implements IColony {
           game.temporarySolarPhase(player, () => {
             // Placing an ocean requires the player to select a space, so it is
             // deferred as a player input. Temperature and oxygen apply directly.
-            if (annotation === GlobalParameter.OCEANS) {
+            if (annotation === GlobalParameter.ESTANDARTES) {
               player.defer(option);
             } else {
               option.cb();
@@ -388,7 +388,7 @@ export abstract class Colony implements IColony {
       break;
 
     case ColonyBenefit.GAIN_MC_FOR_EARTH_TAGS:
-      const tagCount = sum(game.players.map((p) => p.tags.count(Tag.EARTH, p.id === player.id ? 'default' : 'raw')));
+      const tagCount = sum(game.players.map((p) => p.tags.count(Tag.DIPLOMACIA, p.id === player.id ? 'default' : 'raw')));
       const mc = Math.floor(tagCount / 3);
       if (mc > 0) {
         player.stock.add(Resource.MEGACREDITS, mc, {log: true});

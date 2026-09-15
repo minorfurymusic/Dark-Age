@@ -7,17 +7,17 @@ export class ExperimentalForest extends PreludeCard {
   constructor() {
     super({
       name: CardName.EXPERIMENTAL_FOREST,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
 
       behavior: {
-        drawCard: {count: 2, tag: Tag.PLANT},
+        drawCard: {count: 2, tag: Tag.AGRICULTURA},
         greenery: {},
       },
 
       metadata: {
         cardNumber: 'P12',
         renderData: CardRenderer.builder((b) => {
-          b.greenery().cards(2, {secondaryTag: Tag.PLANT});
+          b.greenery().cards(2, {secondaryTag: Tag.AGRICULTURA});
         }),
         description: 'Place 1 greenery tile and raise oxygen 1 step. Reveal cards until you reveal two cards with plant tags on them. Take them into your hand and discard the rest.',
       },

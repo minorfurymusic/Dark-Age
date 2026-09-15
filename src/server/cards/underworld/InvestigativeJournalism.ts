@@ -19,7 +19,7 @@ export class InvestigativeJournalism extends Card implements IProjectCard, IActi
       type: CardType.ACTIVE,
       name: CardName.INVESTIGATIVE_JOURNALISM,
       cost: 3,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       resourceType: CardResource.JOURNALISM,
       victoryPoints: {resourcesHere: {}},
 

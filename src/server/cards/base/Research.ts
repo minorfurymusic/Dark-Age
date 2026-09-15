@@ -10,7 +10,7 @@ export class Research extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.RESEARCH,
-      tags: [Tag.SCIENCE, Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO, Tag.ERUDIÇÃO],
       cost: 11,
       victoryPoints: 1,
 

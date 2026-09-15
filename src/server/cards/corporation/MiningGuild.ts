@@ -17,7 +17,7 @@ export class MiningGuild extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.MINING_GUILD,
-      tags: [Tag.BUILDING, Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO, Tag.CONSTRUÇÃO],
       startingMegaCredits: 30,
 
       behavior: {

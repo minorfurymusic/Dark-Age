@@ -13,7 +13,7 @@ export class AirScrappingExpedition extends Card implements IProjectCard {
     super({
       name: CardName.AIR_SCRAPPING_EXPEDITION,
       type: CardType.EVENT,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 13,
 
       behavior: {
@@ -24,7 +24,7 @@ export class AirScrappingExpedition extends Card implements IProjectCard {
         cardNumber: '215',
         description: 'Raise Venus 1 step. Add 3 floaters to ANY Venus CARD.',
         renderData: CardRenderer.builder((b) => {
-          b.venus(1).resource(CardResource.FLOATER, {amount: 3, secondaryTag: Tag.VENUS});
+          b.venus(1).resource(CardResource.FLOATER, {amount: 3, secondaryTag: Tag.COMÉRCIO});
         }),
       },
     });
@@ -32,7 +32,7 @@ export class AirScrappingExpedition extends Card implements IProjectCard {
 
   public override bespokePlay(player: IPlayer) {
     let floaterCards = player.getResourceCards(CardResource.FLOATER);
-    floaterCards = floaterCards.filter((card) => card.tags.some((cardTag) => cardTag === Tag.VENUS));
+    floaterCards = floaterCards.filter((card) => card.tags.some((cardTag) => cardTag === Tag.COMÉRCIO));
     if (floaterCards.length === 0) {
       return undefined;
     }

@@ -10,7 +10,7 @@ export class PointLuna extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.POINT_LUNA,
-      tags: [Tag.SPACE, Tag.EARTH],
+      tags: [Tag.MARÍTIMO, Tag.DIPLOMACIA],
       startingMegaCredits: 38,
 
       behavior: {
@@ -25,7 +25,7 @@ export class PointLuna extends CorporationCard implements ICorporationCard {
           b.production((pb) => pb.titanium(1)).nbsp.megacredits(38);
           b.corpBox('effect', (ce) => {
             ce.effect('When you play an Earth tag, including this, draw a card.', (eb) => {
-              eb.tag(Tag.EARTH).startEffect.cards(1);
+              eb.tag(Tag.DIPLOMACIA).startEffect.cards(1);
             });
           });
         }),
@@ -34,7 +34,7 @@ export class PointLuna extends CorporationCard implements ICorporationCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const tagCount = player.tags.cardTagCount(card, Tag.EARTH);
+    const tagCount = player.tags.cardTagCount(card, Tag.DIPLOMACIA);
     if (tagCount > 0) {
       player.drawCard(tagCount);
     }

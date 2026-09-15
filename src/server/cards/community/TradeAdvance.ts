@@ -9,7 +9,7 @@ export class TradeAdvance extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.TRADE_ADVANCE,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
 
       metadata: {
         cardNumber: 'Y05',

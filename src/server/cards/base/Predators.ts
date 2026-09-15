@@ -13,7 +13,7 @@ export class Predators extends ActionCard implements IProjectCard, IActionCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.PREDATORS,
-      tags: [Tag.ANIMAL],
+      tags: [Tag.PECUÁRIA],
       cost: 14,
 
       resourceType: CardResource.ANIMAL,

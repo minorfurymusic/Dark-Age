@@ -9,7 +9,7 @@ export class TitaniumExtractionCenter extends Card {
     super({
       name: CardName.TITANIUM_EXTRACTION_CENTER,
       type: CardType.AUTOMATED,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 14,
       reserveUnits: {titanium: 2},
 

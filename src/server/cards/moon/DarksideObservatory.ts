@@ -15,7 +15,7 @@ export class DarksideObservatory extends Card implements IProjectCard, IActionCa
     super({
       name: CardName.DARKSIDE_OBSERVATORY,
       type: CardType.ACTIVE,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 12,
 
       metadata: {

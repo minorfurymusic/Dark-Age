@@ -17,14 +17,14 @@ export class MinersOnStrike extends GlobalEvent implements IGlobalEvent {
         lose: {
           stock: {
             titanium: {
-              tag: Tag.JOVIAN,
+              tag: Tag.ENGENHO,
               turmoil: {max: 5, influence: {subtract: true}},
             },
           },
         },
       },
       renderData: CardRenderer.builder((b) => {
-        b.minus().titanium(1).slash().tag(Tag.JOVIAN).influence({size: Size.SMALL});
+        b.minus().titanium(1).slash().tag(Tag.ENGENHO).influence({size: Size.SMALL});
       }),
     });
   }

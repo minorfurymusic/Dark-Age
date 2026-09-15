@@ -12,7 +12,7 @@ export class DemetronLabs extends ActiveCorporationCard implements ICorporationC
   constructor() {
     super({
       name: CardName.DEMETRON_LABS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       startingMegaCredits: 45,
       resourceType: CardResource.DATA,
 
@@ -36,7 +36,7 @@ export class DemetronLabs extends ActiveCorporationCard implements ICorporationC
           b.megacredits(45).resource(CardResource.DATA, 2);
           b.br;
           b.effect('After you play a science tag, including this, put 2 data on this card.',
-            (eb) => eb.tag(Tag.SCIENCE).startEffect.resource(CardResource.DATA, 2));
+            (eb) => eb.tag(Tag.ERUDIÇÃO).startEffect.resource(CardResource.DATA, 2));
           b.br;
           b.action('Spend 3 data here to identify 3 underground resources. Claim 1 of them.',
             (ab) => ab.resource(CardResource.DATA, {amount: 3, digit}).startAction.identify(3, {digit}).claim(1));
@@ -46,11 +46,11 @@ export class DemetronLabs extends ActiveCorporationCard implements ICorporationC
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const scienceTags = player.tags.cardTagCount(card, Tag.SCIENCE);
+    const scienceTags = player.tags.cardTagCount(card, Tag.ERUDIÇÃO);
     this.onScienceTagAdded(player, scienceTags);
   }
   public onNonCardTagAdded(player: IPlayer, tag: Tag) {
-    if (tag === Tag.SCIENCE) {
+    if (tag === Tag.ERUDIÇÃO) {
       this.onScienceTagAdded(player, 1);
     }
   }

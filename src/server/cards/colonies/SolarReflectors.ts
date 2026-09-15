@@ -10,7 +10,7 @@ export class SolarReflectors extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 23,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.SOLAR_REFLECTORS,
       type: CardType.AUTOMATED,
 

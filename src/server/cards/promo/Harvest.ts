@@ -10,7 +10,7 @@ export class Harvest extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.HARVEST,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 4,
       requirements: {greeneries: 3},
 

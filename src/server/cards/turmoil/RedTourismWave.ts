@@ -15,7 +15,7 @@ export class RedTourismWave extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 3,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       name: CardName.RED_TOURISM_WAVE,
       type: CardType.EVENT,
 

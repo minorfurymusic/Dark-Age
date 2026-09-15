@@ -10,7 +10,7 @@ export class Psyche extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.PSYCHE,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 31,
       victoryPoints: 2,
       behavior: {

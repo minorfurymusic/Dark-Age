@@ -13,7 +13,7 @@ export class RobinHaulings extends ActiveCorporationCard implements ICorporation
   constructor() {
     super({
       name: CardName.ROBIN_HAULINGS,
-      tags: [Tag.MARS, Tag.VENUS],
+      tags: [Tag.MARS, Tag.COMÉRCIO],
       startingMegaCredits: 39,
       resourceType: CardResource.FLOATER,
 
@@ -33,7 +33,7 @@ export class RobinHaulings extends ActiveCorporationCard implements ICorporation
         renderData: CardRenderer.builder((b) => {
           b.megacredits(39).br;
           b.effect('Whenever you play a card with a Venus tag add 1 floater to ANY card.', (eb) => {
-            eb.tag(Tag.VENUS).asterix().startEffect.resource(CardResource.FLOATER).asterix();
+            eb.tag(Tag.COMÉRCIO).asterix().startEffect.resource(CardResource.FLOATER).asterix();
           });
           b.br;
           b.action('Remove 3 floaters from this card to raise Venus 1 step or raise oxygen 1 step', (ab) => {
@@ -45,7 +45,7 @@ export class RobinHaulings extends ActiveCorporationCard implements ICorporation
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    if (card.tags.includes(Tag.VENUS)) {
+    if (card.tags.includes(Tag.COMÉRCIO)) {
       player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER));
     }
   }

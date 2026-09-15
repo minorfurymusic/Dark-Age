@@ -27,7 +27,7 @@ class UnityBonus01 extends Bonus {
   description = 'Gain 1 M€ for each Venus, Earth and Jovian tag you have';
 
   getScore(player: IPlayer) {
-    const tags = [Tag.VENUS, Tag.EARTH, Tag.JOVIAN];
+    const tags = [Tag.COMÉRCIO, Tag.DIPLOMACIA, Tag.ENGENHO];
     return sum(tags.map((tag) => player.tags.count(tag, 'raw')));
   }
 
@@ -41,7 +41,7 @@ class UnityBonus02 extends Bonus {
   description = 'Gain 1 M€ for each Space tag you have';
 
   getScore(player: IPlayer) {
-    return player.tags.count(Tag.SPACE, 'raw');
+    return player.tags.count(Tag.MARÍTIMO, 'raw');
   }
 
   grantForPlayer(player: IPlayer) {
@@ -130,7 +130,7 @@ class UnityPolicy03 implements IPolicy {
     player.politicalAgendasActionUsedCount += 1;
 
     game.defer(new SelectPaymentDeferred(player, 4, {title: TITLES.payForPartyAction(PartyName.UNITY)}))
-      .andThen(() => player.drawCard(1, {tag: Tag.SPACE}));
+      .andThen(() => player.drawCard(1, {tag: Tag.MARÍTIMO}));
 
     return undefined;
   }

@@ -6,6 +6,6 @@ export class SpaceBaron implements IAward {
   public readonly name = 'Space Baron';
   public readonly description = 'Have the most space tags in play';
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.SPACE, 'award');
+    return player.tags.count(Tag.MARÍTIMO, 'award');
   }
 }

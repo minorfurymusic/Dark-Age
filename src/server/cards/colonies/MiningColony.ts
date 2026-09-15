@@ -9,7 +9,7 @@ export class MiningColony extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 20,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       name: CardName.MINING_COLONY,
       type: CardType.AUTOMATED,
 

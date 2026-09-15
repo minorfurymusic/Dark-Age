@@ -10,7 +10,7 @@ export class Extremophiles extends ActionCard {
     super({
       name: CardName.EXTREMOPHILES,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS, Tag.MICROBE],
+      tags: [Tag.COMÉRCIO, Tag.BRUXARIA],
       cost: 3,
       resourceType: CardResource.MICROBE,
       victoryPoints: {resourcesHere: {}, per: 3},
@@ -19,7 +19,7 @@ export class Extremophiles extends ActionCard {
         addResourcesToAnyCard: {type: CardResource.MICROBE, count: 1},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: '224',
         description: 'Requires 2 science tags.',

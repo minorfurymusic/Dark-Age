@@ -11,14 +11,14 @@ export class LightningHarvest extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.LIGHTNING_HARVEST,
       cost: 8,
-      tags: [Tag.POWER],
+      tags: [Tag.GUERREAR],
       victoryPoints: 1,
 
       behavior: {
         production: {energy: 1, megacredits: 1},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 3},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 3},
       metadata: {
         cardNumber: '046',
         renderData: CardRenderer.builder((b) => {

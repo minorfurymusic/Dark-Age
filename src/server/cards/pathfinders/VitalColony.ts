@@ -9,7 +9,7 @@ export class VitalColony extends PreludeCard {
   constructor() {
     super({
       name: CardName.VITAL_COLONY,
-      tags: [Tag.MARS, Tag.SPACE],
+      tags: [Tag.MARS, Tag.MARÍTIMO],
 
       metadata: {
         cardNumber: 'PfP11',

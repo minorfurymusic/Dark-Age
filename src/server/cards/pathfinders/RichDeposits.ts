@@ -16,7 +16,7 @@ export class RichDeposits extends Card implements IProjectCard {
         production: {steel: 3},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: 'Pf52',
         renderData: CardRenderer.builder((b) => b.production((pb) => pb.steel(3))),

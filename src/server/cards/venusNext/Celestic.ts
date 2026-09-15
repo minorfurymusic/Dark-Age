@@ -11,7 +11,7 @@ export class Celestic extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.CELESTIC,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       startingMegaCredits: 42,
       resourceType: CardResource.FLOATER,
       initialActionText: 'Draw 2 cards with a floater icon on it',

@@ -14,7 +14,7 @@ export class MartianZoo extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 12,
-      tags: [Tag.ANIMAL, Tag.BUILDING],
+      tags: [Tag.PECUÁRIA, Tag.CONSTRUÇÃO],
       name: CardName.MARTIAN_ZOO,
       type: CardType.ACTIVE,
       resourceType: CardResource.ANIMAL,
@@ -25,7 +25,7 @@ export class MartianZoo extends Card implements IProjectCard {
         cardNumber: 'C24',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play an Earth tag, place an animal here.', (eb) => {
-            eb.tag(Tag.EARTH).startEffect.resource(CardResource.ANIMAL);
+            eb.tag(Tag.DIPLOMACIA).startEffect.resource(CardResource.ANIMAL);
           }).br;
           b.action('Gain 1M€ per animal here.', (eb) => {
             eb.empty().startAction.megacredits(1).slash().resource(CardResource.ANIMAL);
@@ -40,7 +40,7 @@ export class MartianZoo extends Card implements IProjectCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    const count = player.tags.cardTagCount(card, Tag.EARTH);
+    const count = player.tags.cardTagCount(card, Tag.DIPLOMACIA);
     if (count > 0) {
       player.addResourceTo(this, count);
     }

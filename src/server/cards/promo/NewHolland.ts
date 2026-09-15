@@ -13,7 +13,7 @@ export class NewHolland extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.NEW_HOLLAND,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 20,
 
       behavior: {

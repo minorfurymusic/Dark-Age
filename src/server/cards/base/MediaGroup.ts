@@ -14,14 +14,14 @@ export class MediaGroup extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.MEDIA_GROUP,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 6,
 
       metadata: {
         cardNumber: '109',
         renderData: CardRenderer.builder((b) => {
           b.effect('After you play an event card, you gain 3 M€.', (eb) => {
-            eb.tag(Tag.EVENT).startEffect.megacredits(3);
+            eb.tag(Tag.HISTÓRIA).startEffect.megacredits(3);
           });
         }),
       },

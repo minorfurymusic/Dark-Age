@@ -18,28 +18,28 @@ export class Splice extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.SPLICE,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       startingMegaCredits: 44,
 
       firstAction: {
         text: 'Draw a card with a microbe tag',
-        drawCard: {count: 1, tag: Tag.MICROBE},
+        drawCard: {count: 1, tag: Tag.BRUXARIA},
       },
 
       metadata: {
         cardNumber: 'R28',
         description: 'You start with 44 M€. As your first action, reveal cards until you have revealed a microbe tag. Take it and discard the rest.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(44).nbsp.cards(1, {secondaryTag: Tag.MICROBE});
+          b.megacredits(44).nbsp.cards(1, {secondaryTag: Tag.BRUXARIA});
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.effect(undefined, (eb) => {
-              eb.tag(Tag.MICROBE, {all}).startEffect;
+              eb.tag(Tag.BRUXARIA, {all}).startEffect;
               eb.megacredits(2, {all}).or().resource(CardResource.MICROBE, {all}).asterix();
             });
             ce.vSpace();
             ce.effect('When a microbe tag is played, incl. this, THAT PLAYER gains 2 M€, or adds a microbe to THAT card, and you gain 2 M€.', (eb) => {
-              eb.tag(Tag.MICROBE, {all}).startEffect;
+              eb.tag(Tag.BRUXARIA, {all}).startEffect;
               eb.megacredits(2);
             });
           });
@@ -50,7 +50,7 @@ export class Splice extends CorporationCard implements ICorporationCard {
 
   public onCardPlayedByAnyPlayer(player: IPlayer, card: ICard, cardPlayer: IPlayer) {
     const game = player.game;
-    const microbeTags = cardPlayer.tags.cardTagCount(card, Tag.MICROBE);
+    const microbeTags = cardPlayer.tags.cardTagCount(card, Tag.BRUXARIA);
     if (microbeTags === 0) {
       return;
     }

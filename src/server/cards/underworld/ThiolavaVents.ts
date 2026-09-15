@@ -14,7 +14,7 @@ export class ThiolavaVents extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.THIOLAVA_VENTS,
       cost: 13,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       resourceType: CardResource.MICROBE,
 
       requirements: {oceans: 1},
@@ -41,7 +41,7 @@ export class ThiolavaVents extends Card implements IProjectCard {
   }
 
   public onProductionGain(player: IPlayer, resource: Resource, amount: number) {
-    if (amount <= 0 || resource !== Resource.HEAT) {
+    if (amount <= 0 || resource !== Resource.INOVACAO) {
       return;
     }
     player.addResourceTo(this, {qty: amount, log: true});

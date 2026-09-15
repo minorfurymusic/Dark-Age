@@ -11,6 +11,6 @@ export class VElectrician extends BaseMilestone {
   }
 
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.POWER, 'milestone');
+    return player.tags.count(Tag.GUERREAR, 'milestone');
   }
 }

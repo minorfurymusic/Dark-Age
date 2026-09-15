@@ -14,9 +14,9 @@ export class TerraformingRobots extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.TERRAFORMING_ROBOTS,
       cost: 10,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       resourceType: CardResource.SPECIALIZED_ROBOT,
-      requirements: {tag: Tag.SCIENCE, count: 4},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 4},
       victoryPoints: {resourcesHere: {}},
 
       metadata: {

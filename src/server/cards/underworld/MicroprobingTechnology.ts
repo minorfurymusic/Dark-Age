@@ -11,10 +11,10 @@ export class MicroprobingTechnology extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MICROPROBING_TECHNOLOGY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 8,
 
-      requirements: {tag: Tag.SCIENCE},
+      requirements: {tag: Tag.ERUDIÇÃO},
 
       behavior: {
         stock: {plants: 3},

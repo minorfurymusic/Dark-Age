@@ -19,7 +19,7 @@ export class ImportedHydrogen extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.IMPORTED_HYDROGEN,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 16,
 
       behavior: {

@@ -7,7 +7,7 @@ export class SmeltingPlant extends PreludeCard {
   constructor() {
     super({
       name: CardName.SMELTING_PLANT,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         stock: {steel: 5},

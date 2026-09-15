@@ -11,7 +11,7 @@ export class ArtificialPhotosynthesis extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ARTIFICIAL_PHOTOSYNTHESIS,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 12,
 
       behavior: {

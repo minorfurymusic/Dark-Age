@@ -297,8 +297,8 @@ export class Server {
       steel: 'off',
       titanium: 'off',
       plants: 'off',
-      energy: 'off',
-      heat: 'off',
+      guerrear: 'off',
+      inovacao: 'off',
     };
 
     if (player.alloysAreProtected()) {
@@ -322,8 +322,8 @@ export class Server {
       steel: defaultProteection,
       titanium: defaultProteection,
       plants: defaultProteection,
-      energy: defaultProteection,
-      heat: defaultProteection,
+      guerrear: defaultProteection,
+      inovacao: defaultProteection,
     };
 
     if (player.alloysAreProtected()) {

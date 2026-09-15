@@ -8,7 +8,7 @@ export class Hadesphere extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.HADESPHERE,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       startingMegaCredits: 40,
 
       behavior: {

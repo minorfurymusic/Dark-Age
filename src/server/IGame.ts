@@ -33,6 +33,7 @@ import {GlobalParameter} from '../common/GlobalParameter';
 import {UnderworldData} from './underworld/UnderworldData';
 import {OrOptions} from './inputs/OrOptions';
 import {IStandardProjectCard} from './cards/IStandardProjectCard';
+import {OathDealer} from './oaths/OathDealer';
 
 export interface Score {
   corporation: String;
@@ -85,6 +86,7 @@ export interface IGame extends Logger {
   moonData: MoonData | undefined;
   pathfindersData: PathfindersData | undefined;
   underworldData: UnderworldData;
+  oathDealer: OathDealer | undefined;
 
   // Card-specific data
 
@@ -130,6 +132,7 @@ export interface IGame extends Logger {
   /** Initiates the first research phase, which is when a player chooses their starting hand, corps and preludes. */
   gotoInitialResearchPhase(): void;
   gotoResearchPhase(): void;
+  gotoGuardPhase(): void;
   save(): void;
   serialize(): SerializedGame;
   isSoloMode() :boolean;
@@ -158,6 +161,7 @@ export interface IGame extends Logger {
   playerHasPassed(player: IPlayer): void;
   hasResearched(player: IPlayer): boolean;
   playerIsFinishedWithResearchPhase(player: IPlayer): void;
+  playerIsFinishedWithGuardPhase(player: IPlayer): void;
   /**
    * Called when a player has finished taking actions. It sets up
    * the next player, or moves to the production phase.

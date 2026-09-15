@@ -14,7 +14,7 @@ export class HomeostasisBureau extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.HOMEOSTASIS_BUREAU,
       cost: 16,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       behavior: {
         production: {heat: 2},
@@ -33,7 +33,7 @@ export class HomeostasisBureau extends Card implements IProjectCard {
   }
 
   onGlobalParameterIncrease?(player: IPlayer, parameter: GlobalParameter, steps: number) {
-    if (parameter === GlobalParameter.TEMPERATURE) {
+    if (parameter === GlobalParameter.TECNOLOGIA) {
       player.stock.add(Resource.MEGACREDITS, 3 * steps, {log: true});
     }
   }

@@ -9,11 +9,11 @@ export class AdvancedEcosystems extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ADVANCED_ECOSYSTEMS,
-      tags: [Tag.PLANT, Tag.MICROBE, Tag.ANIMAL],
+      tags: [Tag.AGRICULTURA, Tag.BRUXARIA, Tag.PECUÁRIA],
       cost: 11,
       victoryPoints: 3,
 
-      requirements: [{tag: Tag.PLANT}, {tag: Tag.ANIMAL}, {tag: Tag.MICROBE}],
+      requirements: [{tag: Tag.AGRICULTURA}, {tag: Tag.PECUÁRIA}, {tag: Tag.BRUXARIA}],
       metadata: {
         description: 'Requires a plant tag, a microbe tag, and an animal tag.',
         cardNumber: '135',

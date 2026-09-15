@@ -10,7 +10,7 @@ export class BuildingIndustries extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.BUILDING_INDUSTRIES,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 6,
 
       behavior: {

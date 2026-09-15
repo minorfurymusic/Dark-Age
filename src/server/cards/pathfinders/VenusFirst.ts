@@ -7,10 +7,10 @@ export class VenusFirst extends PreludeCard {
   constructor() {
     super({
       name: CardName.VENUS_FIRST,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
 
       behavior: {
-        drawCard: {count: 2, tag: Tag.VENUS},
+        drawCard: {count: 2, tag: Tag.COMÉRCIO},
         global: {venus: 2},
       },
 
@@ -18,7 +18,7 @@ export class VenusFirst extends PreludeCard {
         cardNumber: 'PfP01',
         renderData: CardRenderer.builder((b) => {
           b.venus(2).br.br;
-          b.cards(2, {secondaryTag: Tag.VENUS});
+          b.cards(2, {secondaryTag: Tag.COMÉRCIO});
         }),
         description: 'Raise Venus 2 steps. Draw 2 Venus cards.',
       },

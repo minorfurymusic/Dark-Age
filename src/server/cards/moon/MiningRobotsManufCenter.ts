@@ -9,7 +9,7 @@ export class MiningRobotsManufCenter extends Card {
     super({
       name: CardName.MINING_ROBOTS_MANUF_CENTER,
       type: CardType.AUTOMATED,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 12,
       reserveUnits: {titanium: 1},
 

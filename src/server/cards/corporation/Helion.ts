@@ -9,7 +9,7 @@ export class Helion extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.HELION,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegaCredits: 42,
 
       behavior: {

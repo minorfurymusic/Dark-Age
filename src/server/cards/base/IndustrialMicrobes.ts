@@ -10,7 +10,7 @@ export class IndustrialMicrobes extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.INDUSTRIAL_MICROBES,
-      tags: [Tag.MICROBE, Tag.BUILDING],
+      tags: [Tag.BRUXARIA, Tag.CONSTRUÇÃO],
       cost: 12,
 
       behavior: {

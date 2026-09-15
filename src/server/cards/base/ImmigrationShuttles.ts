@@ -10,7 +10,7 @@ export class ImmigrationShuttles extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.IMMIGRATION_SHUTTLES,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 31,
       victoryPoints: {cities: {}, all: true, per: 3},
 

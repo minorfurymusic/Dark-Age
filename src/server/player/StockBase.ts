@@ -20,7 +20,14 @@ export abstract class BaseStock {
   }
 
   public get(resource: Resource): number {
-    return this[resource];
+    const key = this.mapResourceToKey(resource);
+    return this[key as keyof this] as number;
+  }
+
+  protected mapResourceToKey(resource: Resource): string {
+    if (resource === Resource.GUERREAR) return 'energy';
+    if (resource === Resource.INOVACAO) return 'heat';
+    return resource;
   }
 
   public override(units: Partial<Units>) {
@@ -96,11 +103,11 @@ export abstract class BaseStock {
     }
 
     if (units.energy !== undefined) {
-      this.add(Resource.ENERGY, units.energy, options);
+      this.add(Resource.GUERREAR, units.energy, options);
     }
 
     if (units.heat !== undefined) {
-      this.add(Resource.HEAT, units.heat, options);
+      this.add(Resource.INOVACAO, units.heat, options);
     }
   }
 
@@ -109,8 +116,8 @@ export abstract class BaseStock {
     this.deduct(Resource.STEEL, units.steel);
     this.deduct(Resource.TITANIUM, units.titanium);
     this.deduct(Resource.PLANTS, units.plants);
-    this.deduct(Resource.ENERGY, units.energy);
-    this.deduct(Resource.HEAT, units.heat);
+    this.deduct(Resource.GUERREAR, units.energy);
+    this.deduct(Resource.INOVACAO, units.heat);
   }
 
   protected logUnitDelta(
@@ -142,8 +149,8 @@ export abstract class BaseStock {
       [Resource.STEEL]: 'steel',
       [Resource.TITANIUM]: 'titanium',
       [Resource.PLANTS]: 'plant',
-      [Resource.ENERGY]: 'energy',
-      [Resource.HEAT]: 'heat',
+      [Resource.GUERREAR]: 'energy',
+      [Resource.INOVACAO]: 'heat',
     };
 
     let resourceString = singular[resource];

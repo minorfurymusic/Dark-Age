@@ -13,13 +13,13 @@ export class RoboticWorkforce extends RoboticWorkforceBase {
     super({
       type: CardType.AUTOMATED,
       name: CardName.ROBOTIC_WORKFORCE,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 9,
       metadata: {
         cardNumber: '086',
         renderData: CardRenderer.builder((b) => {
           b.text('Copy A', {size: Size.SMALL, uppercase}).nbsp;
-          b.production((pb) => pb.tag(Tag.BUILDING));
+          b.production((pb) => pb.tag(Tag.CONSTRUÇÃO));
         }),
         description: 'Duplicate only the production box of one of your building cards.',
       },

@@ -10,7 +10,7 @@ export class GHGProducingBacteria extends ActionCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.GHG_PRODUCING_BACTERIA,
-      tags: [Tag.SCIENCE, Tag.MICROBE],
+      tags: [Tag.ERUDIÇÃO, Tag.BRUXARIA],
       cost: 8,
       resourceType: CardResource.MICROBE,
 

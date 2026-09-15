@@ -20,7 +20,7 @@ class ScientistsBonus01 extends Bonus {
   readonly description = 'Gain 1 M€ for each science tag you have';
 
   getScore(player: IPlayer) {
-    return player.tags.count(Tag.SCIENCE, 'raw-pf');
+    return player.tags.count(Tag.ERUDIÇÃO, 'raw-pf');
   }
 
   grantForPlayer(player: IPlayer) {

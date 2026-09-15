@@ -10,19 +10,19 @@ export class Io extends Colony {
       build: {
         description: 'Gain 1 heat production',
         type: ColonyBenefit.GAIN_PRODUCTION,
-        resource: Resource.HEAT,
+        resource: Resource.INOVACAO,
       },
       trade: {
         description: 'Gain n heat',
         type: ColonyBenefit.GAIN_RESOURCES,
         quantity: [2, 3, 4, 6, 8, 10, 13],
-        resource: Resource.HEAT,
+        resource: Resource.INOVACAO,
       },
       colony: {
         description: 'Gain 2 heat',
         type: ColonyBenefit.GAIN_RESOURCES,
         quantity: 2,
-        resource: Resource.HEAT,
+        resource: Resource.INOVACAO,
       },
     });
   }

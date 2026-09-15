@@ -24,7 +24,7 @@ export class RestrictedArea extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 11,
 
       behavior: {

@@ -10,7 +10,7 @@ export class FloaterPrototypes extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 2,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       name: CardName.FLOATER_PROTOTYPES,
       type: CardType.EVENT,
 

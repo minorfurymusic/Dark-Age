@@ -15,12 +15,12 @@ export class SaturnSurfing extends Card implements IActionCard, IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.SATURN_SURFING,
       cost: 13,
-      tags: [Tag.JOVIAN, Tag.EARTH],
+      tags: [Tag.ENGENHO, Tag.DIPLOMACIA],
       resourceType: CardResource.FLOATER,
       victoryPoints: 1,
 
       behavior: {
-        addResources: {tag: Tag.EARTH},
+        addResources: {tag: Tag.DIPLOMACIA},
       },
 
       metadata: {
@@ -30,7 +30,7 @@ export class SaturnSurfing extends Card implements IActionCard, IProjectCard {
             eb.resource(CardResource.FLOATER).startAction.megacredits(1).slash().resource(CardResource.FLOATER);
             eb.asterix().text('max 5');
           }).br;
-          b.resource(CardResource.FLOATER).slash().tag(Tag.EARTH);
+          b.resource(CardResource.FLOATER).slash().tag(Tag.DIPLOMACIA);
         }),
         description: 'Add 1 floater here for every Earth tag you have, including this.',
       },

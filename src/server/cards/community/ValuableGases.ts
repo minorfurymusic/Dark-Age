@@ -12,7 +12,7 @@ export class ValuableGases extends PreludeCard implements IProjectCard {
   constructor() {
     super({
       name: CardName.VALUABLE_GASES,
-      tags: [Tag.JOVIAN, Tag.VENUS],
+      tags: [Tag.ENGENHO, Tag.COMÉRCIO],
       behavior: {
         stock: {megacredits: 6},
       },
@@ -21,7 +21,7 @@ export class ValuableGases extends PreludeCard implements IProjectCard {
         cardNumber: 'Y06',
         renderData: CardRenderer.builder((b) => {
           b.megacredits(6).br.br;
-          b.text('play', {uppercase}).cards(1, {secondaryTag: Tag.VENUS}).colon();
+          b.text('play', {uppercase}).cards(1, {secondaryTag: Tag.COMÉRCIO}).colon();
           b.resource(CardResource.FLOATER, {amount: 4, digit});
         }),
         description: 'Gain 6 M€. Play a Venus card from your hand and add 4 floaters to it.',
@@ -30,7 +30,7 @@ export class ValuableGases extends PreludeCard implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    const playableCards = player.getPlayableCards().filter((card) => card.tags.includes(Tag.VENUS));
+    const playableCards = player.getPlayableCards().filter((card) => card.tags.includes(Tag.COMÉRCIO));
 
     if (playableCards.length > 0) {
       return new SelectProjectCardToPlay(player, playableCards)

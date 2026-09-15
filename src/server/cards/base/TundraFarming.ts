@@ -10,7 +10,7 @@ export class TundraFarming extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TUNDRA_FARMING,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 16,
       victoryPoints: 2,
 

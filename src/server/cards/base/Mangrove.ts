@@ -10,7 +10,7 @@ export class Mangrove extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MANGROVE,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 12,
       victoryPoints: 1,
 

@@ -10,7 +10,7 @@ export class Habitat14 extends Card {
     super({
       name: CardName.HABITAT_14,
       type: CardType.AUTOMATED,
-      tags: [Tag.CITY, Tag.MOON],
+      tags: [Tag.FEUDO, Tag.MOON],
       cost: 5,
 
       behavior: {

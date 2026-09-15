@@ -10,18 +10,18 @@ export class Worms extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.WORMS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 8,
 
       behavior: {
-        production: {plants: {tag: Tag.MICROBE, per: 2}},
+        production: {plants: {tag: Tag.BRUXARIA, per: 2}},
       },
 
       requirements: {oxygen: 4},
       metadata: {
         cardNumber: '130',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.plants(1).slash().tag(Tag.MICROBE, 2));
+          b.production((pb) => pb.plants(1).slash().tag(Tag.BRUXARIA, 2));
         }),
         description: 'Requires 4% oxygen. Increase your plant production 1 step for every 2 microbe tags you have, including this.',
       },

@@ -14,7 +14,7 @@ export class DeepFoundations extends Card implements IActionCard {
     super({
       name: CardName.DEEP_FOUNDATIONS,
       type: CardType.ACTIVE,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 4,
 
       metadata: {

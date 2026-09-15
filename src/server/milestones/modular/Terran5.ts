@@ -11,6 +11,6 @@ export class Terran5 extends BaseMilestone {
   }
 
   public getScore(player: IPlayer): number {
-    return player.tags.count(Tag.EARTH, 'milestone');
+    return player.tags.count(Tag.DIPLOMACIA, 'milestone');
   }
 }

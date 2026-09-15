@@ -11,7 +11,7 @@ export class RegolithEaters extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.REGOLITH_EATERS,
-      tags: [Tag.SCIENCE, Tag.MICROBE],
+      tags: [Tag.ERUDIÇÃO, Tag.BRUXARIA],
       cost: 13,
       resourceType: CardResource.MICROBE,
 

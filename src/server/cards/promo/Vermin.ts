@@ -17,7 +17,7 @@ export class Vermin extends ActionCard implements IProjectCard, IActionCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.VERMIN,
-      tags: [Tag.MICROBE, Tag.ANIMAL],
+      tags: [Tag.BRUXARIA, Tag.PECUÁRIA],
       cost: 8,
 
       resourceType: CardResource.ANIMAL,

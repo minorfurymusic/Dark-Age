@@ -14,7 +14,7 @@ export class LunaTradeStation extends ActionCard implements IActionCard {
     super({
       name: CardName.LUNA_TRADE_STATION,
       type: CardType.ACTIVE,
-      tags: [Tag.MOON, Tag.MOON, Tag.SPACE],
+      tags: [Tag.MOON, Tag.MOON, Tag.MARÍTIMO],
       cost: 10,
       reserveUnits: {titanium: 2},
 

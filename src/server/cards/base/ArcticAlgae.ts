@@ -17,7 +17,7 @@ export class ArcticAlgae extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ARCTIC_ALGAE,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 12,
 
       behavior: {

@@ -10,7 +10,7 @@ export class FuelFactory extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.FUEL_FACTORY,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 6,
 
       behavior: {

@@ -10,7 +10,7 @@ export class TectonicStressPower extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.TECTONIC_STRESS_POWER,
-      tags: [Tag.POWER, Tag.BUILDING],
+      tags: [Tag.GUERREAR, Tag.CONSTRUÇÃO],
       cost: 18,
 
       behavior: {
@@ -18,7 +18,7 @@ export class TectonicStressPower extends Card implements IProjectCard {
       },
       victoryPoints: 1,
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      requirements: {tag: Tag.ERUDIÇÃO, count: 2},
       metadata: {
         cardNumber: '145',
         renderData: CardRenderer.builder((b) => {

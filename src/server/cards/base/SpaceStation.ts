@@ -10,16 +10,16 @@ export class SpaceStation extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.SPACE_STATION,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 10,
       victoryPoints: 1,
 
-      cardDiscount: {tag: Tag.SPACE, amount: 2},
+      cardDiscount: {tag: Tag.MARÍTIMO, amount: 2},
       metadata: {
         cardNumber: '025',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a space card, you pay 2 M€ less for it.', (eb) => {
-            eb.tag(Tag.SPACE).startEffect.megacredits(-2);
+            eb.tag(Tag.MARÍTIMO).startEffect.megacredits(-2);
           });
         }),
       },

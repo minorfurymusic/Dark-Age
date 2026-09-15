@@ -10,7 +10,7 @@ export class LunarExports extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 19,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       name: CardName.LUNAR_EXPORTS,
       type: CardType.AUTOMATED,
 

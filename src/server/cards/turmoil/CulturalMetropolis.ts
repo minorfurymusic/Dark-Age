@@ -14,7 +14,7 @@ export class CulturalMetropolis extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CULTURAL_METROPOLIS,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 20,
 
       behavior: {

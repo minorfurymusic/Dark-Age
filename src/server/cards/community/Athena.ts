@@ -12,7 +12,7 @@ export class Athena extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.ATHENA,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       initialActionText: 'Place 2 hazard tiles adjacent to no other tiles.',
       startingMegaCredits: 62,
 

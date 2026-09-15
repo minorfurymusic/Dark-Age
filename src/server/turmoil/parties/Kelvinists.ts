@@ -40,7 +40,7 @@ class KelvinistsBonus02 extends Bonus {
   }
 
   grantForPlayer(player: IPlayer): void {
-    player.stock.add(Resource.HEAT, this.getScore(player), {log: true, from: {partyName: PartyName.KELVINISTS}});
+    player.stock.add(Resource.INOVACAO, this.getScore(player), {log: true, from: {partyName: PartyName.KELVINISTS}});
   }
 }
 
@@ -63,8 +63,8 @@ class KelvinistsPolicy01 implements IPolicy {
     game.log('${0} used Turmoil ${1} action', (b) => b.player(player).partyName(PartyName.KELVINISTS));
     game.defer(new SelectPaymentDeferred(player, this.cost(player), {title: TITLES.payForPartyAction(PartyName.KELVINISTS)}))
       .andThen(() => {
-        player.production.add(Resource.ENERGY, 1);
-        player.production.add(Resource.HEAT, 1);
+        player.production.add(Resource.GUERREAR, 1);
+        player.production.add(Resource.INOVACAO, 1);
         game.log('${0} increased heat and energy production 1 step', (b) => b.player(player));
       });
 
@@ -115,7 +115,7 @@ class KelvinistsPolicy04 implements IPolicy {
   readonly description = 'When you place a tile, gain 2 heat';
 
   onTilePlaced(player: IPlayer) {
-    player.stock.add(Resource.HEAT, 2, {log: true, from: {partyName: PartyName.KELVINISTS}});
+    player.stock.add(Resource.INOVACAO, 2, {log: true, from: {partyName: PartyName.KELVINISTS}});
   }
 }
 

@@ -17,7 +17,7 @@ export class DarksideSmugglersUnion extends Card implements IProjectCard, IActio
     super({
       name: CardName.DARKSIDE_SMUGGLERS_UNION,
       type: CardType.ACTIVE,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 17,
 
       behavior: {

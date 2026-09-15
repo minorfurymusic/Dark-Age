@@ -11,9 +11,9 @@ export class Solarpedia extends ActionCard implements IProjectCard {
     super({
       name: CardName.SOLARPEDIA,
       type: CardType.ACTIVE,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 12,
-      requirements: [{tag: Tag.VENUS}, {tag: Tag.EARTH}, {tag: Tag.MARS}, {tag: Tag.JOVIAN}],
+      requirements: [{tag: Tag.COMÉRCIO}, {tag: Tag.DIPLOMACIA}, {tag: Tag.MARS}, {tag: Tag.ENGENHO}],
       resourceType: CardResource.DATA,
       victoryPoints: {resourcesHere: {}, per: 6},
 

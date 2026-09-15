@@ -10,7 +10,7 @@ export class SupportedResearch extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 3,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       name: CardName.SUPPORTED_RESEARCH,
       type: CardType.AUTOMATED,
 

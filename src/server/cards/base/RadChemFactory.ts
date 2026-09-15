@@ -10,7 +10,7 @@ export class RadChemFactory extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.RAD_CHEM_FACTORY,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 8,
 
       behavior: {

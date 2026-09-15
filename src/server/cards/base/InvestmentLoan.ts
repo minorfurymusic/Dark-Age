@@ -10,7 +10,7 @@ export class InvestmentLoan extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.INVESTMENT_LOAN,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 3,
 
       behavior: {

@@ -10,7 +10,7 @@ export class MicrogravityNutrition extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 11,
-      tags: [Tag.MICROBE, Tag.PLANT],
+      tags: [Tag.BRUXARIA, Tag.AGRICULTURA],
       name: CardName.MICROGRAVITY_NUTRITION,
       type: CardType.AUTOMATED,
       victoryPoints: 1,

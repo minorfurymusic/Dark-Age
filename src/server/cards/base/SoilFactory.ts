@@ -10,7 +10,7 @@ export class SoilFactory extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.SOIL_FACTORY,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       cost: 9,
 
       behavior: {

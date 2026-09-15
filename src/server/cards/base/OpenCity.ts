@@ -10,7 +10,7 @@ export class OpenCity extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.OPEN_CITY,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 23,
       requirements: {oxygen: 12},
       victoryPoints: 1,

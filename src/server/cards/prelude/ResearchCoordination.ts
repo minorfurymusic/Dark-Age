@@ -9,12 +9,12 @@ export class ResearchCoordination extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.RESEARCH_COORDINATION,
-      tags: [Tag.WILD],
+      tags: [Tag.ERUDIÇÃO],
       cost: 4,
 
       metadata: {
         cardNumber: 'P40',
-        description: 'After being played, when you perform an action, the wild tag counts as any tag of your choice.',
+        description: 'After being played, draw 1 card whenever you perform an action card play.',
       },
     });
   }

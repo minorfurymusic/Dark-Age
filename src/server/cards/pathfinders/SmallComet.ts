@@ -16,7 +16,7 @@ export class SmallComet extends Card implements IProjectCard {
       type: CardType.EVENT,
       name: CardName.SMALL_COMET,
       cost: 32,
-      tags: [Tag.MARS, Tag.SPACE],
+      tags: [Tag.MARS, Tag.MARÍTIMO],
 
       behavior: {
         stock: {titanium: 1},

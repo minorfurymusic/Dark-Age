@@ -9,7 +9,7 @@ export class Incite extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.INCITE,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       startingMegaCredits: 32,
 
       behavior: {

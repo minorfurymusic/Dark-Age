@@ -7,7 +7,7 @@ export class Biolab extends PreludeCard {
   constructor() {
     super({
       name: CardName.BIOLAB,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
 
       behavior: {
         production: {plants: 1},

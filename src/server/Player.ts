@@ -22,6 +22,7 @@ import {PlayerInput} from './PlayerInput';
 import {Resource} from '../common/Resource';
 import {CardResource} from '../common/CardResource';
 import {SelectCard} from './inputs/SelectCard';
+import {SelectGuardAllocation} from './inputs/SelectGuardAllocation';
 import {SellPatentsStandardProject} from './cards/base/standardProjects/SellPatentsStandardProject';
 import {SimpleDeferredAction} from './deferredActions/DeferredAction';
 import {Priority} from './deferredActions/Priority';
@@ -79,13 +80,14 @@ import {AlliedParty} from '../common/turmoil/Types';
 import {PlayedCards} from './cards/PlayedCards';
 import {From} from './logs/From';
 import {SelectStandardProjectToPlay} from './inputs/SelectStandardProjectToPlay';
+import {IOath} from './oaths/IOath';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {
-  [GlobalParameter.OCEANS]: 0,
-  [GlobalParameter.OXYGEN]: 0,
-  [GlobalParameter.TEMPERATURE]: 0,
-  [GlobalParameter.VENUS]: 0,
+  [GlobalParameter.ESTANDARTES]: 0,
+  [GlobalParameter.FE]: 0,
+  [GlobalParameter.TECNOLOGIA]: 0,
+  [GlobalParameter.ROTAS_COMERCIAIS]: 0,
   [GlobalParameter.MOON_HABITAT_RATE]: 0,
   [GlobalParameter.MOON_MINING_RATE]: 0,
   [GlobalParameter.MOON_LOGISTIC_RATE]: 0,
@@ -138,6 +140,7 @@ export class Player implements IPlayer {
   public playedCards: PlayedCards = new PlayedCards();
   public draftedCards: Array<IProjectCard> = [];
   public draftHand: Array<IProjectCard> = [];
+  public oaths: Array<IOath> = [];
   public cardCost: number = constants.CARD_COST;
   public needsToDraft?: boolean;
 
@@ -175,6 +178,9 @@ export class Player implements IPlayer {
   public availableActionsThisRound = 2;
 
   public withinDeflectionZone = false;
+
+  // Combat Systems (Phase 13.7)
+  public allocatedGuerear: number = 0;
 
   // Stats
   public actionsTakenThisGame: number = 0;
@@ -404,7 +410,7 @@ export class Player implements IPlayer {
   }
 
   public canHaveProductionReduced(resource: Resource, minQuantity: number, attacker: IPlayer) {
-    const reducable = this.production[resource] + (resource === Resource.MEGACREDITS ? 5 : 0);
+    const reducable = this.production.get(resource) + (resource === Resource.MEGACREDITS ? 5 : 0);
     if (reducable < minQuantity) {
       return false;
     }
@@ -636,6 +642,12 @@ export class Player implements IPlayer {
         card.opgActionIsActive = false;
       }
     }
+
+    // Reset allocated Guerrear for next generation (Phase 13.17)
+    if (this.allocatedGuerear > 0) {
+      this.game.log('${0} resolves allocated Guerrear for next generation', (b) => b.player(this));
+      this.allocatedGuerear = 0;
+    }
   }
 
   /**
@@ -711,6 +723,20 @@ export class Player implements IPlayer {
     }
   }
 
+  public runGuardPhase(): void {
+    const maxAllocation = this.production.energy;
+    const currentGuerear = this.energy;
+
+    const selectAllocation = new SelectGuardAllocation(maxAllocation, currentGuerear)
+      .andThen((allocated) => {
+        this.allocatedGuerear = allocated;
+        this.game.playerIsFinishedWithGuardPhase(this);
+        return undefined;
+      });
+
+    this.setWaitingFor(selectAllocation);
+  }
+
   public getCardCost(card: IProjectCard): number {
     let cost = card.cost;
     cost -= this.colonies.cardDiscount;
@@ -727,7 +753,7 @@ export class Player implements IPlayer {
     });
 
     // TODO(kberg): put this in a callback.
-    if (card.tags.includes(Tag.SPACE) && PartyHooks.shouldApplyPolicy(this, PartyName.UNITY, 'up04')) {
+    if (card.tags.includes(Tag.MARÍTIMO) && PartyHooks.shouldApplyPolicy(this, PartyName.UNITY, 'up04')) {
       cost -= 2;
     }
 
@@ -737,17 +763,17 @@ export class Player implements IPlayer {
   private paymentOptionsForCard(card: IProjectCard): PaymentOptions {
     return {
       heat: this.canUseHeatAsMegaCredits,
-      steel: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.BUILDING),
-      plants: card.tags.includes(Tag.BUILDING) && this.playedCards.has(CardName.MARTIAN_LUMBER_CORP),
-      titanium: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.SPACE),
+      steel: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.CONSTRUÇÃO),
+      plants: card.tags.includes(Tag.CONSTRUÇÃO) && this.playedCards.has(CardName.MARTIAN_LUMBER_CORP),
+      titanium: this.lastCardPlayed === CardName.LAST_RESORT_INGENUITY || card.tags.includes(Tag.MARÍTIMO),
       lunaTradeFederationTitanium: this.canUseTitaniumAsMegacredits,
-      seeds: card.tags.includes(Tag.PLANT) || card.name === CardName.GREENERY_STANDARD_PROJECT,
-      floaters: card.tags.includes(Tag.VENUS),
-      microbes: card.tags.includes(Tag.PLANT),
+      seeds: card.tags.includes(Tag.AGRICULTURA) || card.name === CardName.GREENERY_STANDARD_PROJECT,
+      floaters: card.tags.includes(Tag.COMÉRCIO),
+      microbes: card.tags.includes(Tag.AGRICULTURA),
       lunaArchivesScience: card.tags.includes(Tag.MOON),
       spireScience: card.type === CardType.STANDARD_PROJECT,
       auroraiData: card.type === CardType.STANDARD_PROJECT,
-      graphene: card.tags.includes(Tag.CITY) || card.tags.includes(Tag.SPACE),
+      graphene: card.tags.includes(Tag.FEUDO) || card.tags.includes(Tag.MARÍTIMO),
       kuiperAsteroids: card.name === CardName.AQUIFER_STANDARD_PROJECT || card.name === CardName.ASTEROID_STANDARD_PROJECT,
     };
   }
@@ -1055,7 +1081,7 @@ export class Player implements IPlayer {
     if (stormcraft?.resourceCount > 0) {
       return stormcraft.spendHeat(this, amount, cb);
     }
-    this.stock.deduct(Resource.HEAT, amount);
+    this.stock.deduct(Resource.INOVACAO, amount);
     return cb();
   }
 
@@ -1238,7 +1264,7 @@ export class Player implements IPlayer {
     }
 
     const pharmacyUnion = this.tableau.get(CardName.PHARMACY_UNION);
-    if ((pharmacyUnion?.resourceCount ?? 0 > 0) && this.tags.cardHasTag(card, Tag.SCIENCE)) {
+    if ((pharmacyUnion?.resourceCount ?? 0 > 0) && this.tags.cardHasTag(card, Tag.ERUDIÇÃO)) {
       trSource.tr = (trSource.tr ?? 0) + 1;
     }
 
@@ -1267,7 +1293,7 @@ export class Player implements IPlayer {
       card.additionalProjectCosts = card.additionalProjectCosts ?? {};
       card.additionalProjectCosts.redsCost = canAfford.redsCost;
     }
-    if (this.playedCards.has(CardName.PHARMACY_UNION) && card.tags.includes(Tag.MICROBE)) {
+    if (this.playedCards.has(CardName.PHARMACY_UNION) && card.tags.includes(Tag.BRUXARIA)) {
       const pharmacyUnion = this.tableau.get(CardName.PHARMACY_UNION);
       if (pharmacyUnion?.isDisabled === false) {
         card.addWarning('pharmacyUnion');
@@ -1627,6 +1653,18 @@ export class Player implements IPlayer {
     const coloniesTradeAction = this.colonies.coloniesTradeAction();
     if (coloniesTradeAction !== undefined) {
       action.options.push(coloniesTradeAction);
+    }
+
+    // Attack trade routes (Saque)
+    const coloniesAttackAction = this.colonies.coloniesAttackAction();
+    if (coloniesAttackAction !== undefined) {
+      action.options.push(coloniesAttackAction);
+    }
+
+    // Attack cities (Saque de Feudos)
+    const coloniesAttackCityAction = this.colonies.coloniesAttackCityAction();
+    if (coloniesAttackCityAction !== undefined) {
+      action.options.push(coloniesAttackCityAction);
     }
 
     // Add delegates

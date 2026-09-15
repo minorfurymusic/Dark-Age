@@ -10,13 +10,13 @@ export class JovianLanterns extends ActionCard implements IProjectCard {
   constructor() {
     super({
       cost: 20,
-      tags: [Tag.JOVIAN],
+      tags: [Tag.ENGENHO],
       name: CardName.JOVIAN_LANTERNS,
       type: CardType.ACTIVE,
 
       resourceType: CardResource.FLOATER,
       victoryPoints: {resourcesHere: {}, per: 2},
-      requirements: {tag: Tag.JOVIAN},
+      requirements: {tag: Tag.ENGENHO},
 
       behavior: {
         tr: 1,

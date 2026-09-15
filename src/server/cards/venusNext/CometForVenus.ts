@@ -16,7 +16,7 @@ export class CometForVenus extends Card implements IProjectCard {
     super({
       name: CardName.COMET_FOR_VENUS,
       type: CardType.EVENT,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 11,
 
       behavior: {
@@ -27,14 +27,14 @@ export class CometForVenus extends Card implements IProjectCard {
         description: 'Raise Venus 1 step. Remove up to 4M€ from any player WITH A VENUS TAG IN PLAY.',
         cardNumber: '218',
         renderData: CardRenderer.builder((b) => {
-          b.venus(1).nbsp.nbsp.minus().megacredits(4, {all, secondaryTag: Tag.VENUS});
+          b.venus(1).nbsp.nbsp.minus().megacredits(4, {all, secondaryTag: Tag.COMÉRCIO});
         }),
       },
     });
   }
 
   public override bespokePlay(player: IPlayer) {
-    const venusTagPlayers = player.opponents.filter((opponent) => opponent.tags.count(Tag.VENUS, 'raw') > 0);
+    const venusTagPlayers = player.opponents.filter((opponent) => opponent.tags.count(Tag.COMÉRCIO, 'raw') > 0);
 
     if (player.game.isSoloMode()|| venusTagPlayers.length === 0) {
       return undefined;

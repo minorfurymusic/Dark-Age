@@ -10,7 +10,7 @@ export class ImportedHeavyMachinery extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.IMPORTED_HEAVY_MACHINERY,
-      tags: [Tag.EARTH, Tag.SPACE],
+      tags: [Tag.DIPLOMACIA, Tag.MARÍTIMO],
       cost: 9,
 
       behavior: {

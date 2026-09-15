@@ -17,7 +17,7 @@ export class FloydContinuum extends Card implements IProjectCard, IActionCard {
     super({
       cost: 4,
       name: CardName.FLOYD_CONTINUUM,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       type: CardType.ACTIVE,
 
       metadata: {

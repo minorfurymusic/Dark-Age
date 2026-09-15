@@ -13,10 +13,10 @@ export class VeneraBase extends ActionCard {
       type: CardType.ACTIVE,
       name: CardName.VENERA_BASE,
       cost: 21,
-      tags: [Tag.VENUS, Tag.VENUS, Tag.CITY],
+      tags: [Tag.COMÉRCIO, Tag.COMÉRCIO, Tag.FEUDO],
 
       requirements: {party: PartyName.UNITY},
-      victoryPoints: {tag: Tag.VENUS, per: 2},
+      victoryPoints: {tag: Tag.COMÉRCIO, per: 2},
 
       behavior: {
         production: {megacredits: 3},
@@ -24,15 +24,15 @@ export class VeneraBase extends ActionCard {
       },
 
       action: {
-        addResourcesToAnyCard: {type: CardResource.FLOATER, tag: Tag.VENUS, count: 1, mustHaveCard: true},
+        addResourcesToAnyCard: {type: CardResource.FLOATER, tag: Tag.COMÉRCIO, count: 1, mustHaveCard: true},
       },
 
       metadata: {
         cardNumber: 'Pf67',
         renderData: CardRenderer.builder((b) => {
-          b.action('Add 1 floater to ANY Venus card', (ab) => ab.empty().startAction.resource(CardResource.FLOATER, {secondaryTag: Tag.VENUS}).asterix());
+          b.action('Add 1 floater to ANY Venus card', (ab) => ab.empty().startAction.resource(CardResource.FLOATER, {secondaryTag: Tag.COMÉRCIO}).asterix());
           b.br;
-          b.production((pb) => pb.megacredits(3)).nbsp.city({secondaryTag: Tag.SPACE}).asterix();
+          b.production((pb) => pb.megacredits(3)).nbsp.city({secondaryTag: Tag.MARÍTIMO}).asterix();
           b.br;
           b.vpText('1 VP per 2 Venus tags you have.');
         }),

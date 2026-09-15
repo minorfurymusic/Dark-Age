@@ -10,7 +10,7 @@ export class DevelopmentCenter extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.DEVELOPMENT_CENTER,
-      tags: [Tag.SCIENCE, Tag.BUILDING],
+      tags: [Tag.ERUDIÇÃO, Tag.CONSTRUÇÃO],
       cost: 11,
 
       action: {

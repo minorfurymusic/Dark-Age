@@ -7,7 +7,7 @@ import {SerializedPathfindersData} from './SerializedPathfindersData';
  *
  * The order of this list matches the order of the list displayed in the UI.
  */
-export const PLANETARY_TAGS = [Tag.VENUS, Tag.EARTH, Tag.MARS, Tag.JOVIAN, Tag.MOON] as const;
+export const PLANETARY_TAGS = [Tag.COMÉRCIO, Tag.DIPLOMACIA, Tag.MARS, Tag.ENGENHO, Tag.MOON] as const;
 export type PlanetaryTag = typeof PLANETARY_TAGS[number];
 
 
@@ -25,22 +25,22 @@ export namespace PathfindersData {
       return undefined;
     }
     return {
-      venus: pathfindersData.venus,
-      earth: pathfindersData.earth,
-      mars: pathfindersData.mars,
-      jovian: pathfindersData.jovian,
-      moon: pathfindersData.moon,
+      venus: pathfindersData[Tag.COMÉRCIO],
+      earth: pathfindersData[Tag.DIPLOMACIA],
+      mars: pathfindersData[Tag.MARS],
+      jovian: pathfindersData[Tag.ENGENHO],
+      moon: pathfindersData[Tag.MOON],
       vps: pathfindersData.vps,
     };
   }
 
   export function deserialize(pathfindersData: SerializedPathfindersData): PathfindersData {
     return {
-      venus: pathfindersData.venus,
-      earth: pathfindersData.earth,
-      mars: pathfindersData.mars,
-      jovian: pathfindersData.jovian,
-      moon: pathfindersData.moon,
+      [Tag.COMÉRCIO]: pathfindersData.venus,
+      [Tag.DIPLOMACIA]: pathfindersData.earth,
+      [Tag.MARS]: pathfindersData.mars,
+      [Tag.ENGENHO]: pathfindersData.jovian,
+      [Tag.MOON]: pathfindersData.moon,
       vps: pathfindersData.vps,
     };
   }

@@ -18,7 +18,7 @@ export class UrbanizedArea extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.URBANIZED_AREA,
-      tags: [Tag.CITY, Tag.BUILDING],
+      tags: [Tag.FEUDO, Tag.CONSTRUÇÃO],
       cost: 10,
 
       behavior: {
@@ -60,7 +60,7 @@ export class UrbanizedArea extends Card implements IProjectCard {
       title: 'Select space next to at least 2 other city tiles',
       spaces,
     })).andThen(() => {
-      player.game.defer(new LoseProduction(player, Resource.ENERGY, {count: 1}));
+      player.game.defer(new LoseProduction(player, Resource.GUERREAR, {count: 1}));
     });
     return undefined;
   }

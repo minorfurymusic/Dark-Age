@@ -59,6 +59,7 @@ export type SerializedGame = {
     preludeDeck: SerializedDeck,
     projectDeck: SerializedDeck,
     researchedPlayers: Array<PlayerId>;
+    guardedPlayers?: Array<PlayerId>;
     seed: number;
     someoneHasRemovedOtherPlayersPlants: boolean;
     spectatorId: SpectatorId;

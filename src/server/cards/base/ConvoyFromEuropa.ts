@@ -10,7 +10,7 @@ export class ConvoyFromEuropa extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.CONVOY_FROM_EUROPA,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 15,
 
       behavior: {

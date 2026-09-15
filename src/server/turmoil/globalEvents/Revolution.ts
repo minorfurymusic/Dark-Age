@@ -17,7 +17,7 @@ export class Revolution extends GlobalEvent implements IGlobalEvent {
       revealedDelegate: PartyName.UNITY,
       currentDelegate: PartyName.MARS,
       renderData: CardRenderer.builder((b) => {
-        b.tag(Tag.EARTH, {size: Size.SMALL}).plus().influence().colon().br;
+        b.tag(Tag.DIPLOMACIA, {size: Size.SMALL}).plus().influence().colon().br;
         b.text('1st:', {size: Size.SMALL}).minus().tr(2, {size: Size.TINY}).nbsp;
         b.text('2nd:', {size: Size.SMALL}).minus().tr(1, {size: Size.TINY});
       }),
@@ -69,6 +69,6 @@ export class Revolution extends GlobalEvent implements IGlobalEvent {
     }
   }
   public getScore(player: IPlayer, turmoil: Turmoil) {
-    return player.tags.count(Tag.EARTH, 'raw') + turmoil.getInfluence(player);
+    return player.tags.count(Tag.DIPLOMACIA, 'raw') + turmoil.getInfluence(player);
   }
 }

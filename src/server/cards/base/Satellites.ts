@@ -10,18 +10,18 @@ export class Satellites extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.SATELLITES,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 10,
 
       behavior: {
-        production: {megacredits: {tag: Tag.SPACE}},
+        production: {megacredits: {tag: Tag.MARÍTIMO}},
       },
 
       metadata: {
         cardNumber: '175',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(1).slash().tag(Tag.SPACE);
+            pb.megacredits(1).slash().tag(Tag.MARÍTIMO);
           });
         }),
         description: 'Increase your M€ production 1 step for each space tag you have, including this one.',

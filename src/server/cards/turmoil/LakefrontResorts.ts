@@ -16,7 +16,7 @@ export class LakefrontResorts extends CorporationCard implements ICorporationCar
   constructor() {
     super({
       name: CardName.LAKEFRONT_RESORTS,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       startingMegaCredits: 54,
 
       metadata: {

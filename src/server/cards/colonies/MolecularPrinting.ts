@@ -11,7 +11,7 @@ export class MolecularPrinting extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 11,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       name: CardName.MOLECULAR_PRINTING,
       type: CardType.AUTOMATED,
       victoryPoints: 1,

@@ -10,7 +10,7 @@ export class ProtectedValley extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.PROTECTED_VALLEY,
-      tags: [Tag.PLANT, Tag.BUILDING],
+      tags: [Tag.AGRICULTURA, Tag.CONSTRUÇÃO],
       cost: 23,
 
       behavior: {

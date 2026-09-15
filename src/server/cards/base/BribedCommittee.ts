@@ -10,7 +10,7 @@ export class BribedCommittee extends Card implements IProjectCard {
     super({
       type: CardType.EVENT,
       name: CardName.BRIBED_COMMITTEE,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 7,
       victoryPoints: -2,
 

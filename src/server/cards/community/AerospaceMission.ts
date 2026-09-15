@@ -10,7 +10,7 @@ export class AerospaceMission extends PreludeCard {
   constructor() {
     super({
       name: CardName.AEROSPACE_MISSION,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       startingMegacredits: -14,
 
       metadata: {

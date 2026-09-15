@@ -11,7 +11,7 @@ export class PrivateResorts extends Card implements IProjectCard {
       name: CardName.PRIVATE_RESORTS,
       type: CardType.AUTOMATED,
       cost: 9,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
 
       requirements: {oceans: 3},
 

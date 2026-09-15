@@ -15,7 +15,7 @@ export class CloudSeeding extends Card implements IProjectCard {
 
       behavior: {
         production: {megacredits: -1, plants: 2},
-        decreaseAnyProduction: {type: Resource.HEAT, count: 1},
+        decreaseAnyProduction: {type: Resource.INOVACAO, count: 1},
       },
 
       requirements: {oceans: 3},

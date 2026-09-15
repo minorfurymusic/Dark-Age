@@ -14,13 +14,13 @@ export class VenusShuttles extends Card implements IActionCard {
     super({
       name: CardName.VENUS_SHUTTLES,
       type: CardType.ACTIVE,
-      tags: [Tag.VENUS],
+      tags: [Tag.COMÉRCIO],
       cost: 9,
 
       behavior: {
         addResourcesToAnyCard: {
           count: 2,
-          tag: Tag.VENUS,
+          tag: Tag.COMÉRCIO,
           type: CardResource.FLOATER,
           autoSelect: true,
         },
@@ -31,15 +31,15 @@ export class VenusShuttles extends Card implements IActionCard {
         description: 'Add 2 floaters to ANY VENUS CARD.',
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 12 M€ to raise Venus 1 step. This cost is REDUCED BY 1 FOR EACH VENUS TAG you have.', (eb) =>
-            eb.megacredits(12).text('(').megacredits(-1).slash().tag(Tag.VENUS).text(')').startAction.venus(1)).br;
-          b.resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.VENUS});
+            eb.megacredits(12).text('(').megacredits(-1).slash().tag(Tag.COMÉRCIO).text(')').startAction.venus(1)).br;
+          b.resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.COMÉRCIO});
         }),
       },
     });
   }
 
   private actionCost(player: IPlayer) {
-    return Math.max(12 - player.tags.count(Tag.VENUS), 0);
+    return Math.max(12 - player.tags.count(Tag.COMÉRCIO), 0);
   }
 
   public canAct(player: IPlayer) {

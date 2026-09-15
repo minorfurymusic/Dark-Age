@@ -11,7 +11,7 @@ export class UrbanDecomposers extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 6,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       name: CardName.URBAN_DECOMPOSERS,
       type: CardType.AUTOMATED,
 

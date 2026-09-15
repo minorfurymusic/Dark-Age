@@ -10,7 +10,7 @@ export class KelpFarming extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.KELP_FARMING,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 17,
       victoryPoints: 1,
 

@@ -14,20 +14,20 @@ export class MicrobiologyPatents extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.MICROBIOLOGY_PATENTS,
       cost: 6,
-      tags: [Tag.MARS, Tag.MICROBE],
+      tags: [Tag.MARS, Tag.BRUXARIA],
 
       metadata: {
         cardNumber: 'Pf63',
         renderData: CardRenderer.builder((b) => {
           b.effect('After you play a card with a microbe tag, increase your M€ production 1 step.',
-            (eb) => eb.tag(Tag.MICROBE).asterix().startEffect.production((pb) => pb.megacredits(1)));
+            (eb) => eb.tag(Tag.BRUXARIA).asterix().startEffect.production((pb) => pb.megacredits(1)));
         }),
       },
     });
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    if (card.tags.includes(Tag.MICROBE)) {
+    if (card.tags.includes(Tag.BRUXARIA)) {
       player.production.add(Resource.MEGACREDITS, 1, {log: true});
     }
   }

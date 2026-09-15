@@ -15,7 +15,7 @@ export class EcologicalSurvey extends SurveyCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.ECOLOGICAL_SURVEY,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
       cost: 9,
 
       requirements: {greeneries: 3, all},

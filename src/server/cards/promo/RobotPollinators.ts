@@ -14,13 +14,13 @@ export class RobotPollinators extends Card implements IProjectCard {
       requirements: {oxygen: 4},
       behavior: {
         production: {plants: 1},
-        stock: {plants: {tag: Tag.PLANT}},
+        stock: {plants: {tag: Tag.AGRICULTURA}},
       },
 
       metadata: {
         cardNumber: 'X45',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.plants(1)).br.plants(1).slash().tag(Tag.PLANT);
+          b.production((pb) => pb.plants(1)).br.plants(1).slash().tag(Tag.AGRICULTURA);
         }),
         description: 'Requires 4% oxygen. Increase your plant production 1 step. Gain 1 plant for every plant tag you have.',
       },

@@ -16,7 +16,7 @@ export class Philares extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.PHILARES,
-      tags: [Tag.BUILDING],
+      tags: [Tag.CONSTRUÇÃO],
       startingMegaCredits: 47,
 
       firstAction: {

@@ -10,11 +10,11 @@ export class ValleyTrust extends CorporationCard implements ICorporationCard {
   constructor() {
     super({
       name: CardName.VALLEY_TRUST,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       startingMegaCredits: 37,
       initialActionText: 'Draw 3 Prelude cards, and play one of them',
 
-      cardDiscount: {tag: Tag.SCIENCE, amount: 2},
+      cardDiscount: {tag: Tag.ERUDIÇÃO, amount: 2},
       metadata: {
         cardNumber: 'R34',
         description: 'You start with 37 M€. As your first action, draw 3 Prelude cards, and play one of them. Discard the other two.',
@@ -23,7 +23,7 @@ export class ValleyTrust extends CorporationCard implements ICorporationCard {
           b.megacredits(37).nbsp.prelude().asterix();
           b.corpBox('effect', (ce) => {
             ce.effect('When you play a science tag, you pay 2M€ less for it.', (eb) => {
-              eb.tag(Tag.SCIENCE).startEffect.megacredits(-2);
+              eb.tag(Tag.ERUDIÇÃO).startEffect.megacredits(-2);
             });
           });
         }),

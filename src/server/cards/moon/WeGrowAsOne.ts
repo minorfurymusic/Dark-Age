@@ -13,7 +13,7 @@ export class WeGrowAsOne extends Card implements IProjectCard {
     super({
       name: CardName.WE_GROW_AS_ONE,
       type: CardType.EVENT,
-      tags: [Tag.SPACE],
+      tags: [Tag.MARÍTIMO],
       cost: 8,
       requirements: {party: PartyName.UNITY},
 

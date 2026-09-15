@@ -15,7 +15,7 @@ export class TitanShuttles extends Card implements IProjectCard {
   constructor() {
     super({
       cost: 23,
-      tags: [Tag.JOVIAN, Tag.SPACE],
+      tags: [Tag.ENGENHO, Tag.MARÍTIMO],
       name: CardName.TITAN_SHUTTLES,
       type: CardType.ACTIVE,
       resourceType: CardResource.FLOATER,
@@ -24,7 +24,7 @@ export class TitanShuttles extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'C45',
         renderData: CardRenderer.builder((b) => {
-          b.arrow().resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.JOVIAN}).nbsp.or().br;
+          b.arrow().resource(CardResource.FLOATER, {amount: 2, secondaryTag: Tag.ENGENHO}).nbsp.or().br;
           b.text('x').resource(CardResource.FLOATER).arrow().text('x').titanium(1).br;
 
           b.plainText('Action: Add 2 floaters to ANY JOVIAN CARD, or spend any number of floaters here to gain the same number of titanium.', /* parens */ true);
@@ -40,13 +40,13 @@ export class TitanShuttles extends Card implements IProjectCard {
 
   public action(player: IPlayer) {
     if (this.resourceCount === 0) {
-      player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER, {count: 2, restrictedTag: Tag.JOVIAN, title: 'Add 2 floaters to a Jovian card'}));
+      player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER, {count: 2, restrictedTag: Tag.ENGENHO, title: 'Add 2 floaters to a Jovian card'}));
       return undefined;
     }
 
     return new OrOptions(
       new SelectOption('Add 2 floaters to a Jovian card', 'Add floaters').andThen(() => {
-        player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER, {count: 2, restrictedTag: Tag.JOVIAN}));
+        player.game.defer(new AddResourcesToCard(player, CardResource.FLOATER, {count: 2, restrictedTag: Tag.ENGENHO}));
         return undefined;
       }),
       new SelectAmount(

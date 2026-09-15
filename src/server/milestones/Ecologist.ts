@@ -10,6 +10,6 @@ export class Ecologist extends BaseMilestone {
       4);
   }
   public getScore(player: IPlayer): number {
-    return player.tags.multipleCount([Tag.PLANT, Tag.ANIMAL, Tag.MICROBE], 'milestone');
+    return player.tags.multipleCount([Tag.AGRICULTURA, Tag.PECUÁRIA, Tag.BRUXARIA], 'milestone');
   }
 }

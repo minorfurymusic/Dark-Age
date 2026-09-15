@@ -13,9 +13,11 @@ export class Production extends BaseStock {
     amount : number,
     options? : { log: boolean, from? : From, stealing?: boolean},
   ) {
+    const key = this.mapResourceToKey(resource);
     const adj = resource === Resource.MEGACREDITS ? -5 : 0;
-    const delta = (amount >= 0) ? amount : Math.max(amount, -(this[resource] - adj));
-    this[resource] += delta;
+    const currentValue = this[key as keyof this] as number;
+    const delta = (amount >= 0) ? amount : Math.max(amount, -(currentValue - adj));
+    (this[key as keyof this] as any) += delta;
 
     if (options?.log === true) {
       this.logUnitDelta(resource, amount, /* production*/ true, options.from, options.stealing);

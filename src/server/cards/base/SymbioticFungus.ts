@@ -11,7 +11,7 @@ export class SymbioticFungus extends ActionCard implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.SYMBIOTIC_FUNGUS,
-      tags: [Tag.MICROBE],
+      tags: [Tag.BRUXARIA],
       cost: 4,
 
       action: {

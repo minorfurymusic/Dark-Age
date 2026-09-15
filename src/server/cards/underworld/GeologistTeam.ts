@@ -14,7 +14,7 @@ export class GeologistTeam extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.GEOLOGIST_TEAM,
       cost: 6,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.ERUDIÇÃO],
 
       action: {
         underworld: {identify: 1},

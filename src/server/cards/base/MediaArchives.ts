@@ -11,7 +11,7 @@ export class MediaArchives extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MEDIA_ARCHIVES,
-      tags: [Tag.EARTH],
+      tags: [Tag.DIPLOMACIA],
       cost: 8,
 
       behavior: {
@@ -21,7 +21,7 @@ export class MediaArchives extends Card implements IProjectCard {
       metadata: {
         cardNumber: '107',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(1).slash().tag(Tag.EVENT, {all});
+          b.megacredits(1).slash().tag(Tag.HISTÓRIA, {all});
         }),
         description: 'Gain 1 M€ for each event EVER PLAYED by all players.',
       },

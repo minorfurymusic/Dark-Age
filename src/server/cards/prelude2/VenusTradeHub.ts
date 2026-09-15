@@ -10,10 +10,10 @@ export class VenusTradeHub extends Card implements IProjectCard {
     super({
       name: CardName.VENUS_TRADE_HUB,
       cost: 12,
-      tags: [Tag.VENUS, Tag.SPACE],
+      tags: [Tag.COMÉRCIO, Tag.MARÍTIMO],
       type: CardType.ACTIVE,
       victoryPoints: 1,
-      requirements: [{tag: Tag.VENUS, count: 2}],
+      requirements: [{tag: Tag.COMÉRCIO, count: 2}],
 
       metadata: {
         cardNumber: 'P90',

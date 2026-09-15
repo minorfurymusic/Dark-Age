@@ -10,7 +10,7 @@ export class Lichen extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.LICHEN,
-      tags: [Tag.PLANT],
+      tags: [Tag.AGRICULTURA],
       cost: 7,
 
       behavior: {

@@ -13,7 +13,7 @@ export class KaguyaTech extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.KAGUYA_TECH,
-      tags: [Tag.CITY, Tag.PLANT],
+      tags: [Tag.FEUDO, Tag.AGRICULTURA],
       cost: 10,
 
       behavior: {

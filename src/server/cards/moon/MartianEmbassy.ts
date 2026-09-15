@@ -13,14 +13,14 @@ export class MartianEmbassy extends Card implements IProjectCard {
     super({
       name: CardName.MARTIAN_EMBASSY,
       type: CardType.AUTOMATED,
-      tags: [Tag.MOON, Tag.MARS],
+      tags: [Tag.MOON, Tag.GUERREAR],
       cost: 11,
 
       metadata: {
         cardNumber: 'M76',
         description: 'Raise the Mars Planetary Track 1 step for every 3 Moon tags you have, including this.',
         renderData: CardRenderer.builder((b) => {
-          b.tag(Tag.MARS).planetaryTrack().text('+1').slash().tag(Tag.MOON, {amount: 3, digit});
+          b.tag(Tag.GUERREAR).planetaryTrack().text('+1').slash().tag(Tag.MOON, {amount: 3, digit});
         }),
       },
     });
